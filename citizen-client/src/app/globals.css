@@ -53,6 +53,9 @@ div {
 .active_color {
   color: #39bcbc !important;
 }
+.active_color_login {
+  color: white !important;
+}
 
 @keyframes stickYDown {
   0% {

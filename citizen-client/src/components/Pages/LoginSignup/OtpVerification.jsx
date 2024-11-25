@@ -140,7 +140,7 @@ const OtpVerification = ({ setIsOtpPage, setIsSinUpPage }) => {
                     onChange={(e) => handleOtpChange(index, e.target.value)}
                     onPaste={handlePaste}
                     maxLength="1"
-                    className="border border-gray-300 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded text-center focus:outline-none focus:ring-2 focus:ring-[#00BBB4]"
+                    className="border border-gray-300 dark:bg-white placeholder-gray-700 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded text-center focus:outline-none focus:ring-2 focus:ring-[#00BBB4]"
                   />
                 </div>
               ))}

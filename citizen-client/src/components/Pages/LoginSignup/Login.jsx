@@ -63,7 +63,7 @@ const Login = ({ setIsSinUpPage, setIsLoginPage, setIsPasswordReset }) => {
                 phoneNumberCheck(e, userInfo, setUserInfo, error, setError)
               }
               name="phone"
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border dark:bg-white placeholder-gray-700 border-gray-300 rounded-md shadow-sm  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               placeholder="Enter Phone Number"
               required
               onWheel={(e) => e.target.blur()}
@@ -84,7 +84,7 @@ const Login = ({ setIsSinUpPage, setIsLoginPage, setIsPasswordReset }) => {
                 onChange={(e) => passwordCheck(e, setUserInfo, error, setError)}
                 placeholder="Enter your password"
                 name="password"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:bg-white placeholder-gray-700 rounded-md shadow-sm  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 required
               />
               <button

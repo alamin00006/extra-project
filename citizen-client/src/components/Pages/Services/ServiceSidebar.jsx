@@ -32,7 +32,7 @@ const ServiceSidebar = () => {
                 className={`flex items-center justify-between p-2 rounded-l-lg group no-underline ${
                   pathname === `/service-details/${item.id}`
                     ? "bg-[#00a47e] text-white"
-                    : "bg-white text-gray-900 dark:text-white"
+                    : "bg-white text-gray-900 dark:text-black"
                 }`}
               >
                 <span className="ms-3">{item.title}</span>

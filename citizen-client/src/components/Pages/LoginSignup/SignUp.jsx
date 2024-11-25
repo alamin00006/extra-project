@@ -166,7 +166,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
             <input
               type="text"
               onChange={(e) => setFistName(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:bg-white placeholder-gray-700 rounded-md shadow-sm  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               required
               placeholder="First Name"
             />
@@ -178,7 +178,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
             <input
               type="text"
               onChange={(e) => setLastName(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:bg-white placeholder-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               required
               placeholder="Last Name"
             />
@@ -206,7 +206,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
               type="text"
               name="phoneNumber"
               onChange={(e) => setPhoneNumber(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 block w-full px-3 py-2 border dark:bg-white placeholder-gray-700 border-gray-300 rounded-md shadow-sm  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               required
               placeholder="Phone Number"
             />
@@ -219,7 +219,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
               <input
                 onChange={passwordCheck}
                 type={showPassword ? "text" : "password"}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:bg-white placeholder-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 required
                 placeholder="Password"
               />
@@ -244,7 +244,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 onChange={confirmPasswordCheck}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:bg-white placeholder-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 required
                 placeholder="Confirm Password"
               />

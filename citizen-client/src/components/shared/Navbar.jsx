@@ -11,6 +11,7 @@ const Navbar = () => {
   const pathname = usePathname();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
+  const [isProductsOpen, setProductsOpen] = useState(false);
 
   console.log(pathname);
   const [menuItems, setMenuItems] = useState([]);
@@ -22,20 +23,17 @@ const Navbar = () => {
   // Scroll event handler
   const handleScroll = () => {
     if (window.scrollY > 100) {
-      setHasScrolled(true); // Trigger animation when scrolled past 100px
+      setHasScrolled(true);
     } else {
-      setHasScrolled(false); // Remove animation if not scrolled
+      setHasScrolled(false);
     }
   };
 
-  // Add event listener for scroll and handle page load state
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
-    // On initial load, trigger the animation for sticky navbar
     setIsInitialLoad(false);
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -51,13 +49,13 @@ const Navbar = () => {
 
   return (
     <div
-      className={`bg-[#242323] custom-navbar ${
+      className={`bg-[#242323]  ${
         isInitialLoad || hasScrolled ? "sticky-navbar" : ""
       }`}
     >
-      <div className="custom-container">
+      <div className="custom-container ">
         <div className="navbar shadow-md flex flex-wrap items-center ">
-          <div className="col-span-2 ">
+          <div className="col-span-2 custom-navbar">
             <div className="dropdown md:hidden sm:block">
               <div
                 tabIndex={0}
@@ -72,15 +70,15 @@ const Navbar = () => {
               {/* For Mobile Screen */}
               <ul
                 tabIndex={0}
-                className={`menu menu-sm dropdown-content text-base z-[1] mt-20 w-screen p-2 shadow uppercase bg-white text-black dark:bg-gray-800 dark:text-white ${
+                className={`menu menu-sm dropdown-content text-base z-[1] mt-20 w-screen  pb-8 shadow uppercase bg-white text-black dark:bg-white dark:text-black ${
                   isDropdownOpen ? "block" : "hidden"
                 }`}
               >
                 <li>
                   <Link
                     href="/"
-                    className={` uppercase no-underline  ${
-                      pathname === "/" ? "text-[#39bcbc]" : "text-white"
+                    className={` uppercase no-underline text-black ${
+                      pathname === "/" ? "text-[#39bcbc]" : "text-black"
                     }`}
                   >
                     Home
@@ -90,7 +88,7 @@ const Navbar = () => {
                   <Link
                     href="/about-us"
                     className={` uppercase no-underline  ${
-                      pathname === "/about-us" ? "text-[#39bcbc]" : "text-white"
+                      pathname === "/about-us" ? "text-[#39bcbc]" : "text-black"
                     }`}
                   >
                     About Us
@@ -129,7 +127,7 @@ const Navbar = () => {
                           className={` uppercase no-underline  ${
                             pathname === `/service-details/${item.id}`
                               ? "text-[#39bcbc]"
-                              : "text-white"
+                              : "text-black"
                           }`}
                         >
                           {item.title}
@@ -138,11 +136,52 @@ const Navbar = () => {
                     ))}
                   </ul>
                 </li>
+                <br />
+                <li tabIndex={0} className="dropdown group">
+                  <div
+                    className={`uppercase no-underline`}
+                    onClick={() => setProductsOpen(!isProductsOpen)}
+                  >
+                    Our Products
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 inline-block ml-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                  <ul
+                    className={`p-2 bg-white dark:bg-gray-800 dark:text-white dropdown_link  ${
+                      isProductsOpen ? "block" : "hidden"
+                    }`}
+                  >
+                    <li>
+                      <Link
+                        href={`/service-details/10-takai-shastho-sheba`}
+                        className={` uppercase no-underline  ${
+                          pathname === `/service-details/10-takai-shastho-sheba`
+                            ? "text-[#39bcbc]"
+                            : "text-black"
+                        }`}
+                      >
+                        10-takai-shastho-sheba
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
                 <li>
                   <Link
                     href="/blogs"
                     className={` uppercase no-underline  ${
-                      pathname === "/blogs" ? "text-[#39bcbc]" : "text-white"
+                      pathname === "/blogs" ? "text-[#39bcbc]" : "text-black"
                     }`}
                   >
                     Blog
@@ -162,7 +201,7 @@ const Navbar = () => {
             </div>
           </div>
           {/* For Desktop */}
-          <div className="navbar-center hidden lg:flex col-span-10 mt-2">
+          <div className="navbar-center hidden lg:flex col-span-10 mt-2 custom-navbar">
             <ul className="menu menu-horizontal px-1">
               <li>
                 <Link
@@ -195,7 +234,7 @@ const Navbar = () => {
                     />
                   </svg>
                 </div>
-                <ul className="p-2 bg-white hidden dropdown_link group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-white">
+                <ul className="p-2 bg-white hidden dropdown_link group-hover:block absolute z-10 w-[300px] dark:bg-gray-800 dark:text-white">
                   {menuItems.map((item) => (
                     <li key={item.id}>
                       <Link
@@ -303,10 +342,12 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <div className="navbar-end md:hidden sm:block col-span-4">
+          <div className="navbar-end col-span-4 md:hidden sm:block">
             <Link
               href="/login"
-              className="bg-[#39bcbc] text-white rounded uppercase text-base px-3 py-2.5 no-underline"
+              className={`bg-[#39bcbc] text-white rounded uppercase text-base px-3 py-2.5 no-underline ${
+                pathname === "/login" ? "  text-white" : "active_color_login"
+              }`}
             >
               Login
             </Link>
