@@ -1,0 +1,111 @@
+body {
+  font-family: "Rubik", sans-serif !important;
+}
+
+.owl-prev {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.owl-next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.owl-carousel .owl-item {
+  padding-bottom: 20px !important;
+}
+
+.owl-prev,
+.owl-next {
+  background-color: yellow !important;
+
+  color: #000000 !important; /* Set text color */
+  font-size: 35px !important; /* Adjust font size as needed */
+  width: 25px !important;
+
+  /* Adjust padding as needed */
+}
+
+.owl-prev:hover,
+.owl-next:hover {
+  background-color: rgb(
+    255,
+    213,
+    0
+  ) !important; /* Change background color on hover */
+  /* Change text color on hover */
+}
+/* .product-crousel {
+  width: 500px;
+  height: 500px;
+  position: relative;
+} */
+.product-crousel img {
+  width: 100% !important;
+  height: 500px;
+  object-fit: contain;
+
+  border: 1px solid rgb(198, 198, 198);
+
+  border-radius: 20px;
+}
+.order-button button:hover {
+  background-color: rgb(255, 208, 0) !important;
+}
+.order-confirm-button button:hover {
+  background-color: rgba(4, 5, 4, 0.848) !important;
+}
+.home_page ul li {
+  list-style: none;
+}
+input[type="radio"] {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+.modal {
+  --bs-modal-margin: 10rem !important;
+}
+.modal-content {
+  background-color: transparent !important;
+  text-align: center !important;
+}
+.order-button {
+  margin-top: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .product-price {
+    width: 60px;
+  }
+  .order-information {
+    margin-top: 15px !important;
+  }
+  .product-crousel {
+    margin-top: 15px !important;
+  }
+  .video {
+    height: 315px !important;
+  }
+  .product-crousel img {
+    height: 315px !important;
+  }
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 24px !important;
+  line-height: 1;
+  color: rgb(255, 208, 0) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slick-slider .slick-arrow {
+  /* display: none !important; */
+
+  margin: -0px 30px;
+  z-index: 999;
+}

@@ -1,0 +1,84 @@
+[
+  {
+    "id": "10-takai-shastho-sheba",
+    "title": "10 Taka Shastho Sheba",
+    "image": "/images/service-banner/service-10-taka.png",
+    "items": [
+      {
+        "id": 1,
+        "answer": [
+          "10 Taka Health Services is an initiative launched to provide affordable healthcare to citizens in Bangladesh...",
+          "The services covered under this program typically included basic medical consultations...",
+          "It's important to note that the availability and scope of such programs may vary by region and change over time..."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Awareness-Program",
+    "title": "Awareness Program",
+    "image": "/images/service-banner/Awareness-Program.webp",
+    "items": [
+      {
+        "id": 1,
+        "answer": [
+          "Citizen Care Bangladesh is a non-profit organization that focuses on providing awareness programs...",
+          "One of the key areas that Citizen Care Bangladesh focuses on is healthcare...",
+          "Another important aspect of Citizen Care Bangladesh's awareness programs is social issues and rights...",
+          "Citizen Care Bangladesh also takes an active role in environmental awareness...",
+          "In addition to these main focus areas, Citizen Care Bangladesh provides awareness programs on various other topics..."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Environmental-and-agricultural-program",
+    "title": "Environmental-and-agricultural-program",
+    "image": "/images/service-banner/Environment-and-agricultural-service.webp",
+    "items": [
+      {
+        "id": 1,
+        "answer": [
+          "Citizen Care Bangladesh is a provider of environment and agricultural services in Bangladesh. They offer a wide range of solutions and expertise to support farmers, landowners, and agricultural businesses in adopting sustainable and environmentally friendly practices. Their services include soil and water conservation, agricultural waste management, pest and disease management, precision agriculture and technology adoption, sustainable farming practices, and climate change adaptation strategies.",
+          "Through their services, Citizen Care Bangladesh aims to promote sustainable agriculture, protect natural resources, and enhance agricultural productivity in Bangladesh. They work closely with farmers to provide them with the necessary knowledge, tools, and technologies to implement environmentally friendly practices and manage their land in a sustainable manner.",
+          "By creating awareness, offering training, and providing technical assistance, Citizen Care Bangladesh assists farmers in making informed decisions that are beneficial for both their farming operations and the environment. Their ultimate goal is to contribute to a greener and more sustainable agricultural sector in Bangladesh."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Accounts-and-financial-solution",
+    "title": "Accounts-and-financial-solution",
+    "image": "/images/service-banner/Financial-Service.webp",
+    "items": [
+      {
+        "id": 1,
+        "answer": [
+          "Citizen Care Bangladesh is committed to providing comprehensive financial services to individuals and businesses. They offer business projection and strategy services to help entrepreneurs plan and forecast their business growth. This includes analyzing market trends, assessing competition, identifying potential risks, and developing strategies to achieve business goals.",
+
+          "In addition, Citizen Care Bangladesh provides project profile details description services. This involves creating detailed profiles of projects, outlining their objectives, expected outcomes, resources required, and potential risks. These project profiles can be used to attract investors, secure funding, and communicate project details to stakeholders.",
+
+          "Citizen Care Bangladesh understands the importance of having a comprehensive and well-defined financial plan for businesses. They work closely with their clients to understand their specific needs and develop customized financial solutions that align with their goals and objectives.",
+          "Overall, Citizen Care Bangladesh is dedicated to supporting businesses in Bangladesh by providing them with financial services such as business projection, strategy, and project profile details description. Through these services, they aim to empower entrepreneurs and contribute to the economic development of the country."
+        ]
+      }
+    ]
+  },
+  {
+    "id": "Health-care-service",
+    "title": "Health-care-service",
+    "image": "/images/service-banner/Healthcare-service.webp",
+    "items": [
+      {
+        "id": 1,
+        "answer": [
+          "Citizen Care Bangladesh strongly believes in the importance of the human-animal bond and recognizes the significance of animals in people's lives. By providing quality healthcare services to pets and animals, they aim to ensure the overall health and happiness of these beloved companions.",
+
+          "Additionally, Citizen Care Bangladesh places a strong emphasis on health education and awareness. They conduct educational programs and workshops to empower individuals with knowledge about proper care and management of their own health as well as the health of their pets and animals. These initiatives promote responsible pet ownership and encourage the community to take proactive measures to prevent diseases and promote well-being.",
+
+          "Overall, Citizen Care Bangladesh is committed to providing comprehensive healthcare services for both humans and animals. Their dedicated team of professionals works tirelessly to ensure that individuals and their beloved pets receive the highest standard of care and treatment. With a focus on compassion, expertise, and education, Citizen Care Bangladesh aims to make a positive impact on the health and well-being of the community."
+        ]
+      }
+    ]
+  }
+]

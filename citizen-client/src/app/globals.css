@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  /* font-optical-sizing: auto; */
+}
+
+:root {
+  --body-font-family: "Montserrat", sans-serif;
+  --title-font-family: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: var(--body-font-family);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.custom-navbar a,
+div {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+}
+.custom-navbar a:hover {
+  color: #39bcbc !important;
+}
+
+.dropdown_link a {
+  font-weight: 300 !important;
+}
+.dropdown_link a:hover {
+  background-color: #39bcbc;
+  color: white !important;
+}
+.dropdown_text:hover {
+  color: #39bcbc !important;
+}
+.active_color {
+  color: #39bcbc !important;
+}
+
+@keyframes stickYDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sticky-navbar {
+  animation: stickYDown 0.5s ease-out; /* Apply animation */
+}
+
+/* Custom Responsive Css  */
+
+@media (max-width: 576px) {
+  .custom-container {
+    max-width: 540px;
+    /* margin-left: 10px;
+    margin-right: 10px; */
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .custom-container {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .custom-container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .custom-container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Extra extra large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+  .custom-container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
