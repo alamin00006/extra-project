@@ -1,0 +1,89 @@
+import express from "express";
+import dotenv from "dotenv";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import http from "http";
+import { Server } from "socket.io";
+import httpStatus from "http-status";
+
+import globalErrorHandler from "./src/middleware/globalErrorHandler.js";
+import router from "./src/app/routes/index.js";
+
+dotenv.config();
+
+const app = express();
+
+// Create an HTTP server
+const server = http.createServer(app);
+
+// Initialize Socket.IO server
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  // "https://investment-admin-cyan.vercel.app",
+  // "https://investment-test.vercel.app",
+  "https://sharikana.com",
+  "https://www.sharikana.com",
+  "https://admin.sharikana.com",
+];
+
+const io = new Server(server, {
+  cors: {
+    origin: allowedOrigins,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  },
+});
+
+// Attach Socket.IO instance to the app for global use
+app.set("socketio", io);
+
+// Middleware to serve static files from the /public/uploads directory
+app.use("/public/uploads", express.static("public/uploads"));
+
+// CORS configuration
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    optionsSuccessStatus: 200,
+  })
+);
+
+app.options("*", cors());
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Use routes defined in /api/v1
+app.use("/api/v1", router);
+
+// Global error handler
+app.use(globalErrorHandler);
+
+// Handle not found
+app.use((req, res, next) => {
+  res.status(httpStatus.NOT_FOUND).json({
+    success: false,
+    message: "Not Found",
+    errorMessages: [
+      {
+        path: req.originalUrl,
+        message: "API Not Found",
+      },
+    ],
+  });
+  next();
+});
+
+export { app, server };
