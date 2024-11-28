@@ -32,33 +32,7 @@ export const sidebarItems = (role) => {
           route: "/investment",
         },
 
-        {
-          icon: <AiOutlinePlusSquare style={iconStyle} />,
-          label: "Projects",
-          route: "#",
-          children: [
-            ...(role === USER_ROLE.SUPER_ADMIN
-              ? []
-              : [{ label: "Add New Project", route: "/project-add" }]),
-            { label: "Project List", route: "/project-list" },
-          ],
-        },
-        {
-          icon: <AiOutlineDollarCircle style={iconStyle} />,
-          label: "Income",
-          route: "#",
-          children: [
-            { label: "Income submit", route: "/profit-submit" },
-            { label: "Income History", route: "/return-history" },
-          ],
-        },
-        {
-          icon: <MdOutlinePayments style={iconStyle} />,
-          label: "Withdraw",
-          route: "/profit-counts",
-        },
-
-        ...(role === USER_ROLE.COMPANY || role === USER_ROLE.SUPER_ADMIN
+        ...(role === USER_ROLE.SUPER_ADMIN
           ? [
               {
                 icon: <AiOutlineTeam style={iconStyle} />,
@@ -85,45 +59,10 @@ export const sidebarItems = (role) => {
         ...(role === USER_ROLE.SUPER_ADMIN
           ? [
               {
-                icon: <AiOutlineWindows style={iconStyle} />,
-                label: "Company",
-                route: "#",
-                children: [
-                  { label: "Company List", route: "/company" },
-                  // {
-                  //   label: "Company Registration",
-                  //   route: "/company-registration",
-                  // },
-                ],
-              },
-
-              {
                 icon: <MdFilterBAndW style={iconStyle} />,
 
                 label: "Market Banner",
                 route: "/market-banner-list",
-              },
-
-              {
-                icon: <GrHostMaintenance style={iconStyle} />,
-
-                label: "Extra Services List",
-                route: "/extra-service",
-              },
-            ]
-          : []),
-
-        ...(role === USER_ROLE.COMPANY
-          ? [
-              {
-                icon: <AiOutlineTeam style={iconStyle} />,
-                label: "Join Waiting",
-                route: "/join-waiting",
-              },
-              {
-                icon: <HiOutlineBanknotes style={iconStyle} />,
-                label: "Bank Accounts",
-                route: "/company-bank",
               },
             ]
           : []),
