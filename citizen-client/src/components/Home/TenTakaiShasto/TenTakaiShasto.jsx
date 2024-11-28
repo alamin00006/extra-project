@@ -1,11 +1,28 @@
 "use client";
+import { useGetUserQuery } from "@/redux/api/authApi";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const TenTakaiShasto = () => {
+  const router = useRouter();
+  const {
+    data: user,
+    error: userError,
+    isLoading: userIsLoading,
+  } = useGetUserQuery();
+
+  const handleRegistration = () => {
+    if (!user) {
+      return router.push(`/login`);
+    } else {
+      return router.push(`/service-application`);
+    }
+  };
+
   return (
     <div className="custom-container">
-      <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 py-20">
+      <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 py-10">
         <div className="md:col-span-6 w-full h-full">
           <Image
             src={"/images/10-Takar-Health-Services.webp"}
@@ -16,8 +33,8 @@ const TenTakaiShasto = () => {
           />
         </div>
         <div className="md:col-span-6 w-full h-full p-4 md:p-6">
-          <h2 className="text-2xl font-semibold mb-4">10 Takai Shastho Seba</h2>
-          <p className="text-base md:text-lg mb-4">
+          <h2 className="text-2xl  mb-4">10 Takai Shastho Seba</h2>
+          <p className="text-sm md:text-base mb-4 text-[#565656] leading-10">
             10 Taka Health Services is an initiative launched to provide
             affordable healthcare to citizens in Bangladesh. It aims to make
             basic healthcare services accessible to people for a nominal fee of
@@ -25,28 +42,23 @@ const TenTakaiShasto = () => {
             access essential healthcare services without facing significant
             financial barriers.
           </p>
-          <ul className="list-disc ml-4 space-y-2 text-base md:text-lg">
-            <li>
-              Affordable healthcare for citizens at a nominal fee of 10
-              Bangladeshi Taka
-            </li>
-            <li>Aims to provide basic healthcare services to all</li>
-            <li>
-              Goal is to improve healthcare access, especially in rural and
-              underserved areas
-            </li>
-            <li>
-              Acknowledges the financial barriers to healthcare and seeks to
-              overcome them
-            </li>
+          <ul className="list-disc ml-4 space-y-2 text-sm md:text-base text-[#565656]">
+            <li>Blood Pressure (BP)</li>
+            <li>Body Weight Measurement</li>
+            <li>Body Mass Index (BMI)</li>
+            <li>Temperature Measurement</li>
+            <li>Respiration Rate </li>
+            <li>Pulse Oximeter Reading</li>
+            <li>Diabetes Test</li>
+            <li>E-medical consultancy</li>
           </ul>
           <div className="mt-5">
-            <Link
-              href={"/service-application"}
+            <button
+              onClick={handleRegistration}
               className="uppercase no-underline px-6 py-3 bg-[#3abbba] text-white rounded hover:bg-black "
             >
               Registration Now
-            </Link>
+            </button>
           </div>
         </div>
       </div>

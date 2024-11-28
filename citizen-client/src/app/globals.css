@@ -7,20 +7,20 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
   /* font-optical-sizing: auto; */
 }
 
-:root {
+/* :root {
   --body-font-family: "Montserrat", sans-serif;
   --title-font-family: "Montserrat", sans-serif;
-}
+} */
 
-body {
+/* body {
   font-family: var(--body-font-family);
-}
+} */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -29,7 +29,7 @@ h6,
 a {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-}
+} */
 
 .custom-navbar a,
 div {

@@ -25,10 +25,10 @@ const Facilites = () => {
     },
   ];
   return (
-    <div className="mt-20 custom-container">
+    <div className="mt-5 custom-container">
       <div className="flex justify-center">
         {" "}
-        <h5 className=" text-sm bg-[#d3e9fb] text-[#39bcbc] p-1.5 rounded-sm">
+        <h5 className="text-sm bg-[#d3e9fb] text-[#39bcbc] p-1.5 rounded-sm">
           FACILITIES WE HAVE
         </h5>
       </div>

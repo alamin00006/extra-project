@@ -6,19 +6,33 @@ import { useEffect, useState } from "react";
 import { MdOutlineDehaze } from "react-icons/md";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 import { IoChevronDownSharp } from "react-icons/io5";
+import { isLoggedIn } from "@/services/auth.service";
+import { authKey } from "@/constants/storageKey";
+import { removeUserInfo } from "@/helpers/utils/local-storage";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
   const [isProductsOpen, setProductsOpen] = useState(false);
-
-  console.log(pathname);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuItems, setMenuItems] = useState([]);
 
   // State to track whether the navbar should have the animation
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isInitialLoad, setIsInitialLoad] = useState(true);
+
+  const [isUser, setIsUser] = useState(false);
+  // Check if the user is logged in
+  const userLoggedIn = isLoggedIn();
+
+  useEffect(() => {
+    if (userLoggedIn) {
+      setIsUser(true);
+    } else {
+      setIsUser(false);
+    }
+  }, [userLoggedIn]);
 
   // Scroll event handler
   const handleScroll = () => {
@@ -46,6 +60,12 @@ const Navbar = () => {
       .then((data) => setMenuItems(data))
       .catch((error) => console.error("Error fetching menu items:", error));
   }, []);
+
+  const logOut = () => {
+    removeUserInfo(authKey);
+    router.push("/");
+    // setIsDropdownOpen(false);
+  };
 
   return (
     <div
@@ -137,46 +157,7 @@ const Navbar = () => {
                   </ul>
                 </li>
                 <br />
-                <li tabIndex={0} className="dropdown group">
-                  <div
-                    className={`uppercase no-underline`}
-                    onClick={() => setProductsOpen(!isProductsOpen)}
-                  >
-                    Our Products
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 inline-block ml-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </div>
-                  <ul
-                    className={`p-2 bg-white dark:bg-gray-800 dark:text-white dropdown_link  ${
-                      isProductsOpen ? "block" : "hidden"
-                    }`}
-                  >
-                    <li>
-                      <Link
-                        href={`/service-details/10-takai-shastho-sheba`}
-                        className={` uppercase no-underline  ${
-                          pathname === `/service-details/10-takai-shastho-sheba`
-                            ? "text-[#39bcbc]"
-                            : "text-black"
-                        }`}
-                      >
-                        10-takai-shastho-sheba
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
+
                 <li>
                   <Link
                     href="/blogs"
@@ -247,37 +228,7 @@ const Navbar = () => {
                   ))}
                 </ul>
               </li>
-              <li tabIndex={0} className="dropdown group">
-                <div
-                  className={`text-white uppercase no-underline dropdown_text `}
-                >
-                  Our Products
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 inline-block ml-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </div>
-                <ul className="p-2 bg-white hidden dropdown_link group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-white">
-                  <li>
-                    <Link
-                      href={`/service-details/10-takai-shastho-sheba`}
-                      className={`no-underline text-black hover:bg-[#39bcbc] hover:text-white dark:hover:text-gray-200`}
-                    >
-                      10-takai-shastho-sheba
-                    </Link>
-                  </li>
-                </ul>
-              </li>
+
               <li>
                 <Link
                   href="/blogs"
@@ -288,9 +239,9 @@ const Navbar = () => {
                   Blog
                 </Link>
               </li>
-              {/* <li>
+              <li>
                 <Link
-                  href="/blogs"
+                  href="/company-profile"
                   className={`text-white uppercase no-underline hover:text-[#2b7c7c] ${
                     pathname === "/blog"
                       ? "text-blue-500"
@@ -299,7 +250,7 @@ const Navbar = () => {
                 >
                   Company Profile
                 </Link>
-              </li> */}
+              </li>
 
               <li>
                 <Link
@@ -354,7 +305,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {/* <div className="md:block hidden">
+      <div className="md:block hidden">
         <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
           <MenuHandler>
             <Button
@@ -392,7 +343,7 @@ const Navbar = () => {
             </NavLink>
           </MenuList>
         </Menu>
-      </div> */}
+      </div>
     </div>
   );
 };

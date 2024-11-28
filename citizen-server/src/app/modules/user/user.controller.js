@@ -121,19 +121,19 @@ const updateUser = catchAsync(async (req, res) => {
 
 const sendOtp = async (req, res, next) => {
   try {
-    const { email, customerOtp, phoneNumber } = req.body;
+    const { customerOtp, phoneNumber } = req.body;
 
     // Check if user with the same email or phone number already exists
-    const user = await User.findOne({ email });
+
     const phoneNumberCheck = await User.findOne({ phoneNumber });
 
-    if (user || phoneNumberCheck) {
+    if (phoneNumberCheck) {
       return res.status(400).json({
         status: "Failed",
         message: "Sorry! This Number or Email Already Exists",
       });
     } else {
-      const bookingMessage = `/api/smsapi?api_key=${config.sms_api_key}&type=text&number=88${phoneNumber}&senderid=${config.sms_sender_id}&message=For%20Sharikana%20OTP%20for%20account%20verification%20is%3A%20${customerOtp}.%20Enter%20this%20code%20to%20complete%20your%20Signup%20process.%20Thank%20you`;
+      const bookingMessage = `/api/smsapi?api_key=${config.sms_api_key}&type=text&number=88${phoneNumber}&senderid=${config.sms_sender_id}&message=Citizencare%20OTP%20for%20account%20verification%20is%3A%20${customerOtp}.%20Enter%20this%20code%20to%20complete%20your%20Signup%20process.%20Thank%20you`;
       const method = "POST";
       // Send SMS and wait for the response
       try {

@@ -4,12 +4,11 @@ import { generateUserId } from "./user.utils.js";
 import { jwtHelpers } from "../../../helpers/jwtHelpers.js";
 import config from "../../../config/index.js";
 const createUser = async (user) => {
-  const email = user?.email;
   const phoneNumber = user?.phoneNumber;
-  const findUser = await User.findOne({ email });
+
   const findUserWithPhone = await User.findOne({ phoneNumber });
 
-  if (findUser || findUserWithPhone) {
+  if (findUserWithPhone) {
     return {
       status: "fail",
       message: "Sorry! Already Account Created with this Email or Phone number",
@@ -20,8 +19,8 @@ const createUser = async (user) => {
 
   const userData = {
     id: id,
-    name: user.name,
-    email: user.email,
+    firstName: user.firstName,
+    lastName: user.lastName,
     phoneNumber: user.phoneNumber,
     password: user.password,
   };

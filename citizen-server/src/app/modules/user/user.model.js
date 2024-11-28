@@ -22,14 +22,14 @@ const userSchema = mongoose.Schema(
       type: String,
       unique: true,
     },
-    email: {
-      type: String,
-      required: true,
-      unique: [true, "This email already exists!"],
-      validate: [validator.isEmail, "Provide a valid email"],
-      lowercase: true,
-      trim: true,
-    },
+    // email: {
+    //   type: String,
+    //   required: true,
+    //   unique: [true, "This email already exists!"],
+    //   validate: [validator.isEmail, "Provide a valid email"],
+    //   lowercase: true,
+    //   trim: true,
+    // },
     password: {
       type: String,
       required: true,
@@ -70,47 +70,8 @@ const userSchema = mongoose.Schema(
       birthDate: {
         type: Date,
       },
-      nidOrPassportNo: {
-        type: String,
-      },
-      nidOrPassportPhoto: {
-        type: String,
-      },
-      nidOrPassportBackSidePhoto: {
-        type: String,
-      },
-      userPhoto: {
-        type: String,
-      },
-    },
 
-    // Nominee Information
-    nomineeDetails: {
-      nomineeFullName: {
-        type: String,
-      },
-      nomineeRelation: {
-        type: String,
-      },
-      nomineeFathersName: {
-        type: String,
-      },
-      nomineeMothersName: {
-        type: String,
-      },
-      nomineeBirthDate: {
-        type: Date,
-      },
-      nomineeNidOrPassportNo: {
-        type: String,
-      },
-      nomineeNidOrPassportPhoto: {
-        type: String,
-      },
-      nomineeNidOrPassportBackSidePhoto: {
-        type: String,
-      },
-      nomineePhoto: {
+      userPhoto: {
         type: String,
       },
     },

@@ -19,7 +19,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
   const router = useRouter();
-  const [firstName, setFistName] = useState("");
+  const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -108,7 +108,8 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
 
     const otpData = {
       customerOtp: randomCode,
-      name: firstName,
+      firstName: firstName,
+      lastName: lastName,
       // email: userInfo.email,
       phoneNumber: phoneNumber,
       password: userInfo.password,
@@ -165,7 +166,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
             </label>
             <input
               type="text"
-              onChange={(e) => setFistName(e.target.value)}
+              onChange={(e) => setFirstName(e.target.value)}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:bg-white placeholder-gray-700 rounded-md shadow-sm  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               required
               placeholder="First Name"
