@@ -10,20 +10,20 @@ const DashboardLayout = ({ children }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    if (!userLoggedIn) {
-      router.push("/login");
-    }
-    setIsLoading(true);
-  }, [router, isLoading]);
+  // useEffect(() => {
+  //   if (!userLoggedIn) {
+  //     router.push("/login");
+  //   }
+  //   setIsLoading(true);
+  // }, [router, isLoading]);
 
-  if (!isLoading) {
-    return (
-      <div>
-        <Loader />
-      </div>
-    );
-  }
+  // if (!isLoading) {
+  //   return (
+  //     <div>
+  //       <Loader />
+  //     </div>
+  //   );
+  // }
   return (
     <>
       <DefaultLayout>{children} </DefaultLayout>

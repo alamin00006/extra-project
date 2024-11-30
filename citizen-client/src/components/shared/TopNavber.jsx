@@ -17,8 +17,8 @@ const TopNavbar = () => {
         </div>
         <div className="flex space-x-2">
           <Link
-            href="$&"
-            className="border-[#418989] px-3 border-l py-3"
+            href="https://www.facebook.com/Citizencarebd?mibextid=ZbWKwL"
+            className="border-[#418989] px-3 border-l py-3 bg-[#2b7c7c] hover:bg-[#418989]"
             target="_blank"
           >
             <FaFacebook
@@ -27,9 +27,9 @@ const TopNavbar = () => {
             />
           </Link>
           <Link
-            href="https://www.youtube.com"
+            href="https://www.youtube.com/@Citizencarebd"
             target="_blank"
-            className="border-[#418989] px-3  border-l py-3"
+            className="border-[#418989] px-3  border-l py-3 bg-[#2b7c7c] hover:bg-[#418989]"
           >
             <FaYoutube
               className="text-white hover:text-[hoverColor] "
@@ -37,9 +37,9 @@ const TopNavbar = () => {
             />
           </Link>
           <Link
-            href="https://www.linkedin.com"
+            href="#"
             target="_blank"
-            className="border-[#418989] px-3 border-l py-3"
+            className="border-[#418989] px-3 border-l py-3 bg-[#2b7c7c] hover:bg-[#418989]"
           >
             <FaLinkedin
               className="text-white hover:text-[hoverColor]1"
@@ -47,9 +47,9 @@ const TopNavbar = () => {
             />
           </Link>
           <Link
-            href="https://www.instagram.com"
+            href="#"
             target="_blank"
-            className="border-[#418989] px-3 border-r border-l py-3"
+            className="border-[#418989] px-3 border-r border-l py-3 bg-[#2b7c7c] hover:bg-[#418989]"
           >
             <FaInstagram
               className="text-white hover:text-[hoverColor]"

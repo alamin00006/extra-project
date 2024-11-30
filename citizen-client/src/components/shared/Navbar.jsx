@@ -4,18 +4,18 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { MdOutlineDehaze } from "react-icons/md";
-import { HiOutlineUserCircle } from "react-icons/hi2";
-import { IoChevronDownSharp } from "react-icons/io5";
+
 import { isLoggedIn } from "@/services/auth.service";
 import { authKey } from "@/constants/storageKey";
 import { removeUserInfo } from "@/helpers/utils/local-storage";
+import DropdownUser from "./DropdownUser";
+import { useGetUserQuery } from "@/redux/api/authApi";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
-  const [isProductsOpen, setProductsOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const [menuItems, setMenuItems] = useState([]);
 
   // State to track whether the navbar should have the animation
@@ -25,6 +25,12 @@ const Navbar = () => {
   const [isUser, setIsUser] = useState(false);
   // Check if the user is logged in
   const userLoggedIn = isLoggedIn();
+
+  const {
+    data: userData,
+    error: userError,
+    isLoading: userIsLoading,
+  } = useGetUserQuery();
 
   useEffect(() => {
     if (userLoggedIn) {
@@ -73,24 +79,24 @@ const Navbar = () => {
         isInitialLoad || hasScrolled ? "sticky-navbar" : ""
       }`}
     >
-      <div className="custom-container ">
+      <div className="custom-container">
         <div className="navbar shadow-md flex flex-wrap items-center ">
-          <div className="col-span-2 custom-navbar">
-            <div className="dropdown md:hidden sm:block">
+          <div className="col-span-2 custom-navbar relative">
+            <div className="dropdown md:hidden sm:block ">
               <div
                 tabIndex={0}
                 role="button"
-                className="btn btn-ghost lg:hidden absolute top-6"
+                className=" relative  "
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
-                <div className="bg-[#39bcbc] py-2.5 px-3 rounded">
+                <div className="bg-[#39bcbc] py-2.5 px-3 rounded  ">
                   <MdOutlineDehaze className="text-white text-2xl" />
                 </div>
               </div>
               {/* For Mobile Screen */}
               <ul
                 tabIndex={0}
-                className={`menu menu-sm dropdown-content text-base z-[1] mt-20 w-screen  pb-8 shadow uppercase bg-white text-black dark:bg-white dark:text-black ${
+                className={`menu menu-sm dropdown-content text-base z-[1] mt-3 w-screen  pb-8 shadow uppercase bg-white text-black dark:bg-white dark:text-black ${
                   isDropdownOpen ? "block" : "hidden"
                 }`}
               >
@@ -168,15 +174,49 @@ const Navbar = () => {
                     Blog
                   </Link>
                 </li>
+                <li>
+                  {!isUser ? (
+                    <Link
+                      href="/Login"
+                      className={` uppercase no-underline  ${
+                        pathname === "/Login" ? "text-[#39bcbc]" : "text-black"
+                      }`}
+                    >
+                      Login
+                    </Link>
+                  ) : (
+                    <Link
+                      href="/profile"
+                      className={` uppercase no-underline  ${
+                        pathname === "/profile"
+                          ? "text-[#39bcbc]"
+                          : "text-black"
+                      }`}
+                    >
+                      My Profile
+                    </Link>
+                  )}
+                </li>
+                {isUser && (
+                  <li onClick={logOut}>
+                    <Link
+                      href="#"
+                      className={` uppercase no-underline  text-black`}
+                    >
+                      Logout
+                    </Link>
+                  </li>
+                )}
               </ul>
             </div>
-            <div className="xs:p-2 md:p-0">
+            <div className="xs:p-2 md:p-0 md:w-[300px] sm:w-[200px]">
               <Link href="/">
                 <Image
                   src="/images/logo.png"
                   alt="Logo"
                   width={300}
                   height={20}
+                  className="md:w-full sm:w-full"
                 />
               </Link>
             </div>
@@ -263,86 +303,24 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                {/* <Link
-                  href="/login"
-                  className={`bg-[#39bcbc] rounded text-white uppercase no-underline px-3 py-2.5 hover:bg-black hover:text-white`}
-                >
-                  Login
-                </Link> */}
-
-                <button className="flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5">
-                  <HiOutlineUserCircle
-                    style={{ width: "30px", height: "30px" }}
-                    className="text-white"
-                  />
-
-                  <IoChevronDownSharp
-                    strokeWidth={2.5}
-                    className={`h-3 w-3  text-white
-                `}
-                  />
-                  {/* <IoChevronDownSharp
-                strokeWidth={2.5}
-                className={`h-3 w-3 transition-transform 
-                  ${
-                  isMenuOpen ? "rotate-180" : ""
-                }`
-              } 
-              /> */}
-                </button>
+                {isUser ? (
+                  <DropdownUser userData={userData} />
+                ) : (
+                  <Link
+                    href="/login"
+                    className={` rounded text-white uppercase no-underline px-3 py-2.5 hover:text-white ${
+                      pathname === "/login"
+                        ? "bg-[#39bcbc] text-white"
+                        : "bg-[#39bcbc] text-white"
+                    }`}
+                  >
+                    Login
+                  </Link>
+                )}
               </li>
             </ul>
           </div>
-          <div className="navbar-end col-span-4 md:hidden sm:block">
-            <Link
-              href="/login"
-              className={`bg-[#39bcbc] text-white rounded uppercase text-base px-3 py-2.5 no-underline ${
-                pathname === "/login" ? "  text-white" : "active_color_login"
-              }`}
-            >
-              Login
-            </Link>
-          </div>
         </div>
-      </div>
-      <div className="md:block hidden">
-        <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
-          <MenuHandler>
-            <Button
-              variant="text"
-              color="blue-gray"
-              className="flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto"
-            >
-              <HiOutlineUserCircle style={{ width: "30px", height: "30px" }} />
-
-              <ChevronDownIcon
-                strokeWidth={2.5}
-                className={`h-3 w-3 transition-transform ${
-                  isMenuOpen ? "rotate-180" : ""
-                }`}
-              />
-            </Button>
-          </MenuHandler>
-          <MenuList className="p-1">
-            <Link to={"/profile"} onClick={closeMenu}>
-              <MenuItem className={`flex items-center gap-2 rounded `}>
-                <Typography as="span" variant="small" className="font-normal">
-                  {user?.firstName} {user?.lastName}
-                </Typography>
-              </MenuItem>
-            </Link>
-            <NavLink onClick={handleLogOut}>
-              <MenuItem
-                onClick={closeMenu}
-                className={`flex items-center gap-2 rounded `}
-              >
-                <Typography as="span" variant="small" className="font-normal">
-                  Log out
-                </Typography>
-              </MenuItem>
-            </NavLink>
-          </MenuList>
-        </Menu>
       </div>
     </div>
   );

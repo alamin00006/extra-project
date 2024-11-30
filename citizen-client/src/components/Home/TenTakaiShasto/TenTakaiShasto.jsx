@@ -1,7 +1,6 @@
 "use client";
 import { useGetUserQuery } from "@/redux/api/authApi";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const TenTakaiShasto = () => {
@@ -22,7 +21,7 @@ const TenTakaiShasto = () => {
 
   return (
     <div className="custom-container">
-      <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 py-10">
+      <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 py-10 md:mt-0 sm:mt-10 xs:mt-10">
         <div className="md:col-span-6 w-full h-full">
           <Image
             src={"/images/10-Takar-Health-Services.webp"}
@@ -32,9 +31,9 @@ const TenTakaiShasto = () => {
             alt="banner"
           />
         </div>
-        <div className="md:col-span-6 w-full h-full p-4 md:p-6">
-          <h2 className="text-2xl  mb-4">10 Takai Shastho Seba</h2>
-          <p className="text-sm md:text-base mb-4 text-[#565656] leading-10">
+        <div className="md:col-span-6 w-full h-full sm:p-4 xs:p-4 md:p-6 py-0">
+          <h2 className="text-2xl mb-4">10 Takai Shastho Seba</h2>
+          <p className="text-sm md:text-base mb-4 text-[#565656] leading-8 ">
             10 Taka Health Services is an initiative launched to provide
             affordable healthcare to citizens in Bangladesh. It aims to make
             basic healthcare services accessible to people for a nominal fee of
@@ -55,7 +54,7 @@ const TenTakaiShasto = () => {
           <div className="mt-5">
             <button
               onClick={handleRegistration}
-              className="uppercase no-underline px-6 py-3 bg-[#3abbba] text-white rounded hover:bg-black "
+              className="uppercase no-underline px-6 py-3 bg-[#3abbba] text-white rounded hover:bg-black md:text-base sm:text-sm xs:text-sm"
             >
               Registration Now
             </button>

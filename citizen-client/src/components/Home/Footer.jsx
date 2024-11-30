@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   FaFacebookF,
   FaYoutube,
@@ -20,57 +21,63 @@ const Footer = () => {
             We are innovative and passionate about the work we do.
           </p>
           <div className="flex space-x-4">
-            <a href="#" className="p-2 bg-[#489393] rounded">
-              <FaFacebookF />
-            </a>
-            <a href="#" className="p-2 bg-[#489393] rounded">
-              <FaYoutube />
-            </a>
-            <a href="#" className="p-2 bg-[#489393] rounded">
-              <FaLinkedinIn />
-            </a>
-            <a href="#" className="p-2 bg-[#489393] rounded">
-              <FaInstagram />
-            </a>
+            <Link
+              href="https://www.facebook.com/Citizencarebd?mibextid=ZbWKwL"
+              className="p-2 bg-[#489393] hover:bg-[#7ab0b0bd] rounded"
+              target="_blank"
+            >
+              <FaFacebookF className="text-white" />
+            </Link>
+            <Link
+              href="https://www.youtube.com/@Citizencarebd"
+              className="p-2 bg-[#489393] hover:bg-[#7ab0b0bd] rounded"
+              target="_blank"
+            >
+              <FaYoutube className="text-white" />
+            </Link>
+            <Link
+              href="#"
+              className="p-2 bg-[#489393] hover:bg-[#7ab0b0bd] rounded"
+            >
+              <FaLinkedinIn className="text-white" />
+            </Link>
+            <Link
+              href="#"
+              className="p-2 bg-[#489393] hover:bg-[#7ab0b0bd] rounded"
+            >
+              <FaInstagram className="text-white" />
+            </Link>
           </div>
         </div>
 
         {/* Courses */}
         <div>
-          <h3 className="text-lg font-bold mb-4">Our Courses</h3>
+          <h3 className="text-lg font-bold mb-4">Explore</h3>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center">
               <MdKeyboardArrowRight className="text-2xl" />
-              <a
-                href="#"
+              <Link
+                href="/about-us"
                 className="hover:underline text-white no-underline text-base"
               >
                 About Us
-              </a>
+              </Link>
             </li>
             <li className="flex items-center">
               <MdKeyboardArrowRight className="text-2xl" />
 
-              <a
-                href="#"
+              <Link
+                href="/service-details/10-takai-shastho-sheba"
                 className="hover:underline text-white no-underline text-base"
               >
                 Our Services
-              </a>
+              </Link>
             </li>
+
             <li className="flex items-center">
               <MdKeyboardArrowRight className="text-2xl" />
               <a
-                href="#"
-                className="hover:underline text-white no-underline text-base"
-              >
-                Career
-              </a>
-            </li>
-            <li className="flex items-center">
-              <MdKeyboardArrowRight className="text-2xl" />
-              <a
-                href="#"
+                href="/contact-us"
                 className="hover:underline text-white no-underline text-base"
               >
                 Contact Us
@@ -78,12 +85,12 @@ const Footer = () => {
             </li>
             <li className="flex items-center">
               <MdKeyboardArrowRight className="text-2xl" />
-              <a
-                href="#"
+              <Link
+                href="/blogs"
                 className="hover:underline text-white no-underline text-base"
               >
                 Blogs
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -92,30 +99,36 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-bold mb-4">Recent Posts</h3>
           <ul className="space-y-4 text-sm">
-            <li>
+            <li className="flex items-center gap-2">
+              <MdArrowForward className="text-white " size={20} />
               <div>
-                <span className=" text-white text-xs">December 12, 2021</span>
-              </div>
-              <div>
-                <a
-                  href="#"
-                  className="hover:underline text-white text-base no-underline"
-                >
-                  10 Taka Shastho Seba
-                </a>
+                <div>
+                  <span className=" text-white text-xs">December 12, 2021</span>
+                </div>
+                <div>
+                  <Link
+                    href="/service-details/10-takai-shastho-sheba"
+                    className="hover:underline text-white text-base no-underline"
+                  >
+                    10 Taka Shastho Seba
+                  </Link>
+                </div>
               </div>
             </li>
-            <li>
+            <li className="flex items-center gap-2">
+              <MdArrowForward className="text-white " size={20} />
               <div>
-                <span className="text-white text-xs">December 12, 2021</span>
-              </div>
-              <div>
-                <a
-                  href="#"
-                  className="hover:underline text-white text-base no-underline"
-                >
-                  Skill Provider Service
-                </a>
+                <div>
+                  <span className="text-white text-xs">December 12, 2021</span>
+                </div>
+                <div>
+                  <a
+                    href="#"
+                    className="hover:underline text-white text-base no-underline"
+                  >
+                    Skill Provider Service
+                  </a>
+                </div>
               </div>
             </li>
           </ul>

@@ -33,10 +33,8 @@ const AddAdminUser = () => {
       email: formData.get("email"),
       password: formData.get("password"),
       phoneNumber: formData.get("phone"),
-      company: userData?.role === USER_ROLE.COMPANY ? userData?.company : null,
       address: formData.get("address"),
       role: role,
-      incentive: formData?.get("incentive"),
       gender: gender,
     };
 

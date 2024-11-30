@@ -8,23 +8,14 @@ import TenTakaiShasto from "./TenTakaiShasto/TenTakaiShasto";
 import WhyChoosUs from "./WhyChoosUs/WhyChoosUs";
 
 const HomePage = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-  };
-
   return (
     <>
-      <div className="md:block xs:hidden">
+      <div>
         <Banner />
       </div>
-      <div className="md:hidden  xs:block">
+      {/* <div className="md:hidden  xs:block">
         <NoticeBoard />
-      </div>
+      </div> */}
       <div className="bg-[#f4f6f9]">
         <TenTakaiShasto />
       </div>

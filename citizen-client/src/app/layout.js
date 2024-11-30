@@ -3,6 +3,7 @@ import "./responsive.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import "@splidejs/react-splide/css";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/Home/Footer";

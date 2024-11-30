@@ -72,11 +72,11 @@ const ServiceApplicationForm = () => {
           </span>
         </div>
         {/* Application Form */}
-        <div className=" mb-10 p-20 shadow-lg">
+        <div className=" mb-10 md:p-20 sm:p-14 xs:py-10  shadow-lg rounded">
           <h2 className="text-center">Registration Form</h2>
           <form
             onSubmit={handleSubmit}
-            className="grid grid-cols-1 gap-3 mx-48"
+            className="grid grid-cols-1 gap-3 mx-5 md:mx-48"
           >
             <div>
               <label className="block text-sm font-medium text-gray-700 ">
@@ -84,7 +84,6 @@ const ServiceApplicationForm = () => {
               </label>
               <input
                 type="text"
-                //   onChange={(e) => setName(e.target.value)}
                 className="mt-1 block w-full h-[50px] px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 required
                 placeholder="Name"

@@ -19,8 +19,8 @@ const Banner = () => {
 
   return (
     <>
-      <div className="relative">
-        <div className="slider-container">
+      <div className="relative ">
+        <div className="slider-container md:block sm:hidden xs:hidden">
           <Slider {...settings}>
             <div className="w-[1000px] h-[calc(100vh-200px)]">
               <Image
@@ -61,7 +61,10 @@ const Banner = () => {
           </Slider>
         </div>
 
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="md:block sm:hidden xs:hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <NoticeBoard />
+        </div>
+        <div className="md:hidden sm:block xs:block">
           <NoticeBoard />
         </div>
       </div>

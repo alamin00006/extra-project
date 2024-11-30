@@ -13,9 +13,8 @@ const Profile = () => {
     isLoading: userIsLoading,
   } = useGetUserQuery();
 
-  console.log(userData);
-  const email = userData?.email || "N/A";
-  const name = userData?.name || "N/A";
+  const firstName = userData?.firstName || "N/A";
+  const lastName = userData?.lastName || "N/A";
 
   const mobileNumber = userData?.phoneNumber || "N/A";
   const personalDetails = userData?.personalDetails || {
@@ -34,21 +33,21 @@ const Profile = () => {
   };
 
   return (
-    <div className=" grid grid-cols-12 mb-10 gap-5 mt-5">
-      <div className="col-span-4 ">
+    <div className=" grid grid-cols-12 mb-10 gap-x-0 md:gap-5 mt-5">
+      <div className="md:col-span-4 sm:col-span-12 xs:col-span-12">
         {" "}
-        <div className="border flex justify-center p-5">
+        <div className="border flex justify-center p-5 w-[300px] h-[300px]">
           <Image
             src={"/images/avatar7.png"}
             alt={`About Image`}
             width={300}
             height={300}
-            className="w-[300px] h-[300px] "
+            className=" md:w-full sm:w-full xs:w-full"
             priority // Optional: use priority for above-the-fold images
           />
         </div>
       </div>
-      <div className="col-span-8 border border-gray-300 rounded-lg">
+      <div className=" md:col-span-8 sm:col-span-12 xs:col-span-12 border border-gray-300 rounded-lg">
         <Section
           title={<span style={{ color: "#00c194" }}>Account Information</span>}
         >
@@ -59,9 +58,18 @@ const Profile = () => {
                 htmlFor="full-name"
                 className="block md:text-base sm:text-sm"
               >
-                Full Name
+                First Name
               </label>
-              <span className="text-base lg:text-lg mb-2">{name}</span>
+              <span className="text-base lg:text-lg mb-2">{firstName}</span>
+            </div>
+            <div>
+              <label
+                htmlFor="full-name"
+                className="block md:text-base sm:text-sm"
+              >
+                Last Name
+              </label>
+              <span className="text-base lg:text-lg mb-2">{lastName}</span>
             </div>
 
             <div>
@@ -82,7 +90,7 @@ const Profile = () => {
             </div>
 
             {/* Father's Name */}
-            <div>
+            {/* <div>
               <label
                 htmlFor="fathers-name"
                 className="block md:text-base sm:text-sm"
@@ -92,10 +100,10 @@ const Profile = () => {
               <span className="text-base lg:text-lg mb-2">
                 {personalDetails.fathersName}
               </span>
-            </div>
+            </div> */}
 
             {/* Mother's Name */}
-            <div>
+            {/* <div>
               <label
                 htmlFor="mothers-name"
                 className="block md:text-base sm:text-sm"
@@ -105,7 +113,7 @@ const Profile = () => {
               <span className="text-base lg:text-lg mb-2">
                 {personalDetails.mothersName}
               </span>
-            </div>
+            </div> */}
             <div>
               <label
                 htmlFor="address-line-1"
