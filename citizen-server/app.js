@@ -20,11 +20,9 @@ const server = http.createServer(app);
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:3001",
-  // "https://investment-admin-cyan.vercel.app",
-  // "https://investment-test.vercel.app",
-  "https://sharikana.com",
-  "https://www.sharikana.com",
-  "https://admin.sharikana.com",
+
+  "https://citizencarebd.com",
+  "https://www.citizencarebd.com",
 ];
 
 const io = new Server(server, {

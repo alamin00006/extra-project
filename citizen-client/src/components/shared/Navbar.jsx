@@ -75,18 +75,29 @@ const Navbar = () => {
 
   return (
     <div
-      className={`bg-[#242323]  ${
+      className={`bg-[#242323] md:pt-2 md:pb-3 sm:pt-3 sm:pb-3${
         isInitialLoad || hasScrolled ? "sticky-navbar" : ""
       }`}
     >
       <div className="custom-container">
-        <div className="navbar shadow-md flex flex-wrap items-center ">
+        <div className="md:flex justify-between shadow-md flex-none  ">
           <div className="col-span-2 custom-navbar relative">
-            <div className="dropdown md:hidden sm:block ">
+            <div className="dropdown flex justify-between">
+              <div className="md:hidden sm:block md:ps-0 sm:ps-2 ">
+                <Link href="/">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Logo"
+                    width={300}
+                    height={20}
+                    className="md:p-0 md:w-[300px] sm:w-[230px]"
+                  />
+                </Link>
+              </div>
               <div
                 tabIndex={0}
                 role="button"
-                className=" relative  "
+                className="md:hidden sm:block relative md:pr-0 sm:pr-2"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 <div className="bg-[#39bcbc] py-2.5 px-3 rounded  ">
@@ -96,7 +107,7 @@ const Navbar = () => {
               {/* For Mobile Screen */}
               <ul
                 tabIndex={0}
-                className={`menu menu-sm dropdown-content text-base z-[1] mt-3 w-screen  pb-8 shadow uppercase bg-white text-black dark:bg-white dark:text-black ${
+                className={`menu menu-sm dropdown-content text-base z-[1] mt-5 w-screen  pb-8 shadow uppercase bg-white text-black dark:bg-white dark:text-black ${
                   isDropdownOpen ? "block" : "hidden"
                 }`}
               >
@@ -209,7 +220,10 @@ const Navbar = () => {
                 )}
               </ul>
             </div>
-            <div className="xs:p-2 md:p-0 md:w-[300px] sm:w-[200px]">
+            <div
+              className=" md:p-0 md:w-[300px] sm:w-[200px] md:block sm:hidden 
+            mt-2.5"
+            >
               <Link href="/">
                 <Image
                   src="/images/logo.png"
@@ -222,9 +236,9 @@ const Navbar = () => {
             </div>
           </div>
           {/* For Desktop */}
-          <div className="navbar-center hidden lg:flex col-span-10 mt-2 custom-navbar">
-            <ul className="menu menu-horizontal px-1">
-              <li>
+          <div className="navbar-center hidden lg:flex col-span-10 mt-4 custom-navbar ">
+            <ul className="custom_menu menu-horizontal px-10 text-white">
+              <li className="pr-4">
                 <Link
                   href="/"
                   className={` uppercase no-underline  ${
@@ -235,7 +249,7 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li tabIndex={0} className="dropdown group">
+              <li tabIndex={0} className="dropdown group pr-4 cursor-pointer">
                 <div
                   className={`text-white uppercase no-underline dropdown_text `}
                 >
@@ -255,12 +269,15 @@ const Navbar = () => {
                     />
                   </svg>
                 </div>
-                <ul className="p-2 bg-white hidden dropdown_link group-hover:block absolute z-10 w-[300px] dark:bg-gray-800 dark:text-white">
+                <ul className="p-2 mt-2 bg-white hidden dropdown_link group-hover:block absolute z-10 w-[300px] dark:bg-gray-800 dark:text-white">
                   {menuItems.map((item) => (
-                    <li key={item.id}>
+                    <li
+                      key={item.id}
+                      className=" hover:bg-[#39bcbc] hover:text-white text-sm my-1"
+                    >
                       <Link
                         href={`/service-details/${item.id}`}
-                        className={`no-underline text-black hover:bg-[#39bcbc] hover:text-white dark:hover:text-gray-200`}
+                        className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1`}
                       >
                         {item.title}
                       </Link>
@@ -269,7 +286,7 @@ const Navbar = () => {
                 </ul>
               </li>
 
-              <li>
+              <li className="pr-4">
                 <Link
                   href="/blogs"
                   className={` uppercase no-underline  ${
@@ -279,7 +296,7 @@ const Navbar = () => {
                   Blog
                 </Link>
               </li>
-              <li>
+              <li className="pr-4">
                 <Link
                   href="/company-profile"
                   className={`text-white uppercase no-underline hover:text-[#2b7c7c] ${
@@ -292,7 +309,7 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li>
+              <li className="pr-4">
                 <Link
                   href="/about-us"
                   className={` uppercase no-underline  ${

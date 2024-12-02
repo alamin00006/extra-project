@@ -46,12 +46,12 @@ const collaborators = [
 
 const Collaborators = () => {
   return (
-    <section className="py-0 mb-10 custom-container md:mt-0 sm:mt-[300px] xs:mt-[320px]">
+    <section className="py-0 mb-10 custom-container ">
       <div className=" px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
           Our Proposed Collaborators Organizations
         </h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 ">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 ">
           {collaborators.map((collaborator, index) => (
             <div
               key={index}

@@ -17,9 +17,8 @@ const io = new SocketServer(server, {
     origin: [
       "http://localhost:3000",
       "http://localhost:3001",
-      "https://sharikana.com",
-      "https://www.sharikana.com",
-      "https://admin.sharikana.com",
+      "https://citizencarebd.com",
+      "https://www.citizencarebd.com",
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
