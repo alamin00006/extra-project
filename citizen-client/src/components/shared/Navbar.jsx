@@ -325,7 +325,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     href="/login"
-                    className={` rounded text-white uppercase no-underline px-3 py-2.5 hover:bg-[#39bcbcb8] ${
+                    className={` rounded text-white uppercase no-underline px-3 py-2.5 hover:bg-[#39bcbcb8] hover:text-white ${
                       pathname === "/login"
                         ? "bg-[#39bcbc] text-white"
                         : "bg-[#39bcbc] text-white"
