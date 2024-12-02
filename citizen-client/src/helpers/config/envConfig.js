@@ -1,5 +1,5 @@
 export const getBaseUrl = () => {
-  return "http://localhost:5000/api/v1";
+  return "https://api.citizencarebd.com/api/v1";
 };
 // export const getMainBaseUrl = () => {
 //   // return "http://localhost:5000";
