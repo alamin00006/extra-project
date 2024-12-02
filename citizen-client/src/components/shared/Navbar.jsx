@@ -212,7 +212,7 @@ const Navbar = () => {
                   <li onClick={logOut}>
                     <Link
                       href="#"
-                      className={` uppercase no-underline  text-black`}
+                      className={`uppercase no-underline text-black`}
                     >
                       Logout
                     </Link>
@@ -325,7 +325,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     href="/login"
-                    className={` rounded text-white uppercase no-underline px-3 py-2.5 hover:bg-[#39bcbcb8] hover:text-white ${
+                    className={`rounded uppercase no-underline px-3 py-2.5 hover:bg-[#2b7c7c] ${
                       pathname === "/login"
                         ? "bg-[#39bcbc] text-white"
                         : "bg-[#39bcbc] text-white"

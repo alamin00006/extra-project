@@ -51,16 +51,16 @@ const DropdownUser = ({ userData }) => {
       {/* <!-- Dropdown Start --> */}
       {dropdownOpen && (
         <div
-          className={`absolute pt-3 top-16 right-0 mt-4 w-64 rounded-sm  bg-white shadow-md dark:bg-boxdark`}
+          className={`absolute pt-3 top-5 right-0 mt-4  w-64 rounded-sm  bg-white shadow-md dark:bg-boxdark`}
         >
           <ul className="px-6 ">
             <li>
               <Link
                 href="/profile"
-                className="flex w-full text-gray-500 items-center text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+                className="flex w-full no-underline text-gray-500 items-center text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
               >
                 <svg
-                  className="fill-current"
+                  className="fill-current mr-2"
                   width="22"
                   height="22"
                   viewBox="0 0 22 22"
@@ -82,7 +82,7 @@ const DropdownUser = ({ userData }) => {
           </ul>
           <button
             onClick={logOut}
-            className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base"
+            className="flex items-center gap-3.5 px-6 py-4 text-sm font-medium duration-300 ease-in-out text-black hover:text-[#2b7c7c] lg:text-base"
           >
             <svg
               className="fill-current"

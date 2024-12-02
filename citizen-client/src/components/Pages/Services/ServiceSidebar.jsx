@@ -20,7 +20,7 @@ const ServiceSidebar = () => {
   return (
     <aside
       id="default-sidebar"
-      className="z-0 transition-transform -translate-x-full xs:translate-x-0  w-[370px] bg-gray-50 dark:bg-gray-800"
+      className="z-0 transition-transform -translate-x-full sm:translate-x-0  w-[370px] bg-gray-50 dark:bg-gray-800"
       aria-label="Sidebar"
     >
       <div className="h-full py-4">
