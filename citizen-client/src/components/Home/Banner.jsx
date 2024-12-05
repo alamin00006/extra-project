@@ -22,39 +22,39 @@ const Banner = () => {
       <div className="relative">
         <div className="slider-container md:block sm:hidden xs:hidden">
           <Slider {...settings}>
-            <div className="w-[1000px] h-[calc(100vh-200px)]">
+            <div className="w-[1000px] 2xl:h-[calc(100vh-250px)] xl:h-[calc(100vh-200px)] lg:h-[calc(100vh-250px)] md:h-[calc(100vh-200px)] sm:h-[calc(100vh-50px)]">
               <Image
                 src={"/images/1.webp"}
                 width={1000}
                 height={500}
-                className="w-full h-full"
+                className="w-full 2xl:h-full xl:h-full lg:h-full  md:h-full sm:h-full "
                 alt="banner"
               />
             </div>
-            <div className="w-[1000px] h-[calc(100vh-200px)]">
+            <div className="w-[1000px] 2xl:h-[calc(100vh-250px)] xl:h-[calc(100vh-200px)] lg:h-[calc(100vh-250px)] md:h-[calc(100vh-200px)] sm:h-[calc(100vh-50px)]">
               <Image
                 src={"/images/2.webp"}
                 width={1000}
                 height={500}
-                className="w-full h-full"
+                className="w-full 2xl:h-full xl:h-full lg:h-full  md:h-full sm:h-full "
                 alt="banner"
               />
             </div>
-            <div className="w-[1000px] h-[calc(100vh-200px)]">
+            <div className="w-[1000px] 2xl:h-[calc(100vh-250px)] xl:h-[calc(100vh-200px)] lg:h-[calc(100vh-250px)] md:h-[calc(100vh-200px)] sm:h-[calc(100vh-50px)]">
               <Image
                 src={"/images/4.webp"}
                 width={1000}
                 height={500}
-                className="w-full h-full"
+                className="w-full 2xl:h-full xl:h-full lg:h-full  md:h-full sm:h-full "
                 alt="banner"
               />
             </div>
-            <div className="w-[1000px] h-[calc(100vh-200px)]">
+            <div className="w-[1000px] 2xl:h-[calc(100vh-250px)] xl:h-[calc(100vh-200px)] lg:h-[calc(100vh-250px)] md:h-[calc(100vh-200px)] sm:h-[calc(100vh-50px)]">
               <Image
                 src={"/images/5.webp"}
                 width={1000}
                 height={500}
-                className="w-full h-full"
+                className="w-full 2xl:h-full xl:h-full lg:h-full  md:h-full sm:h-full "
                 alt="banner"
               />
             </div>
