@@ -11,7 +11,7 @@ const Career = () => {
         priority // Optional: use priority for above-the-fold images
       />
 
-      {/* Overlay container */}
+      {/* Overlay custom-container */}
       <div className="absolute  inset-0 flex justify-center items-center rounded-lg z-10">
         <div className="bg-transparent rounded-lg border border-black p-3  text-center">
           <h1 className="text-base font-semibold bg-teal-500 text-white py-2 px-4 rounded-full mb-4">

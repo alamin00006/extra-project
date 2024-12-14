@@ -6,8 +6,8 @@ const Card = ({ text, miniText, image, icon, icon2 }) => {
       <div className="w-full mb-4">
         <Image
           src={image}
-          width={500}
-          height={300}
+          width={300}
+          height={250}
           alt="Card Image"
           className="w-full h-auto object-contain rounded-md transform transition-transform duration-500 group-hover:scale-105"
         />

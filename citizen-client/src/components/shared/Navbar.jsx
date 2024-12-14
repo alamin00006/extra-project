@@ -75,12 +75,12 @@ const Navbar = () => {
 
   return (
     <div
-      className={`bg-[#242323] md:pt-2 md:pb-3 sm:pt-3 sm:pb-3${
+      className={`bg-base-100 md:pt-2 md:pb-3 sm:pt-3 sm:pb-3 shadow-md ${
         isInitialLoad || hasScrolled ? "sticky-navbar" : ""
       }`}
     >
       <div className="custom-container">
-        <div className="md:flex justify-between shadow-md flex-none  ">
+        <div className="md:flex justify-between  flex-none  ">
           <div className="col-span-2 custom-navbar relative">
             <div className="dropdown flex justify-between">
               <div className="md:hidden sm:block md:ps-0 sm:ps-2 ">
@@ -101,7 +101,7 @@ const Navbar = () => {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 <div className="bg-[#39bcbc] py-2.5 px-3 rounded  ">
-                  <MdOutlineDehaze className="text-white text-2xl" />
+                  <MdOutlineDehaze className="text-black text-2xl" />
                 </div>
               </div>
               {/* For Mobile Screen */}
@@ -153,7 +153,7 @@ const Navbar = () => {
                     </svg>
                   </div>
                   <ul
-                    className={`p-2 bg-white dark:bg-gray-800 dark:text-white dropdown_link  ${
+                    className={`p-2 bg-white dark:bg-gray-800 dark:text-black dropdown_link  ${
                       isServiceOpen ? "block" : "hidden"
                     }`}
                   >
@@ -237,12 +237,12 @@ const Navbar = () => {
           </div>
           {/* For Desktop */}
           <div className="navbar-center hidden lg:flex col-span-10 mt-4 custom-navbar ">
-            <ul className="custom_menu menu-horizontal px-10 text-white">
+            <ul className="custom_menu menu-horizontal px-10 text-black">
               <li className="pr-4">
                 <Link
                   href="/"
                   className={` uppercase no-underline  ${
-                    pathname === "/" ? "text-[#39bcbc]" : "text-white"
+                    pathname === "/" ? "text-[#39bcbc]" : "text-black"
                   }`}
                 >
                   Home
@@ -251,7 +251,7 @@ const Navbar = () => {
 
               <li tabIndex={0} className="dropdown group pr-4 cursor-pointer">
                 <div
-                  className={`text-white uppercase no-underline dropdown_text `}
+                  className={`text-black uppercase no-underline dropdown_text `}
                 >
                   Services
                   <svg
@@ -269,11 +269,11 @@ const Navbar = () => {
                     />
                   </svg>
                 </div>
-                <ul className="p-2 mt-2 bg-white hidden dropdown_link group-hover:block absolute z-10 w-[300px] dark:bg-gray-800 dark:text-white">
+                <ul className="p-2 mt-2 bg-white hidden dropdown_link group-hover:block absolute z-10 w-[300px] dark:bg-gray-800 dark:text-black">
                   {menuItems.map((item) => (
                     <li
                       key={item.id}
-                      className=" hover:bg-[#39bcbc] hover:text-white text-sm my-1"
+                      className=" hover:bg-[#39bcbc] hover:text-black text-sm my-1"
                     >
                       <Link
                         href={`/service-details/${item.id}`}
@@ -290,7 +290,7 @@ const Navbar = () => {
                 <Link
                   href="/blogs"
                   className={` uppercase no-underline  ${
-                    pathname === "/blogs" ? "text-[#39bcbc]" : "text-white"
+                    pathname === "/blogs" ? "text-[#39bcbc]" : "text-black"
                   }`}
                 >
                   Blog
@@ -299,7 +299,7 @@ const Navbar = () => {
               <li className="pr-4">
                 <Link
                   href="/company-profile"
-                  className={`text-white uppercase no-underline hover:text-[#2b7c7c] ${
+                  className={`text-black uppercase no-underline hover:text-[#2b7c7c] ${
                     pathname === "/blog"
                       ? "text-blue-500"
                       : "hover:text-blue-500 dark:hover:text-blue-300"
@@ -313,7 +313,7 @@ const Navbar = () => {
                 <Link
                   href="/about-us"
                   className={` uppercase no-underline  ${
-                    pathname === "/about-us" ? "text-[#39bcbc]" : "text-white"
+                    pathname === "/about-us" ? "text-[#39bcbc]" : "text-black"
                   }`}
                 >
                   About Us
@@ -327,8 +327,8 @@ const Navbar = () => {
                     href="/login"
                     className={`rounded uppercase no-underline px-3 py-2.5 hover:bg-[#2b7c7c] ${
                       pathname === "/login"
-                        ? "bg-[#39bcbc] text-white"
-                        : "bg-[#39bcbc] text-white"
+                        ? "bg-[#39bcbc] text-black"
+                        : "bg-[#39bcbc] text-black"
                     }`}
                   >
                     Login

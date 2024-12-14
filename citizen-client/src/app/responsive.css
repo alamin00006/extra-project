@@ -48,7 +48,7 @@ Design and Developed by: PeacefulQode
     padding-bottom: 105px;
   }
 
-  .project .container-fluid .owl-carousel {
+  .project .custom-container-fluid .owl-carousel {
     padding: 0 15px;
   }
 
@@ -133,7 +133,7 @@ Design and Developed by: PeacefulQode
     padding: 12px 15px;
   }
 
-  header#pq-header.pq-header-default .pq-btn-container {
+  header#pq-header.pq-header-default .pq-btn-custom-container {
     margin: 0 0 0 15px;
   }
 
@@ -219,7 +219,7 @@ Design and Developed by: PeacefulQode
     padding: 45px 45px 0 45px;
   }
 
-  .text-container {
+  .text-custom-container {
     padding: 0px 80px 0px 80px !important;
   }
 
@@ -227,12 +227,12 @@ Design and Developed by: PeacefulQode
     padding: 0 80px 0 80px;
   }
 
-  .experience-container {
+  .experience-custom-container {
     padding: 0 0px 0 80px;
     margin-top: 60px;
   }
 
-  .pq-form-container {
+  .pq-form-custom-container {
     margin-top: 60px;
     padding: 0 80px 0px 0px;
   }
@@ -322,7 +322,7 @@ Design and Developed by: PeacefulQode
     padding: 20px;
   }
 
-  .text-container {
+  .text-custom-container {
     padding: 80px 80px 0px 80px !important;
   }
 
@@ -330,12 +330,12 @@ Design and Developed by: PeacefulQode
     padding: 0 95px;
   }
 
-  .experience-container {
+  .experience-custom-container {
     padding: 0 80px;
     margin-top: 60px;
   }
 
-  .pq-form-container {
+  .pq-form-custom-container {
     margin-top: 45px;
     padding: 0 80px;
   }
@@ -976,7 +976,7 @@ Design and Developed by: PeacefulQode
     line-height: 50px;
   }
 
-  .pq-breadcrumb-container .breadcrumb {
+  .pq-breadcrumb-custom-container .breadcrumb {
     display: inline-flex;
   }
 
@@ -1019,18 +1019,21 @@ Design and Developed by: PeacefulQode
     padding: 5px 5px !important;
   }
 
-  .navigation-shortcode-table tbody .navigation-event-container .event-title,
+  .navigation-shortcode-table
+    tbody
+    .navigation-event-custom-container
+    .event-title,
   .navigation-shortcode-table tbody .navigation-shortcode-hours {
     font-size: 12px;
   }
 
   .navigation-shortcode-table
     tbody
-    .navigation-event-container
+    .navigation-event-custom-container
     .event-description,
   .navigation-shortcode-table
     tbody
-    .navigation-event-container
+    .navigation-event-custom-container
     .event-subtitle {
     font-size: 14px;
     margin: 5px 0 0;
@@ -1757,12 +1760,12 @@ Design and Developed by: PeacefulQode
     padding-bottom: 100px;
   }
 
-  .experience-container {
+  .experience-custom-container {
     margin-top: 30px;
     padding: 0 65px 0 65px;
   }
 
-  .pq-form-container {
+  .pq-form-custom-container {
     margin-top: 15px;
     padding: 0 65px 0 65px;
   }
@@ -1976,16 +1979,16 @@ Design and Developed by: PeacefulQode
     line-height: 42px;
   }
 
-  .pq-breadcrumb-container .breadcrumb li,
-  .pq-breadcrumb-container .breadcrumb li i {
+  .pq-breadcrumb-custom-container .breadcrumb li,
+  .pq-breadcrumb-custom-container .breadcrumb li i {
     font-size: 14px;
   }
 
-  .pq-breadcrumb-container .breadcrumb li {
+  .pq-breadcrumb-custom-container .breadcrumb li {
     margin-right: 10px;
   }
 
-  .pq-breadcrumb-container
+  .pq-breadcrumb-custom-container
     .breadcrumb
     .breadcrumb-item
     + .breadcrumb-item::before {
@@ -2112,7 +2115,7 @@ Design and Developed by: PeacefulQode
     padding: 60px 0px 105px 0px !important;
   }
 
-  .text-container {
+  .text-custom-container {
     padding: 60px 0 0 0 !important;
   }
 
@@ -2120,12 +2123,12 @@ Design and Developed by: PeacefulQode
     padding: 0 15px;
   }
 
-  .experience-container {
+  .experience-custom-container {
     margin-top: 30px;
     padding: 0;
   }
 
-  .pq-form-container {
+  .pq-form-custom-container {
     margin-top: 15px;
     padding: 0;
   }
@@ -2204,7 +2207,7 @@ Design and Developed by: PeacefulQode
     padding: 45px;
   }
 
-  .text-container {
+  .text-custom-container {
     padding: 60px 0px 0px 0px !important;
   }
 
@@ -2212,12 +2215,12 @@ Design and Developed by: PeacefulQode
     padding: 0 15px 0 15px;
   }
 
-  .experience-container {
+  .experience-custom-container {
     margin-top: 30px;
     padding: 0;
   }
 
-  .pq-form-container {
+  .pq-form-custom-container {
     margin-top: 15px;
     padding: 0;
   }

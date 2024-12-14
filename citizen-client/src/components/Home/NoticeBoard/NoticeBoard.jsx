@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import YouTube from "react-youtube";
+import LoadingState from "@/components/shared/LoadingState";
 
 const NoticeBoard = () => {
   const videoArray = [
@@ -14,7 +15,7 @@ const NoticeBoard = () => {
   const players = useRef([]);
 
   const opts = {
-    height: "250",
+    height: "100%",
     width: "100%",
     playerVars: {
       autoplay: 0, // Set to 0 to avoid autoplay on load
@@ -28,7 +29,7 @@ const NoticeBoard = () => {
     pagination: false,
     arrows: true,
     width: "100%",
-    height: "auto",
+    height: "100%",
   });
 
   // Pause the currently active video
@@ -39,41 +40,85 @@ const NoticeBoard = () => {
   };
 
   // Handle slide change
-  const handleSlideChange = () => {
-    const splide = splideRef.current.splide;
-    pauseActiveVideo(); // Pause the active video
-    setActiveVideoIndex(splide.index); // Set the new active index
+  // const handleSlideChange = () => {
+  //   const splide = splideRef.current.splide;
+  //   pauseActiveVideo(); // Pause the active video
+  //   setActiveVideoIndex(splide.index); // Set the new active index
+  // };
+
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [videoEnded, setVideoEnded] = useState([]);
+  // const [youtubeVideoLinks, setYoutubeVideoLinks] = useState([]);
+  // const splideRef = useRef(null);
+  const playerRefs = useRef([]);
+
+  const youtubeVideoLinks = [
+    "https://youtu.be/kzeIJOBYoy4?si=1ghHY8poC8UxO1H1?rel=0",
+    "https://youtu.be/va7unzVNZog?si=vnoc8o4E_hGjcEoK?rel=0",
+    "https://youtu.be/nKyFfgDRhaQ?si=7ILOAux9IRRut4BB?rel=0",
+  ];
+
+  const videoOptions = {
+    height: "340",
+    width: "100%",
+    playerVars: {
+      autoplay: 0,
+      rel: 0,
+    },
+  };
+
+  const extractVideoId = (url) => {
+    const regex = /(?:\?v=|\/embed\/|\.be\/|\/v\/)([^&#?/]+)/;
+    const match = url.match(regex);
+    return match ? match[1] : null;
+  };
+  const handleSlideChange = (splide) => {
+    const newActiveSlide = splide.index;
+    setActiveSlide(newActiveSlide);
+
+    playerRefs.current.forEach((player, index) => {
+      if (player) {
+        if (index === newActiveSlide) {
+          player.playVideo();
+        } else {
+          player.pauseVideo();
+        }
+      }
+    });
+  };
+
+  const handleVideoEnd = (index) => {
+    // Mark the video as ended
+    setVideoEnded((prevState) => {
+      const updatedState = [...prevState];
+      updatedState[index] = true;
+      return updatedState;
+    });
   };
 
   return (
-    <div className="md:w-[500px] h-[250px] mx-auto md:rounded-lg xs:rounded-none shadow-lg">
-      <div className="flex items-center justify-center">
-        <Splide
-          ref={splideRef}
-          options={youtubeSlider()}
-          onMove={handleSlideChange} // Trigger on slide change
-        >
-          {videoArray.map((video, index) => (
-            <SplideSlide key={video.id}>
-              <div className="w-full md:h-[250px] sm:h-[200px] rounded">
-                <YouTube
-                  videoId={video.link}
-                  opts={opts}
-                  onReady={(e) => {
-                    players.current[index] = e.target; // Store player instances
-                  }}
-                  onPlay={() => {
-                    if (activeVideoIndex !== index) {
-                      pauseActiveVideo(); // Ensure only one video plays
-                    }
-                  }}
-                />
-              </div>
-            </SplideSlide>
-          ))}
-        </Splide>
-      </div>
-    </div>
+    <Splide
+      className=""
+      ref={splideRef}
+      options={youtubeSlider()}
+      onMove={handleSlideChange} // Trigger on slide change
+    >
+      {youtubeVideoLinks.map((link, index) => {
+        const videoId = extractVideoId(link);
+        return (
+          <SplideSlide key={index}>
+            <YouTube
+              videoId={videoId}
+              opts={videoOptions}
+              onReady={(event) => {
+                playerRefs.current[index] = event.target;
+              }}
+              onEnd={() => handleVideoEnd(index)}
+            />
+          </SplideSlide>
+        );
+      })}
+    </Splide>
   );
 };
 

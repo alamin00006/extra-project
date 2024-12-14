@@ -88,7 +88,6 @@ ul,
 .sticky-navbar {
   animation: stickYDown 0.5s ease-out; /* Apply animation */
 }
-
 /* Custom Responsive Css  */
 
 @media (max-width: 576px) {
@@ -120,7 +119,7 @@ ul,
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .custom-container {
-    max-width: 1280px;
+    max-width: 1140px;
     margin-left: auto;
     margin-right: auto;
   }

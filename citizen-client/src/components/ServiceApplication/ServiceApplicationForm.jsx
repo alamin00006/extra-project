@@ -140,7 +140,7 @@ const ServiceApplicationForm = () => {
         </div>
         <Toaster
           position="top-center"
-          containerStyle={{ marginTop: "100px" }}
+          custom-containerStyle={{ marginTop: "100px" }}
           reverseOrder={false}
         />{" "}
       </div>

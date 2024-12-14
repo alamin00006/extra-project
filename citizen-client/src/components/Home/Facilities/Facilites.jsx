@@ -23,6 +23,30 @@ const Facilites = () => {
       image: "/images/Training-Skill-Development-Program.webp",
       icon: "/images/icons/pen-paper.svg",
     },
+    {
+      text: "Skill Development",
+      miniText: "Training Sales Marketing",
+      image: "/images/Training-Skill-Development-Program.webp",
+      icon: "/images/icons/pen-paper.svg",
+    },
+    {
+      text: "Skill Development",
+      miniText: "Training Sales Marketing",
+      image: "/images/Training-Skill-Development-Program.webp",
+      icon: "/images/icons/pen-paper.svg",
+    },
+    {
+      text: "Skill Development",
+      miniText: "Training Sales Marketing",
+      image: "/images/Training-Skill-Development-Program.webp",
+      icon: "/images/icons/pen-paper.svg",
+    },
+    {
+      text: "Skill Development",
+      miniText: "Training Sales Marketing",
+      image: "/images/Training-Skill-Development-Program.webp",
+      icon: "/images/icons/pen-paper.svg",
+    },
   ];
   return (
     <div className="mt-5 custom-container">
@@ -33,7 +57,7 @@ const Facilites = () => {
         </h5>
       </div>
       <h1 className="text-center">What Facilities We Provided</h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 ">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 p-6 ">
         {cardData.map((card, index) => (
           <Card
             key={index}
