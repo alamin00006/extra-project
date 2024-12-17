@@ -101,7 +101,7 @@ const Navbar = () => {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 <div className="bg-[#39bcbc] py-2.5 px-3 rounded  ">
-                  <MdOutlineDehaze className="text-black text-2xl" />
+                  <MdOutlineDehaze className="text-white text-2xl" />
                 </div>
               </div>
               {/* For Mobile Screen */}
@@ -325,11 +325,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     href="/login"
-                    className={`rounded uppercase no-underline px-3 py-2.5 hover:bg-[#2b7c7c] ${
-                      pathname === "/login"
-                        ? "bg-[#39bcbc] text-black"
-                        : "bg-[#39bcbc] text-black"
-                    }`}
+                    className={`rounded uppercase no-underline px-3 py-2.5 bg-pink-500 hover:bg-pink-600 text-white hover:text-white`}
                   >
                     Login
                   </Link>

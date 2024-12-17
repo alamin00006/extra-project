@@ -20,8 +20,8 @@ const TenTakaiShasto = () => {
   };
 
   return (
-    <div className="custom-container">
-      <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 py-10 md:mt-0 sm:mt-10 xs:mt-10">
+    <div className="custom-container shadow-md">
+      <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 py-10 md:mt-0 sm:mt-10 xs:mt-10 ">
         <div className="md:col-span-6 w-full h-full">
           <Image
             src={"/images/10-Takar-Health-Services.webp"}

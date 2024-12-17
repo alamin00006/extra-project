@@ -6,19 +6,20 @@ import {
   FaInstagram,
   FaEnvelope,
 } from "react-icons/fa";
+import { IoCallOutline } from "react-icons/io5";
 
 const TopNavbar = () => {
   return (
-    <nav className="bg-[#39bcbc]">
+    <nav className="bg-dark">
       <div className="custom-container flex flex-wrap items-center justify-between">
-        <div className="flex items-center text-white border-base-100 px-2 border-r border-l py-2.5">
-          <FaEnvelope className="mr-2" />
-          <span>citizencarebd@gmail.com</span>
+        <div className="flex items-center text-white border-base-100 px-2 border-r border-l py-2.5 gap-1">
+          <IoCallOutline size={20} />
+          <span>02-41061616</span>
         </div>
         <div className="flex space-x-2">
           <Link
             href="https://www.facebook.com/Citizencarebd?mibextid=ZbWKwL"
-            className="border-base-100 px-3 border-l py-3 bg-[#39bcbc] hover:bg-[#418989]"
+            className="border-base-100 px-3 border-l py-3 bg-dark hover:bg-[#418989]"
             target="_blank"
           >
             <FaFacebook
@@ -29,7 +30,7 @@ const TopNavbar = () => {
           <Link
             href="https://www.youtube.com/@Citizencarebd"
             target="_blank"
-            className="border-base-100 px-3  border-l py-3 bg-[#39bcbc] hover:bg-[#418989]"
+            className="border-base-100 px-3  border-l py-3 bg-dark hover:bg-[#418989]"
           >
             <FaYoutube
               className="text-white hover:text-[hoverColor] "
@@ -39,7 +40,7 @@ const TopNavbar = () => {
           <Link
             href="#"
             target="_blank"
-            className="border-base-100 px-3 border-l py-3 bg-[#39bcbc] hover:bg-[#418989]"
+            className="border-base-100 px-3 border-l py-3 bg-dark hover:bg-[#418989]"
           >
             <FaLinkedin
               className="text-white hover:text-[hoverColor]1"
@@ -49,7 +50,7 @@ const TopNavbar = () => {
           <Link
             href="#"
             target="_blank"
-            className="border-base-100 px-3 border-r border-l py-3 bg-[#39bcbc] hover:bg-[#418989]"
+            className="border-base-100 px-3 border-r border-l py-3 bg-dark hover:bg-[#418989]"
           >
             <FaInstagram
               className="text-white hover:text-[hoverColor]"

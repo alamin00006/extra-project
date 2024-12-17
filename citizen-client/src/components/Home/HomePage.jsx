@@ -15,13 +15,13 @@ const HomePage = () => {
       {/* <div className="md:hidden  xs:block">
         <NoticeBoard />
       </div> */}
-      <div className="bg-[#f4f6f9] md:mt-0 sm:mt-48">
+      <div className=" md:mt-0 sm:mt-10 ">
         <TenTakaiShasto />
       </div>
-      <div className="bg-white">
+      <div className="bg-base-100 ">
         <Facilites />
       </div>
-      <div className="bg-white">
+      <div className="bg-white mt-4">
         <WhyChoosUs />
       </div>
       <div className="bg-white ">
