@@ -325,7 +325,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     href="/login"
-                    className={`rounded uppercase no-underline px-3 py-2.5 bg-pink-500 hover:bg-pink-600 text-white hover:text-white`}
+                    className={`rounded uppercase no-underline px-3 py-2.5 bg-[#39bcbc] hover:bg-pink-600 text-white hover:text-white `}
                   >
                     Login
                   </Link>

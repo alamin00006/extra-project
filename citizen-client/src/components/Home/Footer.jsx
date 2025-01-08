@@ -8,10 +8,9 @@ import {
   FaInstagram,
   FaLink,
 } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlineEmail, MdOutlineLocationOn } from "react-icons/md";
-import { TbLocation } from "react-icons/tb";
+import { TbMessage } from "react-icons/tb";
 
 const Footer = () => {
   const [isSocial, setSocial] = useState(false);
@@ -25,76 +24,100 @@ const Footer = () => {
           style={{
             backgroundImage: "url('/images/logo.png')",
             backgroundRepeat: "no-repeat",
-            backgroundSize: "contain", // Ensure it's contained in the space
-            backgroundPosition: "center", // Adjust position if needed
-            pointerEvents: "none", // Make sure it doesn't block interactions
+            backgroundSize: "contain",
+            backgroundPosition: "center",
+            pointerEvents: "none",
           }}
         ></div>
 
-        <div className="custom-container mx-auto flex flex-wrap justify-between items-start relative z-10 ">
+        <div className="custom-container mx-auto flex flex-wrap justify-between items-start relative z-10">
           {/* Left Section */}
           <div>
-            <Image src="/images/logo.png" alt="Logo" width={350} height={350} />
+            <Image
+              src="/images/logo.png"
+              alt="Logo"
+              width={350}
+              height={350}
+              priority
+            />
 
-            <p>We are innovative and passionate about the work we do.</p>
+            <p className="mt-4">
+              We are innovative and passionate about the work we do.
+            </p>
           </div>
+
+          {/* Middle Section */}
           <div>
-            <h2 className="text-xl font-bold mb-4">Citezen Care Bangladesh</h2>
+            <h2 className="text-xl font-bold mb-4">Citizen Care Bangladesh</h2>
             <ul className="space-y-2 text-[15px] p-0">
-              <li className="flex">
+              <li className="flex items-start gap-2">
                 <MdOutlineLocationOn size={20} />
-                Anamika Terrace, 32/A, Road-02, <br />
-                Dhanmondi, Dhaka-1205, Bangladesh
+                <span>
+                  Anamika Terrace, 32/A, Road-02, <br />
+                  Dhanmondi, Dhaka-1205, Bangladesh
+                </span>
               </li>
 
-              <li className="flex gap-1">
-                <IoCallOutline size={20} /> 02-41061616
-                <span className="font-bold">Phone:</span> 02-41061616
+              <li className="flex items-center gap-2">
+                <IoCallOutline size={20} />
+                <span>
+                  <span className="font-bold">Phone:</span> 02-41061616
+                </span>
               </li>
-              <li className="flex gap-1">
+
+              <li className="flex items-center gap-2">
                 <MdOutlineEmail size={20} />
-                <span className="font-bold">Email:</span>{" "}
-                <a
-                  href="mailto:citizencarebd@gmail.com"
-                  className="text-[#565656]"
-                >
-                  citizencarebd@gmail.com
-                </a>
+                <span>
+                  <span className="font-bold">Email:</span>{" "}
+                  <a
+                    href="mailto:citizencarebd@gmail.com"
+                    className="text-[#565656] hover:underline"
+                  >
+                    citizencarebd@gmail.com
+                  </a>
+                </span>
               </li>
-              <li className="flex gap-1">
+
+              <li className="flex items-center gap-2">
                 <FaLink size={20} />
-                <span className="font-bold ">Website:</span>{" "}
-                <a
-                  href="https://www.citizencarebd.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#565656]"
-                >
-                  www.citizencarebd.com
-                </a>
+                <span>
+                  <span className="font-bold">Website:</span>{" "}
+                  <a
+                    href="https://www.citizencarebd.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#565656] hover:underline"
+                  >
+                    www.citizencarebd.com
+                  </a>
+                </span>
               </li>
             </ul>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mt-4">
               <a
                 href="#"
+                aria-label="Facebook"
                 className="p-2 rounded-full bg-white text-pink-600 hover:bg-gray-100 transition"
               >
                 <FaFacebookF size={20} />
               </a>
               <a
                 href="#"
+                aria-label="Twitter"
                 className="p-2 rounded-full bg-white text-pink-600 hover:bg-gray-100 transition"
               >
                 <FaTwitter size={20} />
               </a>
               <a
                 href="#"
+                aria-label="LinkedIn"
                 className="p-2 rounded-full bg-white text-pink-600 hover:bg-gray-100 transition"
               >
                 <FaLinkedinIn size={20} />
               </a>
               <a
                 href="#"
+                aria-label="Instagram"
                 className="p-2 rounded-full bg-white text-pink-600 hover:bg-gray-100 transition"
               >
                 <FaInstagram size={20} />
@@ -104,67 +127,68 @@ const Footer = () => {
 
           {/* Right Section */}
           <div className="flex flex-col items-center space-y-4">
-            <div>
+            <div className="relative w-full h-0 pb-[56.25%]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d58435.677869841085!2d90.378612!3d23.739181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b93af48652eb%3A0xee9ace2160af5673!2sAnamika%20Terrace!5e0!3m2!1sen!2sbd!4v1730666893904!5m2!1sen!2sbd"
-                width="300"
-                height="200"
+                className="absolute top-0 left-0 w-full h-full rounded shadow-md"
                 allowFullScreen
                 loading="lazy"
-                className="rounded shadow-md"
               ></iframe>
             </div>
           </div>
         </div>
 
-        <div className="flex justify-end">
+        {/* Social Media Toggle */}
+        <div className="flex justify-end overflow-hidden absolute bottom-6 right-6">
           <div>
-            {isSocial && (
-              <>
-                <div>
-                  <a href="https://wa.me/+8801647647404" target="_blank">
-                    <Image
-                      src="/images/whastapp.png"
-                      alt="Logo"
-                      width={350}
-                      height={350}
-                      style={{ width: 60, height: 60 }}
-                    />
-                  </a>
-                </div>
-                <div>
-                  <a href="https://wa.me/+8801647647404" target="_blank">
-                    <Image
-                      src="/images/messenger.png"
-                      alt="Logo"
-                      width={350}
-                      height={350}
-                      style={{ width: 60, height: 60 }}
-                    />
-                  </a>
-                </div>
-              </>
-            )}
+            {/* Social Media Links */}
+            <div
+              className={`transition-all duration-500 transform ${
+                isSocial
+                  ? "translate-y-0 opacity-100 scale-100"
+                  : "translate-y-20 opacity-0 scale-90"
+              } flex flex-col items-center `}
+            >
+              <a
+                href="https://wa.me/8801894671875"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/images/whastapp.png"
+                  alt="WhatsApp"
+                  width={43}
+                  height={43}
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/Citizencarebd"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/images/messenger.png"
+                  alt="Messenger"
+                  width={54}
+                  height={54}
+                />
+              </a>
+            </div>
 
-            <div onClick={() => setSocial(!isSocial)}>
-              <label className="btn btn-circle swap swap-rotate">
-                {/* this hidden checkbox controls the state */}
-                <input type="checkbox" />
+            {/* Toggle Button */}
+            <button
+              onClick={() => setSocial(!isSocial)}
+              className={`flex items-center justify-center p-2.5 mt-2 rounded-full bg-[#39bcbc] hover:bg-[#39bcbc] text-white transition-transform duration-300  ${
+                isSocial ? "rotate-180" : "rotate-0"
+              }`}
+            >
+              {/* Hamburger Icon */}
+              {!isSocial && <TbMessage size={35} />}
 
-                {/* hamburger icon */}
+              {/* Close Icon */}
+              {isSocial && (
                 <svg
-                  className="swap-off fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 512 512"
-                >
-                  <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
-                </svg>
-
-                {/* close icon */}
-                <svg
-                  className="swap-on fill-current"
+                  className="fill-current"
                   xmlns="http://www.w3.org/2000/svg"
                   width="32"
                   height="32"
@@ -172,8 +196,8 @@ const Footer = () => {
                 >
                   <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
                 </svg>
-              </label>
-            </div>
+              )}
+            </button>
           </div>
         </div>
       </div>

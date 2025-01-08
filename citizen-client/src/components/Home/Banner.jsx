@@ -4,9 +4,11 @@ import Image from "next/image";
 import NoticeBoard from "./NoticeBoard/NoticeBoard";
 
 const images = [
-  "/images/1.webp", // Replace with your image paths
-  "/images/2.webp",
-  "/images/4.webp",
+  "/images/banner/helth-awar-01.jpg",
+  "/images/banner/HELTH-CARE-01-01.jpg",
+  "/images/banner/JAHID-01.jpg",
+  "/images/banner/niutri-01.jpg",
+  "/images/banner/nurse-01.jpg",
 ];
 
 const HeroSlider = () => {
@@ -27,7 +29,7 @@ const HeroSlider = () => {
       >
         {images.map((image, index) => (
           <SplideSlide key={index}>
-            <div className="relative w-full h-screen">
+            <div className="relative w-screen h-screen">
               <Image
                 src={image}
                 alt={`Slide ${index + 1}`}
@@ -60,14 +62,6 @@ const HeroSlider = () => {
         {/* Right-Aligned YouTube Video */}
         <div className="w-full md:w-1/2">
           <div className="relative w-full h-64 md:h-96">
-            {/* <iframe
-              className="absolute top-0 left-0 w-full h-full rounded-lg"
-              src="https://www.youtube.com/embed/your-video-id"
-              title="YouTube video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe> */}
             <NoticeBoard />
           </div>
         </div>

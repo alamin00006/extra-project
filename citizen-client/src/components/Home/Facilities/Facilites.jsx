@@ -15,49 +15,54 @@ const Facilites = () => {
     {
       text: "Healthcare at your Home",
       miniText: "মাসিক ৫৬৬ টাকায় স্বাস্থ্যসেবা",
-      image: "/images/Awareness-Program.webp",
+      image: "/images/services-2/HELTH CARE-at-01.jpg",
       icon2: <IoHomeOutline className="w-10 h-10 text-[#3cb9ba]" />,
     },
     {
       text: "MBBS Doctor / Family Physician",
       miniText: "At your home",
-      image: "/images/Environment-and-agricultural-Program.webp",
+      image: "/images/services-2/family-01.jpg",
       icon2: <FaUserDoctor className="w-10 h-10 text-[#3cb9ba]" />,
     },
     {
       text: "Nutritionists",
       miniText: "At your home",
-      image: "/images/Training-Skill-Development-Program.webp",
+      image: "/images/services-2/NUTRI-BOXe-box-01.jpg",
+
       icon2: <FaAppleAlt className="w-10 h-10 text-[#3cb9ba]" />,
     },
     {
       text: "Health Check",
       miniText: "At your home",
-      image: "/images/Training-Skill-Development-Program.webp",
+      image: "/images/services-2/chekup-01-01.jpg",
+
       icon: "/images/check.png",
     },
     {
       text: "Medicine & Medical Device",
       miniText: "At your home",
-      image: "/images/Training-Skill-Development-Program.webp",
+      image: "/images/services-2/MEDICINE-01.jpg",
+
       icon2: <GiMedicines className="w-10 h-10 text-[#3cb9ba]" />,
     },
     {
       text: "Health Tourism",
       miniText: "At your home",
-      image: "/images/Training-Skill-Development-Program.webp",
+      image: "/images/services-2/Health tourism-01.jpg",
+
       icon: "/images/tourisom.png",
     },
     {
       text: "Health Guide",
       miniText: "At your home",
-      image: "/images/Training-Skill-Development-Program.webp",
+      image: "/images/services-2/HEALTH GUIDE-01.jpg",
+
       icon: "/images/health-guide.png",
     },
     {
       text: "Telemedicine / E-Medical Consultancy",
       miniText: "At your home",
-      image: "/images/Training-Skill-Development-Program.webp",
+      image: "/images/services-2/nurse box-01.jpg",
       icon: "/images/e-medical.png",
     },
   ];

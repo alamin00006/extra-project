@@ -1,5 +1,5 @@
 "use client";
-import Banner from "./Banner";
+import Banner2 from "./Banner2";
 import Collaborators from "./Collaborators/Collaborators";
 import Facilites from "./Facilities/Facilites";
 import "./Home.css";
@@ -9,8 +9,11 @@ import WhyChoosUs from "./WhyChoosUs/WhyChoosUs";
 const HomePage = () => {
   return (
     <>
-      <div>
+      {/* <div>
         <Banner />
+      </div> */}
+      <div>
+        <Banner2 />
       </div>
       {/* <div className="md:hidden  xs:block">
         <NoticeBoard />
