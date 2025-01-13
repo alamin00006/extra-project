@@ -30,7 +30,7 @@ const Footer = () => {
           }}
         ></div>
 
-        <div className="custom-container mx-auto flex flex-wrap justify-between items-start relative z-10">
+        <div className="custom-container mx-auto md:px-0 sm:px-5 flex flex-wrap justify-between items-start relative z-10">
           {/* Left Section */}
           <div>
             <Image
@@ -139,7 +139,7 @@ const Footer = () => {
         </div>
 
         {/* Social Media Toggle */}
-        <div className="flex justify-end overflow-hidden absolute bottom-6 right-6">
+        <div className="flex justify-end overflow-hidden fixed bottom-6 right-6">
           <div>
             {/* Social Media Links */}
             <div

@@ -6,13 +6,11 @@ export default function ServiceLayout({ children }) {
   return (
     <div className="custom-container mt-[10px]  ">
       <div className="grid grid-cols-12">
-        <div className="md:col-span-4 sm:col-span-12">
+        {/* <div className="md:col-span-4 sm:col-span-12">
           <ServiceSidebar />
-        </div>
+        </div> */}
 
-        <main className="md:col-span-8 sm:col-span-12 md:mx-0 sm:mx-3">
-          {children}
-        </main>
+        <main className="col-span-12 md:mx-0 sm:mx-3">{children}</main>
       </div>
     </div>
   );

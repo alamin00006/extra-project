@@ -10,6 +10,7 @@ import { authKey } from "@/constants/storageKey";
 import { removeUserInfo } from "@/helpers/utils/local-storage";
 import DropdownUser from "./DropdownUser";
 import { useGetUserQuery } from "@/redux/api/authApi";
+import { cardData } from "@/helpers/utils/serviceData";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -81,7 +82,7 @@ const Navbar = () => {
     >
       <div className="custom-container">
         <div className="md:flex justify-between  flex-none  ">
-          <div className="col-span-2 custom-navbar relative">
+          <div className="col-span-2  relative">
             <div className="dropdown flex justify-between">
               <div className="md:hidden sm:block md:ps-0 sm:ps-2 ">
                 <Link href="/">
@@ -111,7 +112,7 @@ const Navbar = () => {
                   isDropdownOpen ? "block" : "hidden"
                 }`}
               >
-                <li>
+                <li className="custom-navbar">
                   <Link
                     href="/"
                     className={` uppercase no-underline text-black ${
@@ -121,7 +122,7 @@ const Navbar = () => {
                     Home
                   </Link>
                 </li>
-                <li>
+                <li className="custom-navbar">
                   <Link
                     href="/about-us"
                     className={` uppercase no-underline  ${
@@ -133,7 +134,7 @@ const Navbar = () => {
                 </li>
                 <li tabIndex={0} className="dropdown group">
                   <div
-                    className={`uppercase no-underline`}
+                    className={`uppercase no-underline dropdown_text`}
                     onClick={() => setIsServiceOpen(!isServiceOpen)}
                   >
                     Services
@@ -153,12 +154,12 @@ const Navbar = () => {
                     </svg>
                   </div>
                   <ul
-                    className={`p-2 bg-white dark:bg-gray-800 dark:text-black dropdown_link  ${
+                    className={`p-2 bg-white dark:bg-gray-800 dark:text-black   ${
                       isServiceOpen ? "block" : "hidden"
                     }`}
                   >
                     {menuItems.map((item) => (
-                      <li key={item.id}>
+                      <li key={item.id} className="dropdown_link ">
                         <Link
                           href={`/service-details/${item.id}`}
                           className={` uppercase no-underline  ${
@@ -167,7 +168,7 @@ const Navbar = () => {
                               : "text-black"
                           }`}
                         >
-                          {item.title}
+                          {item.text}
                         </Link>
                       </li>
                     ))}
@@ -175,7 +176,7 @@ const Navbar = () => {
                 </li>
                 <br />
 
-                <li>
+                <li className="custom-navbar">
                   <Link
                     href="/blogs"
                     className={` uppercase no-underline  ${
@@ -185,7 +186,7 @@ const Navbar = () => {
                     Blog
                   </Link>
                 </li>
-                <li>
+                <li className="custom-navbar">
                   {!isUser ? (
                     <Link
                       href="/Login"
@@ -236,9 +237,9 @@ const Navbar = () => {
             </div>
           </div>
           {/* For Desktop */}
-          <div className="navbar-center hidden lg:flex col-span-10 mt-4 custom-navbar ">
+          <div className="navbar-center hidden lg:flex col-span-10 mt-4  ">
             <ul className="custom_menu menu-horizontal px-10 text-black">
-              <li className="pr-4">
+              <li className="pr-4 custom-navbar">
                 <Link
                   href="/"
                   className={` uppercase no-underline  ${
@@ -249,9 +250,9 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li tabIndex={0} className="dropdown group pr-4 cursor-pointer">
+              <li tabIndex={0} className="dropdown group pr-4 cursor-pointer ">
                 <div
-                  className={`text-black uppercase no-underline dropdown_text `}
+                  className={`text-black  hover:text-[#39bcbc] uppercase no-underline dropdown_text`}
                 >
                   Services
                   <svg
@@ -269,24 +270,23 @@ const Navbar = () => {
                     />
                   </svg>
                 </div>
-                <ul className="p-2 mt-2 bg-white hidden dropdown_link group-hover:block absolute z-10 w-[300px] dark:bg-gray-800 dark:text-black">
-                  {menuItems.map((item) => (
-                    <li
-                      key={item.id}
-                      className=" hover:bg-[#39bcbc] hover:text-black text-sm my-1"
-                    >
+                <ul className="p-2 mt-2 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[300px] dark:bg-gray-800 dark:text-black">
+                  {cardData.map((item) => (
+                    <li key={item.id} className=" dropdown_link text-sm my-1 ">
                       <Link
                         href={`/service-details/${item.id}`}
-                        className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1`}
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1
+                           `}
                       >
-                        {item.title}
+                        {item.text}
                       </Link>
                     </li>
                   ))}
                 </ul>
               </li>
 
-              <li className="pr-4">
+              <li className="pr-4 custom-navbar">
                 <Link
                   href="/blogs"
                   className={` uppercase no-underline  ${
@@ -296,7 +296,7 @@ const Navbar = () => {
                   Blog
                 </Link>
               </li>
-              <li className="pr-4">
+              <li className="pr-4 custom-navbar">
                 <Link
                   href="/company-profile"
                   className={`text-black uppercase no-underline hover:text-[#2b7c7c] ${
@@ -309,7 +309,7 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li className="pr-4">
+              <li className="pr-4 custom-navbar">
                 <Link
                   href="/about-us"
                   className={` uppercase no-underline  ${

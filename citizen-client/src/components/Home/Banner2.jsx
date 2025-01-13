@@ -13,7 +13,7 @@ const images = [
 
 const HeroSlider = () => {
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full ">
       {/* Splide Slider */}
       <Splide
         options={{
@@ -29,12 +29,24 @@ const HeroSlider = () => {
       >
         {images.map((image, index) => (
           <SplideSlide key={index}>
-            <div className="relative w-screen h-screen">
+            <div className="relative w-screen h-screen sm:hidden md:block">
               <Image
                 src={image}
                 alt={`Slide ${index + 1}`}
                 fill
-                objectFit="cover"
+                className="md:object-cover sm:object-contain"
+                priority
+              />
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+            </div>
+            <div className="md:hidden w-screen h-screen">
+              <Image
+                src={image}
+                alt={`Slide ${index + 1}`}
+                width={500}
+                height={300}
+                className="w-screen h-screen "
                 priority
               />
               {/* Overlay */}

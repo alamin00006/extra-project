@@ -1,12 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import CountUp from "react-countup";
-import {
-  FaUser,
-  FaHospitalUser,
-  FaAppleAlt,
-  FaStethoscope,
-} from "react-icons/fa";
+
 import { useInView } from "react-intersection-observer";
 
 const WhyChooseUs = () => {
@@ -16,10 +11,10 @@ const WhyChooseUs = () => {
   });
 
   return (
-    <div className="mb-10 h-[550px] bg-[#e8ffff45] relative ">
-      <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 custom-container">
+    <div className="mb-10 h-[550px] bg-[#e8ffff45]  ">
+      <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full md:gap-5 sm:gap-0 custom-container">
         {/* Left Side Content */}
-        <div className="md:col-span-6 w-full p-4 md:p-8">
+        <div className="md:col-span-6 sm:col-span-12 w-full sm:p-4 md:p-8">
           <div className="mt-10">
             <h2 className="md:text-5xl sm:text-3xl xs:text-3xl font-semibold mb-4">
               Why you choose us
@@ -41,7 +36,7 @@ const WhyChooseUs = () => {
 
         {/* Right Side Counters */}
         <div
-          className="md:col-span-6 w-full h-full  text-black"
+          className="md:col-span-6 sm:col-span-12 w-full h-full text-black"
           ref={ref} // Attach the intersection observer
         >
           <div className="grid grid-cols-2 mt-10">

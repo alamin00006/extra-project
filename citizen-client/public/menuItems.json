@@ -1,84 +1,54 @@
 [
   {
-    "id": "10-takai-shastho-sheba",
-    "title": "10 Taka Shastho Sheba",
-    "image": "/images/service-banner/service-10-taka.png",
-    "items": [
-      {
-        "id": 1,
-        "answer": [
-          "10 Taka Health Services is an initiative launched to provide affordable healthcare to citizens in Bangladesh...",
-          "The services covered under this program typically included basic medical consultations...",
-          "It's important to note that the availability and scope of such programs may vary by region and change over time..."
-        ]
-      }
-    ]
+    "id": "1",
+    "text": "লয়্যাল মেম্বার হয়ে ঘরে বসে নার্সিং সেবা",
+    "miniText": "মাত্র ১৫০ টাকায়",
+    "price": 150,
+    "image": "/images/services-2/HELTH CARE-at-01.jpg",
+    "content": "<h2 className=\"text-lg mb-4\">\n<span className=\"text-[#3abbba] font-bold\">Citizen Care Bangladesh-</span> এর{\" \"}\n<span className=\"text-pink-500 font-bold\">লয়্যাল মেম্বার</span> হয়ে ঘরে বসে{\" \"}\n<b>নার্সিং সেবা, মাত্র ১৫০ টাকা।</b>\n</h2>\n<p className=\"text-sm md:text-base mb-4 text-[#565656] leading-8\">\nCitizen Care Bangladesh- এর{\" \"}\n<span className=\"text-[#3abbba] font-bold\">লয়্যাল মেম্বার</span> হয়ে আপনি\nঘরে বসেই রেজিস্টার্ড অভিজ্ঞ নার্সের মাধ্যমে physical Vital Signs মনিটরিং\nকরতে পারবেন। এটি একটি দারুণ সুযোগ, বিশেষ করে যাদের পরিবারের বয়স্ক সদস্য\nরয়েছেন, দীর্ঘ মেয়াদে ঔষধ সেবন করতে হয় এবং একজন সুস্থ মানুষ তার\nসুস্বাস্থ্যের জন্য এবং অসুস্থতার ঝুঁকি এড়াতে নিজেদের বাসায় বসে প্রাথমিক\nস্বাস্থ্যসেবা নিতে পারেন।\n</p>\n<p className=\"text-sm md:text-base mb-4 text-[#565656] font-bold\">\nআসুন নার্সের সেবা সম্পর্কে আরও বিস্তারিত জেনে নেওয়া যাক:\n</p>\n<ul className=\"list-disc ml-4 space-y-2 text-sm text-[#565656]\">\n<li>\n  <span className=\"text-pink-500 font-bold\">রেজিস্টার্ড অভিজ্ঞ নার্স:</span>{\" \"}\n  এই সেবাটি আপনাকে রেজিস্টার্ড এবং অভিজ্ঞ নার্সের মাধ্যমে সরবরাহ করা হয়।\n  তাই আপনি নিশ্চিন্ত থাকতে পারেন যে আপনি সর্বোত্তম সেবা পাচ্ছেন।\n</li>\n<li>\n  <span className=\"text-pink-500 font-bold\">ঘরে বসে সেবা:</span> আপনাকে\n  হাসপাতালে বা কষ্ট করে বাহিরে যাওয়ার প্রয়োজন নেই। নার্স আপনার বাড়িতে এসে\n  নার্সিং সেবা প্রদান করবেন।\n</li>\n<li>\n  <span className=\"text-pink-500 font-bold\">স্বল্প খরচে:</span> মাত্র ১৫০\n  টাকায় আপনি একবারের জন্য নার্সের সেবা নিতে পারবেন। এটি খুবই সাশ্রয়ী\n  মূল্যের সেবা।\n</li>\n<li>\n  <span className=\"text-pink-500 font-bold\">সুবিধাজনক:</span> আপনার জন্য একটি\n  সময়সূচি নির্ধারণ করা হবে এবং নার্স নির্ধারিত সময়ে আপনার বাড়িতে আসবেন।\n</li>\n<li>\n  <span className=\"text-pink-500 font-bold\">হাইজেনিক মেইন্টেন:</span> এটি\n  সবচেয়ে গুরুত্বপূর্ণ। সেবা প্রদানের পূর্বে হাত ধুয়ে পরিষ্কার করা, হ্যান্ড\n  গ্লাভস ব্যবহার, মাস্ক ব্যবহার করে সেবা প্রদান করে থাকেন।\n</li>\n</ul>\n<p className=\"text-sm md:text-base mb-4 text-[#565656] font-bold\">\nকোন ধরনের সেবা পাওয়া যায়?\n</p>\n<ul className=\"list-disc ml-4 space-y-2 text-sm text-[#565656]\">\n<li>ব্লাড প্রেসার (রক্তচাপ) মনিটরিং</li>\n<li>ডায়াবেটিস টেস্ট</li>\n<li>ব্লাড অক্সিজেন স্যাচুরেশন পরিমাপ</li>\n<li>বডি ওয়েট মেজারমেন্ট</li>\n<li>বডি মাস ইনডেক্স (BMI)</li>\n<li>রেসপিরেটরি রেট মনিটরিং</li>\n<li>পালস রিডিং</li>\n<li>বডি টেম্পারেচার মনিটরিং</li>\n</ul>\n<p className=\"text-sm md:text-base mb-4 text-[#565656] leading-8\">\nএ ছাড়াও রোগীর প্রেসক্রিপশন অনুযায়ী নিয়মিত সঠিক সময় ঔষধ সেবন করার বিষয়ে অবগত\nকরি। কোন অসাবধানতার কারণে মেডিসিনের ডোজ চেইঞ্জ হয়ে যাচ্ছে কিনা সে বিষয়ে\nসতর্ক থাকার ও সঠিক মেডিসিন সেবন করা সহ শরীর চর্চা, খাদ্য গ্রহনের নিয়ম মেনে\nচলার বিষয়ে অবগত করি।\n</p>\n<p className=\"text-sm md:text-base mb-4 text-[#565656] leading-8\">\nআপনিও সিটিজেন কেয়ার বাংলাদেশ এর{\" \"}\n<span className=\"text-[#3abbba] font-bold\">লয়্যাল মেম্বার</span> হয়ে নিজেকে\nসুস্থ রাখতে আরোও মনযোগী হোন, ঘরে বসে নার্সিং সেবা নিন, স্বাস্থ্য ঝুঁকি\nপ্রতিরোধে সচেষ্ট থাকুন।\n</p>"
   },
   {
-    "id": "Awareness-Program",
-    "title": "Awareness Program",
-    "image": "/images/service-banner/Awareness-Program.webp",
-    "items": [
-      {
-        "id": 1,
-        "answer": [
-          "Citizen Care Bangladesh is a non-profit organization that focuses on providing awareness programs...",
-          "One of the key areas that Citizen Care Bangladesh focuses on is healthcare...",
-          "Another important aspect of Citizen Care Bangladesh's awareness programs is social issues and rights...",
-          "Citizen Care Bangladesh also takes an active role in environmental awareness...",
-          "In addition to these main focus areas, Citizen Care Bangladesh provides awareness programs on various other topics..."
-        ]
-      }
-    ]
+    "id": "2",
+    "text": "লয়্যাল মেম্বার হয়ে ঘরে বসে MBBS ডাক্তারের সেবা নিন",
+    "miniText": "মাত্র ২০০ টাকায়",
+    "image": "/images/services-2/family-01.jpg",
+    "content": "<h2 className=\"text-lg mb-4\">... (Content for MBBS Doctor Service)</h2>"
   },
   {
-    "id": "Environmental-and-agricultural-program",
-    "title": "Environmental-and-agricultural-program",
-    "image": "/images/service-banner/Environment-and-agricultural-service.webp",
-    "items": [
-      {
-        "id": 1,
-        "answer": [
-          "Citizen Care Bangladesh is a provider of environment and agricultural services in Bangladesh. They offer a wide range of solutions and expertise to support farmers, landowners, and agricultural businesses in adopting sustainable and environmentally friendly practices. Their services include soil and water conservation, agricultural waste management, pest and disease management, precision agriculture and technology adoption, sustainable farming practices, and climate change adaptation strategies.",
-          "Through their services, Citizen Care Bangladesh aims to promote sustainable agriculture, protect natural resources, and enhance agricultural productivity in Bangladesh. They work closely with farmers to provide them with the necessary knowledge, tools, and technologies to implement environmentally friendly practices and manage their land in a sustainable manner.",
-          "By creating awareness, offering training, and providing technical assistance, Citizen Care Bangladesh assists farmers in making informed decisions that are beneficial for both their farming operations and the environment. Their ultimate goal is to contribute to a greener and more sustainable agricultural sector in Bangladesh."
-        ]
-      }
-    ]
+    "id": "3",
+    "text": "ঘরে বসে অভিজ্ঞ নিউট্রিশনিস্ট এর পরামর্শ নিন",
+    "miniText": "নিউট্রিশনিস্টের পরামর্শ: সুস্থ জীবনের চাবিকাঠি মাত্র ২০০ টাকায়",
+    "image": "/images/services-2/NUTRI-BOXe-box-01.jpg",
+    "content": "<h2 className=\"text-lg mb-4\">... (Content for Nutritionist Service)</h2>"
   },
   {
-    "id": "Accounts-and-financial-solution",
-    "title": "Accounts-and-financial-solution",
-    "image": "/images/service-banner/Financial-Service.webp",
-    "items": [
-      {
-        "id": 1,
-        "answer": [
-          "Citizen Care Bangladesh is committed to providing comprehensive financial services to individuals and businesses. They offer business projection and strategy services to help entrepreneurs plan and forecast their business growth. This includes analyzing market trends, assessing competition, identifying potential risks, and developing strategies to achieve business goals.",
-
-          "In addition, Citizen Care Bangladesh provides project profile details description services. This involves creating detailed profiles of projects, outlining their objectives, expected outcomes, resources required, and potential risks. These project profiles can be used to attract investors, secure funding, and communicate project details to stakeholders.",
-
-          "Citizen Care Bangladesh understands the importance of having a comprehensive and well-defined financial plan for businesses. They work closely with their clients to understand their specific needs and develop customized financial solutions that align with their goals and objectives.",
-          "Overall, Citizen Care Bangladesh is dedicated to supporting businesses in Bangladesh by providing them with financial services such as business projection, strategy, and project profile details description. Through these services, they aim to empower entrepreneurs and contribute to the economic development of the country."
-        ]
-      }
-    ]
+    "id": "4",
+    "text": "Health Check",
+    "miniText": "At your home",
+    "image": "/images/services-2/chekup-01-01.jpg"
   },
   {
-    "id": "Health-care-service",
-    "title": "Health-care-service",
-    "image": "/images/service-banner/Healthcare-service.webp",
-    "items": [
-      {
-        "id": 1,
-        "answer": [
-          "Citizen Care Bangladesh strongly believes in the importance of the human-animal bond and recognizes the significance of animals in people's lives. By providing quality healthcare services to pets and animals, they aim to ensure the overall health and happiness of these beloved companions.",
-
-          "Additionally, Citizen Care Bangladesh places a strong emphasis on health education and awareness. They conduct educational programs and workshops to empower individuals with knowledge about proper care and management of their own health as well as the health of their pets and animals. These initiatives promote responsible pet ownership and encourage the community to take proactive measures to prevent diseases and promote well-being.",
-
-          "Overall, Citizen Care Bangladesh is committed to providing comprehensive healthcare services for both humans and animals. Their dedicated team of professionals works tirelessly to ensure that individuals and their beloved pets receive the highest standard of care and treatment. With a focus on compassion, expertise, and education, Citizen Care Bangladesh aims to make a positive impact on the health and well-being of the community."
-        ]
-      }
-    ]
+    "id": "5",
+    "text": "Medicine & Medical Device",
+    "miniText": "At your home",
+    "image": "/images/services-2/MEDICINE-01.jpg"
+  },
+  {
+    "id": "6",
+    "text": "Health Tourism",
+    "miniText": "At your home",
+    "image": "/images/services-2/Health tourism-01.jpg"
+  },
+  {
+    "id": "7",
+    "text": "Health Guide",
+    "miniText": "At your home",
+    "image": "/images/services-2/HEALTH GUIDE-01.jpg"
+  },
+  {
+    "id": "8",
+    "text": "Telemedicine / E-Medical Consultancy",
+    "miniText": "At your home",
+    "image": "/images/services-2/nurse box-01.jpg"
   }
 ]

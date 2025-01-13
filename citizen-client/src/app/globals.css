@@ -43,8 +43,11 @@ div {
 .dropdown_link a {
   font-weight: 300 !important;
 }
+.dropdown_link:hover {
+  background-color: #39bcbc !important;
+  color: white !important;
+}
 .dropdown_link a:hover {
-  background-color: #39bcbc;
   color: white !important;
 }
 .dropdown_text:hover {

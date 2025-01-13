@@ -1,3 +1,4 @@
+"use client";
 import { useState, useRef } from "react";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import YouTube from "react-youtube";
