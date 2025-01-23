@@ -6,87 +6,99 @@ import { GiMedicines } from "react-icons/gi";
 export const cardData = [
   {
     id: 1,
-    text: "লয়্যাল মেম্বার হয়ে ঘরে বসে নার্সিং সেবা",
-    miniText: "মাত্র ১৫০ টাকায়",
+    text: "লয়্যাল মেম্বার হয়ে ঘরে বসে স্বাস্থ্য সেবা নিন",
+    miniText: "HEALTH CARE AT YOUR HOME",
     price: 150,
     image: "/images/services-2/HELTH CARE-at-01.jpg",
+    banner: "/images/banner/HELTH-CARE-01-01.jpg",
+
     icon2: <IoHomeOutline className="w-10 h-10 text-[#3cb9ba]" />,
     content: (
       <div>
-        {" "}
         <h2 className="text-lg mb-4">
-          <span className="text-[#3abbba] font-bold">
-            Citizen Care Bangladesh-
-          </span>{" "}
-          এর <span className="text-pink-500 font-bold">লয়্যাল মেম্বার</span>{" "}
-          হয়ে ঘরে বসে <b>নার্সিং সেবা, মাত্র ১৫০ টাকা।</b>
+          Citizen Care Bangladesh- এর{" "}
+          <span className="text-pink-500 font-bold">লয়্যাল মেম্বার</span> হয়ে
+          ডাক্তার, নিউট্রিশনিস্ট ও নার্সের সশরীরে উপস্থিতিতে ঘরে বসে{" "}
+          <b>স্বাস্থ্য সেবা নিন।</b>
         </h2>
         <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
-          Citizen Care Bangladesh- এর{" "}
-          <span className="text-[#3abbba] font-bold">লয়্যাল মেম্বার</span> হয়ে
-          আপনি ঘরে বসেই রেজিস্টার্ড অভিজ্ঞ নার্সের মাধ্যমে physical Vital Signs
-          মনিটরিং করতে পারবেন। এটি একটি দারুণ সুযোগ, বিশেষ করে যাদের পরিবারের
-          বয়স্ক সদস্য রয়েছেন, দীর্ঘ মেয়াদে ঔষধ সেবন করতে হয় এবং একজন সুস্থ
-          মানুষ তার সুস্বাস্থ্যের জন্য এবং অসুস্থতার ঝুঁকি এড়াতে নিজেদের বাসায়
-          বসে প্রাথমিক স্বাস্থ্যসেবা নিতে পারেন।
-        </p>
-        <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
-          আসুন নার্সের সেবা সম্পর্কে আরও বিস্তারিত জেনে নেওয়া যাক:
+          আপনি কেন <span className="text-[#3abbba] font-bold">CCB</span> লয়্যাল
+          মেম্বার হবেন? কি কি সুবিধা পাবেন?
         </p>
         <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
           <li>
             <span className="text-pink-500 font-bold">
-              রেজিস্টার্ড অভিজ্ঞ নার্স:
+              রেজিস্টার্ড অভিজ্ঞ MBBS ডাক্তার:
             </span>{" "}
-            এই সেবাটি আপনাকে রেজিস্টার্ড এবং অভিজ্ঞ নার্সের মাধ্যমে সরবরাহ করা
-            হয়। তাই আপনি নিশ্চিন্ত থাকতে পারেন যে আপনি সর্বোত্তম সেবা পাচ্ছেন।
+            প্রতি ৩ মাসে ১ বার বাসায় গিয়ে স্বাস্থ্যসেবা দিবেন এবং প্রয়োজনে
+            টেলিমেডিসিন সেবা। <br />
+            (ভিজিট মাত্র ২০০ টাকা)
           </li>
           <li>
-            <span className="text-pink-500 font-bold">ঘরে বসে সেবা:</span>{" "}
-            আপনাকে হাসপাতালে বা কষ্ট করে বাহিরে যাওয়ার প্রয়োজন নেই। নার্স
-            আপনার বাড়িতে এসে নার্সিং সেবা প্রদান করবেন।
+            <span className="text-pink-500 font-bold">
+              অভিজ্ঞ নিউট্রিশনিস্টের পরামর্শ:
+            </span>{" "}
+            প্রতি মাসে ১ বার আপনার বাসায় গিয়ে আপনার আদর্শ ডায়েট চার্ট প্রদান সহ
+            প্রয়োজনীয় নিউট্রিশনাল পরামর্শ প্রদান করবেন। <br />
+            (ভিজিট মাত্র ২০০ টাকা)
           </li>
           <li>
-            <span className="text-pink-500 font-bold">স্বল্প খরচে:</span> মাত্র
-            ১৫০ টাকায় আপনি একবারের জন্য নার্সের সেবা নিতে পারবেন। এটি খুবই
-            সাশ্রয়ী মূল্যের সেবা।
-          </li>
-          <li>
-            <span className="text-pink-500 font-bold">সুবিধাজনক:</span> আপনার
-            জন্য একটি সময়সূচি নির্ধারণ করা হবে এবং নার্স নির্ধারিত সময়ে আপনার
-            বাড়িতে আসবেন।
-          </li>
-          <li>
-            <span className="text-pink-500 font-bold">হাইজেনিক মেইন্টেন:</span>{" "}
-            এটি সবচেয়ে গুরুত্বপূর্ণ। সেবা প্রদানের পূর্বে হাত ধুয়ে পরিষ্কার
-            করা, হ্যান্ড গ্লাভস ব্যবহার, মাস্ক ব্যবহার করে সেবা প্রদান করে
-            থাকেন।
+            <span className="text-pink-500 font-bold">
+              অভিজ্ঞ রেজিস্টার্ড নার্স:
+            </span>{" "}
+            প্রতি সপ্তাহে ১ বার এবং প্রতি মাসে সর্বোচ্চ ২-৪ বার বাসায় গিয়ে Vital
+            Signs মনিটরিং করে হেলথ রেকর্ড বুকে লিপিবদ্ধ করে রাখবেন। <br />
+            (ভিজিট মাত্র ১৫০ টাকা)
           </li>
         </ul>
-        <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
-          কোন ধরনের সেবা পাওয়া যায়?
+        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+          এছাড়াও আমাদের লয়্যাল মেম্বার হলে আপনি পাচ্ছেন:
         </p>
         <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
-          <li>ব্লাড প্রেসার (রক্তচাপ) মনিটরিং</li>
-          <li>ডায়াবেটিস টেস্ট</li>
-          <li>ব্লাড অক্সিজেন স্যাচুরেশন পরিমাপ</li>
-          <li>বডি ওয়েট মেজারমেন্ট</li>
-          <li>বডি মাস ইনডেক্স (BMI)</li>
-          <li>রেসপিরেটরি রেট মনিটরিং</li>
-          <li>পালস রিডিং</li>
-          <li>বডি টেম্পারেচার মনিটরিং</li>
+          <li>CCB নমিনেটেড হাসপাতাল ও ডায়াগনস্টিক সেন্টারে বিশেষ ডিসকাউন্ট।</li>
+          <li>ডেলিভারি চার্জ ছাড়া মেডিসিন ক্রয়ের সুবিধা।</li>
+          <li>দেশে-বিদেশে হেলথ গাইডের সুবিধা।</li>
+          <li>পাবলিক হেলথ বিশেষজ্ঞের বিশেষ কনসালটেন্সি।</li>
+          <li>হেলথ ট্যুরিজম।</li>
+          <li>ইমার্জেন্সি প্রয়োজনে এয়ার অ্যাম্বুলেন্স।</li>
+          <li>
+            ঘরে বসে সাশ্রয়ী মূল্য প্যাকেজ ভিত্তিক প্রয়োজনীয় মেডিক্যাল টেস্ট।
+          </li>
         </ul>
         <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
-          এ ছাড়াও রোগীর প্রেসক্রিপশন অনুযায়ী নিয়মিত সঠিক সময় ঔষধ সেবন করার বিষয়ে
-          অবগত করি। কোন অসাবধানতার কারণে মেডিসিনের ডোজ চেইঞ্জ হয়ে যাচ্ছে কিনা সে
-          বিষয়ে সতর্ক থাকার ও সঠিক মেডিসিন সেবন করা সহ শরীর চর্চা, খাদ্য গ্রহনের
-          নিয়ম মেনে চলার বিষয়ে অবগত করি।
+          আপনিও সিটিজেন কেয়ার বাংলাদেশ এর{" "}
+          <span className="text-[#3abbba] font-bold">লয়্যাল মেম্বার</span> হয়ে
+          নিজেকে সুস্থ রাখতে আরো মনযোগী হোন, ডাক্তার, নিউট্রিশনিস্ট, নার্সের
+          সেবা নিন এবং স্বাস্থ্য ঝুঁকি প্রতিরোধে সচেষ্ট থাকুন।
+        </p>
+        <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
+          লয়্যাল মেম্বার ফি:
+        </p>
+        <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
+          <li>একজনের জন্য বাৎসরিক ২৫০০ টাকা।</li>
+          <li>ফ্যামিলির জন্য বাৎসরিক ৪৫০০ টাকা।</li>
+        </ul>
+        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+          সিটিজেন কেয়ার বাংলাদেশের লয়্যাল মেম্বার হতে যোগাযোগ করুন:
+          <br />
+          <b>কল সেন্টার:</b> ০১৮৯৬-৫১১০২০, ০২৪১০৬১৬১৬ <br />
+          <b>WhatsApp:</b> ০১৮৯৪-৬৭১৮৭৫ <br />
+          <b>Website:</b>{" "}
+          <a href="https://citizencarebd.com" className="text-[#3abbba]">
+            citizencarebd.com
+          </a>{" "}
+          <br />
+          <b>Facebook:</b>{" "}
+          <a
+            href="https://www.facebook.com/Citizencarebd"
+            className="text-[#3abbba]"
+          >
+            facebook.com/Citizencarebd
+          </a>
         </p>
         <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
-          আপনিও সিটিজেন কেয়ার বাংলাদেশ এর{" "}
-          <span className="text-[#3abbba] font-bold">লয়্যাল মেম্বার</span> হয়ে
-          নিজেকে সুস্থ রাখতে আরোও মনযোগী হোন, ঘরে বসে নার্সিং সেবা নিন,
-          স্বাস্থ্য ঝুঁকি প্রতিরোধে সচেষ্ট থাকুন।
+          এই অফারের শর্তাবলী সম্পর্কে ভালো করে জেনে নিন। <br />
+          আপনার স্বাস্থ্য আপনার হাতে, {`"সিটিজেন কেয়ার বাংলাদেশ আপনার সাথে"`}!
         </p>
       </div>
     ),
@@ -94,8 +106,10 @@ export const cardData = [
   {
     id: 2,
     text: "লয়্যাল মেম্বার হয়ে ঘরে বসে MBBS ডাক্তারের সেবা নিন",
-    miniText: "মাত্র ২০০ টাকায়",
+    miniText: "ভিজিট মাত্র ২০০ টাকা",
     image: "/images/services-2/family-01.jpg",
+    banner: "/images/banner/JAHID-01.jpg",
+
     icon2: <FaUserDoctor className="w-10 h-10 text-[#3cb9ba]" />,
     content: (
       <div>
@@ -190,8 +204,10 @@ export const cardData = [
   {
     id: 3,
     text: " ঘরে বসে অভিজ্ঞ নিউট্রিশনিস্ট এর পরামর্শ নিন",
-    miniText: "নিউট্রিশনিস্টের পরামর্শ: সুস্থ জীবনের চাবিকাঠি মাত্র ২০০ টাকায়",
+    miniText: "ভিজিট মাত্র ২০০ টাকা",
     image: "/images/services-2/NUTRI-BOXe-box-01.jpg",
+    banner: "/images/banner/niutri-01.jpg",
+
     icon2: <FaAppleAlt className="w-10 h-10 text-[#3cb9ba]" />,
     content: (
       <div>
@@ -288,10 +304,90 @@ export const cardData = [
   },
   {
     id: 4,
-    text: "Health Check",
-    miniText: "At your home",
-    image: "/images/services-2/chekup-01-01.jpg",
-    icon: "/images/check.png",
+    text: "Telemedicine / E-Medical Consultancy",
+    miniText: "ভিজিট মাত্র ২০০ টাকা",
+    image: "/images/services-2/nurse box-01.jpg",
+    banner: "/images/banner/nurse-01.jpg",
+    icon: "/images/e-medical.png",
+    content: (
+      <div>
+        {" "}
+        <h2 className="text-lg mb-4">
+          <span className="text-[#3abbba] font-bold">
+            Citizen Care Bangladesh-
+          </span>{" "}
+          এর <span className="text-pink-500 font-bold">লয়্যাল মেম্বার</span>{" "}
+          হয়ে ঘরে বসে <b>নার্সিং সেবা, মাত্র ১৫০ টাকা।</b>
+        </h2>
+        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+          Citizen Care Bangladesh- এর{" "}
+          <span className="text-[#3abbba] font-bold">লয়্যাল মেম্বার</span> হয়ে
+          আপনি ঘরে বসেই রেজিস্টার্ড অভিজ্ঞ নার্সের মাধ্যমে physical Vital Signs
+          মনিটরিং করতে পারবেন। এটি একটি দারুণ সুযোগ, বিশেষ করে যাদের পরিবারের
+          বয়স্ক সদস্য রয়েছেন, দীর্ঘ মেয়াদে ঔষধ সেবন করতে হয় এবং একজন সুস্থ
+          মানুষ তার সুস্বাস্থ্যের জন্য এবং অসুস্থতার ঝুঁকি এড়াতে নিজেদের বাসায়
+          বসে প্রাথমিক স্বাস্থ্যসেবা নিতে পারেন।
+        </p>
+        <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
+          আসুন নার্সের সেবা সম্পর্কে আরও বিস্তারিত জেনে নেওয়া যাক:
+        </p>
+        <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
+          <li>
+            <span className="text-pink-500 font-bold">
+              রেজিস্টার্ড অভিজ্ঞ নার্স:
+            </span>{" "}
+            এই সেবাটি আপনাকে রেজিস্টার্ড এবং অভিজ্ঞ নার্সের মাধ্যমে সরবরাহ করা
+            হয়। তাই আপনি নিশ্চিন্ত থাকতে পারেন যে আপনি সর্বোত্তম সেবা পাচ্ছেন।
+          </li>
+          <li>
+            <span className="text-pink-500 font-bold">ঘরে বসে সেবা:</span>{" "}
+            আপনাকে হাসপাতালে বা কষ্ট করে বাহিরে যাওয়ার প্রয়োজন নেই। নার্স
+            আপনার বাড়িতে এসে নার্সিং সেবা প্রদান করবেন।
+          </li>
+          <li>
+            <span className="text-pink-500 font-bold">স্বল্প খরচে:</span> মাত্র
+            ১৫০ টাকায় আপনি একবারের জন্য নার্সের সেবা নিতে পারবেন। এটি খুবই
+            সাশ্রয়ী মূল্যের সেবা।
+          </li>
+          <li>
+            <span className="text-pink-500 font-bold">সুবিধাজনক:</span> আপনার
+            জন্য একটি সময়সূচি নির্ধারণ করা হবে এবং নার্স নির্ধারিত সময়ে আপনার
+            বাড়িতে আসবেন।
+          </li>
+          <li>
+            <span className="text-pink-500 font-bold">হাইজেনিক মেইন্টেন:</span>{" "}
+            এটি সবচেয়ে গুরুত্বপূর্ণ। সেবা প্রদানের পূর্বে হাত ধুয়ে পরিষ্কার
+            করা, হ্যান্ড গ্লাভস ব্যবহার, মাস্ক ব্যবহার করে সেবা প্রদান করে
+            থাকেন।
+          </li>
+        </ul>
+        <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
+          কোন ধরনের সেবা পাওয়া যায়?
+        </p>
+        <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
+          <li>ব্লাড প্রেসার (রক্তচাপ) মনিটরিং</li>
+          <li>ডায়াবেটিস টেস্ট</li>
+          <li>ব্লাড অক্সিজেন স্যাচুরেশন পরিমাপ</li>
+          <li>বডি ওয়েট মেজারমেন্ট</li>
+          <li>বডি মাস ইনডেক্স (BMI)</li>
+          <li>রেসপিরেটরি রেট মনিটরিং</li>
+          <li>পালস রিডিং</li>
+          <li>বডি টেম্পারেচার মনিটরিং</li>
+        </ul>
+        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+          এ ছাড়াও রোগীর প্রেসক্রিপশন অনুযায়ী নিয়মিত সঠিক সময় ঔষধ সেবন করার বিষয়ে
+          অবগত করি। কোন অসাবধানতার কারণে মেডিসিনের ডোজ চেইঞ্জ হয়ে যাচ্ছে কিনা সে
+          বিষয়ে সতর্ক থাকার ও সঠিক মেডিসিন সেবন করা সহ শরীর চর্চা, খাদ্য গ্রহনের
+          নিয়ম মেনে চলার বিষয়ে অবগত করি।
+        </p>
+        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+          আপনিও সিটিজেন কেয়ার বাংলাদেশ এর{" "}
+          <span className="text-[#3abbba] font-bold">লয়্যাল মেম্বার</span> হয়ে
+          নিজেকে সুস্থ রাখতে আরোও মনযোগী হোন, ঘরে বসে নার্সিং সেবা নিন,
+          স্বাস্থ্য ঝুঁকি প্রতিরোধে সচেষ্ট থাকুন।
+        </p>
+      </div>
+    ),
   },
   {
     id: 5,
@@ -314,11 +410,12 @@ export const cardData = [
     image: "/images/services-2/HEALTH GUIDE-01.jpg",
     icon: "/images/health-guide.png",
   },
+
   {
     id: 8,
-    text: "Telemedicine / E-Medical Consultancy",
+    text: "Health Check",
     miniText: "At your home",
-    image: "/images/services-2/nurse box-01.jpg",
-    icon: "/images/e-medical.png",
+    image: "/images/services-2/chekup-01-01.jpg",
+    icon: "/images/check.png",
   },
 ];

@@ -30,13 +30,7 @@ const HeroSlider = () => {
         {images.map((image, index) => (
           <SplideSlide key={index}>
             <div className="relative w-screen h-screen sm:hidden md:block">
-              <Image
-                src={image}
-                alt={`Slide ${index + 1}`}
-                fill
-                className="md:object-cover sm:object-contain"
-                priority
-              />
+              <Image src={image} alt={`Slide ${index + 1}`} fill priority />
               {/* Overlay */}
               <div className="absolute inset-0 bg-black bg-opacity-50"></div>
             </div>
@@ -72,11 +66,11 @@ const HeroSlider = () => {
         </div>
 
         {/* Right-Aligned YouTube Video */}
-        <div className="w-full md:w-1/2">
+        {/* <div className="w-full md:w-1/2">
           <div className="relative w-full h-64 md:h-96">
             <NoticeBoard />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

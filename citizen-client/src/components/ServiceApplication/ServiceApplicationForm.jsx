@@ -49,7 +49,7 @@ const ServiceApplicationForm = () => {
     <>
       <div className="relative w-full h-[20vh] md:h-72 ">
         <Image
-          src={"/images/services/service-10-taka-10.png"}
+          src={"/images/banner/HELTH-CARE-01-01.jpg"}
           alt={`About Image`}
           layout="fill"
           className="w-full h-full md:object-cover sm:object-contain"
@@ -57,11 +57,8 @@ const ServiceApplicationForm = () => {
         />
       </div>
       <div className="custom-container">
-        <h1 className="md:text-5xl sm:text-2xl font-semibold mb-4 text-black rounded-lg mt-8">
-          10-takai-shastho-sheba
-        </h1>
         {/* Breadcrumb */}
-        <div className="flex items-center space-x-2 text-gray-500 mb-12">
+        {/* <div className="flex items-center space-x-2 text-gray-500 mb-12">
           <Link href="/" className="flex items-center space-x-1 text-teal-600">
             <MdHome className="text-xl" />
             <span className="uppercase text-sm">Home</span>
@@ -70,16 +67,18 @@ const ServiceApplicationForm = () => {
           <span className="font-medium text-[#39bcbc] uppercase text-sm">
             10-takai-shastho-sheba
           </span>
-        </div>
+        </div> */}
         {/* Application Form */}
-        <div className=" mb-10 md:p-20 sm:p-14 xs:py-10  shadow-lg rounded">
-          <h2 className="text-center">Registration Form</h2>
+        <div className="mb-10 md:p-20 sm:p-0 sm:py-10 shadow-lg rounded">
+          <h2 className="text-center text-2xl font-bold mb-6">
+            Registration Form
+          </h2>
           <form
             onSubmit={handleSubmit}
-            className="grid grid-cols-1 gap-3 mx-5 md:mx-48"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 mx-5 md:mx-20"
           >
             <div>
-              <label className="block text-sm font-medium text-gray-700 ">
+              <label className="block text-sm font-medium text-gray-700">
                 Name
               </label>
               <input
@@ -99,14 +98,14 @@ const ServiceApplicationForm = () => {
                 type="text"
                 className="mt-1 block w-full h-[50px] px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 required
-                placeholder="Conatact Number"
+                placeholder="Contact Number"
                 name="mobileNumber"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Email
+                Email (Optional)
               </label>
               <input
                 type="email"
@@ -116,6 +115,7 @@ const ServiceApplicationForm = () => {
                 name="email"
               />
             </div>
+
             <div>
               <label className="block text-sm font-medium text-gray-700">
                 Address
@@ -129,13 +129,76 @@ const ServiceApplicationForm = () => {
               />
             </div>
 
-            <button
-              type="submit"
-              className="w-full bg-[#2a7d7d] text-white py-2 px-4 rounded-md shadow-sm hover:bg-[#00a47e] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-            >
-              {/* {loading ? "Submitting..." : "Submit"} */}
-              Registration
-            </button>
+            <div className="md:col-span-2">
+              <label className="block text-sm font-medium text-gray-700">
+                লয়্যাল মেম্বার ফি (Choose Any One)
+              </label>
+              <ul className="list-style-none ml-4 space-y-2 text-sm text-gray-700 mt-2">
+                <li>
+                  <label>
+                    <input
+                      type="radio"
+                      name="membershipType"
+                      value="individual"
+                      required
+                    />
+                    <span className="ml-2">একজনের জন্য বাৎসরিক ২৫০০ টাকা।</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input
+                      type="radio"
+                      name="membershipType"
+                      value="family"
+                      required
+                    />
+                    <span className="ml-2">
+                      ফ্যামিলির জন্য বাৎসরিক ৪৫০০ টাকা।
+                    </span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+
+            <div className="md:col-span-2">
+              <label className="block text-sm font-medium text-gray-700">
+                Payment Type
+              </label>
+              <ul className="list-style-none ml-4 space-y-2 text-sm text-gray-700 mt-2">
+                <li>
+                  <label>
+                    <input
+                      type="radio"
+                      name="paymentType"
+                      value="bkash"
+                      required
+                    />
+                    <span className="ml-2">Bkash</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input
+                      type="radio"
+                      name="paymentType"
+                      value="Cash"
+                      required
+                    />
+                    <span className="ml-2">Cash</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+
+            <div className="md:col-span-2">
+              <button
+                type="submit"
+                className="w-full bg-[#2a7d7d] text-white py-2 px-4 rounded-md shadow-sm hover:bg-[#00a47e] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Registration
+              </button>
+            </div>
           </form>
         </div>
         <Toaster

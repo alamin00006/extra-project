@@ -1,0 +1,27 @@
+import mongoose, { Types } from "mongoose";
+
+const paymentSchema = new mongoose.Schema(
+  {
+    user: {
+      type: Types.ObjectId,
+      ref: "User",
+    },
+    amount: {
+      type: Number,
+    },
+    trxID: {
+      type: String,
+    },
+    paymentID: {
+      type: String,
+    },
+    date: {
+      type: String,
+    },
+  },
+  { timestamps: true }
+);
+
+const Payment2 = mongoose.model("Payment2", paymentSchema);
+
+export default Payment2;
