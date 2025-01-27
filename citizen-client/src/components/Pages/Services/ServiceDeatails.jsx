@@ -24,10 +24,10 @@ const ServiceDeatails = ({ params }) => {
     <div>
       <div className="relative w-full h-[20vh] md:h-72 rounded-lg">
         <Image
-          src={menuItem.image || ""}
+          src={menuItem.banner || menuItem?.image || ""}
           alt={menuItem.text}
           layout="fill"
-          className="w-screen h-full md:object-contain sm:object-contain top-0"
+          // className="w-screen h-full md:object-contain sm:object-contain top-0"
           priority // Optional: use priority for above-the-fold images
         />
       </div>
