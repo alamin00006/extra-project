@@ -34,7 +34,7 @@ const HeroSlider = () => {
                 src={image}
                 alt={`Slide ${index + 1}`}
                 fill
-                className="md:object-cover sm:object-contain"
+                // className="md:object-cover sm:object-contain"
                 priority
               />
               {/* Overlay */}
