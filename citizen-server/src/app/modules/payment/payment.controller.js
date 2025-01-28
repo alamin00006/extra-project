@@ -1,22 +1,13 @@
+import mongoose from "mongoose";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import { getValue, setValue } from "node-global-storage";
-import config from "../config/index.js";
-import OrderModel from "../models/Order.js";
-import mongoose from "mongoose"; // MongoDB session handling
-import { generateBookingId } from "../utils/generateBookingId.js";
-import { bookingSms } from "../SMS/BookingSms.js";
-import RentRoom from "../models/RentRoom.js";
-import Transaction from "../models/Transaction.js";
-import User from "../models/User.js";
+import Member from "../membersReg/member.model.js";
+import Payment from "./payment.model.js";
 
-import {
-  createOrderByCash,
-  createOrderByManualBkash,
-} from "../services/order.service.js";
-
-import sendResponse from "../shared/sendResponse.js";
-import Payment2 from "./payment.model.js";
+import User from "../user/user.model.js";
+import config from "../../../config/index.js";
+import { CCBSms } from "../../../sms/CCBSMS.js";
 
 // Helper to prepare bkash headers
 const bkashHeaders = async () => {
@@ -30,61 +21,46 @@ const bkashHeaders = async () => {
 
 // Create Payment Method
 const paymentCreate = async (req, res) => {
-  const {
-    amount,
-    selectMethod,
-    dataForBooking: dataForRegistration,
-  } = req.body;
+  const { amount, selectMethod, ...dataForRegistration } = req.body;
 
   // Find User
   const findUser = await User.findOne({
-    _id: dataForRegistration?.userId,
+    _id: dataForRegistration?.user,
   });
 
   if (!findUser) {
-    return new Error("Sorry! User Not Found"); //   User Not Exist
+    return new Error("Sorry! User Not Found");
   }
-  // If Manual Payment
-  if (selectMethod === "cash") {
-    const result = await createOrderByManualBkash(dataForRegistration);
 
-    sendResponse(res, {
-      statusCode: 200,
-      success: true,
-      data: result,
-      message:
-        "Thank You! Your Booking Successfully Done, We will contact you very soon.",
-    });
-  } else {
-    setValue("dataForBooking", dataForRegistration);
+  setValue("dataForBooking", dataForRegistration);
 
-    try {
-      const { data } = await axios.post(
-        config.bkash_create_payment_url,
-        {
-          mode: "0011",
-          payerReference: " ",
-          callbackURL: `${config.server_url}/bkash/payment/callback`,
-          amount: amount,
-          currency: "BDT",
-          intent: "sale",
-          merchantInvoiceNumber: "Inv" + uuidv4().substring(0, 5),
-        },
-        {
-          headers: await bkashHeaders(),
-        }
-      );
+  try {
+    const { data } = await axios.post(
+      config.bkash_create_payment_url,
+      {
+        mode: "0011",
+        payerReference: " ",
+        callbackURL: `${config.server_url}/bkash/payment/callback`,
+        amount: amount,
+        currency: "BDT",
+        intent: "sale",
+        merchantInvoiceNumber: "Inv" + uuidv4().substring(0, 5),
+      },
+      {
+        headers: await bkashHeaders(),
+      }
+    );
 
-      return res.status(200).json({ bkashURL: data.bkashURL });
-    } catch (error) {
-      return res.status(401).json({ error: error.message });
-    }
+    return res.status(200).json({ bkashURL: data.bkashURL });
+  } catch (error) {
+    return res.status(401).json({ error: error.message });
   }
 };
 
 // Callback Method (After Payment Confirmation)
 const callBack = async (req, res) => {
   const { paymentID, status } = req.query;
+  console.log(status);
   const dataForRegistration = getValue("dataForRegistration");
 
   if (status === "cancel" || status === "failure") {
@@ -108,30 +84,30 @@ const callBack = async (req, res) => {
 
       if (data && data.statusCode === "0000") {
         // Start Create Booking
-        const generateId = await generateBookingId();
-
-        dataForRegistration.regId = generateId;
+        const memberId = await generateMemberId();
+        dataForRegistration.id = memberId;
         dataForRegistration.status = "Approved";
 
-        const orderData = new OrderModel({
+        const memberData = new Member({
           ...dataForRegistration,
         });
 
-        const result = await orderData.save({ session });
+        const result = await memberData.save({ session });
+
         // End Create Booking
 
         // Start Create user transaction
-        const newTransaction = new Payment2({
-          orderId: result?._id,
+        const newTransaction = new Payment({
+          member: result?._id,
 
           paymentDate: new Date(),
-          totalAmount: dataForRegistration?.bookingInfo?.totalAmount,
+          amount: parseInt(data?.amount),
 
           paymentType: "bkash",
-          receivedTk: parseInt(data?.amount),
+
           paymentNumber: data?.customerMsisdn,
-          transactionId: data.trxID,
-          userId: dataForRegistration?.userId,
+          trxID: data.trxID,
+          user: dataForRegistration?.user,
           //   userPhone: dataForRegistration?.phone,
           //   userName: dataForRegistration?.fullName,
           acceptableStatus: "Accepted",
@@ -140,9 +116,9 @@ const callBack = async (req, res) => {
         await newTransaction.save({ session });
 
         // Phone SMS for booking
-        const bookingMessage = `/api/smsapi?api_key=${config.sms_api_key}&type=text&number=88${dataForRegistration?.phone}&senderid=8809617617196&message=Your%20booking%20with%20Project%20Second%20Home%20is%20Confirmed!%20Booking%20ID%3A%23${dataForRegistration?.bookingId}.%20Check-in%3A%${dataForRegistration?.bookingInfo?.rentDate?.bookStartDate}%2C%20Check-out%3A%${dataForRegistration?.bookingInfo?.rentDate?.bookEndDate}.%20Call%20Us%3A%2001647647404.%20Enjoy%20your%20stay!%20-%20PSH`;
+        const message = `/api/smsapi?api_key=${config.sms_api_key}&type=text&number=88${dataForRegistration?.phone}&senderid=8809617617196&message=Your%20booking%20with%20Project%20Second%20Home%20is%20Confirmed!%20Booking%20ID%3A%23${dataForRegistration?.bookingId}.%20Check-in%3A%${dataForRegistration?.bookingInfo?.rentDate?.bookStartDate}%2C%20Check-out%3A%${dataForRegistration?.bookingInfo?.rentDate?.bookEndDate}.%20Call%20Us%3A%2001647647404.%20Enjoy%20your%20stay!%20-%20PSH`;
 
-        await bookingSms(bookingMessage);
+        await CCBSms(message);
 
         // Commit the transaction if both operations are successful
         await session.commitTransaction();
@@ -212,7 +188,7 @@ const callBack = async (req, res) => {
 //   }
 // };
 
-export const PaymentController2 = {
+export const PaymentController = {
   paymentCreate,
   callBack,
 };

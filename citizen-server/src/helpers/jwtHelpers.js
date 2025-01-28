@@ -5,7 +5,7 @@ import config from "../config/index.js";
 const generateToken = (user) => {
   const payload = {
     userId: user._id,
-    email: user?.email,
+    phoneNumber: user?.phoneNumber,
     role: user.role,
   };
 

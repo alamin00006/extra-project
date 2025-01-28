@@ -1,53 +1,56 @@
 "use client";
 import { getBaseUrl } from "@/helpers/config/envConfig";
-import { useGetUserQuery } from "@/redux/api/authApi";
+import useUserData from "@/hooks/useUserData";
+// import { useGetUserQuery } from "@/redux/api/authApi";
 import axios from "axios";
-import Image from "next/image";
-import Link from "next/link";
+
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { MdHome } from "react-icons/md";
 
 const ServiceApplicationForm = () => {
   const [loading, setLoading] = useState(false);
-  const {
-    data: userData,
-    error: userError,
-    isLoading: userIsLoading,
-  } = useGetUserQuery();
+  const [memberFee, setMemberFee] = useState(2500);
 
+  const { userData, error: userError, loading: isLoadingUser } = useUserData();
+
+  console.log(memberFee);
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!memberFee) return toast.error("Please choice any member type");
     setLoading(true);
 
     const { name, mobileNumber, email, address } = e.target;
 
     const resgistrationData = {
+      amount: Number(memberFee),
+      user: userData?._id,
       name: name.value,
       mobileNumber: mobileNumber.value,
-      email: email.value,
+      email: email?.value,
       address: address.value,
+      paymentType: "Bkash",
+      selectMethod: "Bkash",
     };
 
     try {
       const { data } = await axios.post(
-        `${getBaseUrl()}/service-10taka`,
-        resgistrationData
+        `${getBaseUrl()}/bkash/payment/create`,
+        resgistrationData,
+        { withCredentials: true }
       );
-      toast.success(data?.message);
-    } catch (err) {
-      //   console.log(err);
-      toast.error(err?.response?.data?.message);
-    } finally {
-      setLoading(false);
+
+      window.location.href = data?.bkashURL;
+      // window.location.href = data.bkashURL;
+      // return data;
+    } catch (error) {
+      console.log(error);
     }
-    e.target.reset();
+    // e.target.reset();
   };
 
   return (
     <>
-      <div className="relative w-full h-[20vh] md:h-72 ">
+      {/* <div className="relative w-full h-[20vh] md:h-72 ">
         <Image
           src={"/images/banner/HELTH-CARE-01-01.jpg"}
           alt={`About Image`}
@@ -55,8 +58,8 @@ const ServiceApplicationForm = () => {
           className="w-full h-full md:object-cover sm:object-contain"
           priority // Optional: use priority for above-the-fold images
         />
-      </div>
-      <div className="custom-container">
+      </div> */}
+      <div className="custom-container mt-5">
         {/* Breadcrumb */}
         {/* <div className="flex items-center space-x-2 text-gray-500 mb-12">
           <Link href="/" className="flex items-center space-x-1 text-teal-600">
@@ -79,7 +82,7 @@ const ServiceApplicationForm = () => {
           >
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Name
+                Full Name
               </label>
               <input
                 type="text"
@@ -129,7 +132,7 @@ const ServiceApplicationForm = () => {
               />
             </div>
 
-            <div className="md:col-span-2">
+            <div>
               <label className="block text-sm font-medium text-gray-700">
                 লয়্যাল মেম্বার ফি (Choose Any One)
               </label>
@@ -139,8 +142,9 @@ const ServiceApplicationForm = () => {
                     <input
                       type="radio"
                       name="membershipType"
-                      value="individual"
-                      required
+                      value={2500}
+                      defaultChecked
+                      onChange={(e) => setMemberFee(e.target.value)}
                     />
                     <span className="ml-2">একজনের জন্য বাৎসরিক ২৫০০ টাকা।</span>
                   </label>
@@ -148,10 +152,10 @@ const ServiceApplicationForm = () => {
                 <li>
                   <label>
                     <input
+                      onChange={(e) => setMemberFee(e.target.value)}
                       type="radio"
                       name="membershipType"
-                      value="family"
-                      required
+                      value={4500}
                     />
                     <span className="ml-2">
                       ফ্যামিলির জন্য বাৎসরিক ৪৫০০ টাকা।
@@ -161,7 +165,7 @@ const ServiceApplicationForm = () => {
               </ul>
             </div>
 
-            <div className="md:col-span-2">
+            <div>
               <label className="block text-sm font-medium text-gray-700">
                 Payment Type
               </label>
@@ -173,11 +177,12 @@ const ServiceApplicationForm = () => {
                       name="paymentType"
                       value="bkash"
                       required
+                      defaultChecked
                     />
                     <span className="ml-2">Bkash</span>
                   </label>
                 </li>
-                <li>
+                {/* <li>
                   <label>
                     <input
                       type="radio"
@@ -187,7 +192,7 @@ const ServiceApplicationForm = () => {
                     />
                     <span className="ml-2">Cash</span>
                   </label>
-                </li>
+                </li> */}
               </ul>
             </div>
 

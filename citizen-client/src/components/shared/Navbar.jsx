@@ -11,6 +11,7 @@ import { removeUserInfo } from "@/helpers/utils/local-storage";
 import DropdownUser from "./DropdownUser";
 import { useGetUserQuery } from "@/redux/api/authApi";
 import { cardData } from "@/helpers/utils/serviceData";
+import useUserData from "@/hooks/useUserData";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -27,12 +28,6 @@ const Navbar = () => {
   // Check if the user is logged in
   const userLoggedIn = isLoggedIn();
 
-  const {
-    data: userData,
-    error: userError,
-    isLoading: userIsLoading,
-  } = useGetUserQuery();
-
   useEffect(() => {
     if (userLoggedIn) {
       setIsUser(true);
@@ -40,6 +35,12 @@ const Navbar = () => {
       setIsUser(false);
     }
   }, [userLoggedIn]);
+  // Get User
+  const {
+    userData,
+    error: userError,
+    loading: isLoadingUser,
+  } = useUserData(isUser);
 
   // Scroll event handler
   const handleScroll = () => {
@@ -72,6 +73,7 @@ const Navbar = () => {
     removeUserInfo(authKey);
     router.push("/");
     // setIsDropdownOpen(false);
+    window.location.reload();
   };
 
   return (

@@ -13,7 +13,7 @@ router.route("/refresh-token").post(UsersController.refreshToken);
 
 router.route("/login").post(UsersController.createLogin);
 
-router.route("/me").get(verifyToken, UsersController.getMe);
+router.route("/me").get(verifyToken, UsersController.getUserByPhone);
 
 router.route("/:userId").patch(UsersController.updateUser);
 

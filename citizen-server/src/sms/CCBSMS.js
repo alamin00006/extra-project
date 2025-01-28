@@ -3,7 +3,7 @@ import config from "../config/index.js";
 
 const { http } = pkg;
 
-export function otpSms(bookingMessage, method) {
+export function CCBSms(bookingMessage, method) {
   return new Promise((resolve, reject) => {
     var options = {
       method: method,

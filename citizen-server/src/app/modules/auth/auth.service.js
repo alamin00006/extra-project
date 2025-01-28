@@ -1,9 +1,10 @@
 import crypto from "crypto";
 import bcrypt from "bcryptjs";
 import httpStatus from "http-status";
-import { otpSms } from "../../../sms/otpSms.js";
+
 import User from "../user/user.model.js";
 import config from "../../../config/index.js";
+import { CCBSms } from "../../../sms/CCBSMS.js";
 
 const sendOtp = async (phoneNumber) => {
   const user = await User.findOne({ phoneNumber });
@@ -20,7 +21,7 @@ const sendOtp = async (phoneNumber) => {
 
   const bookingMessage = `/api/smsapi?api_key=${config.sms_api_key}&type=text&number=88${phoneNumber}&senderid=${config.sms_sender_id}&message=You%20have%20requested%20to%20reset%20your%20password%20for%20Sharikana.%20Your%20OTP%20is%20${otp}.%20If%20this%20wasn't%20you,%20please%20contact%20our%20support%20team%20immediately.%20Call%2001234567890`;
   const method = "POST";
-  await otpSms(bookingMessage, method);
+  await CCBSms(bookingMessage, method);
 };
 
 const verifyOtp = async (phoneNumber, otp) => {

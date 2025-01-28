@@ -11,7 +11,7 @@ const createUser = async (user) => {
   if (findUserWithPhone) {
     return {
       status: "fail",
-      message: "Sorry! Already Account Created with this Email or Phone number",
+      message: "Sorry! Already Account Created with Phone number",
     };
   }
 
@@ -19,8 +19,8 @@ const createUser = async (user) => {
 
   const userData = {
     id: id,
-    firstName: user.firstName,
-    lastName: user.lastName,
+    fullName: user.fullName,
+    // lastName: user.lastName,
     phoneNumber: user.phoneNumber,
     password: user.password,
   };
@@ -45,6 +45,7 @@ const createLogin = async (phoneNumber, password) => {
   }
 
   const user = await User.findOne({ phoneNumber });
+
   if (!user) {
     throw new Error("No account found with this Phone Number");
   }
@@ -55,12 +56,12 @@ const createLogin = async (phoneNumber, password) => {
   }
 
   const token = jwtHelpers.generateToken(user);
-  const refreshToken = jwtHelpers.generateRefreshToken(user);
+  // const refreshToken = jwtHelpers.generateRefreshToken(user);
   const { password: pwd, ...others } = user.toObject();
 
   await User.updateOne({ phoneNumber: phoneNumber }, { lastLogin: Date.now() });
 
-  return { user: others, token, refreshToken };
+  return { user: others, token };
 };
 
 const refreshToken = async (token) => {
@@ -96,27 +97,25 @@ const getAllUsers = async () => {
   return users;
 };
 
-// Get a user by ID
-const getUserById = async (userId) => {
-  try {
-    const user = await User.findById(userId);
-    if (!user) {
-      return {
-        status: "fail",
-        message: "User not found.",
-      };
-    }
-    return {
-      status: "success",
-      data: user,
-    };
-  } catch (error) {
-    return {
-      status: "error",
-      message: "An error occurred while fetching the user.",
-      error: error.message,
-    };
+// Get Single User
+const getUserByPhone = async (phoneNumber) => {
+  if (!phoneNumber) {
+    throw new ApiError(
+      httpStatus.httpStatus.NOT_FOUND,
+      "This phone number was not found."
+    );
   }
+
+  const user = await User.findOne({ phoneNumber });
+  if (!user) {
+    throw new ApiError(
+      httpStatus.httpStatus.NOT_FOUND,
+      "No account found with this phone number."
+    );
+  }
+
+  const { password: pwd, ...others } = user.toObject();
+  return others;
 };
 
 // Update a user
@@ -196,7 +195,7 @@ export const userService = {
   createUser,
   refreshToken,
   createLogin,
-  getUserById,
+  getUserByPhone,
   getAllUsers,
   updateUser,
 };

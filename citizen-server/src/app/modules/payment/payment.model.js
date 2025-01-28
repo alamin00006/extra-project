@@ -1,10 +1,15 @@
-import mongoose, { Types } from "mongoose";
+import mongoose from "mongoose";
+const { ObjectId } = mongoose.Schema.Types;
 
 const paymentSchema = new mongoose.Schema(
   {
     user: {
-      type: Types.ObjectId,
+      type: ObjectId,
       ref: "User",
+    },
+    member: {
+      type: ObjectId,
+      ref: "Member",
     },
     amount: {
       type: Number,
@@ -15,13 +20,19 @@ const paymentSchema = new mongoose.Schema(
     paymentID: {
       type: String,
     },
-    date: {
+    paymentNumber: {
       type: String,
+    },
+    paymentType: {
+      type: String,
+    },
+    paymentDate: {
+      type: Date,
     },
   },
   { timestamps: true }
 );
 
-const Payment2 = mongoose.model("Payment2", paymentSchema);
+const Payment = mongoose.model("Payment", paymentSchema);
 
-export default Payment2;
+export default Payment;

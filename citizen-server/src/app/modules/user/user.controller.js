@@ -7,12 +7,15 @@ import httpStatus from "http-status";
 import config from "../../../config/index.js";
 import catchAsync from "../../../shared/catchAsync.js";
 import sendResponse from "../../../shared/sendResponse.js";
-import { otpSms } from "../../../sms/otpSms.js";
+
+import { encrypt } from "../../../helpers/encrypt.js";
+import { CCBSms } from "../../../sms/CCBSMS.js";
 
 const createUser = catchAsync(async (req, res) => {
   const user = req.body;
 
   // create new user
+
   const result = await userService.createUser(user);
 
   if (result instanceof Error) {
@@ -76,25 +79,30 @@ const refreshToken = catchAsync(async (req, res) => {
   });
 });
 
-const getMe = async (req, res) => {
-  try {
-    const email = req?.user?.email;
+const getUserByPhone = catchAsync(async (req, res) => {
+  const phoneNumber = req?.user?.phoneNumber;
 
-    const user = await User.findOne({ email });
-    const { password: pwd, ...others } = user?.toObject();
+  // const randomToken = crypto.randomBytes(64).toString("hex"); // Use 32 bytes for a 64-character token
 
-    res.status(200).json({
-      status: "success",
-      data: others,
-    });
-  } catch (error) {
-    res.status(400).json({
-      status: "failed",
-      message: "Please Log in",
-      error: error.message,
-    });
-  }
-};
+  // console.log(randomToken);
+
+  // Call the service function
+  const userData = await userService.getUserByPhone(phoneNumber);
+
+  const encryptedData = encrypt(userData);
+
+  // console.log("Encrypted:", encryptedData);
+
+  // const decryptedData = decrypt(encryptedData);
+  // console.log("Decrypted:", decryptedData);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "get Success",
+    data: encryptedData,
+  });
+});
 
 const getAllUsers = catchAsync(async (req, res) => {
   const result = await userService.getAllUsers();
@@ -137,7 +145,8 @@ const sendOtp = async (req, res, next) => {
       const method = "POST";
       // Send SMS and wait for the response
       try {
-        await otpSms(bookingMessage, method);
+        await CCBSms(bookingMessage, method);
+
         res.status(200).json({ status: "success" });
       } catch (error) {
         return res.status(500).json({
@@ -159,8 +168,9 @@ export const UsersController = {
   createLogin,
   createUser,
   refreshToken,
-  getMe,
+
   getAllUsers,
   updateUser,
   sendOtp,
+  getUserByPhone,
 };

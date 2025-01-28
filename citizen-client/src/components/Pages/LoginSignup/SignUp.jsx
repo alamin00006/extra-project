@@ -19,7 +19,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
   const router = useRouter();
-  const [firstName, setFirstName] = useState("");
+  const [fullName, setFullName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
@@ -108,9 +108,9 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
 
     const otpData = {
       customerOtp: randomCode,
-      firstName: firstName,
-      lastName: lastName,
-      // email: userInfo.email,
+      fullName: fullName,
+      // lastName: lastName,
+      email: userInfo?.email,
       phoneNumber: phoneNumber,
       password: userInfo.password,
     };
@@ -162,17 +162,17 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
         <form onSubmit={handleSignUp} className="space-y-3">
           <div>
             <label className="block text-sm font-medium text-gray-700">
-              First Name
+              Full Name
             </label>
             <input
               type="text"
-              onChange={(e) => setFirstName(e.target.value)}
+              onChange={(e) => setFullName(e.target.value)}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:bg-white placeholder-gray-700 rounded-md shadow-sm  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               required
               placeholder="First Name"
             />
           </div>
-          <div>
+          {/* <div>
             <label className="block text-sm font-medium text-gray-700">
               Last Name
             </label>
@@ -183,7 +183,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
               required
               placeholder="Last Name"
             />
-          </div>
+          </div> */}
           {/* <div>
             <label className="block text-sm font-medium text-gray-700">
               Email

@@ -11,6 +11,21 @@ export default {
   sms_sender_id: process.env.SMS_SENDER_ID,
   sms_api_host: process.env.SMS_API_HOST_SITE,
   bcrypt_salt_rounds: process.env.BCRYPT_SALT_ROUNDS,
+  secretKey: process.env.secretKey,
+  api_key: process.env.API_KEY,
+  // Bkash Related
+  bkash_userName: process.env.BKASH_USERNAME,
+  bkash_password: process.env.BKASH_PASSWORD,
+  bkash_api_key: process.env.BKASH_API_KEY,
+  bkash_secret_key: process.env.BKASH_SECRET_KEY,
+  bkash_grant_token_url: process.env.bkash_grant_token_url,
+  bkash_refresh_token_url: process.env.bkash_refresh_token_url,
+  bkash_create_payment_url: process.env.bkash_create_payment_url,
+  bkash_execute_payment_url: process.env.bkash_execute_payment_url,
+  bkash_refund_transaction_url: process.env.bkash_refund_transaction_url,
+  server_url: process.env.server_site_url,
+  client_url: process.env.client_site_url,
+
   jwt: {
     secret: process.env.ACCESS_TOKEN_SECRET,
     refresh_secret: process.env.REFRESH_TOKEN_SECRET,

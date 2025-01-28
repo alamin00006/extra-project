@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+const { ObjectId } = mongoose.Schema.Types;
+
 // Schema Design
 const memberSchema = mongoose.Schema(
   {
@@ -6,6 +8,10 @@ const memberSchema = mongoose.Schema(
       type: String,
       required: true,
       unique: true,
+    },
+    user: {
+      type: ObjectId,
+      ref: "User",
     },
     name: {
       type: String,
@@ -15,12 +21,23 @@ const memberSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    // gender: {
-    //   type: String,
-    //   enum: ["Male", "Female"],
-    // },
+
+    email: {
+      type: String,
+      unique: [true, "This email already exists!"],
+      // validate: [validator.isEmail, "Provide a valid email"],
+      lowercase: true,
+      trim: true,
+    },
+
     address: {
       type: String,
+    },
+
+    status: {
+      type: String,
+      enum: ["Approved", "Pending", "Processing", "Canceled"],
+      default: "Pending",
     },
   },
   {
@@ -32,6 +49,6 @@ const memberSchema = mongoose.Schema(
 );
 
 // Model
-const SuperAdmin = mongoose.model("SuperAdmin", memberSchema);
+const Member = mongoose.model("Member", memberSchema);
 
-export default SuperAdmin;
+export default Member;

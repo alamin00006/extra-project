@@ -11,25 +11,25 @@ const userSchema = mongoose.Schema(
       // required: true,
       unique: true,
     },
-    firstName: {
+    fullName: {
       type: String,
       required: true,
     },
-    lastName: {
-      type: String,
-    },
+    // lastName: {
+    //   type: String,
+    // },
     phoneNumber: {
       type: String,
       unique: true,
     },
-    // email: {
-    //   type: String,
-    //   required: true,
-    //   unique: [true, "This email already exists!"],
-    //   validate: [validator.isEmail, "Provide a valid email"],
-    //   lowercase: true,
-    //   trim: true,
-    // },
+    email: {
+      type: String,
+      // required: true,
+      // unique: [true, "This email already exists!"],
+      // validate: [validator.isEmail, "Provide a valid email"],
+      lowercase: true,
+      trim: true,
+    },
     password: {
       type: String,
       required: true,
