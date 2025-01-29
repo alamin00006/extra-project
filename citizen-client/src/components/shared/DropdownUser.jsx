@@ -13,6 +13,7 @@ import {
 import ClickOutside from "../ClickOutSide/ClickOutSide";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 import { IoChevronDownSharp } from "react-icons/io5";
+import { CgProfile } from "react-icons/cg";
 
 const DropdownUser = ({ userData }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -28,19 +29,16 @@ const DropdownUser = ({ userData }) => {
     <ClickOutside onClick={() => setDropdownOpen(false)} className="relative">
       <Link
         onClick={() => setDropdownOpen(!dropdownOpen)}
-        className="flex items-center gap-2 no-underline"
+        className="flex items-center gap-1 no-underline"
         href="#"
       >
-        {/* <span className="block text-sm font-medium text-white dark:text-white">
-          {userData?.userData?.firstName}
-        </span> */}
         <div>
-          <p>{userData?.firstName}</p>
+          <CgProfile size={24} className="text-[#39bcbc]" />
         </div>
-        <div className="-mt-3">
+        <div className="">
           <button>
             <IoChevronDownSharp
-              size={18}
+              size={20}
               className={` transition-transform 
                   ${dropdownOpen ? "rotate-180" : ""}`}
             />

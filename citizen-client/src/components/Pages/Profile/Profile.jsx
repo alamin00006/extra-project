@@ -5,16 +5,12 @@ import { formatDate } from "@/helpers/utils/dateConvert";
 import { FaEdit } from "react-icons/fa";
 import { useGetUserQuery } from "@/redux/api/authApi";
 import Image from "next/image";
+import useUserData from "@/hooks/useUserData";
 
 const Profile = () => {
-  const {
-    data: userData,
-    error: userError,
-    isLoading: userIsLoading,
-  } = useGetUserQuery();
+  const { userData, error: userError, loading: isLoadingUser } = useUserData();
 
-  const firstName = userData?.firstName || "N/A";
-  const lastName = userData?.lastName || "N/A";
+  const fullName = userData?.fullName || "N/A";
 
   const mobileNumber = userData?.phoneNumber || "N/A";
   const personalDetails = userData?.personalDetails || {
@@ -33,7 +29,7 @@ const Profile = () => {
   };
 
   return (
-    <div className=" grid grid-cols-12 mb-10 gap-x-0 md:gap-5 mt-5">
+    <div className=" grid grid-cols-12 mb-20 gap-x-0 md:gap-5 mt-5 ">
       <div className="md:col-span-4 sm:col-span-12 xs:col-span-12">
         {" "}
         <div className="border flex justify-center p-5 w-[300px] h-[300px]">
@@ -58,18 +54,9 @@ const Profile = () => {
                 htmlFor="full-name"
                 className="block md:text-base sm:text-sm"
               >
-                First Name
+                Full Name
               </label>
-              <span className="text-base lg:text-lg mb-2">{firstName}</span>
-            </div>
-            <div>
-              <label
-                htmlFor="full-name"
-                className="block md:text-base sm:text-sm"
-              >
-                Last Name
-              </label>
-              <span className="text-base lg:text-lg mb-2">{lastName}</span>
+              <span className="text-base lg:text-lg mb-2">{fullName}</span>
             </div>
 
             <div>

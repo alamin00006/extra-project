@@ -1,8 +1,9 @@
 import httpStatus from "http-status";
-import User from "./user.model.js";
+
 import { generateUserId } from "./user.utils.js";
 import { jwtHelpers } from "../../../helpers/jwtHelpers.js";
 import config from "../../../config/index.js";
+import User from "./user.model.js";
 const createUser = async (user) => {
   const phoneNumber = user?.phoneNumber;
 
@@ -44,7 +45,7 @@ const createLogin = async (phoneNumber, password) => {
     throw new Error("Please provide Phone Number and password");
   }
 
-  const user = await User.findOne({ phoneNumber });
+  const user = await User.findOne({ phoneNumber: phoneNumber });
 
   if (!user) {
     throw new Error("No account found with this Phone Number");
@@ -56,6 +57,7 @@ const createLogin = async (phoneNumber, password) => {
   }
 
   const token = jwtHelpers.generateToken(user);
+
   // const refreshToken = jwtHelpers.generateRefreshToken(user);
   const { password: pwd, ...others } = user.toObject();
 

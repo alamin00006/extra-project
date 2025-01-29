@@ -13,7 +13,6 @@ const ServiceApplicationForm = () => {
 
   const { userData, error: userError, loading: isLoadingUser } = useUserData();
 
-  console.log(memberFee);
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!memberFee) return toast.error("Please choice any member type");

@@ -1,4 +1,7 @@
 import { toast } from "react-hot-toast";
+import { getFromLocalStorage } from "./local-storage";
+import axios from "axios";
+import { getBaseUrl } from "../config/envConfig";
 
 // phone Number Check
 export const phoneNumberCheck = (e, userInfo, setUserInfo, error, setError) => {
@@ -45,10 +48,22 @@ export const handleSubmit = async (e, userInfo, userLogin, authKey, router) => {
   };
 
   try {
-    const res = await userLogin(userData).unwrap();
-    if (res?.token) {
+    const accessToken = getFromLocalStorage(authKey);
+    // Set the headers
+    const headers = {
+      Authorization: `${accessToken}`,
+      "Content-Type": "application/json",
+      // "Content-Type": "multipart/form-data",
+    };
+    // const res = await userLogin(userData).unwrap();
+
+    const res = await axios.post(`${getBaseUrl()}/users/login`, userData, {
+      headers,
+    });
+
+    if (res?.data?.data?.token) {
       toast.success("Login Success");
-      localStorage.setItem(authKey, res.token);
+      localStorage.setItem(authKey, res?.data?.data?.token);
       router.back();
     } else {
       toast.error(
@@ -56,6 +71,7 @@ export const handleSubmit = async (e, userInfo, userLogin, authKey, router) => {
       );
     }
   } catch (error) {
+    console.log(error);
     toast.error(error?.response?.data?.message || "An error occurred");
   }
 };

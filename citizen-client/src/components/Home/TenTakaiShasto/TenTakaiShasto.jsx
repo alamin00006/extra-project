@@ -21,7 +21,7 @@ const TenTakaiShasto = () => {
 
   return (
     <div className="custom-container shadow-md">
-      <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 py-10 md:mt-0 sm:mt-52 ">
+      <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 md:p-10 sm:px-5 sm:py-5 mt-0 ">
         <div className="md:col-span-6 w-full h-full sm:hidden md:block">
           <Image
             src={"/images/services-2/HELTH CARE-at-012.jpg"}

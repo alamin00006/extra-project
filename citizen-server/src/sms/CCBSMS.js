@@ -230,3 +230,26 @@ export function CCBSms(bookingMessage, method) {
 //   call_back,
 //   refund,
 // };
+
+// DATABASE_URL = mongodb+srv://citizencarebd:Citizencare!!43@citizen.97nyu.mongodb.net/CitizenDB?retryWrites=true&w=majority&appName=Citizen
+// PORT = 5000
+
+// ACCESS_TOKEN_SECRET=e911b71e4c47b5f4ab605ffbfbfb4782616ee9b2c592c386f45691ee26c53e8f99cb4f4d208bc9851b48f38b7126f8bf4dd9fcc061bf7f0dc7498fe119b7298b
+
+// REFRESH_TOKEN_SECRET="our-secret"
+// PORT=5000
+
+// BCRYPT_SALT_ROUNDS=12
+
+// # JWT_EXPIRES_IN=1d
+// JWT_EXPIRES_IN=365d
+// # JWT_EXPIRES_IN=5m
+
+// JWT_REFRESH_EXPIRES_IN=365d
+
+// SMS_API_KEY_VALUE=za0YHQ7fvYCpcWGGZgce
+// SMS_SENDER_ID=8809617617196
+// SMS_API_HOST_SITE=bulksmsbd.net
+
+// secretKey=go-to-sharikana08$@&&sha25601235
+// API_KEY=sharikana_0120!!05

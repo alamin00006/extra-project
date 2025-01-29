@@ -29,21 +29,20 @@ const HeroSlider = () => {
       >
         {images.map((image, index) => (
           <SplideSlide key={index}>
-            <div className="relative w-screen h-screen sm:hidden md:block">
+            <div className="relative w-screen md:h-screen sm:hidden md:block">
               <Image src={image} alt={`Slide ${index + 1}`} fill priority />
               {/* Overlay */}
               <div className="absolute inset-0 bg-black bg-opacity-50"></div>
             </div>
-            <div className="md:hidden w-screen h-screen">
+            <div className="md:hidden w-screen h-[400px]">
               <Image
                 src={image}
                 alt={`Slide ${index + 1}`}
-                width={500}
-                height={300}
+                fill
                 className="w-screen h-screen "
                 priority
               />
-              {/* Overlay */}
+
               <div className="absolute inset-0 bg-black bg-opacity-50"></div>
             </div>
           </SplideSlide>
@@ -57,8 +56,10 @@ const HeroSlider = () => {
           <h1 className="text-3xl md:text-4xl font-bold mb-4 text-pink-600">
             Welcome to Our Service
           </h1>
-          <p className="text-lg md:text-2xl mb-8">
-            Experience the best healthcare solutions tailored for your family.
+          <p className="text-lg md:text-xl mb-8">
+            Citizen Care Bangladesh - এর লয়্যাল মেম্বার হয়ে বছর জুড়ে MBBS
+            ডাক্তার, নিউট্রিশনিস্ট, রেজিস্টার্ড নার্সের নিয়মিত স্বাস্থ্যসেবা নিন
+            ঘরে বসেই।
           </p>
           <button className=" border-2 border-pink-500 hover:bg-pink-600 text-pink-600 hover:text-white font-bold py-3 px-6 rounded-lg">
             Book an Appointment
