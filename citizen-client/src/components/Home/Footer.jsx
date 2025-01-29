@@ -206,7 +206,7 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <div className="text-center text-sm bg-[#39bcbc] p-3 text-white">
-        © 2023 Citizen Care BD. All rights reserved.
+        © 2025 Citizen Care BD. All rights reserved.
       </div>
     </footer>
   );
