@@ -4,10 +4,10 @@ import { v4 as uuidv4 } from "uuid";
 import { getValue, setValue } from "node-global-storage";
 import Member from "../membersReg/member.model.js";
 import Payment from "./payment.model.js";
-
 import User from "../user/user.model.js";
 import config from "../../../config/index.js";
 import { CCBSms } from "../../../sms/CCBSMS.js";
+import { generateMemberId } from "../membersReg/member.utils.js";
 
 // Helper to prepare bkash headers
 const bkashHeaders = async () => {
@@ -32,7 +32,7 @@ const paymentCreate = async (req, res) => {
     return new Error("Sorry! User Not Found");
   }
 
-  setValue("dataForBooking", dataForRegistration);
+  setValue("dataForRegistration", dataForRegistration);
 
   try {
     const { data } = await axios.post(
@@ -60,7 +60,7 @@ const paymentCreate = async (req, res) => {
 // Callback Method (After Payment Confirmation)
 const callBack = async (req, res) => {
   const { paymentID, status } = req.query;
-  console.log(status);
+
   const dataForRegistration = getValue("dataForRegistration");
 
   if (status === "cancel" || status === "failure") {
@@ -84,12 +84,13 @@ const callBack = async (req, res) => {
 
       if (data && data.statusCode === "0000") {
         // Start Create Booking
+
         const memberId = await generateMemberId();
-        dataForRegistration.id = memberId;
-        dataForRegistration.status = "Approved";
 
         const memberData = new Member({
+          id: memberId,
           ...dataForRegistration,
+          status: "Approved",
         });
 
         const result = await memberData.save({ session });
@@ -116,7 +117,7 @@ const callBack = async (req, res) => {
         await newTransaction.save({ session });
 
         // Phone SMS for booking
-        const message = `/api/smsapi?api_key=${config.sms_api_key}&type=text&number=88${dataForRegistration?.phone}&senderid=8809617617196&message=Your%20booking%20with%20Project%20Second%20Home%20is%20Confirmed!%20Booking%20ID%3A%23${dataForRegistration?.bookingId}.%20Check-in%3A%${dataForRegistration?.bookingInfo?.rentDate?.bookStartDate}%2C%20Check-out%3A%${dataForRegistration?.bookingInfo?.rentDate?.bookEndDate}.%20Call%20Us%3A%2001647647404.%20Enjoy%20your%20stay!%20-%20PSH`;
+        const message = `/api/smsapi?api_key=${config.sms_api_key}&type=text&number=88${dataForRegistration?.phone}&senderid=${config.sms_sender_id}&message=Thank%20You%20for%20being%20our%20loyal%20member`;
 
         await CCBSms(message);
 
@@ -135,6 +136,7 @@ const callBack = async (req, res) => {
       }
     } catch (error) {
       // Abort transaction if any error founds
+      console.log(error);
       await session.abortTransaction();
       session.endSession();
       return res.redirect(

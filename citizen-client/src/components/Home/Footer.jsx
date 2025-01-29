@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   FaFacebookF,
@@ -94,13 +95,14 @@ const Footer = () => {
               </li>
             </ul>
             <div className="flex space-x-4 mt-4">
-              <a
-                href="#"
+              <Link
+                href="https://www.facebook.com/Citizencarebd?mibextid=ZbWKwL"
                 aria-label="Facebook"
                 className="p-2 rounded-full bg-white text-pink-600 hover:bg-gray-100 transition"
+                target="_blank"
               >
                 <FaFacebookF size={20} />
-              </a>
+              </Link>
               <a
                 href="#"
                 aria-label="Twitter"

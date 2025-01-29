@@ -160,7 +160,7 @@ const Navbar = () => {
                       isServiceOpen ? "block" : "hidden"
                     }`}
                   >
-                    {menuItems.map((item) => (
+                    {cardData.map((item) => (
                       <li key={item.id} className="dropdown_link ">
                         <Link
                           href={`/service-details/${item.id}`}
@@ -170,7 +170,7 @@ const Navbar = () => {
                               : "text-black"
                           }`}
                         >
-                          {item.text}
+                          {item.enTitle}
                         </Link>
                       </li>
                     ))}
@@ -281,7 +281,7 @@ const Navbar = () => {
                            text-black dark:hover:text-gray-200 px-2 py-1
                            `}
                       >
-                        {item.text}
+                        {item.enTitle}
                       </Link>
                     </li>
                   ))}

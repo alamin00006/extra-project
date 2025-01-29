@@ -24,15 +24,15 @@ export default function SuccessStories() {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   return (
-    <section className="py-12 px-6 bg-gray-100">
-      <div className="custom-container text-center md:mx-0 sm:mx-5">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">
-          Success Stories
+    <section className="custom-container ">
+      <div className=" text-center md:mx-0 sm:mx-5 md:mt-4 sm:-mt-10 ">
+        <h2 className="md:text-4xl sm:text-xl text-gray-900 my-4">
+          Our Live Experience
         </h2>
-        <p className="text-gray-600 mb-8">
+        {/* <p className="text-gray-600 mb-8">
           Our students presence in the ever-expanding IT industry drives us to
           guide more people towards a sustainable future.
-        </p>
+        </p> */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {videos.map((video, index) => {
             const videoId = video.videoUrl.split("/").pop();

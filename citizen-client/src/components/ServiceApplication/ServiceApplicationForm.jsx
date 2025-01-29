@@ -1,14 +1,14 @@
 "use client";
+import Loading from "@/app/loading";
 import { getBaseUrl } from "@/helpers/config/envConfig";
 import useUserData from "@/hooks/useUserData";
-// import { useGetUserQuery } from "@/redux/api/authApi";
 import axios from "axios";
 
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 const ServiceApplicationForm = () => {
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [memberFee, setMemberFee] = useState(2500);
 
   const { userData, error: userError, loading: isLoadingUser } = useUserData();
@@ -16,15 +16,15 @@ const ServiceApplicationForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!memberFee) return toast.error("Please choice any member type");
-    setLoading(true);
+    setIsLoading(true);
 
     const { name, mobileNumber, email, address } = e.target;
 
     const resgistrationData = {
-      amount: Number(memberFee),
+      amount: 1,
       user: userData?._id,
       name: name.value,
-      mobileNumber: mobileNumber.value,
+      phoneNumber: mobileNumber.value,
       email: email?.value,
       address: address.value,
       paymentType: "Bkash",
@@ -37,16 +37,20 @@ const ServiceApplicationForm = () => {
         resgistrationData,
         { withCredentials: true }
       );
-
+      setIsLoading(false);
       window.location.href = data?.bkashURL;
       // window.location.href = data.bkashURL;
       // return data;
     } catch (error) {
       console.log(error);
+      setIsLoading(false);
     }
     // e.target.reset();
   };
 
+  if (isLoading) {
+    <Loading />;
+  }
   return (
     <>
       {/* <div className="relative w-full h-[20vh] md:h-72 ">
@@ -112,7 +116,6 @@ const ServiceApplicationForm = () => {
               <input
                 type="email"
                 className="mt-1 block w-full h-[50px] px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                required
                 placeholder="Email Address"
                 name="email"
               />

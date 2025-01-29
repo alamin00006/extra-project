@@ -24,7 +24,7 @@ const memberSchema = mongoose.Schema(
 
     email: {
       type: String,
-      unique: [true, "This email already exists!"],
+      // unique: [true, "This email already exists!"],
       // validate: [validator.isEmail, "Provide a valid email"],
       lowercase: true,
       trim: true,

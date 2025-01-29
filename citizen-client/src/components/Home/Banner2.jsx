@@ -3,6 +3,8 @@ import "@splidejs/splide/css"; // Default Splide CSS
 import Image from "next/image";
 import NoticeBoard from "./NoticeBoard/NoticeBoard";
 
+import { useRouter } from "next/navigation";
+
 const images = [
   "/images/banner/helth-awar-01.jpg",
   "/images/banner/HELTH-CARE-01-01.jpg",
@@ -11,7 +13,17 @@ const images = [
   "/images/banner/nurse-01.jpg",
 ];
 
-const HeroSlider = () => {
+const HeroSlider = ({ userData }) => {
+  const router = useRouter();
+
+  const handleRegistration = () => {
+    if (!userData) {
+      return router.push(`/login`);
+    } else {
+      return router.push(`/service-application`);
+    }
+  };
+
   return (
     <div className="relative w-full ">
       {/* Splide Slider */}
@@ -34,12 +46,12 @@ const HeroSlider = () => {
               {/* Overlay */}
               <div className="absolute inset-0 bg-black bg-opacity-50"></div>
             </div>
-            <div className="md:hidden w-screen h-[400px]">
+            <div className="md:hidden sm:block w-screen h-[350px]">
               <Image
                 src={image}
                 alt={`Slide ${index + 1}`}
                 fill
-                className="w-screen h-screen "
+                // className="w-screen h-full object-contain "
                 priority
               />
 
@@ -52,17 +64,20 @@ const HeroSlider = () => {
       {/* Two-Column Content */}
       <div className="custom-container absolute inset-0 flex flex-col md:flex-row  items-center text-black px-8 gap-8">
         {/* Left-Aligned Text Content */}
-        <div className="w-full md:w-1/2 bg-[#e8ffff] p-3 opacity-60 rounded">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-pink-600">
+        <div className="w-full md:w-1/2 bg-[#e8ffff] p-3 opacity-60 rounded md:mt-0 sm:mt-5">
+          <h1 className="text-xl md:text-3xl font-bold mb-4 text-pink-600">
             Welcome to Our Service
           </h1>
-          <p className="text-lg md:text-xl mb-8">
+          <p className="text-sm md:text-xl mb-8">
             Citizen Care Bangladesh - এর লয়্যাল মেম্বার হয়ে বছর জুড়ে MBBS
             ডাক্তার, নিউট্রিশনিস্ট, রেজিস্টার্ড নার্সের নিয়মিত স্বাস্থ্যসেবা নিন
             ঘরে বসেই।
           </p>
-          <button className=" border-2 border-pink-500 hover:bg-pink-600 text-pink-600 hover:text-white font-bold py-3 px-6 rounded-lg">
-            Book an Appointment
+          <button
+            onClick={handleRegistration}
+            className=" text-sm md:text-lg border-2 border-pink-500 hover:bg-pink-600 text-pink-600 hover:text-white font-bold py-3 px-6 rounded-lg"
+          >
+            Registration Now
           </button>
         </div>
 

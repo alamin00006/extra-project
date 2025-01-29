@@ -1,18 +1,11 @@
-"use client";
-import { useGetUserQuery } from "@/redux/api/authApi";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-const TenTakaiShasto = () => {
+const TenTakaiShasto = ({ userData }) => {
   const router = useRouter();
-  const {
-    data: user,
-    error: userError,
-    isLoading: userIsLoading,
-  } = useGetUserQuery();
 
   const handleRegistration = () => {
-    if (!user) {
+    if (!userData) {
       return router.push(`/login`);
     } else {
       return router.push(`/service-application`);
@@ -27,7 +20,7 @@ const TenTakaiShasto = () => {
             src={"/images/services-2/HELTH CARE-at-012.jpg"}
             width={600}
             height={600}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover"
             alt="banner"
           />
         </div>
@@ -102,11 +95,11 @@ const TenTakaiShasto = () => {
               ঘরে বসে সাশ্রয়ী মূল্য প্যাকেজ ভিত্তিক প্রয়োজনীয় মেডিক্যাল টেস্ট
             </li>
           </ul> */}
-          <p className="text-sm md:text-base mb-4 text-[#565656] font-normal leading-8 ">
+          {/* <p className="text-sm md:text-base mb-4 text-[#565656] font-normal leading-8 ">
             আপনিও সিটিজেন কেয়ার বাংলাদেশ এর লয়্যাল মেম্বার হয়ে নিজেকে সুস্থ
             রাখতে আরোও মনযোগী হোন, <b>ডাক্তার,নিউট্রিশনিস্ট, নার্সের</b> সেবা
             নিন, স্বাস্থ্য ঝুঁকি প্রতিরোধে সচেষ্ট থাকুন।
-          </p>
+          </p> */}
           <ul className="list-disc ml-4 space-y-2 text-sm  ">
             <li className="font-bold">
               লয়্যাল <span className="text-[#3abbba]">মেম্বার ফি</span> একজনের
@@ -124,7 +117,7 @@ const TenTakaiShasto = () => {
           <div className="mt-5">
             <button
               onClick={handleRegistration}
-              className="uppercase no-underline px-6 py-3 bg-[#39bcbc] hover:bg-pink-600 text-white hover:text-white rounded md:text-base sm:text-sm xs:text-sm"
+              className="uppercase no-underline px-6 py-3 bg-[#39bcbc] hover:bg-pink-600 text-white hover:text-white rounded text-sm"
             >
               Registration Now
             </button>

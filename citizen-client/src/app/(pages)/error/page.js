@@ -1,9 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import { FaExclamationTriangle } from "react-icons/fa";
 
-const ErrorPage = () => {
+const ErrorPage = ({ params }) => {
   return (
     <div className="flex flex-col justify-center items-center mt-56 p-6 rounded-lg mb-20">
       <FaExclamationTriangle className="text-rose-500 text-6xl mb-4" />

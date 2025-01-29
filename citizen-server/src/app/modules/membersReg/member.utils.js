@@ -1,13 +1,13 @@
 import Member from "./member.model.js";
 
 const findLastMemberId = async () => {
-  const lastInvestment = await Member.findOne({}, { id: 1, _id: 0 })
+  const lastMember = await Member.findOne({}, { id: 1, _id: 0 })
     .sort({
       createdAt: -1,
     })
     .lean();
 
-  return lastInvestment?.id;
+  return lastMember?.id;
 };
 
 export const generateMemberId = async () => {
@@ -19,7 +19,7 @@ export const generateMemberId = async () => {
   // Increment by 1
   let incrementedId = (parseInt(convertNumberPreviousId) + 1)
     .toString()
-    .padStart(4, "0");
+    .padStart(5, "0");
   incrementedId = "CCB".toLowerCase() + incrementedId;
 
   return incrementedId;

@@ -8,6 +8,7 @@ export const cardData = [
     id: 1,
     text: "লয়্যাল মেম্বার হয়ে ঘরে বসে স্বাস্থ্য সেবা নিন",
     miniText: "HEALTH CARE AT YOUR HOME",
+    enTitle: "Health care at your home",
     price: 150,
     image: "/images/services-2/HELTH CARE-at-01.jpg",
     banner: "/images/banner/HELTH-CARE-01-01.jpg",
@@ -78,28 +79,6 @@ export const cardData = [
           <li>একজনের জন্য বাৎসরিক ২৫০০ টাকা।</li>
           <li>ফ্যামিলির জন্য বাৎসরিক ৪৫০০ টাকা।</li>
         </ul>
-        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
-          সিটিজেন কেয়ার বাংলাদেশের লয়্যাল মেম্বার হতে যোগাযোগ করুন:
-          <br />
-          <b>কল সেন্টার:</b> ০১৮৯৬-৫১১০২০, ০২৪১০৬১৬১৬ <br />
-          <b>WhatsApp:</b> ০১৮৯৪-৬৭১৮৭৫ <br />
-          <b>Website:</b>{" "}
-          <a href="https://citizencarebd.com" className="text-[#3abbba]">
-            citizencarebd.com
-          </a>{" "}
-          <br />
-          <b>Facebook:</b>{" "}
-          <a
-            href="https://www.facebook.com/Citizencarebd"
-            className="text-[#3abbba]"
-          >
-            facebook.com/Citizencarebd
-          </a>
-        </p>
-        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
-          এই অফারের শর্তাবলী সম্পর্কে ভালো করে জেনে নিন। <br />
-          আপনার স্বাস্থ্য আপনার হাতে, {`"সিটিজেন কেয়ার বাংলাদেশ আপনার সাথে"`}!
-        </p>
       </div>
     ),
   },
@@ -107,6 +86,7 @@ export const cardData = [
     id: 2,
     text: "লয়্যাল মেম্বার হয়ে ঘরে বসে MBBS ডাক্তারের সেবা নিন",
     miniText: "ভিজিট মাত্র ২০০ টাকা",
+    enTitle: "MBBS Doctor / Family Physician",
     image: "/images/services-2/family-01.jpg",
     banner: "/images/banner/JAHID-01.jpg",
 
@@ -205,6 +185,7 @@ export const cardData = [
     id: 3,
     text: " ঘরে বসে অভিজ্ঞ নিউট্রিশনিস্ট এর পরামর্শ নিন",
     miniText: "ভিজিট মাত্র ২০০ টাকা",
+    enTitle: "Nutritionists",
     image: "/images/services-2/NUTRI-BOXe-box-01.jpg",
     banner: "/images/banner/niutri-01.jpg",
 
@@ -306,6 +287,7 @@ export const cardData = [
     id: 4,
     text: "Telemedicine / E-Medical Consultancy",
     miniText: "ভিজিট মাত্র ২০০ টাকা",
+    enTitle: "Telemedicine / E-Medical Consultancy",
     image: "/images/services-2/nurse box-01.jpg",
     banner: "/images/banner/nurse-01.jpg",
     icon: "/images/e-medical.png",
@@ -393,6 +375,7 @@ export const cardData = [
     id: 5,
     text: "Medicine & Medical Device",
     miniText: "At your home",
+    enTitle: "Medicine & Medical Device",
     image: "/images/services-2/MEDICINE-01.jpg",
     icon2: <GiMedicines className="w-10 h-10 text-[#3cb9ba]" />,
   },
@@ -400,6 +383,7 @@ export const cardData = [
     id: 6,
     text: "Health Tourism",
     miniText: "At your home",
+    enTitle: "Health Tourism",
     image: "/images/services-2/Health tourism-01.jpg",
     icon: "/images/tourisom.png",
   },
@@ -407,6 +391,7 @@ export const cardData = [
     id: 7,
     text: "Health Guide",
     miniText: "At your home",
+    enTitle: "Health Guide",
     image: "/images/services-2/HEALTH GUIDE-01.jpg",
     icon: "/images/health-guide.png",
   },
@@ -415,6 +400,7 @@ export const cardData = [
     id: 8,
     text: "Health Check",
     miniText: "At your home",
+    enTitle: "Health Check",
     image: "/images/services-2/chekup-01-01.jpg",
     icon: "/images/check.png",
   },
