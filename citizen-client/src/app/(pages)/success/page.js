@@ -11,8 +11,7 @@ const ThankYouPage = () => {
       <div className="bg-white p-8 rounded-2xl shadow-xl max-w-md text-center">
         <h1 className="text-2xl font-bold text-gray-800 mb-4">Thank You!</h1>
         <p className="text-gray-600 mb-6">
-          We appreciate your feedback. Your submission has been received. We
-          will contact you very soon.
+          Your submission has been received. We will contact you very soon.
         </p>
         <Link
           href={"/"}
