@@ -21,7 +21,7 @@ const ServiceApplicationForm = () => {
     const { name, mobileNumber, email, address } = e.target;
 
     const resgistrationData = {
-      amount: 1,
+      amount: Number(memberFee),
       user: userData?._id,
       name: name.value,
       phoneNumber: mobileNumber.value,
@@ -42,7 +42,7 @@ const ServiceApplicationForm = () => {
       // window.location.href = data.bkashURL;
       // return data;
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       setIsLoading(false);
     }
     // e.target.reset();
