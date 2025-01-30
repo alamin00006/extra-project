@@ -285,9 +285,9 @@ export const cardData = [
   },
   {
     id: 4,
-    text: "Telemedicine / E-Medical Consultancy",
+    text: "ঘরে বসে নার্সিং সেবা",
     miniText: "ভিজিট মাত্র ২০০ টাকা",
-    enTitle: "Telemedicine / E-Medical Consultancy",
+    enTitle: "Nurse",
     image: "/images/services-2/nurse box-01.jpg",
     banner: "/images/banner/nurse-01.jpg",
     icon: "/images/e-medical.png",
