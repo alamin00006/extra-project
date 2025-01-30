@@ -285,8 +285,8 @@ export const cardData = [
   },
   {
     id: 4,
-    text: "ঘরে বসে নার্সিং সেবা",
-    miniText: "ভিজিট মাত্র ২০০ টাকা",
+    text: "ঘরে বসে নার্সিং সেবা নিন",
+    miniText: "ভিজিট মাত্র ১৫০ টাকা",
     enTitle: "Nurse",
     image: "/images/services-2/nurse box-01.jpg",
     banner: "/images/banner/nurse-01.jpg",
