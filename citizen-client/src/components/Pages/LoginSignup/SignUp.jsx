@@ -169,7 +169,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
               onChange={(e) => setFullName(e.target.value)}
               className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:bg-white placeholder-gray-700 rounded-md shadow-sm  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               required
-              placeholder="First Name"
+              placeholder="Full Name"
             />
           </div>
           {/* <div>
