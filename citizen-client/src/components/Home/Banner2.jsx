@@ -6,11 +6,11 @@ import NoticeBoard from "./NoticeBoard/NoticeBoard";
 import { useRouter } from "next/navigation";
 
 const images = [
-  "/images/banner/helth-awar-01.jpg",
-  "/images/banner/HELTH-CARE-01-01.jpg",
-  "/images/banner/JAHID-01.jpg",
-  "/images/banner/niutri-01.jpg",
-  "/images/banner/nurse-01.jpg",
+  "/images/home-page/HELTH CARE-01.jpg",
+  "/images/home-page/HELTH AWAR-01 (1).jpg",
+  "/images/home-page/MBBS-01.jpg",
+  "/images/home-page/NUTRI-01.jpg",
+  "/images/home-page/nurse-01-01.jpg",
 ];
 
 const HeroSlider = ({ userData }) => {

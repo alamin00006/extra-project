@@ -17,7 +17,7 @@ const TenTakaiShasto = ({ userData }) => {
       <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 md:p-10 sm:px-5 sm:py-5 mt-0 ">
         <div className="md:col-span-6 w-full h-full sm:hidden md:block">
           <Image
-            src={"/images/services-2/HELTH CARE-at-012.jpg"}
+            src={"/images/services-2/HELTH-01.jpg"}
             width={600}
             height={600}
             className="w-full h-full object-cover"
