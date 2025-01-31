@@ -48,32 +48,12 @@ const ServiceApplicationForm = () => {
     // e.target.reset();
   };
 
-  if (isLoading) {
-    <Loading />;
-  }
+  // if (isLoading) {
+  //   <Loading />;
+  // }
   return (
     <>
-      {/* <div className="relative w-full h-[20vh] md:h-72 ">
-        <Image
-          src={"/images/banner/HELTH-CARE-01-01.jpg"}
-          alt={`About Image`}
-          layout="fill"
-          className="w-full h-full md:object-cover sm:object-contain"
-          priority // Optional: use priority for above-the-fold images
-        />
-      </div> */}
       <div className="custom-container mt-5">
-        {/* Breadcrumb */}
-        {/* <div className="flex items-center space-x-2 text-gray-500 mb-12">
-          <Link href="/" className="flex items-center space-x-1 text-teal-600">
-            <MdHome className="text-xl" />
-            <span className="uppercase text-sm">Home</span>
-          </Link>
-          <span>/</span>
-          <span className="font-medium text-[#39bcbc] uppercase text-sm">
-            10-takai-shastho-sheba
-          </span>
-        </div> */}
         {/* Application Form */}
         <div className="mb-10 md:p-20 sm:p-0 sm:py-10 shadow-lg rounded">
           <h2 className="text-center text-2xl font-bold mb-6">

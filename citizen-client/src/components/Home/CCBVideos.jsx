@@ -24,9 +24,9 @@ export default function SuccessStories() {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   return (
-    <section className="custom-container ">
+    <div className="custom-container  ">
       <div className=" text-center md:mx-0 sm:mx-5 md:mt-4 sm:-mt-10 ">
-        <h2 className="md:text-4xl sm:text-xl text-gray-900 my-4">
+        <h2 className="md:text-4xl sm:text-xl text-gray-900 my-4 md:mt-0 sm:mt-6">
           Our Live Experience
         </h2>
         {/* <p className="text-gray-600 mb-8">
@@ -86,6 +86,6 @@ export default function SuccessStories() {
           </div>
         </div>
       )}
-    </section>
+    </div>
   );
 }

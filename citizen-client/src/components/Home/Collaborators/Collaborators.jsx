@@ -46,7 +46,7 @@ const collaborators = [
 
 const Collaborators = () => {
   return (
-    <div className="py-0 mb-10 custom-container md:mt-0 sm:mt-52">
+    <div className="py-0 mb-10 custom-container ">
       <div className=" px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
           Our Proposed Collaborators Organizations

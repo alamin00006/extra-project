@@ -285,9 +285,9 @@ export const cardData = [
   },
   {
     id: 4,
-    text: "Telemedicine / E-Medical Consultancy",
-    miniText: "ভিজিট মাত্র ২০০ টাকা",
-    enTitle: "Telemedicine / E-Medical Consultancy",
+    text: "ঘরে বসে নার্সিং সেবা নিন",
+    miniText: "ভিজিট মাত্র ১৫০ টাকা",
+    enTitle: "Nurse",
     image: "/images/services-2/nurse box-01.jpg",
     banner: "/images/banner/nurse-01.jpg",
     icon: "/images/e-medical.png",
@@ -401,7 +401,7 @@ export const cardData = [
     text: "Health Check",
     miniText: "At your home",
     enTitle: "Health Check",
-    image: "/images/services-2/chekup-01-01.jpg",
+    image: "/images/services-2/health-check.jpg",
     icon: "/images/check.png",
   },
 ];

@@ -1,12 +1,12 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css"; // Default Splide CSS
 import Image from "next/image";
-import NoticeBoard from "./NoticeBoard/NoticeBoard";
+// import NoticeBoard from "./NoticeBoard/NoticeBoard";
 
 import { useRouter } from "next/navigation";
 
 const images = [
-  "/images/home-page/HELTH CARE-01.jpg",
+  "/images/home-page/HELTH AWAR-01.jpg",
   "/images/home-page/HELTH AWAR-01 (1).jpg",
   "/images/home-page/MBBS-01.jpg",
   "/images/home-page/NUTRI-01.jpg",
@@ -64,7 +64,7 @@ const HeroSlider = ({ userData }) => {
       {/* Two-Column Content */}
       <div className="custom-container absolute inset-0 flex flex-col md:flex-row  items-center text-black px-8 gap-8">
         {/* Left-Aligned Text Content */}
-        <div className="w-full md:w-1/2 bg-[#e8ffff] p-3 opacity-60 rounded md:mt-0 sm:mt-5">
+        <div className="w-full md:w-1/2 bg-[#e8ffff] p-3  rounded md:mt-0 sm:mt-5">
           <h1 className="text-xl md:text-3xl font-bold mb-4 text-pink-600">
             Welcome to Our Service
           </h1>

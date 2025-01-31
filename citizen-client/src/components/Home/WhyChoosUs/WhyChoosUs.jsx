@@ -11,9 +11,9 @@ const WhyChooseUs = () => {
   });
 
   return (
-    <div className="mb-10 h-[550px] bg-[#e8ffff45]  ">
-      <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full md:gap-5 sm:gap-0 custom-container">
-        {/* Left Side Content */}
+    <div className="mb-10    ">
+      {/* <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full md:gap-5 sm:gap-0 custom-container">
+    
         <div className="md:col-span-6 sm:col-span-12 w-full sm:p-4 md:p-8">
           <div className="mt-10">
             <h2 className="md:text-5xl sm:text-3xl xs:text-3xl font-semibold mb-4">
@@ -34,10 +34,10 @@ const WhyChooseUs = () => {
           </div>
         </div>
 
-        {/* Right Side Counters */}
+     
         <div
           className="md:col-span-6 sm:col-span-12 w-full h-full text-black"
-          ref={ref} // Attach the intersection observer
+          ref={ref} 
         >
           <div className="grid grid-cols-2 mt-10">
             <div className="text-center ">
@@ -98,6 +98,60 @@ const WhyChooseUs = () => {
                 {inView && <CountUp start={0} end={35} duration={3} />}+
               </p>
               <p className="font-bold">Nurses</p>
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+      <div className="custom-container shadow rounded-md md:py-5 sm:py-2">
+        <div
+          className="stats flex flex-col md:flex-row md:justify-between w-full"
+          ref={ref}
+        >
+          <div className="stat place-items-center">
+            <div className="stat-title"> Loyal Members</div>
+            <div className="stat-value text-[#39bcbc]">
+              {inView && (
+                <CountUp
+                  start={0}
+                  end={8670}
+                  className="text-[#39bcbc]"
+                  duration={3}
+                  separator=","
+                />
+              )}
+              +
+            </div>
+          </div>
+
+          <div className="stat place-items-center">
+            <div className="stat-title">Doctors</div>
+            <div className="stat-value text-secondary">
+              {" "}
+              {inView && <CountUp start={0} end={14} duration={2.5} />}+
+            </div>
+          </div>
+
+          <div className="stat place-items-center">
+            <div className="stat-title">Nutritionists</div>
+            <div className="stat-value text-[#39bcbc]">
+              {" "}
+              {inView && (
+                <CountUp
+                  start={0}
+                  className="text-[#39bcbc]"
+                  end={10}
+                  duration={2.5}
+                />
+              )}
+              +
+            </div>
+          </div>
+          <div className="stat place-items-center">
+            <div className="stat-title">Nurses</div>
+            <div className="stat-value">
+              {" "}
+              {inView && <CountUp start={0} end={35} duration={3} />}+
             </div>
           </div>
         </div>

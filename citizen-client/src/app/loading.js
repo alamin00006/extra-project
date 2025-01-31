@@ -4,7 +4,7 @@ const Loading = () => {
     //   <div className="h-16 w-16 animate-spin rounded-full border-4 border-solid border-primary border-t-transparent"></div>
     // </div>
     <div className="flex justify-center items-center h-screen">
-      <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-primary"></div>
+      <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-[#39bcbc]"></div>
       {/* <ScaleLoader size={30} speedMultiplier={0.8} color="#36d7b7" />{" "} */}
     </div>
   );
