@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import useUserData from "@/hooks/useUserData";
 import "./Home.css";
+import { useEffect } from "react";
 
 // Loading placeholder
 const Loading = () => (
@@ -32,13 +33,20 @@ const HomePage = () => {
   // Get User
   const { userData, loading: isLoadingUser } = useUserData();
 
-  // Show loading if user data is still being fetched
-  // if (isLoadingUser) {
-  //   return <Loading />;
-  // }
+  const [showLoading, setShowLoading] = useState(false);
+
+  // Show loading after a delay if components take too long to load
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoading(true);
+    }, 300); // Show loading after 300ms if components haven't loaded
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div>
+      {showLoading && <Loading />}
       <Banner2 userData={userData} />
 
       <div className="md:mt-0 sm:mt-0 md:mx-0 sm:mx-5">
