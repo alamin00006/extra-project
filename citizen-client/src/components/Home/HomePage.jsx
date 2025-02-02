@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import useUserData from "@/hooks/useUserData";
 import "./Home.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Loading placeholder
 const Loading = () => (
