@@ -1,7 +1,6 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
 import useUserData from "@/hooks/useUserData";
 import "./Home.css";
 
@@ -12,39 +11,42 @@ const Loading = () => (
   </div>
 );
 
-// Dynamically import components (SSR enabled)
-const Banner2 = dynamic(() => import("./Banner2"), { ssr: true });
-const SuccessStories = dynamic(() => import("./CCBVideos"), { ssr: true });
+// Dynamically import components (disable SSR)
+const Banner2 = dynamic(() => import("./Banner2"), { ssr: false });
+const SuccessStories = dynamic(() => import("./CCBVideos"), { ssr: false });
 const Collaborators = dynamic(() => import("./Collaborators/Collaborators"), {
-  ssr: true,
+  ssr: false,
 });
-const Facilites = dynamic(() => import("./Facilities/Facilites"), {
-  ssr: true,
+const Facilities = dynamic(() => import("./Facilities/Facilites"), {
+  ssr: false,
 });
 const TenTakaiShasto = dynamic(
   () => import("./TenTakaiShasto/TenTakaiShasto"),
-  { ssr: true }
+  { ssr: false }
 );
-const WhyChoosUs = dynamic(() => import("./WhyChoosUs/WhyChoosUs"), {
-  ssr: true,
+const WhyChooseUs = dynamic(() => import("./WhyChoosUs/WhyChoosUs"), {
+  ssr: false,
 });
 
 const HomePage = () => {
   // Get User
-  const { userData, error: userError, loading: isLoadingUser } = useUserData();
+  const { userData, loading: isLoadingUser } = useUserData();
+
+  // Show loading if user data is still being fetched
+  // if (isLoadingUser) {
+  //   return <Loading />;
+  // }
 
   return (
-    <Suspense fallback={<Loading />}>
-      <div>
-        <Banner2 userData={userData} />
-      </div>
+    <div>
+      <Banner2 userData={userData} />
 
       <div className="md:mt-0 sm:mt-0 md:mx-0 sm:mx-5">
         <TenTakaiShasto userData={userData} />
       </div>
 
       <div className="bg-base-100">
-        <Facilites />
+        <Facilities />
       </div>
 
       <div className="bg-base-100">
@@ -52,13 +54,13 @@ const HomePage = () => {
       </div>
 
       <div className="bg-white mt-4">
-        <WhyChoosUs />
+        <WhyChooseUs />
       </div>
 
       <div className="bg-white">
         <Collaborators />
       </div>
-    </Suspense>
+    </div>
   );
 };
 
