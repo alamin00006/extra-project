@@ -9,11 +9,20 @@ import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/Home/Footer";
 import TopNavber from "@/components/shared/TopNavber";
 import { Providers } from "@/redux/providers";
+import Head from "next/head";
 
 export default function RootLayout({ children }) {
   return (
     <Providers>
       <html lang="en">
+        <Head>
+          <link
+            rel="preload"
+            href="/images/logo.png"
+            as="image"
+            type="image/png"
+          />
+        </Head>
         <body className="antialiased">
           <div className="hidden md:block">
             <TopNavber />
