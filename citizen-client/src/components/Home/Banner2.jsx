@@ -6,8 +6,8 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const images = [
-  "/images/home-page/HELTH AWAR-01.jpg",
-  "/images/home-page/HELTH AWAR-01 (1).jpg",
+  "/images/home-page/HELTH-CARE-01.jpg",
+  "/images/home-page/HELTH-AWAR-01.jpg",
   "/images/home-page/MBBS-01.jpg",
   "/images/home-page/NUTRI-01.jpg",
   "/images/home-page/nurse-01-01.jpg",
