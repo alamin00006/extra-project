@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const TenTakaiShasto = ({ userData }) => {
@@ -14,7 +15,7 @@ const TenTakaiShasto = ({ userData }) => {
 
   return (
     <div className="custom-container shadow-md">
-      <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 md:p-10 sm:px-5 sm:py-5 mt-0 ">
+      <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 md:p-5 sm:px-5 sm:py-5 mt-0 ">
         <div className="md:col-span-6 w-full h-full sm:hidden md:block">
           <Image
             src={"/images/services-2/HELTH-01.jpg"}
@@ -100,6 +101,13 @@ const TenTakaiShasto = ({ userData }) => {
             রাখতে আরোও মনযোগী হোন, <b>ডাক্তার,নিউট্রিশনিস্ট, নার্সের</b> সেবা
             নিন, স্বাস্থ্য ঝুঁকি প্রতিরোধে সচেষ্ট থাকুন।
           </p> */}
+          {/* <p className="text-sm md:text-base  text-[#565656]  ">মেম্বার ফি</p> */}
+          <Link
+            href={"/service-details/1"}
+            className="flex justify-end text-sm text-[#3abbba] hover:text-[#1c7d7d]"
+          >
+            আরো পড়ুন
+          </Link>
           <ul className="list-disc ml-4 space-y-2 text-sm  ">
             <li className="font-bold">
               লয়্যাল <span className="text-[#3abbba]">মেম্বার ফি</span> একজনের

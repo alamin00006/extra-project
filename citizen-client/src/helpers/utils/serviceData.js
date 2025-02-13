@@ -183,7 +183,7 @@ export const cardData = [
   },
   {
     id: 3,
-    text: " ঘরে বসে অভিজ্ঞ নিউট্রিশনিস্ট এর পরামর্শ নিন",
+    text: "লয়্যাল মেম্বার হয়ে ঘরে বসে অভিজ্ঞ নিউট্রিশনিস্ট এর পরামর্শ নিন",
     miniText: "ভিজিট মাত্র ২০০ টাকা",
     enTitle: "Nutritionists",
     image: "/images/services-2/NUTRI-BOXe-box-01.jpg",
@@ -285,7 +285,7 @@ export const cardData = [
   },
   {
     id: 4,
-    text: "ঘরে বসে নার্সিং সেবা নিন",
+    text: "লয়্যাল মেম্বার হয়ে ঘরে বসে নার্সিং সেবা নিন",
     miniText: "ভিজিট মাত্র ১৫০ টাকা",
     enTitle: "Nurse",
     image: "/images/services-2/nurse box-01.jpg",
@@ -374,7 +374,7 @@ export const cardData = [
   {
     id: 5,
     text: "Medicine & Medical Device",
-    miniText: "At your home",
+    miniText: "Free Home delivery",
     enTitle: "Medicine & Medical Device",
     image: "/images/services-2/MEDICINE-01.jpg",
     icon2: <GiMedicines className="w-10 h-10 text-[#3cb9ba]" />,
@@ -382,7 +382,7 @@ export const cardData = [
   {
     id: 6,
     text: "Health Tourism",
-    miniText: "At your home",
+    miniText: "",
     enTitle: "Health Tourism",
     image: "/images/services-2/Health tourism-01.jpg",
     icon: "/images/tourisom.png",
@@ -390,7 +390,7 @@ export const cardData = [
   {
     id: 7,
     text: "Health Guide",
-    miniText: "At your home",
+    miniText: "",
     enTitle: "Health Guide",
     image: "/images/services-2/HEALTH GUIDE-01.jpg",
     icon: "/images/health-guide.png",

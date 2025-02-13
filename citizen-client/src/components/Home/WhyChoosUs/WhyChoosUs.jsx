@@ -11,7 +11,7 @@ const WhyChooseUs = () => {
   });
 
   return (
-    <div className="mb-10    ">
+    <div className="mb-4   ">
       {/* <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full md:gap-5 sm:gap-0 custom-container">
     
         <div className="md:col-span-6 sm:col-span-12 w-full sm:p-4 md:p-8">
@@ -114,7 +114,7 @@ const WhyChooseUs = () => {
               {inView && (
                 <CountUp
                   start={0}
-                  end={8670}
+                  end={10600}
                   className="text-[#39bcbc]"
                   duration={3}
                   separator=","

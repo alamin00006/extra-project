@@ -19,6 +19,9 @@ const HomePage = () => {
       <div>
         <Banner2 userData={userData} />
       </div>
+      <div className="bg-white mt-4">
+        <WhyChoosUs />
+      </div>
       {/* <div className="md:hidden  xs:block">
         <NoticeBoard />
       </div> */}
@@ -31,10 +34,8 @@ const HomePage = () => {
       <div className="bg-base-100 ">
         <SuccessStories />
       </div>
+
       <div className="bg-white mt-4">
-        <WhyChoosUs />
-      </div>
-      <div className="bg-white ">
         <Collaborators />
       </div>
     </>
