@@ -45,9 +45,9 @@ const HeroSlider = ({ userData }) => {
             <div className="relative w-screen md:h-screen sm:hidden md:block">
               <Image src={image} alt={`Slide ${index + 1}`} fill priority />
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+              {/* <div className="absolute inset-0 bg-black bg-opacity-50"></div> */}
             </div>
-            <div className="md:hidden sm:block w-screen h-[350px]">
+            <div className="md:hidden sm:block w-screen h-[170px]">
               <Image
                 src={image}
                 alt={`Slide ${index + 1}`}
@@ -56,14 +56,14 @@ const HeroSlider = ({ userData }) => {
                 priority
               />
 
-              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+              {/* <div className="absolute inset-0 bg-black bg-opacity-50"></div> */}
             </div>
           </SplideSlide>
         ))}
       </Splide>
 
       {/* Two-Column Content */}
-      <div className="custom-container absolute inset-0 flex flex-col md:flex-row  items-center text-black px-8 gap-8">
+      <div className="custom-container absolute inset-0 md:flex flex-col md:flex-row hidden items-center text-black px-8 gap-8">
         {/* Left-Aligned Text Content */}
         <div className="w-full md:w-1/2 bg-[#e8ffff] p-3 opacity-50 rounded md:mt-0 sm:mt-5">
           <h1 className="text-xl md:text-3xl font-bold mb-4 text-pink-600">

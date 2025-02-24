@@ -20,7 +20,7 @@ const HomePage = () => {
         <Banner2 userData={userData} />
       </div>
       <div className="bg-white mt-4">
-        <WhyChoosUs />
+        <WhyChoosUs userData={userData}/>
       </div>
       {/* <div className="md:hidden  xs:block">
         <NoticeBoard />
