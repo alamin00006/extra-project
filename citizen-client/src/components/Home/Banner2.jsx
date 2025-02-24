@@ -65,7 +65,7 @@ const HeroSlider = ({ userData }) => {
       {/* Two-Column Content */}
       <div className="custom-container absolute inset-0 md:flex flex-col md:flex-row hidden items-center text-black px-8 gap-8">
         {/* Left-Aligned Text Content */}
-        <div className="w-full md:w-1/2 bg-[#e8ffff] p-3 opacity-50 rounded md:mt-0 sm:mt-5">
+        <div className="w-full md:w-1/2 bg-[#e8ffff] p-3 opacity-75 rounded md:mt-0 sm:mt-5">
           <h1 className="text-xl md:text-3xl font-bold mb-4 text-pink-600">
             Welcome to Our Service
           </h1>
