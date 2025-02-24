@@ -14,7 +14,7 @@ const TopNavbar = () => {
       <div className="custom-container flex flex-wrap items-center justify-between">
         <div className="flex items-center text-white border-base-100 px-2 border-r border-l py-2.5 gap-1">
           <IoCallOutline size={20} />
-          <span className="text-sm">02-41061616</span>
+          <span className="text-sm">09-613166166</span>
         </div>
         <div className="flex space-x-2">
           <Link
