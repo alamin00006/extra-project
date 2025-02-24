@@ -1,11 +1,9 @@
+"use client"
 import ServiceDeatails from "@/components/Pages/Services/ServiceDeatails";
+import { useParams } from "next/navigation";
 
-export const metadata = {
-  title: "Serices",
-  description: "Serices",
-};
-
-const ServiceDetailsPage = async ({ params }) => {
+const ServiceDetailsPage =  () => {
+  const params = useParams()
   return (
     <div>
       <ServiceDeatails params={params} />
