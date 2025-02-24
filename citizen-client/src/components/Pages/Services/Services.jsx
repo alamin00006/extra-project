@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 import { MdKeyboardArrowRight, MdHome } from "react-icons/md";
 
 const Services = () => {

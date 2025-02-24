@@ -31,7 +31,7 @@ const TenTakaiShasto = ({ userData }) => {
             width={600}
             height={600}
             className="w-full h-full object-contain"
-            alt="banner"
+            alt="banner2"
           />
         </div>
         <div className="md:col-span-6 w-full h-full sm:p-4 xs:p-4 md:p-6 py-0">

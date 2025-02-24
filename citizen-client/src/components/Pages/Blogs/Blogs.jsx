@@ -1,39 +1,92 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { MdHome } from "react-icons/md";
-import BlogCard from "./BlogCard";
 
-const Blogs = () => {
+const videos = [
+  {
+    videoUrl: "https://www.youtube.com/embed/Arb1yWgFXlk",
+  },
+  {
+    videoUrl: "https://www.youtube.com/embed/xl2Bs8KHlAg",
+  },
+
+  {
+    title: "3D Animation Industry Success",
+
+    videoUrl: "https://www.youtube.com/embed/nKyFfgDRhaQ",
+  },
+  {
+    videoUrl: "https://www.youtube.com/embed/va7unzVNZog",
+  },
+];
+
+const Blogs =() =>{
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
   return (
-    <>
-      <div className="relative w-full h-[20vh] md:h-72 ">
-        <Image
-          src={"/images/blog/blog-banner.png"}
-          alt={`About Image`}
-          layout="fill"
-          className="w-full h-full md:object-cover sm:object-contain"
-          priority // Optional: use priority for above-the-fold images
-        />
-      </div>
-      <div className="custom-container">
-        <h1 className="md:text-5xl sm:text-2xl font-semibold mb-4 text-black rounded-lg mt-8">
-          Our Blogs
-        </h1>
-
-        {/* Breadcrumb */}
-        <div className="flex items-center space-x-2 text-gray-500 mb-12">
-          <Link href="/" className="flex items-center space-x-1 text-teal-600">
-            <MdHome className="text-xl" />
-            <span className="uppercase">Home</span>
-          </Link>
-          <span>/</span>
-          <span className="font-medium text-[#39bcbc] uppercase">Blogs</span>
+    <div className="custom-container mb-10 mt-5 ">
+      <div className=" text-center md:mx-0 sm:mx-5 md:mt-4 sm:-mt-2 ">
+        {/* <h2 className="md:text-4xl sm:text-xl text-gray-900 my-4 md:mt-0 sm:mt-6">
+          Our Live Experience
+        </h2> */}
+        {/* <p className="text-gray-600 mb-8">
+          Our students presence in the ever-expanding IT industry drives us to
+          guide more people towards a sustainable future.
+        </p> */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          {videos.map((video, index) => {
+            const videoId = video.videoUrl.split("/").pop();
+            const thumbnail = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+            return (
+              <div
+                key={index}
+                className="relative rounded-lg overflow-hidden shadow-md h-[250px]"
+              >
+                <Image
+                  src={thumbnail}
+                  alt={"videos"}
+                  width={600}
+                  height={350}
+                  className="w-full h-[250px]"
+                />
+                <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-2">
+                  <div className="mt-4 flex justify-center items-center bg-white rounded-full p-2 relative">
+                    <svg
+                      className="w-12 h-12 text-red-500 transition-transform duration-1000 cursor-pointer animate-ping rounded-full bg-red-400 opacity-50"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      onClick={() => setSelectedVideo(video.videoUrl)}
+                    >
+                      <path d="M10 15l5-3-5-3v6z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
-        <BlogCard />
       </div>
-    </>
+      {selectedVideo && (
+        <div className="fixed inset-0 flex justify-center items-center z-50">
+          <div className="bg-white p-4 rounded-lg max-w-3xl w-full relative">
+            <button
+              className="absolute top-2 right-2 text-black text-xl"
+              onClick={() => setSelectedVideo(null)}
+            >
+              &times;
+            </button>
+            <iframe
+              className="w-full h-96"
+              src={selectedVideo}
+              title="YouTube Video"
+              frameBorder="0"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
+    </div>
   );
-};
-
+}
 export default Blogs;

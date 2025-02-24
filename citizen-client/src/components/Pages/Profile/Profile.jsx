@@ -1,9 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { formatDate } from "@/helpers/utils/dateConvert";
-import { FaEdit } from "react-icons/fa";
-import { useGetUserQuery } from "@/redux/api/authApi";
+
 import Image from "next/image";
 import useUserData from "@/hooks/useUserData";
 

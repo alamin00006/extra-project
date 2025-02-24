@@ -4,7 +4,7 @@ import Link from "next/link";
 const Card = ({ data }) => {
   return (
     <Link href={`/service-details/${data.id}`} className="no-underline">
-      <div className="bg-base-100 rounded-lg overflow-hidden group shadow-md">
+      <div className="bg-base-100 rounded-lg overflow-hidden group shadow-md md:h-[300px] sm:h-auto">
         <div className="w-full mb-4">
           <Image
             src={data?.image}

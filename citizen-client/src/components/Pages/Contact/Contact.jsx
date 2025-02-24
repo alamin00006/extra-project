@@ -65,6 +65,7 @@ const Contact = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            title="1"
           ></iframe>
         </div>
       </div>

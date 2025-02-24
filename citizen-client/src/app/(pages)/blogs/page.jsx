@@ -1,5 +1,6 @@
 import Blogs from "@/components/Pages/Blogs/Blogs";
 
+
 export const metadata = {
   title: "Citzen | Blogs",
   description: "Citezen Blogs",

@@ -161,7 +161,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
         </h2>
         <form onSubmit={handleSignUp} className="space-y-3">
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label htmlFor="FullName" className="block text-sm font-medium text-gray-700">
               Full Name
             </label>
             <input
@@ -200,7 +200,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
             )}
           </div> */}
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label htmlFor="Phone Number" className="block text-sm font-medium text-gray-700">
               Phone Number
             </label>
             <input
@@ -213,7 +213,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label htmlFor="Password" className="block text-sm font-medium text-gray-700">
               Password
             </label>
             <div className="relative">
@@ -227,6 +227,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
               <span
                 className="absolute inset-y-0 right-3 flex items-center cursor-pointer"
                 onClick={togglePasswordVisibility}
+     
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </span>

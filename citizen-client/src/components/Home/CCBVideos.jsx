@@ -25,7 +25,7 @@ export default function SuccessStories() {
 
   return (
     <div className="custom-container  ">
-      <div className=" text-center md:mx-0 sm:mx-5 md:mt-4 sm:-mt-10 ">
+      <div className=" text-center md:mx-0 sm:mx-5 md:mt-4 sm:-mt-2 ">
         <h2 className="md:text-4xl sm:text-xl text-gray-900 my-4 md:mt-0 sm:mt-6">
           Our Live Experience
         </h2>
@@ -33,23 +33,23 @@ export default function SuccessStories() {
           Our students presence in the ever-expanding IT industry drives us to
           guide more people towards a sustainable future.
         </p> */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {videos.map((video, index) => {
             const videoId = video.videoUrl.split("/").pop();
             const thumbnail = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
             return (
               <div
                 key={index}
-                className="relative rounded-lg overflow-hidden shadow-lg"
+                className="relative rounded-lg overflow-hidden shadow-md h-[250px]"
               >
                 <Image
                   src={thumbnail}
-                  alt={video.title}
+                  alt={"videos"}
                   width={600}
                   height={350}
-                  className="w-full h-auto"
+                  className="w-full h-[250px]"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white p-2">
+                <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-2">
                   <div className="mt-4 flex justify-center items-center bg-white rounded-full p-2 relative">
                     <svg
                       className="w-12 h-12 text-red-500 transition-transform duration-1000 cursor-pointer animate-ping rounded-full bg-red-400 opacity-50"
@@ -68,7 +68,7 @@ export default function SuccessStories() {
         </div>
       </div>
       {selectedVideo && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
+        <div className="fixed inset-0 flex justify-center items-center z-50">
           <div className="bg-white p-4 rounded-lg max-w-3xl w-full relative">
             <button
               className="absolute top-2 right-2 text-black text-xl"
