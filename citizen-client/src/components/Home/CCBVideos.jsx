@@ -4,15 +4,17 @@ import Image from "next/image";
 
 const videos = [
   {
-    videoUrl: "https://www.youtube.com/embed/Arb1yWgFXlk",
+    videoUrl: "https://www.youtube.com/embed/qyl1cJqohJs",
   },
+  // {
+  //   videoUrl: "https://www.youtube.com/embed/Arb1yWgFXlk",
+  // },
   {
     videoUrl: "https://www.youtube.com/embed/xl2Bs8KHlAg",
   },
 
   {
-    title: "3D Animation Industry Success",
-
+ 
     videoUrl: "https://www.youtube.com/embed/nKyFfgDRhaQ",
   },
   {
