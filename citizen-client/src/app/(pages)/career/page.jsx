@@ -1,4 +1,5 @@
-import Career from "@/components/Pages/Carrier/Career";
+import Careers from "@/components/Pages/careers/Careers";
+
 
 export const metadata = {
   title: "Citzen | Carrier",
@@ -7,9 +8,10 @@ export const metadata = {
 
 const CareerPage = () => {
   return (
-    <div>
-      <Career />
-    </div>
+    <>
+      <Careers />
+
+    </>
   );
 };
 

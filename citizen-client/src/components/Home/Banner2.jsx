@@ -10,7 +10,7 @@ const images = [
   "/images/home-page/HELTH-AWAR-01.jpg",
   "/images/home-page/MBBS-01.jpg",
   "/images/home-page/NUTRI-01.jpg",
-  "/images/home-page/nurse-01-01.jpg",
+  "/images/home-page/nurse-01.jpg",
 ];
 
 const HeroSlider = ({ userData }) => {
