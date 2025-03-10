@@ -16,6 +16,7 @@ const images = [
 const HeroSlider = ({ userData }) => {
   const router = useRouter();
 
+  // console.log("hello");
   const handleRegistration = () => {
     if (!userData) {
       return router.push(`/login`);
