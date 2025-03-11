@@ -6,9 +6,9 @@ const videos = [
   {
     videoUrl: "https://www.youtube.com/embed/qyl1cJqohJs",
   },
-  // {
-  //   videoUrl: "https://www.youtube.com/embed/Arb1yWgFXlk",
-  // },
+  {
+    videoUrl: "https://www.youtube.com/embed/Arb1yWgFXlk",
+  },
   {
     videoUrl: "https://www.youtube.com/embed/xl2Bs8KHlAg",
   },
