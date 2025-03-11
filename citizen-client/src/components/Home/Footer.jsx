@@ -112,7 +112,8 @@ const Footer = () => {
                 <FaTwitter size={20} />
               </a>
               <a
-                href="#"
+                href="https://bd.linkedin.com/company/citizen-care-bangladesh-ccb"
+                target="_blank"
                 aria-label="LinkedIn"
                 className="p-2 rounded-full bg-white text-pink-600 hover:text-[#39bcbc] transition"
               >

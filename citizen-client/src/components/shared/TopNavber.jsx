@@ -38,7 +38,7 @@ const TopNavbar = () => {
             />
           </Link>
           <Link
-            href="#"
+            href="https://bd.linkedin.com/company/citizen-care-bangladesh-ccb"
             target="_blank"
             className="border-base-100 px-3 border-l py-3 bg-pink-600 hover:bg-pink-600"
           >
