@@ -21,14 +21,14 @@ const Footer = () => {
       <div className="bg-[#e8ffff] text-[#565656] py-8 relative">
         {/* Watermark */}
         <div
-          className="absolute top-12 left-48 w-full h-full opacity-20"
+          className="absolute md:top-12 sm:top-44 md:left-48 sm:left-0 md:h-full sm:h-[100px] opacity-20 md:w-[1000px] sm:w-[300px] md:rotate-0 sm:rotate-45"
           style={{
             backgroundImage: "url('/images/logo.png')",
             backgroundRepeat: "no-repeat",
             backgroundSize: "contain",
             backgroundPosition: "center",
             pointerEvents: "none",
-            width:"1000px"
+       
           }}
         ></div>
 
