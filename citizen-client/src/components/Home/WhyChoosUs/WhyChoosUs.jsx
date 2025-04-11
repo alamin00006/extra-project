@@ -51,8 +51,8 @@ const WhyChooseUs = ({ userData }) => {
       </div>
 
 
-    <div className="mb-4   ">
-  
+    <div className="mb-4 ">
+
        
       <div className="custom-container shadow-md rounded-md md:py-5 sm:py-2 bg-white">
         <div

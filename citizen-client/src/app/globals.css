@@ -44,11 +44,11 @@ div {
   font-weight: 300 !important;
 }
 .dropdown_link:hover {
-  background-color: #39bcbc !important;
-  color: white !important;
+  /* background-color: #39bcbc !important; */
+  color: #39bcbc !important;
 }
 .dropdown_link a:hover {
-  color: white !important;
+  color: #39bcbc !important;
 }
 .dropdown_text:hover {
   color: #39bcbc !important;
@@ -90,6 +90,7 @@ ul,
 
 .sticky-navbar {
   animation: stickYDown 0.5s ease-out; /* Apply animation */
+  background-color: white;
 }
 /* Custom Responsive Css  */
 
@@ -122,7 +123,7 @@ ul,
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .custom-container {
-    max-width: 1140px;
+    max-width: 1132px;
     margin-left: auto;
     margin-right: auto;
   }

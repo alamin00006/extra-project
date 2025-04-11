@@ -28,10 +28,10 @@ const HomePage = () => {
       <div className=" md:mt-0 sm:mt-0 md:mx-0 sm:mx-5 ">
         <TenTakaiShasto userData={userData} />
       </div>
-      <div className="bg-base-100 ">
+      <div className="">
         <Facilites />
       </div>
-      <div className="bg-base-100 ">
+      <div >
         <SuccessStories />
       </div>
 

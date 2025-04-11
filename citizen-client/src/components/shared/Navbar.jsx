@@ -78,13 +78,13 @@ const Navbar = () => {
 
   return (
     <div
-      className={`bg-base-100 md:pt-2 md:pb-3 sm:pt-3 sm:pb-3 shadow-md ${
+      className={` md:pt-2 md:pb-3 sm:pt-3 sm:pb-3 shadow-md ${
         isInitialLoad || hasScrolled ? "sticky-navbar" : ""
       }`}
     >
       <div className="custom-container">
-        <div className="md:flex justify-between  flex-none  ">
-          <div className="col-span-2  relative">
+        <div className="md:flex justify-between flex-none  ">
+          <div className="col-span-2 relative">
             <div className="dropdown flex justify-between">
               <div className="md:hidden sm:block md:ps-0 sm:ps-2 ">
                 <Link href="/">
@@ -110,33 +110,24 @@ const Navbar = () => {
               {/* For Mobile Screen */}
               <ul
                 tabIndex={0}
-                className={`menu menu-sm dropdown-content text-base z-[1] mt-5 w-screen  pb-8 shadow uppercase bg-white text-black dark:bg-white dark:text-black ${
+                className={`menu menu-sm dropdown-content text-base z-[1] mt-5 w-screen  pb-8 shadow bg-white text-black dark:bg-white dark:text-black ${
                   isDropdownOpen ? "block" : "hidden"
                 }`}
               >
                 <li className="custom-navbar">
                   <Link
                     href="/"
-                    className={` uppercase no-underline text-black ${
+                    className={`  no-underline text-black ${
                       pathname === "/" ? "text-[#39bcbc]" : "text-black"
                     }`}
                   >
                     Home
                   </Link>
                 </li>
-                <li className="custom-navbar">
-                  <Link
-                    href="/about-us"
-                    className={` uppercase no-underline  ${
-                      pathname === "/about-us" ? "text-[#39bcbc]" : "text-black"
-                    }`}
-                  >
-                    About Us
-                  </Link>
-                </li>
+              
                 <li tabIndex={0} className="dropdown group">
                   <div
-                    className={`uppercase no-underline dropdown_text`}
+                    className={` no-underline dropdown_text`}
                     onClick={() => setIsServiceOpen(!isServiceOpen)}
                   >
                     Services
@@ -181,13 +172,136 @@ const Navbar = () => {
                 <li className="custom-navbar">
                   <Link
                     href="/blogs"
-                    className={` uppercase no-underline  ${
+                    className={` no-underline  ${
                       pathname === "/blogs" ? "text-[#39bcbc]" : "text-black"
                     }`}
                   >
                     Blog
                   </Link>
                 </li>
+
+
+                <li tabIndex={0}  className="dropdown group pr-5 cursor-pointer ">
+                <div
+                  className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                >
+                Appointments
+                <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 inline-block ml-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+     
+                </div>
+                <ul className="p-0 md:-ml-7 sm:-ml-0 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
+            
+                    <li  className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
+                      <Link
+                        href={`/doctors`}
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-sm 
+                           `}
+                      >
+                       Book an Appointment
+                      </Link>
+                    </li>
+          
+                </ul>
+              </li>
+              <br/>
+              <li tabIndex={0} className="dropdown group pr-5 cursor-pointer custom-navbar">
+                <div
+                  className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                >
+                About Us
+
+                <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 inline-block ml-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                </div>
+                <ul className="p-0 md:-ml-7 sm:-ml-0 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
+            
+                    <li  className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
+                      <Link
+                        href={`/about-us`}
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
+                           `}
+                      >
+                         Who We Are
+                      </Link>
+                    </li>
+                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                      <Link
+                        href={`/company-profile`}
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
+                           `}
+                      >
+                           Company Profile
+                      </Link>
+                    </li>
+                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                      <Link
+                        href={`/mission-vision`}
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
+                           `}
+                      >
+                       Mission & Vission
+                      </Link>
+                    </li>
+                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                      <Link
+                        href={`/career`}
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
+                           `}
+                      >
+                         Careers
+                      </Link>
+                    </li>
+                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                      <Link
+                        href={`/career`}
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
+                           `}
+                      >
+                        Privacy Policy
+                      </Link>
+                    </li>
+              
+            
+                </ul>
+              </li>
+
+
+
+
+
+
+
                 <li className="custom-navbar">
                   {!isUser ? (
                     <Link
@@ -239,46 +353,33 @@ const Navbar = () => {
             </div>
           </div>
           {/* For Desktop */}
-          <div className="navbar-center hidden lg:flex col-span-10 mt-4  ">
-            <ul className="custom_menu menu-horizontal px-10 text-black">
-              <li className="pr-4 custom-navbar">
+          <div className="navbar-center hidden lg:flex col-span-10 mt-4  z-10 ">
+            <ul className="custom_menu menu-horizontal text-black">
+              <li className="pr-5 custom-navbar">
                 <Link
                   href="/"
-                  className={` uppercase no-underline  ${
-                    pathname === "/" ? "text-[#39bcbc]" : "text-black"
+                  className={` no-underline text-[16px] ${
+                    pathname === "/" ? "text-[#39bcbc]" : "text-black "
                   }`}
                 >
                   Home
                 </Link>
               </li>
 
-              <li tabIndex={0} className="dropdown group pr-4 cursor-pointer ">
+              <li  className="dropdown group pr-5 cursor-pointer ">
                 <div
-                  className={`text-black  hover:text-[#39bcbc] uppercase no-underline dropdown_text`}
+                  className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
                 >
                   Services
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4 inline-block ml-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
+
                 </div>
-                <ul className="p-2 mt-2 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[300px] dark:bg-gray-800 dark:text-black">
+                <ul className="p-0 bg-white hidden shadow-lg group-hover:block absolute w-[300px] -ml-5 dark:bg-gray-800 dark:text-black">
                   {cardData.map((item) => (
-                    <li key={item.id} className=" dropdown_link text-sm my-1 ">
+                    <li key={item.id} className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
                       <Link
                         href={`/service-details/${item.id}`}
                         className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
                            `}
                       >
                         {item.enTitle}
@@ -288,46 +389,126 @@ const Navbar = () => {
                 </ul>
               </li>
 
-              <li className="pr-4 custom-navbar">
+              <li className="pr-5 custom-navbar">
                 <Link
                   href="/blogs"
-                  className={` uppercase no-underline  ${
+                  className={` text-[16px] no-underline  ${
                     pathname === "/blogs" ? "text-[#39bcbc]" : "text-black"
                   }`}
                 >
                   Blog
                 </Link>
               </li>
-              <li className="pr-4 custom-navbar">
-                <Link
-                  href="/company-profile"
-                  className={`text-black uppercase no-underline hover:text-[#2b7c7c] ${
-                    pathname === "/blog"
-                      ? "text-blue-500"
-                      : "hover:text-blue-500 dark:hover:text-blue-300"
-                  }`}
+          
+
+        
+
+              <li tabIndex={0} className="dropdown group pr-5 cursor-pointer ">
+                <div
+                  className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
                 >
-                  Company Profile
-                </Link>
+                Appointments
+
+     
+                </div>
+                <ul className="p-0 -ml-7 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
+            
+                    <li  className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
+                      <Link
+                        href={`/doctors`}
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
+                           `}
+                      >
+                       Book an Appointment
+                      </Link>
+                    </li>
+          
+               
+             
+              
+            
+                </ul>
+              </li>
+              <li tabIndex={0} className="dropdown group pr-5 cursor-pointer ">
+                <div
+                  className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                >
+                About Us
+
+     
+                </div>
+                <ul className="p-0 -ml-7 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
+            
+                    <li  className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
+                      <Link
+                        href={`/about-us`}
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
+                           `}
+                      >
+                         Who We Are
+                      </Link>
+                    </li>
+                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                      <Link
+                        href={`/company-profile`}
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
+                           `}
+                      >
+                           Company Profile
+                      </Link>
+                    </li>
+                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                      <Link
+                        href={`/mission-vision`}
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
+                           `}
+                      >
+                       Mission & Vission
+                      </Link>
+                    </li>
+                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                      <Link
+                        href={`/career`}
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
+                           `}
+                      >
+                         Careers
+                      </Link>
+                    </li>
+                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                      <Link
+                        href={`/career`}
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
+                           `}
+                      >
+                        Privacy Policy
+                      </Link>
+                    </li>
+              
+            
+                </ul>
               </li>
 
-              <li className="pr-4 custom-navbar">
-                <Link
-                  href="/about-us"
-                  className={` uppercase no-underline  ${
-                    pathname === "/about-us" ? "text-[#39bcbc]" : "text-black"
-                  }`}
-                >
-                  About Us
-                </Link>
-              </li>
+
+
+
+
+
+
+
               <li>
                 {isUser ? (
                   <DropdownUser userData={userData} />
                 ) : (
                   <Link
                     href="/login"
-                    className={`rounded uppercase no-underline px-3 py-2.5 bg-[#39bcbc] hover:bg-pink-600 text-white hover:text-white `}
+                    className={`rounded text-[16px] no-underline px-3 py-2.5 bg-[#39bcbc] hover:bg-pink-600 text-white hover:text-white `}
                   >
                     Login
                   </Link>

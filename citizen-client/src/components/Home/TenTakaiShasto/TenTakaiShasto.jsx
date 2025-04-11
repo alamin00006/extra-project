@@ -14,7 +14,7 @@ const TenTakaiShasto = ({ userData }) => {
   };
 
   return (
-    <div className="custom-container shadow-md">
+    <div className="custom-container shadow-md ">
       <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 md:p-5 sm:px-5 sm:py-5 mt-0 ">
         <div className="md:col-span-6 w-full h-full sm:hidden md:block">
           <Image
