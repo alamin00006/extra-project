@@ -124,7 +124,7 @@ const Navbar = () => {
                     Home
                   </Link>
                 </li>
-              
+
                 <li tabIndex={0} className="dropdown group">
                   <div
                     className={` no-underline dropdown_text`}
@@ -155,7 +155,7 @@ const Navbar = () => {
                       <li key={item.id} className="dropdown_link ">
                         <Link
                           href={`/service-details/${item.id}`}
-                          className={` uppercase no-underline  ${
+                          className={` uppercase no-underline text-black ${
                             pathname === `/service-details/${item.id}`
                               ? "text-[#39bcbc]"
                               : "text-black"
@@ -180,13 +180,15 @@ const Navbar = () => {
                   </Link>
                 </li>
 
-
-                <li tabIndex={0}  className="dropdown group pr-5 cursor-pointer ">
-                <div
-                  className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                <li
+                  tabIndex={0}
+                  className="dropdown group pr-5 cursor-pointer "
                 >
-                Appointments
-                <svg
+                  <div
+                    className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                  >
+                    Appointments
+                    <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4 inline-block ml-1"
                       fill="none"
@@ -200,31 +202,30 @@ const Navbar = () => {
                         d="M19 9l-7 7-7-7"
                       />
                     </svg>
-     
-                </div>
-                <ul className="p-0 md:-ml-7 sm:-ml-0 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
-            
-                    <li  className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
+                  </div>
+                  <ul className="p-0 md:-ml-7 sm:-ml-0 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
+                    <li className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
                       <Link
                         href={`/doctors`}
                         className={`no-underline
                            text-black dark:hover:text-gray-200 px-2 py-1 text-sm 
                            `}
                       >
-                       Book an Appointment
+                        Book an Appointment
                       </Link>
                     </li>
-          
-                </ul>
-              </li>
-              <br/>
-              <li tabIndex={0} className="dropdown group pr-5 cursor-pointer custom-navbar">
-                <div
-                  className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                  </ul>
+                </li>
+                <br />
+                <li
+                  tabIndex={0}
+                  className="dropdown group pr-5 cursor-pointer custom-navbar"
                 >
-                About Us
-
-                <svg
+                  <div
+                    className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                  >
+                    About Us
+                    <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4 inline-block ml-1"
                       fill="none"
@@ -238,50 +239,49 @@ const Navbar = () => {
                         d="M19 9l-7 7-7-7"
                       />
                     </svg>
-                </div>
-                <ul className="p-0 md:-ml-7 sm:-ml-0 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
-            
-                    <li  className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
+                  </div>
+                  <ul className="p-0 md:-ml-7 sm:-ml-0 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
+                    <li className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
                       <Link
                         href={`/about-us`}
                         className={`no-underline
                            text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
                            `}
                       >
-                         Who We Are
+                        Who We Are
                       </Link>
                     </li>
-                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                    <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
                       <Link
                         href={`/company-profile`}
                         className={`no-underline
                            text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
                            `}
                       >
-                           Company Profile
+                        Company Profile
                       </Link>
                     </li>
-                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                    <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
                       <Link
                         href={`/mission-vision`}
                         className={`no-underline
                            text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
                            `}
                       >
-                       Mission & Vission
+                        Mission & Vission
                       </Link>
                     </li>
-                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                    <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
                       <Link
                         href={`/career`}
                         className={`no-underline
                            text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
                            `}
                       >
-                         Careers
+                        Careers
                       </Link>
                     </li>
-                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                    <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
                       <Link
                         href={`/career`}
                         className={`no-underline
@@ -291,16 +291,8 @@ const Navbar = () => {
                         Privacy Policy
                       </Link>
                     </li>
-              
-            
-                </ul>
-              </li>
-
-
-
-
-
-
+                  </ul>
+                </li>
 
                 <li className="custom-navbar">
                   {!isUser ? (
@@ -366,16 +358,18 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              <li  className="dropdown group pr-5 cursor-pointer ">
+              <li className="dropdown group pr-5 cursor-pointer ">
                 <div
                   className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
                 >
                   Services
-
                 </div>
                 <ul className="p-0 bg-white hidden shadow-lg group-hover:block absolute w-[300px] -ml-5 dark:bg-gray-800 dark:text-black">
                   {cardData.map((item) => (
-                    <li key={item.id} className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
+                    <li
+                      key={item.id}
+                      className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600"
+                    >
                       <Link
                         href={`/service-details/${item.id}`}
                         className={`no-underline
@@ -399,108 +393,85 @@ const Navbar = () => {
                   Blog
                 </Link>
               </li>
-          
-
-        
 
               <li tabIndex={0} className="dropdown group pr-5 cursor-pointer ">
                 <div
                   className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
                 >
-                Appointments
-
-     
+                  Appointments
                 </div>
                 <ul className="p-0 -ml-7 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
-            
-                    <li  className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
-                      <Link
-                        href={`/doctors`}
-                        className={`no-underline
+                  <li className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
+                    <Link
+                      href={`/doctors`}
+                      className={`no-underline
                            text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
                            `}
-                      >
-                       Book an Appointment
-                      </Link>
-                    </li>
-          
-               
-             
-              
-            
+                    >
+                      Book an Appointment
+                    </Link>
+                  </li>
                 </ul>
               </li>
               <li tabIndex={0} className="dropdown group pr-5 cursor-pointer ">
                 <div
                   className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
                 >
-                About Us
-
-     
+                  About Us
                 </div>
                 <ul className="p-0 -ml-7 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
-            
-                    <li  className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
-                      <Link
-                        href={`/about-us`}
-                        className={`no-underline
+                  <li className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
+                    <Link
+                      href={`/about-us`}
+                      className={`no-underline
                            text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
                            `}
-                      >
-                         Who We Are
-                      </Link>
-                    </li>
-                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
-                      <Link
-                        href={`/company-profile`}
-                        className={`no-underline
+                    >
+                      Who We Are
+                    </Link>
+                  </li>
+                  <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                    <Link
+                      href={`/company-profile`}
+                      className={`no-underline
                            text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
                            `}
-                      >
-                           Company Profile
-                      </Link>
-                    </li>
-                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
-                      <Link
-                        href={`/mission-vision`}
-                        className={`no-underline
+                    >
+                      Company Profile
+                    </Link>
+                  </li>
+                  <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                    <Link
+                      href={`/mission-vision`}
+                      className={`no-underline
                            text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
                            `}
-                      >
-                       Mission & Vission
-                      </Link>
-                    </li>
-                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
-                      <Link
-                        href={`/career`}
-                        className={`no-underline
+                    >
+                      Mission & Vission
+                    </Link>
+                  </li>
+                  <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                    <Link
+                      href={`/career`}
+                      className={`no-underline
                            text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
                            `}
-                      >
-                         Careers
-                      </Link>
-                    </li>
-                    <li  className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
-                      <Link
-                        href={`/career`}
-                        className={`no-underline
+                    >
+                      Careers
+                    </Link>
+                  </li>
+                  <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                    <Link
+                      href={`/career`}
+                      className={`no-underline
                            text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
                            `}
-                      >
-                        Privacy Policy
-                      </Link>
-                    </li>
-              
-            
+                    >
+                      Privacy Policy
+                    </Link>
+                  </li>
                 </ul>
               </li>
-
-
-
-
-
-
-
 
               <li>
                 {isUser ? (

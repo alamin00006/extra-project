@@ -22,7 +22,14 @@ module.exports = {
       "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
     },
+    extend: {
+      fontFamily: {
+        bengali: ['"Tiro Bangla"', "serif"],
+        english: ['"Montserrat"', "sans-serif"],
+      },
+    },
   },
+
   plugins: [require("daisyui")],
-  darkMode: 'class',
+  darkMode: "class",
 };

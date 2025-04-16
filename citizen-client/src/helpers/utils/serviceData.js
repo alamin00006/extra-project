@@ -294,14 +294,14 @@ export const cardData = [
     content: (
       <div>
         {" "}
-        <h2 className="text-lg mb-4">
+        <h2 className="text-lg mb-4 font-bengali">
           <span className="text-[#3abbba] font-bold">
             Citizen Care Bangladesh-
           </span>{" "}
           এর <span className="text-pink-500 font-bold">লয়্যাল মেম্বার</span>{" "}
           হয়ে ঘরে বসে <b>নার্সিং সেবা, মাত্র ১৫০ টাকা।</b>
         </h2>
-        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+        <p className="text-base md:text-base mb-4 text-[#565656] leading-8 font-bengali">
           Citizen Care Bangladesh- এর{" "}
           <span className="text-[#3abbba] font-bold">লয়্যাল মেম্বার</span> হয়ে
           আপনি ঘরে বসেই রেজিস্টার্ড অভিজ্ঞ নার্সের মাধ্যমে physical Vital Signs
@@ -313,8 +313,8 @@ export const cardData = [
         <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
           আসুন নার্সের সেবা সম্পর্কে আরও বিস্তারিত জেনে নেওয়া যাক:
         </p>
-        <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
-          <li>
+        <ul className="list-disc ml-4 space-y-2 text-base text-[#565656]">
+          <li className="font-bengali">
             <span className="text-pink-500 font-bold">
               রেজিস্টার্ড অভিজ্ঞ নার্স:
             </span>{" "}
@@ -398,9 +398,9 @@ export const cardData = [
 
   {
     id: 8,
-    text: "Health Check",
+    text: "Home Sample Collection",
     miniText: "At your home",
-    enTitle: "Health Check",
+    enTitle: "Home Sample Collection",
     image: "/images/services-2/health-check.jpg",
     icon: "/images/check.png",
   },

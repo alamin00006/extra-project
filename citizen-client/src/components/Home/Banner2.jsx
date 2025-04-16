@@ -70,7 +70,7 @@ const HeroSlider = ({ userData }) => {
           <h1 className="text-xl md:text-3xl font-bold mb-4 text-pink-600">
             Welcome to Our Service
           </h1>
-          <p className="text-sm md:text-xl mb-8">
+          <p className="text-sm md:text-xl mb-8 font-bengali">
             Citizen Care Bangladesh - এর লয়্যাল মেম্বার হয়ে বছর জুড়ে MBBS
             ডাক্তার, নিউট্রিশনিস্ট, রেজিস্টার্ড নার্সের নিয়মিত স্বাস্থ্যসেবা নিন
             ঘরে বসেই।

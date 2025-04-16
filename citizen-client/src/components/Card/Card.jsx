@@ -4,7 +4,7 @@ import Link from "next/link";
 const Card = ({ data }) => {
   return (
     <Link href={`/service-details/${data.id}`} className="no-underline">
-      <div className=" rounded-lg overflow-hidden group shadow-md md:h-[300px] sm:h-auto">
+      <div className=" rounded-lg overflow-hidden group shadow-md md:h-[320px] sm:h-auto">
         <div className="w-full mb-4">
           <Image
             src={data?.image}
@@ -16,11 +16,15 @@ const Card = ({ data }) => {
         </div>
         <div className="flex items-center px-3">
           <div>
-            <p className="text-gray-600 text-[12px]">{data?.miniText}</p>
+            <p className="text-gray-600 text-sm font-bengali">
+              {data?.miniText}
+            </p>
           </div>
         </div>
         <div className="flex justify-between items-center px-3 pb-1">
-          <h3 className="text-sm font-semibold text-gray-800">{data?.text}</h3>
+          <h3 className="text-base font-semibold text-gray-800 font-bengali">
+            {data?.text}
+          </h3>
           <div className="w-10 h-10 transform transition-transform duration-1000 group-hover:rotate-[360deg]">
             {data?.icon2 ? (
               data?.icon2

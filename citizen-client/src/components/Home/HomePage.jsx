@@ -5,7 +5,7 @@ import SuccessStories from "./CCBVideos";
 import Collaborators from "./Collaborators/Collaborators";
 import Facilites from "./Facilities/Facilites";
 import "./Home.css";
-import TenTakaiShasto from "./TenTakaiShasto/TenTakaiShasto";
+import TenTakaiShasto from "./loayal-member/LoayalMember";
 import WhyChoosUs from "./WhyChoosUs/WhyChoosUs";
 
 const HomePage = () => {
@@ -20,7 +20,7 @@ const HomePage = () => {
         <Banner2 userData={userData} />
       </div>
       <div className="bg-white mt-4">
-        <WhyChoosUs userData={userData}/>
+        <WhyChoosUs userData={userData} />
       </div>
       {/* <div className="md:hidden  xs:block">
         <NoticeBoard />
@@ -31,7 +31,7 @@ const HomePage = () => {
       <div className="">
         <Facilites />
       </div>
-      <div >
+      <div>
         <SuccessStories />
       </div>
 

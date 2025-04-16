@@ -43,15 +43,9 @@ const ServiceDeatails = ({ params }) => {
           priority // Optional: use priority for above-the-fold images
         />
       </div>
-      <h3 className="mt-4">{menuItem?.text}</h3>
+      <h3 className="mt-4 font-bengali">{menuItem?.text}</h3>
       <div>
-        <p
-        // dangerouslySetInnerHTML={{
-        //   __html: convertHtml(menuItem?.content),
-        // }}
-        >
-          {menuItem?.content}
-        </p>
+        <div className="font-bengali text-base">{menuItem?.content}</div>
         <div className="my-3">
           <button
             onClick={handleRegistration}
@@ -60,17 +54,17 @@ const ServiceDeatails = ({ params }) => {
             Registration Now
           </button>
         </div>
-        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8 font-bengali">
           সিটিজেন কেয়ার বাংলাদেশের লয়্যাল মেম্বার হতে যোগাযোগ করুন:
           <br />
-          <b>কল সেন্টার:</b> ০১৮৯৬-৫১১০২০, ০২৪১০৬১৬১৬ <br />
-          <b>WhatsApp:</b> ০১৮৯৪-৬৭১৮৭৫ <br />
-          <b>Website:</b>{" "}
+          কল সেন্টার: ০১৮৯৬-৫১১০২০, ০২৪১০৬১৬১৬ <br />
+          WhatsApp: ০১৮৯৪-৬৭১৮৭৫ <br />
+          Website:{" "}
           <a href="https://citizencarebd.com" className="text-[#3abbba]">
             citizencarebd.com
           </a>{" "}
           <br />
-          <b>Facebook:</b>{" "}
+          Facebook:{" "}
           <a
             href="https://www.facebook.com/Citizencarebd"
             className="text-[#3abbba]"
@@ -78,7 +72,7 @@ const ServiceDeatails = ({ params }) => {
             facebook.com/Citizencarebd
           </a>
         </p>
-        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8 font-bengali">
           এই অফারের শর্তাবলী সম্পর্কে ভালো করে জেনে নিন। <br />
           আপনার স্বাস্থ্য আপনার হাতে, {`"সিটিজেন কেয়ার বাংলাদেশ আপনার সাথে"`}!
         </p>
