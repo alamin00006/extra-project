@@ -379,29 +379,313 @@ export const cardData = [
     image: "/images/services-2/MEDICINE-01.jpg",
     icon2: <GiMedicines className="w-10 h-10 text-[#3cb9ba]" />,
   },
-  {
-    id: 6,
-    text: "Health Tourism",
-    miniText: "",
-    enTitle: "Health Tourism",
-    image: "/images/services-2/Health tourism-01.jpg",
-    icon: "/images/tourisom.png",
-  },
-  {
-    id: 7,
-    text: "Health Guide",
-    miniText: "",
-    enTitle: "Health Guide",
-    image: "/images/services-2/HEALTH GUIDE-01.jpg",
-    icon: "/images/health-guide.png",
-  },
+  // {
+  //   id: 6,
+  //   text: "Health Tourism",
+  //   miniText: "",
+  //   enTitle: "Health Tourism",
+  //   image: "/images/services-2/Health tourism-01.jpg",
+  //   icon: "/images/tourisom.png",
+  // },
 
   {
+    id: 6,
+    text: "হেলথ ট্যুরিজম",
+    miniText: "ঝামেলামুক্ত চিকিৎসা সফর",
+    enTitle: "হেলথ ট্যুরিজম",
+    image: "/images/services-2/Health tourism-01.jpg",
+    // banner: "/images/banner/health-tourism-01.jpg",
+    icon: "/images/tourisom.png",
+    content: (
+      <div>
+        <h2 className="text-lg mb-4 font-bengali">
+          <span className="text-[#3abbba] font-bold">
+            Citizen Care Bangladesh-
+          </span>{" "}
+          এর <span className="text-pink-500 font-bold">হেলথ ট্যুরিজম</span>{" "}
+          সার্ভিসে বিদেশে উন্নত চিকিৎসা – নিশ্চিন্তে।
+        </h2>
+        <p className="text-base md:text-base mb-4 text-[#565656] leading-8 font-bengali">
+          জটিল রোগ, উন্নত প্রযুক্তি কিংবা অভিজ্ঞ বিশেষজ্ঞ চিকিৎসকের পরামর্শ –
+          এখন অনেকেই চিকিৎসার জন্য বিদেশমুখী হচ্ছেন। কিন্তু বিদেশে চিকিৎসা নিতে
+          গিয়ে বহু জটিলতা ও অনিশ্চয়তার মুখোমুখি হতে হয়। দেশ, হাসপাতাল,
+          অ্যাপয়েন্টমেন্ট, ভিসা, টিকিট, থাকা-খাওয়ার ব্যবস্থা – সব মিলিয়ে এক
+          বিশাল চ্যালেঞ্জ! Citizen Care Bangladesh-এর{" "}
+          <span className="text-[#3abbba] font-bold">হেলথ ট্যুরিজম</span> সেবা
+          আপনাকে এই সকল জটিলতা থেকে মুক্তি দেবে এবং আপনার চিকিৎসাভিত্তিক বিদেশ
+          সফরকে নির্ঝঞ্ঝাট করবে।
+        </p>
+        <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
+          হেলথ ট্যুরিজম প্যাকেজে কী কী সেবা পাবেন?
+        </p>
+        <ul className="list-disc ml-4 space-y-2 text-base text-[#565656]">
+          <li className="font-bengali">
+            <span className="text-pink-500 font-bold">
+              চিকিৎসা কেন্দ্রিক সফর পরিকল্পনা:
+            </span>{" "}
+            রোগ অনুযায়ী উপযুক্ত দেশ, হাসপাতাল ও বিশেষজ্ঞ ডাক্তার নির্বাচন করে
+            একটি পূর্ণাঙ্গ চিকিৎসা রোডম্যাপ তৈরি করে দেওয়া হয়।
+          </li>
+          <li>
+            <span className="text-pink-500 font-bold">
+              বিশেষজ্ঞ অ্যাপয়েন্টমেন্ট ও হাসপাতাল বুকিং:
+            </span>{" "}
+            বিদেশের স্বনামধন্য হাসপাতাল ও চিকিৎসকের সাথে যোগাযোগ করে
+            অ্যাপয়েন্টমেন্ট এবং ভর্তি প্রক্রিয়া নিশ্চিত করা হয়।
+          </li>
+          <li>
+            <span className="text-pink-500 font-bold">
+              ভ্রমণ সংক্রান্ত সম্পূর্ণ ব্যবস্থা:
+            </span>{" "}
+            পাসপোর্ট, মেডিকেল ভিসা, বিমান টিকিট, হোটেল বুকিং, এয়ারপোর্ট
+            পিক-ড্রপ সহ ভ্রমণের প্রতিটি ধাপে সহযোগিতা করা হয়।
+          </li>
+          <li>
+            <span className="text-pink-500 font-bold">
+              অনুবাদ ও তথ্য সহায়তা:
+            </span>{" "}
+            চিকিৎসা রিপোর্টের অনুবাদ, ব্যাখ্যা, ভাষাগত সমস্যা সমাধান সহ তথ্য
+            বুঝতে সহযোগিতা করে যেকোনো ধরণের বিভ্রান্তি দূর করা হয়।
+          </li>
+        </ul>
+        <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
+          কোথায় যেতে পারবেন?
+        </p>
+        <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
+          <li>ভারত</li>
+          <li>থাইল্যান্ড</li>
+          <li>সিঙ্গাপুর</li>
+          <li>মালয়েশিয়া</li>
+          <li>বিশ্বের বিভিন্ন দেশের উন্নতমানের হাসপাতাল ও চিকিৎসা কেন্দ্র</li>
+        </ul>
+        <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
+          কেন হেলথ ট্যুরিজম সেবা আপনার জন্য গুরুত্বপূর্ণ?
+        </p>
+        <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
+          <li>বিদেশে চিকিৎসা নিয়ে দুশ্চিন্তা ও বিভ্রান্তি কমবে।</li>
+          <li>সময় ও অর্থ দুটোই সাশ্রয় হবে।</li>
+          <li>দ্রুত, নির্ভুল ও গাইডেড চিকিৎসা নিশ্চিত হবে।</li>
+          <li>চিকিৎসাভিত্তিক সফর হবে নিরবিচারে পরিকল্পিত ও ঝামেলামুক্ত।</li>
+        </ul>
+        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+          মনে রাখবেন: চিকিৎসার সময় ভুল সিদ্ধান্ত নয়, প্রয়োজন অভিজ্ঞ গাইড।{" "}
+          <span className="text-[#3abbba] font-bold">হেলথ ট্যুরিজম</span>{" "}
+          সার্ভিসের সাথে থাকুন – আর নিশ্চিন্তে শুরু করুন সুস্থতার যাত্রা।
+        </p>
+        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+          Citizen Care Bangladesh – আপনজনের মতো সেবা, ঘরে ঘরে।
+        </p>
+      </div>
+    ),
+  },
+
+  // {
+  //   id: 7,
+  //   text: "Health Guide",
+  //   miniText: "",
+  //   enTitle: "Health Guide",
+  //   image: "/images/services-2/HEALTH GUIDE-01.jpg",
+  //   icon: "/images/health-guide.png",
+  // },
+
+  {
+    id: 7,
+    text: "হেলথ গাইড",
+    miniText: "মাত্র ৫০০ টাকা থেকে শুরু",
+    enTitle: "হেলথ গাইড",
+    image: "/images/services-2/HEALTH GUIDE-01.jpg",
+    // banner: "/images/banner/health-guide-01.jpg",
+    icon: "/images/health-guide.png",
+    content: (
+      <div>
+        <h2 className="text-lg mb-4 font-bengali">
+          <span className="text-[#3abbba] font-bold">
+            Citizen Care Bangladesh-
+          </span>{" "}
+          এর <span className="text-pink-500 font-bold">হেলথ গাইড</span> সার্ভিসে
+          রোগীর পাশে একজন নির্ভরযোগ্য সঙ্গী।
+        </h2>
+        <p className="text-base md:text-base mb-4 text-[#565656] leading-8 font-bengali">
+          রোগী অনেক সময় একা থাকেন, পরিবারের কেউ কাছে নেই বা চিকিৎসা বিষয়ক নানা
+          জটিলতা বুঝে ওঠা কঠিন হয়ে পড়ে। ঠিক তখনই প্রয়োজন একজন মানবিক ও দক্ষ
+          সহকারীর, যিনি শুধুই সহকারী নন – একেবারে পরিবারের একজন সদস্যের মতো পাশে
+          থাকবেন। Citizen Care Bangladesh-এর{" "}
+          <span className="text-[#3abbba] font-bold">হেলথ গাইড</span> হলেন একজন
+          প্রশিক্ষিত ও বিশ্বস্ত সহকারী, যিনি রোগীর পাশে থেকে প্রতিদিনের
+          স্বাস্থ্য পরিচর্যা, ওষুধ গ্রহণ, রিপোর্ট বোঝা এবং প্রয়োজনীয় চিকিৎসা
+          সহায়তা নিশ্চিত করেন।
+        </p>
+        <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
+          কেন ‘হেলথ গাইড’ এত গুরুত্বপূর্ণ?
+        </p>
+        <ul className="list-disc ml-4 space-y-2 text-base text-[#565656]">
+          <li className="font-bengali">
+            <span className="text-pink-500 font-bold">সবসময় পাশে:</span> রোগী
+            কখনো একা থাকেন না – একজন বিশ্বস্ত সহকারী থাকেন তার পাশে।
+          </li>
+          <li>
+            <span className="text-pink-500 font-bold">
+              ওষুধ ও চিকিৎসা ঠিক সময়ে:
+            </span>{" "}
+            সময়মতো ওষুধ সেবন এবং চিকিৎসা গ্রহণ নিশ্চিত হয়।
+          </li>
+          <li>
+            <span className="text-pink-500 font-bold">নিরাপত্তা:</span> পরিবার
+            পাশে না থাকলেও রোগী থাকেন সুরক্ষিত ও গাইডেড।
+          </li>
+          <li>
+            <span className="text-pink-500 font-bold">
+              বিদেশে চিকিৎসা বা দূরে থাকা:
+            </span>{" "}
+            মন থেকে নিশ্চিন্ত থাকা যায় – হেলথ গাইড রোগীর দেখভাল করেন।
+          </li>
+        </ul>
+        <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
+          হেলথ গাইড কী কী দায়িত্ব পালন করেন?
+        </p>
+        <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
+          <li>রোগীর ওষুধ সঠিক সময়ে খাওয়ার বিষয়টি নিশ্চিত করেন।</li>
+          <li>
+            চিকিৎসকের প্রেসক্রিপশন অনুযায়ী রোগীকে গাইড করেন এবং রিপোর্ট বুঝতে
+            সহায়তা করেন।
+          </li>
+          <li>
+            প্রতিদিন রোগীর শারীরিক অবস্থা পর্যবেক্ষণ করে সেবা টিমকে আপডেট দেন।
+          </li>
+          <li>
+            হাসপাতাল, ডায়াগনস্টিক বা অন্যান্য স্বাস্থ্যসেবার প্রয়োজন হলে রোগী ও
+            পরিবারের পক্ষ থেকে তাতে সহায়তা করেন।
+          </li>
+          <li>সবসময় রোগীর পাশে থেকে একজন আপনজনের মতো দায়িত্ব পালন করেন।</li>
+        </ul>
+        <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
+          সার্ভিস সময় ও মূল্য:
+        </p>
+        <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
+          <li>
+            <span className="font-bold">বাংলাদেশে (দেশের ভেতর):</span> প্রতিদিন
+            ৮ ঘণ্টা, পারিশ্রমিক: মাত্র ৫০০ টাকা/দিন।
+          </li>
+          <li>
+            <span className="font-bold">বিদেশগামী বা প্রবাসে:</span> প্রতিদিন ৮
+            ঘণ্টা, পারিশ্রমিক: ১০০০ টাকা/দিন।
+          </li>
+        </ul>
+        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+          মনে রাখবেন: একজন হেলথ গাইড শুধু একজন সহকারী নন – তিনি আপনার পরিবারের
+          একজন বিশ্বস্ত অংশ হয়ে ওঠেন। সুস্থতা ও মানসিক প্রশান্তির জন্য আজই{" "}
+          <span className="text-[#3abbba] font-bold">হেলথ গাইড</span> সার্ভিস
+          গ্রহণ করুন।
+        </p>
+        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+          Citizen Care Bangladesh – আপনজনের মতো সেবা, ঘরে ঘরে।
+        </p>
+      </div>
+    ),
+  },
+
+  // {
+  //   id: 8,
+  //   text: "Home Sample Collection",
+  //   miniText: "At your home",
+  //   enTitle: "Home Sample Collection",
+  //   image: "/images/services-2/health-check.jpg",
+  //   icon: "/images/check.png",
+  // },
+  {
     id: 8,
-    text: "Home Sample Collection",
-    miniText: "At your home",
+    text: "ঘরে বসেই স্বাস্থ্য পরীক্ষা",
+    miniText: "ঘরে বসে নমুনা দিন",
     enTitle: "Home Sample Collection",
     image: "/images/services-2/health-check.jpg",
+    // banner: "/images/banner/home-sample-01.jpg",
     icon: "/images/check.png",
+    content: (
+      <div>
+        <h2 className="text-lg mb-4 font-bengali">
+          <span className="text-[#3abbba] font-bold">
+            Citizen Care Bangladesh-
+          </span>{" "}
+          এর{" "}
+          <span className="text-pink-500 font-bold">হোম স্যাম্পল কালেকশন</span>{" "}
+          সেবায় ঘরে বসেই স্বাস্থ্য পরীক্ষা।
+        </h2>
+        <p className="text-base md:text-base mb-4 text-[#565656] leading-8 font-bengali">
+          আপনার সময়, নিরাপত্তা এবং স্বাস্থ্যের কথা ভেবে Citizen Care Bangladesh
+          নিয়ে এসেছে ঘরে বসে নমুনা সংগ্রহের নির্ভরযোগ্য সেবা। রুটিন হেলথ চেকআপ
+          হোক কিংবা নির্দিষ্ট কোনো রোগ নির্ণয়ের প্রয়োজন – ল্যাব টেস্ট এখন আর
+          ঝামেলার নয়। আমাদের{" "}
+          <span className="text-[#3abbba] font-bold">হোম স্যাম্পল কালেকশন</span>{" "}
+          সেবার মাধ্যমে ঘরে বসেই নমুনা দিন এবং রিপোর্ট পান অনলাইনে।
+        </p>
+        <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
+          আমাদের এই সেবায় আপনি কী কী সুবিধা পাবেন?
+        </p>
+        <ul className="list-disc ml-4 space-y-2 text-base text-[#565656]">
+          <li className="font-bengali">
+            <span className="text-pink-500 font-bold">
+              নমুনা সংগ্রহের জন্য দক্ষ টিম:
+            </span>{" "}
+            BSc নার্স ও প্রশিক্ষিত ফিল্ড টিম আপনার নির্ধারিত ঠিকানায় গিয়ে
+            স্বাস্থ্যবিধি মেনে রক্ত, ইউরিন, সুগারসহ বিভিন্ন ধরনের নমুনা সংগ্রহ
+            করে।
+          </li>
+          <li>
+            <span className="text-pink-500 font-bold">
+              নির্ভরযোগ্য ল্যাব পার্টনার:
+            </span>{" "}
+            আপনার নমুনা পাঠানো হয় আমাদের বিশ্বস্ত ও মানসম্পন্ন ল্যাব পার্টনারদের
+            কাছে, ফলে রিপোর্ট থাকে নির্ভুল ও সময়মতো।
+          </li>
+          <li>
+            <span className="text-pink-500 font-bold">
+              দ্রুত ও ডিজিটাল রিপোর্ট:
+            </span>{" "}
+            নমুনা সংগ্রহের পর আপনি WhatsApp বা Email-এর মাধ্যমে দ্রুত রিপোর্ট
+            হাতে পাবেন। চাইলে প্রিন্টেড কপি-ও পেতে পারেন।
+          </li>
+          <li>
+            <span className="text-pink-500 font-bold">
+              নিরাপদ ও হাইজেনিক পদ্ধতি:
+            </span>{" "}
+            প্রতিটি নমুনা সংগ্রহ হয় স্যানিটাইজড ও ডিসপোজেবল সরঞ্জাম ব্যবহার করে,
+            সর্বোচ্চ নিরাপত্তা নিশ্চিত করে।
+          </li>
+          <li>
+            <span className="text-pink-500 font-bold">
+              সময় ও ভ্রমণের খরচ সাশ্রয়:
+            </span>{" "}
+            ল্যাবে যাওয়ার জন্য রাস্তায় সময়, পরিবহন খরচ – সবকিছুর ঝামেলা থেকে
+            মুক্তি, ঘরে বসেই স্বাস্থ্যপরীক্ষা হয়ে যাবে।
+          </li>
+        </ul>
+        <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
+          কারা নিতে পারেন এই সেবা?
+        </p>
+        <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
+          <li>বয়স্ক ও শারীরিকভাবে দুর্বল রোগী</li>
+          <li>ব্যস্ত কর্মজীবী মানুষ</li>
+          <li>শিশুদের স্বাস্থ্য পরীক্ষা</li>
+          <li>প্রেগন্যান্ট মায়েরা বা বেড রেস্টে থাকা রোগী</li>
+          <li>রুটিন চেকআপ করতে ইচ্ছুক কেউ</li>
+        </ul>
+        <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
+          সেবার আওতাভুক্ত এলাকা:
+        </p>
+        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+          ঢাকা শহরের প্রায় সব এলাকাজুড়ে আমাদের হোম সার্ভিস টিম কার্যক্রম
+          পরিচালনা করে।
+        </p>
+        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+          Citizen Care Bangladesh-এর{" "}
+          <span className="text-[#3abbba] font-bold">হোম স্যাম্পল কালেকশন</span>{" "}
+          সেবার সাথে থাকুন – ঘরে বসেই নিশ্চিন্তে স্বাস্থ্য পরীক্ষা করুন, সময় ও
+          শক্তি সাশ্রয় করুন।
+        </p>
+        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+          Citizen Care Bangladesh – আপনজনের মতো সেবা, ঘরে ঘরে।
+        </p>
+      </div>
+    ),
   },
 ];

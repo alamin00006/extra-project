@@ -283,12 +283,12 @@ const Navbar = () => {
                     </li>
                     <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
                       <Link
-                        href={`/career`}
+                        href={`/terms-condition`}
                         className={`no-underline
                            text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
                            `}
                       >
-                        Privacy Policy
+                        Terms & Condition
                       </Link>
                     </li>
                   </ul>
@@ -462,12 +462,12 @@ const Navbar = () => {
                   </li>
                   <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
                     <Link
-                      href={`/career`}
+                      href={`/terms-condition`}
                       className={`no-underline
                            text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
                            `}
                     >
-                      Privacy Policy
+                      Terms & Condition
                     </Link>
                   </li>
                 </ul>

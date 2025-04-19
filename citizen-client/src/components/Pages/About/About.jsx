@@ -9,22 +9,22 @@ const About = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
           Our Purpose & Promises
         </h2>
-        <p className="mt-4 text-gray-700 leading-relaxed">
+        <p className="mt-4 text-gray-700 leading-relaxed font-english">
           At Citizen Care Bangladesh, we believe healthcare should begin where
           life happens- at home. Our purpose is to bridge the gap between people
           and proper medical attention by delivering professional,
           compassionate, and reliable health services right to the doorstep.
-          Whether it's regular monitoring, specialist consultations, or advanced
-          medical coordination, we exist to make healthcare less about stress
-          and more about healing.
+          Whether {`it's`} regular monitoring, specialist consultations, or
+          advanced medical coordination, we exist to make healthcare less about
+          stress and more about healing.
         </p>
-        <p className="mt-4 text-gray-700 leading-relaxed">
+        <p className="mt-4 text-gray-700 leading-relaxed font-english">
           We promise to walk beside our patients like family — with integrity,
-          dignity, and a deep understanding of their needs. Every nurse's visit,
-          sample collected, and consultation arranged reflects our commitment to
-          restoring comfort, trust, and confidence in care. With Citizen Care
-          Bangladesh, healthcare is not a service you seek — it’s a support
-          system that comes to you.
+          dignity, and a deep understanding of their needs. Every {`nurse's`}{" "}
+          visit, sample collected, and consultation arranged reflects our
+          commitment to restoring comfort, trust, and confidence in care. With
+          Citizen Care Bangladesh, healthcare is not a service you seek — it’s a
+          support system that comes to you.
         </p>
       </div>
 
