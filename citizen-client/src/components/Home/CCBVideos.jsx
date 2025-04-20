@@ -7,15 +7,14 @@ const videos = [
     videoUrl: "https://www.youtube.com/embed/qyl1cJqohJs",
   },
   {
-    videoUrl: "https://www.youtube.com/embed/Arb1yWgFXlk",
+    videoUrl: "https://www.youtube.com/embed/8etWY4_0z4o",
   },
   {
-    videoUrl: "https://www.youtube.com/embed/xl2Bs8KHlAg",
+    videoUrl: "https://www.youtube.com/embed/yaFId-1VfcQ",
   },
 
   {
- 
-    videoUrl: "https://www.youtube.com/embed/nKyFfgDRhaQ",
+    videoUrl: "https://www.youtube.com/embed/lrgHv03tewU",
   },
   {
     videoUrl: "https://www.youtube.com/embed/va7unzVNZog",
@@ -31,10 +30,7 @@ export default function SuccessStories() {
         <h2 className="md:text-4xl sm:text-xl text-gray-900 my-4 md:mt-0 sm:mt-6">
           Our Live Experience
         </h2>
-        {/* <p className="text-gray-600 mb-8">
-          Our students presence in the ever-expanding IT industry drives us to
-          guide more people towards a sustainable future.
-        </p> */}
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {videos.map((video, index) => {
             const videoId = video.videoUrl.split("/").pop();
@@ -42,14 +38,14 @@ export default function SuccessStories() {
             return (
               <div
                 key={index}
-                className="relative rounded-lg overflow-hidden shadow-md h-[250px]"
+                className="relative rounded-lg overflow-hidden shadow-md h-[200px]"
               >
                 <Image
                   src={thumbnail}
                   alt={"videos"}
                   width={600}
-                  height={350}
-                  className="w-full h-[250px]"
+                  height={200}
+                  className="w-full h-[200px]"
                 />
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-2">
                   <div className="mt-4 flex justify-center items-center bg-white rounded-full p-2 relative">

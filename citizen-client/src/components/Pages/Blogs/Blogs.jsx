@@ -4,23 +4,24 @@ import Image from "next/image";
 
 const videos = [
   {
-    videoUrl: "https://www.youtube.com/embed/Arb1yWgFXlk",
+    videoUrl: "https://www.youtube.com/embed/qyl1cJqohJs",
   },
   {
-    videoUrl: "https://www.youtube.com/embed/xl2Bs8KHlAg",
+    videoUrl: "https://www.youtube.com/embed/8etWY4_0z4o",
+  },
+  {
+    videoUrl: "https://www.youtube.com/embed/yaFId-1VfcQ",
   },
 
   {
-    title: "3D Animation Industry Success",
-
-    videoUrl: "https://www.youtube.com/embed/nKyFfgDRhaQ",
+    videoUrl: "https://www.youtube.com/embed/lrgHv03tewU",
   },
   {
     videoUrl: "https://www.youtube.com/embed/va7unzVNZog",
   },
 ];
 
-const Blogs =() =>{
+const Blogs = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   return (
@@ -40,14 +41,14 @@ const Blogs =() =>{
             return (
               <div
                 key={index}
-                className="relative rounded-lg overflow-hidden shadow-md h-[250px]"
+                className="relative rounded-lg overflow-hidden shadow-md h-[200px]"
               >
                 <Image
                   src={thumbnail}
                   alt={"videos"}
                   width={600}
-                  height={350}
-                  className="w-full h-[250px]"
+                  height={200}
+                  className="w-full h-[200px]"
                 />
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-white p-2">
                   <div className="mt-4 flex justify-center items-center bg-white rounded-full p-2 relative">
@@ -88,5 +89,5 @@ const Blogs =() =>{
       )}
     </div>
   );
-}
+};
 export default Blogs;

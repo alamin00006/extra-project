@@ -78,7 +78,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={` md:pt-2 md:pb-3 sm:pt-3 sm:pb-3 shadow-md ${
+      className={`bg-white md:pt-2 md:pb-3 sm:pt-3 sm:pb-3 shadow-md ${
         isInitialLoad || hasScrolled ? "sticky-navbar" : ""
       }`}
     >

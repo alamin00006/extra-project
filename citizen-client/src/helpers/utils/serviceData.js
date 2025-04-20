@@ -373,7 +373,7 @@ export const cardData = [
   },
   {
     id: 5,
-    text: "Medicine & Medical Device",
+    text: "মেডিসিন & মেডিকেল ডিভাইস",
     miniText: "Free Home delivery",
     enTitle: "Medicine & Medical Device",
     image: "/images/services-2/MEDICINE-01.jpg",
