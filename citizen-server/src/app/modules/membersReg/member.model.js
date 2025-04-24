@@ -29,8 +29,16 @@ const memberSchema = mongoose.Schema(
       lowercase: true,
       trim: true,
     },
-
-    address: {
+    streetAddress: {
+      type: String,
+    },
+    city: {
+      type: String,
+    },
+    state: {
+      type: String,
+    },
+    zipCode: {
       type: String,
     },
 

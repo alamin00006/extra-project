@@ -78,31 +78,24 @@ const userSchema = mongoose.Schema(
     },
 
     // Address Information
-    address: {
-      addressLine1: {
-        type: String,
-      },
-      addressLine2: {
-        type: String,
-      },
-      city: {
-        type: String,
-      },
-      state: {
-        type: String,
-      },
-      zipCode: {
-        type: String,
-      },
-      country: {
-        type: String,
-        default: "Bangladesh",
-      },
-    },
+
     status: {
       type: String,
       enum: ["active", "inActive", "blocked"],
       default: "active",
+    },
+
+    streetAddress: {
+      type: String,
+    },
+    city: {
+      type: String,
+    },
+    state: {
+      type: String,
+    },
+    zipCode: {
+      type: String,
     },
   },
   {

@@ -22,6 +22,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
   const [fullName, setFullName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [address, setAddress] = useState("");
 
   const [userMessage, setUserMessage] = useState("");
 
@@ -113,6 +114,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
       email: userInfo?.email,
       phoneNumber: phoneNumber,
       password: userInfo.password,
+      streetAddress: address,
     };
 
     try {
@@ -161,7 +163,10 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
         </h2>
         <form onSubmit={handleSignUp} className="space-y-3">
           <div>
-            <label htmlFor="FullName" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="FullName"
+              className="block text-sm font-medium text-gray-700"
+            >
               Full Name
             </label>
             <input
@@ -172,35 +177,12 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
               placeholder="Full Name"
             />
           </div>
-          {/* <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Last Name
-            </label>
-            <input
-              type="text"
-              onChange={(e) => setLastName(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:bg-white placeholder-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              required
-              placeholder="Last Name"
-            />
-          </div> */}
-          {/* <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Email
-            </label>
-            <input
-              type="email"
-              onChange={emailCheck}
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              required
-              placeholder="Email"
-            />
-            {error.emailError && (
-              <p className="text-rose-500 ">{error.emailError}</p>
-            )}
-          </div> */}
+
           <div>
-            <label htmlFor="Phone Number" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="Phone Number"
+              className="block text-sm font-medium text-gray-700"
+            >
               Phone Number
             </label>
             <input
@@ -212,8 +194,12 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
               placeholder="Phone Number"
             />
           </div>
+
           <div>
-            <label htmlFor="Password" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="Password"
+              className="block text-sm font-medium text-gray-700"
+            >
               Password
             </label>
             <div className="relative">
@@ -227,7 +213,6 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
               <span
                 className="absolute inset-y-0 right-3 flex items-center cursor-pointer"
                 onClick={togglePasswordVisibility}
-     
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </span>
@@ -262,6 +247,21 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
                 {error.passWordError}
               </p>
             )}
+          </div>
+          <div>
+            <label
+              htmlFor="streetAddress"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Address (Optional)
+            </label>
+            <textarea
+              name="streetAddress"
+              onChange={(e) => setAddress(e.target.value)}
+              className="mt-1 block w-full h-20 px-3 py-2 border dark:bg-white placeholder-gray-700 border-gray-300 rounded-md shadow-sm  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              required
+              placeholder="Address"
+            />
           </div>
           <button
             onClick={generateRandomCode}

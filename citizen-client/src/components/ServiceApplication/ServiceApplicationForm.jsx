@@ -18,7 +18,7 @@ const ServiceApplicationForm = () => {
     if (!memberFee) return toast.error("Please choice any member type");
     setIsLoading(true);
 
-    const { name, mobileNumber, email, address } = e.target;
+    const { name, mobileNumber, email, streetAddress, city } = e.target;
 
     const resgistrationData = {
       amount: Number(memberFee),
@@ -26,7 +26,9 @@ const ServiceApplicationForm = () => {
       name: name.value,
       phoneNumber: mobileNumber.value,
       email: email?.value,
-      address: address.value,
+      streetAddress: streetAddress.value,
+      city: city.value,
+      state: state.value,
       paymentType: "Bkash",
       selectMethod: "Bkash",
     };
@@ -103,14 +105,38 @@ const ServiceApplicationForm = () => {
 
             <div>
               <label className="block text-sm font-medium text-gray-700">
-                Address
+                Street Address
               </label>
               <input
                 type="text"
-                name="address"
+                name="streetAddress"
                 className="mt-1 block w-full h-[50px] px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 required
-                placeholder="Address"
+                placeholder="Street Address"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                City
+              </label>
+              <input
+                type="text"
+                name="city"
+                className="mt-1 block w-full h-[50px] px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                required
+                placeholder="City"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700">
+                State
+              </label>
+              <input
+                type="text"
+                name="state"
+                className="mt-1 block w-full h-[50px] px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                required
+                placeholder="State"
               />
             </div>
 

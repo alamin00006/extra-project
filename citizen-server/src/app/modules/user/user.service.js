@@ -24,6 +24,7 @@ const createUser = async (user) => {
     // lastName: user.lastName,
     phoneNumber: user.phoneNumber,
     password: user.password,
+    streetAddress: user?.streetAddress,
   };
 
   const newUser = new User(userData);
