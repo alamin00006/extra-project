@@ -6,11 +6,11 @@ import { GiMedicines } from "react-icons/gi";
 export const cardData = [
   {
     id: 1,
-    text: "লয়্যাল মেম্বার হয়ে ঘরে বসে স্বাস্থ্য সেবা নিন",
+    text: "লয়্যাল মেম্বার হয়ে ঘরে বসে স্বাস্থ্য সেবা নিন।",
     miniText: "HEALTH CARE AT YOUR HOME",
     enTitle: "Health care at your home",
     price: 150,
-    image: "/images/services-2/MBBS000-01.jpg",
+    image: "/images/services-2/Service-Small-Banner-D1.jpg",
     banner: "/images/banner/HELTH-CARE-01-01.jpg",
 
     icon2: <IoHomeOutline className="w-10 h-10 text-[#3cb9ba]" />,
@@ -87,7 +87,7 @@ export const cardData = [
     text: "লয়্যাল মেম্বার হয়ে ঘরে বসে MBBS ডাক্তারের সেবা নিন",
     miniText: "ভিজিট মাত্র ২০০ টাকা",
     enTitle: "MBBS Doctor / Family Physician",
-    image: "/images/services-2/family-01.jpg",
+    image: "/images/services-2/Service-Small-Banner-D2.jpg",
     banner: "/images/banner/JAHID-01.jpg",
 
     icon2: <FaUserDoctor className="w-10 h-10 text-[#3cb9ba]" />,
