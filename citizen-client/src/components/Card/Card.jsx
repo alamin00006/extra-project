@@ -8,23 +8,34 @@ const Card = ({ data }) => {
         {/* Text section centered in the middle of the image */}
         {data.id === 2 && (
           <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-[1]">
-            <p className="text-[#39bcbc] text-sm font-black p-2">
+            <p className="text-[#12a88b] text-sm font-black py-1 px-2 my-0 leading-tight">
               ঘরে বসেই পেশাদার
             </p>
-            <p className="text-[12px]  font-bold">
-              <span className="bg-yellow-500 text-white p-2">
-                {" "}
-                MBBS Doctor/Family Physician
+            <p className="text-[14px] font-bold py-1 px-2 my-0 leading-tight">
+              <span
+                className="text-[#ff25a0] p-2 inline-block"
+                style={{
+                  clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
+                }}
+              >
+                MBBS Doctor
               </span>
             </p>
-            <p className=" text-[12px] font-black">
-              <span className="bg-pink-600 text-white p-2">
-                {" "}
+            <p className="text-[10px] font-black py-1 px-2 my-0 leading-tight">
+              <span
+                className="bg-pink-600 text-white p-2 inline-block"
+                style={{
+                  clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
+                }}
+              >
                 ভিজিট নিন প্রতি মাসে একবার।
               </span>
             </p>
-            <p className=" text-[12px] font-black">
-              <span className="bg-yellow-500 text-white p-2">
+            <p className="text-[10px] font-black py-1 px-2 my-0 leading-tight">
+              <span
+                className="bg-[#39bcbc] text-white p-2 inline-block"
+                style={{ clipPath: "polygon(0 0, 100% 0, 93% 100%, 0% 100%)" }}
+              >
                 জরুরি প্রয়োজনে টেলিমেডিসিন সেবা
               </span>
             </p>
