@@ -150,11 +150,13 @@ const ServiceApplicationForm = () => {
                     <input
                       type="radio"
                       name="membershipType"
-                      value={2500}
+                      value={4500}
                       defaultChecked
                       onChange={(e) => setMemberFee(e.target.value)}
                     />
-                    <span className="ml-2">একজনের জন্য বাৎসরিক ২৫০০ টাকা।</span>
+                    <span className="ml-2">
+                      একজনের জন্য বাৎসরিক 4,500 টাকা।
+                    </span>
                   </label>
                 </li>
                 <li>
@@ -163,10 +165,10 @@ const ServiceApplicationForm = () => {
                       onChange={(e) => setMemberFee(e.target.value)}
                       type="radio"
                       name="membershipType"
-                      value={4500}
+                      value={10000}
                     />
                     <span className="ml-2">
-                      ফ্যামিলির জন্য বাৎসরিক ৪৫০০ টাকা।
+                      ফ্যামিলির জন্য বাৎসরিক 10,000 টাকা।
                     </span>
                   </label>
                 </li>

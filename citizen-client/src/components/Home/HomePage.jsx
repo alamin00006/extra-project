@@ -3,7 +3,7 @@ import useUserData from "@/hooks/useUserData";
 import Banner2 from "./Banner2";
 import SuccessStories from "./CCBVideos";
 import Collaborators from "./Collaborators/Collaborators";
-import Facilites from "./Facilities/Facilites";
+import Services from "./services/Services";
 import "./Home.css";
 import TenTakaiShasto from "./loayal-member/LoayalMember";
 import WhyChoosUs from "./WhyChoosUs/WhyChoosUs";
@@ -29,7 +29,7 @@ const HomePage = () => {
         <TenTakaiShasto userData={userData} />
       </div>
       <div className="">
-        <Facilites />
+        <Services />
       </div>
       <div>
         <SuccessStories />

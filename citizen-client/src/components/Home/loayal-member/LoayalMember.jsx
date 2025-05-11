@@ -54,27 +54,29 @@ const TenTakaiShasto = ({ userData }) => {
           </p>
           <ul className="list-disc ml-4 space-y-2 text-[17px] font-medium ">
             <li className="font-bengali ">
-              রেজিস্টার্ড অভিজ্ঞ MBBS ডাক্তার: প্রতি ৩ মাসে ১ বার বাসায় গিয়ে
-              স্বাস্থ্যসেবা দিবেন এবং প্রয়োজনে টেলিমেডিসিন সেবা।{" "}
-              <p className="text-center text-pink-500 font-bengali ">
+              রেজিস্টার্ড অভিজ্ঞ MBBS ডাক্তার: প্রতি
+              {/* ৩  */}
+              মাসে ১ বার বাসায় গিয়ে স্বাস্থ্যসেবা দিবেন এবং প্রয়োজনে
+              টেলিমেডিসিন সেবা।{" "}
+              {/* <p className="text-center text-pink-500 font-bengali ">
                 (ভিজিট মাত্র ২০০ টাকা)
-              </p>
+              </p> */}
             </li>
             <li className="font-bengali ">
               অভিজ্ঞ নিউট্রিশনিস্টের পরামর্শ: প্রতি মাসে ১ বার আপনার বাসায় গিয়ে
               আপনার আদর্শ ডায়েট চার্ট প্রদান সহ প্রয়োজনীয় নিউট্রিশনাল পরামর্শ
               প্রদান করবেন ।
-              <p className="text-center text-pink-500 font-bengali ">
+              {/* <p className="text-center text-pink-500 font-bengali ">
                 (ভিজিট মাত্র ২০০ টাকা)
-              </p>
+              </p> */}
             </li>
             <li className="font-bengali ">
               অভিজ্ঞ রেজিস্টার্ড নার্স: প্রতি সপ্তাহে ১ বার এবং প্রতি মাসে
               সর্বোচ্চ ২-৪ বার বাসায় গিয়ে Vital Signs মনিটরিং করে হেলথ রেকর্ড
               বুকে লিপিবদ্ধ করে রাখবেন।
-              <p className="text-center text-pink-500 font-bengali ">
+              {/* <p className="text-center text-pink-500 font-bengali ">
                 (ভিজিট মাত্র ১৫০ টাকা)
-              </p>
+              </p> */}
             </li>
           </ul>
 
@@ -111,14 +113,12 @@ const TenTakaiShasto = ({ userData }) => {
           <ul className="list-disc ml-4 space-y-2 text-base  ">
             <li className="font-bold font-bengali  ">
               লয়্যাল <span className="text-[#3abbba]">মেম্বার ফি</span> একজনের
-              জন্য বাৎসরিক <span className="text-pink-500">২৫০০</span> টাকা
+              জন্য বাৎসরিক <span className="text-pink-500">4,500</span> টাকা
             </li>
             <li className="font-bold font-bengali ">
               লয়্যাল <span className="text-[#3abbba]"> মেম্বার ফি </span>
-              ফ্যামিলির জন্য বাৎসরিক <span className="text-pink-500">
-                ৪৫০০
-              </span>{" "}
-              টাকা
+              ফ্যামিলির জন্য বাৎসরিক{" "}
+              <span className="text-pink-500">10,000</span> টাকা
             </li>
           </ul>
 
