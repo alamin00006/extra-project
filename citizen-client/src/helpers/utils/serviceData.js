@@ -31,9 +31,9 @@ export const cardData = [
             <span className="text-pink-500 font-bold">
               রেজিস্টার্ড অভিজ্ঞ MBBS ডাক্তার:
             </span>{" "}
-            প্রতি ৩ মাসে ১ বার বাসায় গিয়ে স্বাস্থ্যসেবা দিবেন এবং প্রয়োজনে
+            প্রতি মাসে ১ বার বাসায় গিয়ে স্বাস্থ্যসেবা দিবেন এবং প্রয়োজনে
             টেলিমেডিসিন সেবা। <br />
-            (ভিজিট মাত্র ২০০ টাকা)
+            {/* (ভিজিট মাত্র ২০০ টাকা) */}
           </li>
           <li>
             <span className="text-pink-500 font-bold">
@@ -41,7 +41,7 @@ export const cardData = [
             </span>{" "}
             প্রতি মাসে ১ বার আপনার বাসায় গিয়ে আপনার আদর্শ ডায়েট চার্ট প্রদান সহ
             প্রয়োজনীয় নিউট্রিশনাল পরামর্শ প্রদান করবেন। <br />
-            (ভিজিট মাত্র ২০০ টাকা)
+            {/* (ভিজিট মাত্র ২০০ টাকা) */}
           </li>
           <li>
             <span className="text-pink-500 font-bold">
@@ -49,7 +49,7 @@ export const cardData = [
             </span>{" "}
             প্রতি সপ্তাহে ১ বার এবং প্রতি মাসে সর্বোচ্চ ২-৪ বার বাসায় গিয়ে Vital
             Signs মনিটরিং করে হেলথ রেকর্ড বুকে লিপিবদ্ধ করে রাখবেন। <br />
-            (ভিজিট মাত্র ১৫০ টাকা)
+            {/* (ভিজিট মাত্র ১৫০ টাকা) */}
           </li>
         </ul>
         <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
@@ -76,8 +76,8 @@ export const cardData = [
           লয়্যাল মেম্বার ফি:
         </p>
         <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
-          <li>একজনের জন্য বাৎসরিক ২৫০০ টাকা।</li>
-          <li>ফ্যামিলির জন্য বাৎসরিক ৪৫০০ টাকা।</li>
+          <li>একজনের জন্য বাৎসরিক 4,500 টাকা।</li>
+          <li>ফ্যামিলির জন্য বাৎসরিক 10,000 টাকা।</li>
         </ul>
       </div>
     ),
@@ -85,7 +85,7 @@ export const cardData = [
   {
     id: 2,
     text: "লয়্যাল মেম্বার হয়ে ঘরে বসে MBBS ডাক্তারের সেবা নিন",
-    miniText: "ভিজিট মাত্র ২০০ টাকা",
+    miniText: "",
     enTitle: "MBBS Doctor / Family Physician",
     image: "/images/services-2/Service-Small-Banner-D2.jpg",
     banner: "/images/banner/JAHID-01.jpg",
@@ -99,7 +99,7 @@ export const cardData = [
           </span>{" "}
           এর <span className="text-pink-500 font-bold">লয়্যাল মেম্বার</span>{" "}
           হয়ে ঘরে বসে <b>MBBS ডাক্তারের সেবা</b> নিন,{" "}
-          <b>ভিজিট মাত্র ২০০ টাকা।</b>
+          {/* <b>ভিজিট মাত্র ২০০ টাকা।</b> */}
         </h2>
         <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
           Citizen Care Bangladesh- এর{" "}
@@ -130,9 +130,9 @@ export const cardData = [
             আপনার বাড়িতে এসে চিকিৎসা পরামর্শ প্রদান করবেন।
           </li>
           <li>
-            <span className="text-pink-500 font-bold">স্বল্প খরচে:</span> মাত্র
-            ২০০ টাকা ভিজিট এ আপনি একবারের জন্য অভিজ্ঞ MBBS ডাক্তারের পরামর্শ
-            নিতে পারবেন। এটি খুবই সাশ্রয়ী মূল্যের সেবা।
+            <span className="text-pink-500 font-bold">স্বল্প খরচে:</span>এ আপনি
+            অভিজ্ঞ MBBS ডাক্তারের পরামর্শ নিতে পারবেন। খুবই সাশ্রয়ী মূল্যের
+            সেবা।
           </li>
           <li>
             <span className="text-pink-500 font-bold">সুবিধাজনক:</span> আপনার
@@ -184,7 +184,7 @@ export const cardData = [
   {
     id: 3,
     text: "লয়্যাল মেম্বার হয়ে ঘরে বসে অভিজ্ঞ নিউট্রিশনিস্ট এর পরামর্শ নিন",
-    miniText: "ভিজিট মাত্র ২০০ টাকা",
+    miniText: "",
     enTitle: "Nutritionists",
     image: "/images/services-2/NUTRI-BOXe-box-01.jpg",
     banner: "/images/banner/niutri-01.jpg",
@@ -198,7 +198,7 @@ export const cardData = [
           </span>{" "}
           এর <span className="text-pink-500 font-bold">লয়্যাল মেম্বার</span>{" "}
           হয়ে ঘরে বসে <b>অভিজ্ঞ নিউট্রিশনিস্ট</b> এর পরামর্শ নিন,{" "}
-          <b>ভিজিট মাত্র ২০০ টাকা।</b>
+          {/* <b>ভিজিট মাত্র ২০০ টাকা।</b> */}
         </h2>
         <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
           <span className="text-red-500 font-bold">
@@ -234,9 +234,8 @@ export const cardData = [
             নিউট্রিশনিস্ট আপনার বাড়িতে এসে পরামর্শ প্রদান করবেন।
           </li>
           <li>
-            <span className="text-pink-500 font-bold">স্বল্প খরচে:</span> মাত্র
-            ২০০ টাকায় ভিজিট এ আপনি একবারের জন্য অভিজ্ঞ নিউট্রিশনিস্টের পরামর্শ
-            নিতে পারবেন। এটি খুবই সাশ্রয়ী মূল্যের সেবা।
+            <span className="text-pink-500 font-bold">স্বল্প খরচে:</span> আপনি
+            অভিজ্ঞ নিউট্রিশনিস্টের পরামর্শ নিতে পারবেন। খুবই সাশ্রয়ী মূল্যে।
           </li>
           <li>
             <span className="text-pink-500 font-bold">সুবিধাজনক:</span> আপনার
@@ -286,7 +285,7 @@ export const cardData = [
   {
     id: 4,
     text: "লয়্যাল মেম্বার হয়ে ঘরে বসে নার্সিং সেবা নিন",
-    miniText: "ভিজিট মাত্র ১৫০ টাকা",
+    miniText: "",
     enTitle: "Nurse",
     image: "/images/services-2/nurse box-01.jpg",
     banner: "/images/banner/nurse-01.jpg",
@@ -299,7 +298,8 @@ export const cardData = [
             Citizen Care Bangladesh-
           </span>{" "}
           এর <span className="text-pink-500 font-bold">লয়্যাল মেম্বার</span>{" "}
-          হয়ে ঘরে বসে <b>নার্সিং সেবা, মাত্র ১৫০ টাকা।</b>
+          হয়ে ঘরে বসে{" "}
+          <span className="font-black text-sm">নার্সিং সেবা ।</span>
         </h2>
         <p className="text-base md:text-base mb-4 text-[#565656] leading-8 font-bengali">
           Citizen Care Bangladesh- এর{" "}
@@ -321,15 +321,14 @@ export const cardData = [
             এই সেবাটি আপনাকে রেজিস্টার্ড এবং অভিজ্ঞ নার্সের মাধ্যমে সরবরাহ করা
             হয়। তাই আপনি নিশ্চিন্ত থাকতে পারেন যে আপনি সর্বোত্তম সেবা পাচ্ছেন।
           </li>
-          <li>
+          <li className="font-bengali">
             <span className="text-pink-500 font-bold">ঘরে বসে সেবা:</span>{" "}
             আপনাকে হাসপাতালে বা কষ্ট করে বাহিরে যাওয়ার প্রয়োজন নেই। নার্স
             আপনার বাড়িতে এসে নার্সিং সেবা প্রদান করবেন।
           </li>
           <li>
-            <span className="text-pink-500 font-bold">স্বল্প খরচে:</span> মাত্র
-            ১৫০ টাকায় আপনি একবারের জন্য নার্সের সেবা নিতে পারবেন। এটি খুবই
-            সাশ্রয়ী মূল্যের সেবা।
+            <span className="text-pink-500 font-bold">স্বল্প খরচে:</span> আপনি
+            নার্সের সেবা নিতে পারবেন। খুবই সাশ্রয়ী মূল্যে।
           </li>
           <li>
             <span className="text-pink-500 font-bold">সুবিধাজনক:</span> আপনার
