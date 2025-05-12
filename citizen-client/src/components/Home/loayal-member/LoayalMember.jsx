@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-const TenTakaiShasto = ({ userData }) => {
+const LoayalMember = ({ userData }) => {
   const router = useRouter();
 
   const handleRegistration = () => {
@@ -18,7 +18,7 @@ const TenTakaiShasto = ({ userData }) => {
       <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 md:p-5 sm:px-5 sm:py-5 mt-0 ">
         <div className="md:col-span-6 w-full h-full sm:hidden md:block">
           <Image
-            src={"/images/services-2/HELTH-CARE-at-01.jpg"}
+            src={"/images/registration/Doing Registration Picture.jpg"}
             width={600}
             height={600}
             className="w-full h-full object-cover"
@@ -27,7 +27,7 @@ const TenTakaiShasto = ({ userData }) => {
         </div>
         <div className="md:col-span-6 w-full h-full md:hidden sm:block ">
           <Image
-            src={"/images/services-2/HELTH-CARE-at-01.jpg"}
+            src={"/images/registration/Doing Registration Picture.jpg"}
             width={600}
             height={600}
             className="w-full h-full object-contain"
@@ -120,6 +120,10 @@ const TenTakaiShasto = ({ userData }) => {
               ফ্যামিলির জন্য বাৎসরিক{" "}
               <span className="text-pink-500">10,000</span> টাকা
             </li>
+            <li className="font-bold font-bengali ">
+              মাসিক <span className="text-[#3abbba]"> চার্জ </span>
+              <span className="text-pink-500">2,000 </span> টাকা
+            </li>
           </ul>
 
           <div className="mt-5">
@@ -136,4 +140,4 @@ const TenTakaiShasto = ({ userData }) => {
   );
 };
 
-export default TenTakaiShasto;
+export default LoayalMember;

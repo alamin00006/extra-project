@@ -6,7 +6,7 @@ const Card = ({ data }) => {
     <Link href={`/service-details/${data.id}`} className="no-underline">
       <div className="rounded-lg overflow-hidden group shadow-md md:h-[320px] sm:h-auto relative">
         {/* Text section centered in the middle of the image */}
-        {data.id === 2 && (
+        {/* {data.id === 2 && (
           <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-[1]">
             <p className="text-[#12a88b] text-sm font-black py-1 px-2 my-0 leading-tight">
               ঘরে বসেই পেশাদার
@@ -40,7 +40,7 @@ const Card = ({ data }) => {
               </span>
             </p>
           </div>
-        )}
+        )} */}
         {/* Image section */}
         <div className="w-full mb-4">
           <Image

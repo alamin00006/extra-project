@@ -10,8 +10,8 @@ export const cardData = [
     miniText: "HEALTH CARE AT YOUR HOME",
     enTitle: "Health care at your home",
     price: 150,
-    image: "/images/services-2/Service-Small-Banner-D1.jpg",
-    banner: "/images/banner/HELTH-CARE-01-01.jpg",
+    image: "/images/services-2/Health Care at your home.jpg",
+    banner: "/images/banner/Health-Care-at-your-homee.jpg",
 
     icon2: <IoHomeOutline className="w-10 h-10 text-[#3cb9ba]" />,
     content: (
@@ -78,6 +78,7 @@ export const cardData = [
         <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
           <li>একজনের জন্য বাৎসরিক 4,500 টাকা।</li>
           <li>ফ্যামিলির জন্য বাৎসরিক 10,000 টাকা।</li>
+          <li>মাসিক চার্জ 2,000 টাকা।</li>
         </ul>
       </div>
     ),
@@ -88,7 +89,7 @@ export const cardData = [
     miniText: "",
     enTitle: "MBBS Doctor / Family Physician",
     image: "/images/services-2/Service-Small-Banner-D2.jpg",
-    banner: "/images/banner/JAHID-01.jpg",
+    banner: "/images/banner/Doctor Poster.jpg",
 
     icon2: <FaUserDoctor className="w-10 h-10 text-[#3cb9ba]" />,
     content: (
@@ -186,8 +187,8 @@ export const cardData = [
     text: "লয়্যাল মেম্বার হয়ে ঘরে বসে অভিজ্ঞ নিউট্রিশনিস্ট এর পরামর্শ নিন",
     miniText: "",
     enTitle: "Nutritionists",
-    image: "/images/services-2/NUTRI-BOXe-box-01.jpg",
-    banner: "/images/banner/niutri-01.jpg",
+    image: "/images/services-2/Nutronist Poster.jpg",
+    banner: "/images/banner/Nutronist Poster.jpg",
 
     icon2: <FaAppleAlt className="w-10 h-10 text-[#3cb9ba]" />,
     content: (
@@ -287,8 +288,8 @@ export const cardData = [
     text: "লয়্যাল মেম্বার হয়ে ঘরে বসে নার্সিং সেবা নিন",
     miniText: "",
     enTitle: "Nurse",
-    image: "/images/services-2/nurse box-01.jpg",
-    banner: "/images/banner/nurse-01.jpg",
+    image: "/images/services-2/Nurse Poster.jpg",
+    banner: "/images/banner/Nurse Poster.jpg",
     icon: "/images/e-medical.png",
     content: (
       <div>
@@ -376,6 +377,7 @@ export const cardData = [
     miniText: "Free Home delivery",
     enTitle: "Medicine & Medical Device",
     image: "/images/services-2/MEDICINE-01.jpg",
+    banner: "/images/banner/Medicine-and-Medical-Device.jpg",
     icon2: <GiMedicines className="w-10 h-10 text-[#3cb9ba]" />,
   },
   // {
@@ -392,8 +394,8 @@ export const cardData = [
     text: "হেলথ ট্যুরিজম",
     miniText: "ঝামেলামুক্ত চিকিৎসা সফর",
     enTitle: "Health Tourism",
-    image: "/images/services-2/Health tourism-01.jpg",
-    // banner: "/images/banner/health-tourism-01.jpg",
+    image: "/images/services-2/Health Turism.jpg",
+    banner: "/images/banner/Health Turism.jpg",
     icon: "/images/tourisom.png",
     content: (
       <div>
@@ -492,8 +494,8 @@ export const cardData = [
     text: "হেলথ গাইড",
     miniText: "মাত্র ৫০০ টাকা থেকে শুরু",
     enTitle: "Health Guide",
-    image: "/images/services-2/HEALTH GUIDE-01.jpg",
-    // banner: "/images/banner/health-guide-01.jpg",
+    image: "/images/services-2/Health Guide.jpg",
+    banner: "/images/banner/Health Guide.jpg",
     icon: "/images/health-guide.png",
     content: (
       <div>
@@ -596,8 +598,8 @@ export const cardData = [
     text: "ঘরে বসেই স্বাস্থ্য পরীক্ষা",
     miniText: "ঘরে বসে নমুনা দিন",
     enTitle: "Home Sample Collection",
-    image: "/images/services-2/health-check.jpg",
-    // banner: "/images/banner/home-sample-01.jpg",
+    image: "/images/services-2/Home Sample Collection.jpg",
+    banner: "/images/banner/Home sample collection.jpg",
     icon: "/images/check.png",
     content: (
       <div>

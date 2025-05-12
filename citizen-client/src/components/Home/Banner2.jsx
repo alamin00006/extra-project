@@ -6,12 +6,12 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const images = [
-  "/images/home-page/HELTH-CARE-01.jpg",
+  "/images/home-page/Home Care Photo.jpg",
   // "/images/home-page/HOME-PAGE-1.jpg",
-  "/images/home-page/HELTH-AWAR-01.jpg",
-  "/images/home-page/MBBS-01.jpg",
-  "/images/home-page/NUTRI-01.jpg",
-  "/images/home-page/nurse-01.jpg",
+  "/images/home-page/Medicine Supply.jpg",
+  "/images/home-page/Awarness Program.jpg",
+  // "/images/home-page/NUTRI-01.jpg",
+  // "/images/home-page/nurse-01.jpg",
 ];
 
 const HeroSlider = ({ userData }) => {

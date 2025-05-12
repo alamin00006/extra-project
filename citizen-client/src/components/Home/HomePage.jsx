@@ -5,7 +5,7 @@ import SuccessStories from "./CCBVideos";
 import Collaborators from "./Collaborators/Collaborators";
 import Services from "./services/Services";
 import "./Home.css";
-import TenTakaiShasto from "./loayal-member/LoayalMember";
+import LoayalMember from "./loayal-member/LoayalMember";
 import WhyChoosUs from "./WhyChoosUs/WhyChoosUs";
 
 const HomePage = () => {
@@ -26,7 +26,7 @@ const HomePage = () => {
         <NoticeBoard />
       </div> */}
       <div className=" md:mt-0 sm:mt-0 md:mx-0 sm:mx-5 ">
-        <TenTakaiShasto userData={userData} />
+        <LoayalMember userData={userData} />
       </div>
       <div className="">
         <Services />
