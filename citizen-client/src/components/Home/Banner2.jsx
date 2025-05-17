@@ -7,11 +7,10 @@ import { useRouter } from "next/navigation";
 
 const images = [
   "/images/home-page/Home Care Photo.jpg",
-  // "/images/home-page/HOME-PAGE-1.jpg",
-  "/images/home-page/Medicine Supply.jpg",
-  "/images/home-page/Awarness Program.jpg",
-  // "/images/home-page/NUTRI-01.jpg",
-  // "/images/home-page/nurse-01.jpg",
+  "/images/home-page/Health-Care.jpg",
+  "/images/home-page/Home-Page-Front.jpg",
+  "/images/home-page/CCB-CUMMUNITY.jpg",
+  "/images/home-page/Awerness-Program.jpg",
 ];
 
 const HeroSlider = ({ userData }) => {
