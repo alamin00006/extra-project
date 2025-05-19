@@ -25,7 +25,7 @@ const HeroSlider = ({ userData }) => {
     }
   };
 
-  console.log("hello");
+
   return (
     <div className="relative w-full ">
       {/* Splide Slider */}

@@ -187,7 +187,7 @@ export const cardData = [
     text: "লয়্যাল মেম্বার হয়ে ঘরে বসে অভিজ্ঞ নিউট্রিশনিস্ট এর পরামর্শ নিন",
     miniText: "",
     enTitle: "Nutritionists",
-    image: "/images/services-2/Nutronist Poster.jpg",
+    image: "/images/services-2/Nutronist-Poster.jpg",
     banner: "/images/banner/Nutronist Poster.jpg",
 
     icon2: <FaAppleAlt className="w-10 h-10 text-[#3cb9ba]" />,
