@@ -4,12 +4,11 @@ export default function WhoWeAre() {
   return (
     <div className="relative w-full">
       {/* Background Image */}
-      <div className="relative h-56 sm:h-64 md:h-72 lg:h-80 xl:h-96 overflow-hidden">
+      <div className="relative h-[20vh] md:h-72 overflow-hidden">
         <Image
           src="/images/About-us/about-us.jpg" // Ensure the image is inside the "public/images/banner" folder
           alt="Who We Are"
-          layout="fill"
-          objectFit="cover"
+          fill
           priority
         />
         {/* Overlay */}

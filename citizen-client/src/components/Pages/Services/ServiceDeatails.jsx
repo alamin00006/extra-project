@@ -38,9 +38,8 @@ const ServiceDeatails = ({ params }) => {
         <Image
           src={menuItem.banner || menuItem?.image || ""}
           alt={menuItem.text}
-          layout="fill"
-          // className="w-screen h-full md:object-contain sm:object-contain top-0"
-          priority // Optional: use priority for above-the-fold images
+          fill
+          priority
         />
       </div>
       <h3 className="mt-4 font-bengali">{menuItem?.text}</h3>

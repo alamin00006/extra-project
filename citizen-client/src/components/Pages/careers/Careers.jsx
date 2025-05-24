@@ -10,8 +10,7 @@ const Careers = () => {
           <Image
             src="/images/careers/career-baneer.jpg"
             alt="Who We Are"
-            layout="fill"
-            objectFit="cover"
+            fill
             priority
           />
           {/* Overlay */}
