@@ -8,7 +8,8 @@ export default function WhoWeAre() {
         <Image
           src="/images/About-us/about-us.jpg" // Ensure the image is inside the "public/images/banner" folder
           alt="Who We Are"
-          fill
+          layout="fill"
+          objectFit="cover"
           priority
         />
         {/* Overlay */}
