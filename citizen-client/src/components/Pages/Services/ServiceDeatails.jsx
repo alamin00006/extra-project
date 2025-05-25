@@ -34,11 +34,12 @@ const ServiceDeatails = ({ params }) => {
 
   return (
     <div>
-      <div className="relative w-full h-[20vh] md:h-72 rounded-lg">
+      <div className="relative w-full h-[20vh] md:h-72 ">
         <Image
           src={menuItem.banner || menuItem?.image || ""}
           alt={menuItem.text}
-          fill
+          layout="fill"
+          objectFit="cover"
           priority
         />
       </div>

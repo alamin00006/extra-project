@@ -49,7 +49,7 @@ const HeroSlider = ({ userData }) => {
       </Splide>
 
       {/* Two-Column Content */}
-      <div className="custom-container inset-0 absolute top-0 left-0 z-[1] md:flex flex-col md:flex-row items-center text-black gap-8 h-full">
+      <div className="custom-container inset-0 absolute top-0 left-0 z-[1] md:flex hidden flex-col md:flex-row items-center text-black gap-8 h-full">
         <div>
           {/* Left-Aligned Text Content */}
           <div className="w-full md:w-1/2 bg-[#e8ffff] p-3 opacity-75 rounded md:mt-0 sm:mt-5">
