@@ -4,13 +4,23 @@ import JobOpenings from "./JobOpening";
 const Careers = () => {
   return (
     <>
-      <div className="relative w-full ">
+      <div className="relative w-full custom-container">
         {/* Background Image */}
-        <div className="relative h-[calc(100vh-120px)]">
+        <div className="relative ">
           <Image
             src="/images/careers/career-baneer.jpg"
             alt="Who We Are"
             layout="fill"
+            priority
+          />
+
+          <Image
+            src="/images/careers/career-baneer.jpg"
+            alt="Who We Are"
+            width={1280}
+            height={300}
+            objectFit="contain"
+            objectPosition="center"
             priority
           />
 

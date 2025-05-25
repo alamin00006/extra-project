@@ -37,7 +37,7 @@ const ServiceDeatails = ({ params }) => {
         <Image
           src={menuItem.banner || menuItem?.image}
           alt={`Banner for ${menuItem.text} service`}
-          width={1140}
+          width={1280}
           height={300}
           objectFit="contain"
           objectPosition="center"

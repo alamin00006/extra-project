@@ -8,7 +8,7 @@ export default function WhoWeAre() {
         <Image
           src="/images/About-us/about-us.jpg" // Ensure the image is inside the "public/images/banner" folder
           alt="Who We Are"
-          width={1140}
+          width={1280}
           height={300}
           objectFit="contain"
           objectPosition="center"
