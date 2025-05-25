@@ -4,7 +4,6 @@ import { cardData } from "@/helpers/utils/serviceData";
 import useUserData from "@/hooks/useUserData";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-
 import { useEffect, useState } from "react";
 
 const ServiceDeatails = ({ params }) => {
@@ -34,27 +33,33 @@ const ServiceDeatails = ({ params }) => {
 
   return (
     <div>
-      <div className="relative w-full h-[20vh] md:h-72 ">
+      <div className="relative ">
         <Image
-          src={menuItem.banner || menuItem?.image || ""}
-          alt={menuItem.text}
-          layout="fill"
-          objectFit="cover"
+          src={menuItem.banner || menuItem?.image}
+          alt={`Banner for ${menuItem.text} service`}
+          width={1140}
+          height={300}
+          objectFit="contain"
+          objectPosition="center"
           priority
         />
       </div>
-      <h3 className="mt-4 font-bengali">{menuItem?.text}</h3>
+      <h3 className="mt-4 font-bengali text-lg sm:text-xl md:text-2xl">
+        {menuItem?.text}
+      </h3>
       <div>
-        <div className="font-bengali text-base">{menuItem?.content}</div>
+        <div className="font-bengali text-sm sm:text-base">
+          {menuItem?.content}
+        </div>
         <div className="my-3">
           <button
             onClick={handleRegistration}
-            className="uppercase no-underline px-6 py-3 bg-[#39bcbc] hover:bg-pink-600 text-white hover:text-white rounded text-sm"
+            className="uppercase no-underline px-4 py-2 sm:px-6 sm:py-3 bg-[#39bcbc] hover:bg-pink-600 text-white hover:text-white rounded text-xs sm:text-sm"
           >
             Registration Now
           </button>
         </div>
-        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8 font-bengali">
+        <p className="text-xs sm:text-sm md:text-base mb-4 text-[#565656] leading-8 font-bengali">
           সিটিজেন কেয়ার বাংলাদেশের লয়্যাল মেম্বার হতে যোগাযোগ করুন:
           <br />
           কল সেন্টার: ০১৮৯৬-৫১১০২০, ০২৪১০৬১৬১৬ <br />
@@ -72,7 +77,7 @@ const ServiceDeatails = ({ params }) => {
             facebook.com/Citizencarebd
           </a>
         </p>
-        <p className="text-sm md:text-base mb-4 text-[#565656] leading-8 font-bengali">
+        <p className="text-xs sm:text-sm md:text-base mb-4 text-[#565656] leading-8 font-bengali">
           এই অফারের শর্তাবলী সম্পর্কে ভালো করে জেনে নিন। <br />
           আপনার স্বাস্থ্য আপনার হাতে, {`"সিটিজেন কেয়ার বাংলাদেশ আপনার সাথে"`}!
         </p>

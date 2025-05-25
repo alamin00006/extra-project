@@ -6,7 +6,7 @@ const Careers = () => {
     <>
       <div className="relative w-full ">
         {/* Background Image */}
-        <div className="relative h-80 sm:h-64 md:h-96 lg:h-80 xl:h-[500px] ">
+        <div className="relative h-[calc(100vh-120px)]">
           <Image
             src="/images/careers/career-baneer.jpg"
             alt="Who We Are"
