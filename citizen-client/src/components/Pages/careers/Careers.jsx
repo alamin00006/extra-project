@@ -7,12 +7,12 @@ const Careers = () => {
       <div className="relative w-full custom-container">
         {/* Background Image */}
         <div className="relative ">
-          <Image
+          {/* <Image
             src="/images/careers/career-baneer.jpg"
             alt="Who We Are"
             layout="fill"
             priority
-          />
+          /> */}
 
           <Image
             src="/images/careers/career-baneer.jpg"

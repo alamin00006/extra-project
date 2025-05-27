@@ -10,7 +10,7 @@ export const cardData = [
     miniText: "HEALTH CARE AT YOUR HOME",
     enTitle: "Health care at your home",
     price: 150,
-    image: "/images/services-2/Health Care at your home.jpg",
+    image: "/images/services-2/Health-Care-at-your-home.jpg",
     banner: "/images/banner/Health-Care-at-your-homee.jpg",
 
     icon2: <IoHomeOutline className="w-10 h-10 text-[#3cb9ba]" />,
@@ -376,7 +376,7 @@ export const cardData = [
     text: "মেডিসিন & মেডিকেল ডিভাইস",
     miniText: "Free Home delivery",
     enTitle: "Medicine & Medical Device",
-    image: "/images/services-2/MEDICINE-01.jpg",
+    image: "/images/services-2/MEDICINE DEVICES.jpg",
     banner: "/images/banner/Medicine-and-Medical-Device.jpg",
     icon2: <GiMedicines className="w-10 h-10 text-[#3cb9ba]" />,
   },

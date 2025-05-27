@@ -25,7 +25,7 @@ const doctors = [
       time: "Not specified",
       location: "Not specified",
     },
-    image: "/images/services-2/HEALTH GUIDE-01.jpg",
+    image: "/images/doctors/imrul.jpg",
   },
 ];
 

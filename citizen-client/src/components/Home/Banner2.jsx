@@ -8,6 +8,8 @@ const images = [
   "/images/home-page/Home-Page-Front.jpg",
   "/images/home-page/CCB-CUMMUNITY.jpg",
   "/images/home-page/Awerness-Program.jpg",
+  "/images/home-page/Awerness-Program.jpg",
+  "/images/home-page/Medicine Supply.jpg",
 ];
 
 const HeroSlider = ({ userData }) => {
@@ -38,7 +40,7 @@ const HeroSlider = ({ userData }) => {
       >
         {images.map((image, index) => (
           <SplideSlide key={index}>
-            <div className="relative w-screen sm:hidden md:block h-[calc(100vh-100px)]">
+            <div className="relative w-screen sm:hidden md:block h-[calc(100vh-100px)] ">
               <Image src={image} alt={`Slide ${index + 1}`} fill priority />
             </div>
             <div className="md:hidden sm:block w-screen h-[170px]">
