@@ -6,41 +6,95 @@ const Card = ({ data }) => {
     <Link href={`/service-details/${data.id}`} className="no-underline">
       <div className="rounded-lg overflow-hidden group shadow-md md:h-[300px] sm:h-auto relative">
         {/* Text section centered in the middle of the image */}
-        {/* {data.id === 2 && (
-          <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-[1]">
-            <p className="text-[#12a88b] text-sm font-black py-1 px-2 my-0 leading-tight">
-              ঘরে বসেই পেশাদার
+        {data.id === 2 && (
+          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-[1]">
+            <p className="text-[#12a88b] text-[12px] font-black py-1 px-2 my-0 ">
+              প্রতি মাসে ১ বার
             </p>
-            <p className="text-[14px] font-bold py-1 px-2 my-0 leading-tight">
+            <p className="text-[12px]  font-bold py-1 px-2 my-0 leading-tight">
               <span
                 className="text-[#ff25a0] p-2 inline-block"
                 style={{
                   clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
                 }}
               >
-                MBBS Doctor
+                আপনার বাসায়
               </span>
             </p>
-            <p className="text-[10px] font-black py-1 px-2 my-0 leading-tight">
+            <p className="text-[11px] font-black py-1 px-2 my-0 leading-tight">
               <span
                 className="bg-pink-600 text-white p-2 inline-block"
                 style={{
                   clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
                 }}
               >
-                ভিজিট নিন প্রতি মাসে একবার।
+                রেজিস্টার্ড MBBS ডাক্তার।
               </span>
             </p>
-            <p className="text-[10px] font-black py-1 px-2 my-0 leading-tight">
+            {/* <p className="text-[10px] font-black py-1 px-2 my-0 leading-tight">
               <span
                 className="bg-[#39bcbc] text-white p-2 inline-block"
                 style={{ clipPath: "polygon(0 0, 100% 0, 93% 100%, 0% 100%)" }}
               >
                 জরুরি প্রয়োজনে টেলিমেডিসিন সেবা
               </span>
+            </p> */}
+          </div>
+        )}
+        {data.id === 3 && (
+          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-[1]">
+            <p className="text-[#12a88b] text-[12px] font-black py-1 px-2 my-0 ">
+              প্রতি মাসে ১ বার
+            </p>
+            <p className="text-[12px] font-bold py-1 px-2 my-0 leading-tight">
+              <span
+                className="text-[#ff25a0] p-2 inline-block"
+                style={{
+                  clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
+                }}
+              >
+                আপনার বাসায়
+              </span>
+            </p>
+            <p className="text-[11px] font-black py-1 px-2 my-0 leading-tight">
+              <span
+                className="bg-pink-600 text-white p-2 inline-block"
+                style={{
+                  clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
+                }}
+              >
+                অভিজ্ঞ নিউট্রিশনিস্ট।
+              </span>
             </p>
           </div>
-        )} */}
+        )}
+        {data.id === 4 && (
+          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-[1]">
+            <p className="text-[#12a88b] text-[12px] font-black py-1 px-2 my-0 ">
+              প্রতি মাসে ২-৪ বার
+            </p>
+            <p className="text-[12px] font-bold py-1 px-2 my-0 leading-tight">
+              <span
+                className="text-[#ff25a0] p-2 inline-block"
+                style={{
+                  clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
+                }}
+              >
+                আপনার বাসায়
+              </span>
+            </p>
+            <p className="text-[11px] font-black py-1 px-2 my-0 leading-tight">
+              <span
+                className="bg-pink-600 text-white p-2 inline-block"
+                style={{
+                  clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
+                }}
+              >
+                BSc নার্স/SACMO।
+              </span>
+            </p>
+          </div>
+        )}
         {/* Image section */}
         <div className="w-full mb-4">
           <Image
