@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const images = [
-  "/images/home-page/Health-Care1.jpg",
+  "/images/home-page/Health-Care.jpg",
   "/images/home-page/Home-Page-Front.jpg",
   "/images/home-page/CCB-CUMMUNITY.jpg",
   "/images/home-page/Awerness-Program.jpg",
