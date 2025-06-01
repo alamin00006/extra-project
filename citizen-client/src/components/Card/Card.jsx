@@ -7,7 +7,7 @@ const Card = ({ data }) => {
       <div className="rounded-lg overflow-hidden group shadow-md md:h-[300px] sm:h-auto relative">
         {/* Text section centered in the middle of the image */}
         {data.id === 2 && (
-          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/3 -translate-y-1/2 w-full z-[1]">
+          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/3 w-full z-[1]">
             <p className="text-[#12a88b] text-xl font-black py-1 px-2 my-0 font-bengali">
               প্রতি মাসে <span className="text-3xl text-pink-600 ">১</span> বার
             </p>
