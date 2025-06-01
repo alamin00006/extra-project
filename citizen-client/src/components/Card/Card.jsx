@@ -8,27 +8,30 @@ const Card = ({ data }) => {
         {/* Text section centered in the middle of the image */}
         {data.id === 2 && (
           <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-[1]">
-            <p className="text-[#12a88b] text-[14px] font-black py-1 px-2 my-0 hind-siliguri-bold">
-              প্রতি মাসে ১ বার
+            <p className="text-[#12a88b] text-xl font-black py-1 px-2 my-0 font-bengali">
+              প্রতি মাসে <span className="text-3xl text-pink-600 ">১</span> বার
             </p>
-            <p className="  font-bold py-1 px-2 my-0 leading-tight ">
+
+            <p className=" font-black px-2 my-0 leading-tight ">
               <span
-                className="text-[#ff25a0] text-[14px] p-2 inline-block hind-siliguri-bold"
+                className=" text-pink-600 text-xl font-bold inline-block font-bengali"
+                // style={{
+                //   clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
+                // }}
+              >
+                {/* রেজিস্টার্ড */}
+                MBBS ডাক্তার
+              </span>
+            </p>
+
+            <p className="font-bold px-2 my-0 opacity-80 leading-tight ">
+              <span
+                className="text-[#12a88b] bg-white  px-2 py-1 font-bold text-xl inline-block font-bengali"
                 style={{
                   clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
                 }}
               >
                 আপনার বাসায়
-              </span>
-            </p>
-            <p className=" font-black py-1 px-2 my-0 leading-tight ">
-              <span
-                className="bg-pink-600 text-[14px] text-white p-2 inline-block hind-siliguri-bold"
-                style={{
-                  clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
-                }}
-              >
-                রেজিস্টার্ড MBBS ডাক্তার।
               </span>
             </p>
             {/* <p className="text-[10px] font-black py-1 px-2 my-0 leading-tight">
@@ -42,55 +45,58 @@ const Card = ({ data }) => {
           </div>
         )}
         {data.id === 3 && (
-          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-[1]">
-            <p className="text-[#12a88b] text-[14px] font-black py-1 px-2 my-0 hind-siliguri-bold">
-              প্রতি মাসে ১ বার
+          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/3 w-full z-[1]">
+            <p className="text-[#12a88b] text-xl font-black py-1 px-2 my-0 font-bengali">
+              প্রতি মাসে <span className="text-3xl text-pink-600 ">১</span> বার
             </p>
-            <p className=" font-bold py-1 px-2 my-0 leading-tight ">
+
+            <p className="font-black px-2 my-0 leading-tight ">
               <span
-                className="text-[#ff25a0] text-[14px] p-2 inline-block hind-siliguri-bold"
-                style={{
-                  clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
-                }}
+                className="text-xl font-bold text-pink-600 inline-block font-bengali"
+                // style={{
+                //   clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
+                // }}
               >
-                আপনার বাসায়
+                অভিজ্ঞ নিউট্রিশনিস্ট
               </span>
             </p>
-            <p className="font-black py-1 px-2 my-0 leading-tight ">
+
+            <p className=" font-bold px-2 my-0 leading-tight ">
               <span
-                className="text-[14px] bg-pink-600 text-white p-2 inline-block hind-siliguri-bold"
-                style={{
-                  clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
-                }}
+                className="text-[#12a88b] text-xl inline-block font-bengali"
+                // style={{
+                //   clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
+                // }}
               >
-                অভিজ্ঞ নিউট্রিশনিস্ট।
+                আপনার বাসায়
               </span>
             </p>
           </div>
         )}
         {data.id === 4 && (
-          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-[1]">
-            <p className="text-[#12a88b] text-[14px] font-black py-1 px-2 my-0 hind-siliguri-bold">
-              প্রতি মাসে ২-৪ বার
+          <div className="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/3 w-full z-[1]">
+            <p className="text-[#12a88b] text-xl font-black  px-2 my-0 font-bengali">
+              প্রতি মাসে <span className="text-2xl text-pink-600">২-৪</span> বার
             </p>
-            <p className=" font-bold py-1 px-2 my-0 leading-tight  ">
+
+            <p className=" font-black px-2 my-0 leading-tight ">
               <span
-                className="text-[#ff25a0] text-[14px] p-2 inline-block hind-siliguri-bold"
-                style={{
-                  clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
-                }}
+                className=" text-pink-600 font-bold text-xl inline-block font-bengali"
+                // style={{
+                //   clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
+                // }}
               >
-                আপনার বাসায়
+                BSc নার্স/SACMO
               </span>
             </p>
-            <p className=" font-black py-1 px-2 my-0 leading-tight ">
+            <p className=" font-bold  px-2 my-0 leading-tight   ">
               <span
-                className="bg-pink-600 text-[14px] text-white p-2 inline-block hind-siliguri-bold"
-                style={{
-                  clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
-                }}
+                className="text-[#12a88b] text-xl inline-block font-bengali "
+                // style={{
+                //   clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
+                // }}
               >
-                BSc নার্স/SACMO।
+                আপনার বাসায়
               </span>
             </p>
           </div>

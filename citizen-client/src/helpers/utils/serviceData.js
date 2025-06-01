@@ -13,7 +13,7 @@ export const cardData = [
     image: "/images/services-2/Health-Care-at-your-home.jpg",
     banner: "/images/banner/Health-Care-at-your-homee.jpg",
 
-    icon2: <IoHomeOutline className="w-10 h-10 text-[#3cb9ba]" />,
+    icon2: <IoHomeOutline className="w-10 h-10 text-black opacity-50" />,
     content: (
       <div>
         <h2 className="text-lg mb-4">
@@ -91,7 +91,7 @@ export const cardData = [
     image: "/images/services-2/Service-Small-Banner-D2.jpg",
     banner: "/images/banner/Doctor Poster.jpg",
 
-    icon2: <FaUserDoctor className="w-10 h-10 text-[#3cb9ba]" />,
+    icon2: <FaUserDoctor className="w-10 h-10 text-black opacity-50" />,
     content: (
       <div>
         <h2 className="text-lg mb-4">
@@ -190,7 +190,7 @@ export const cardData = [
     image: "/images/services-2/Nutronist-Poster.jpg",
     banner: "/images/banner/Nutronist Poster.jpg",
 
-    icon2: <FaAppleAlt className="w-10 h-10 text-[#3cb9ba]" />,
+    icon2: <FaAppleAlt className="w-10 h-10 text-black opacity-50" />,
     content: (
       <div>
         <h2 className="text-lg mb-4">
@@ -378,7 +378,7 @@ export const cardData = [
     enTitle: "Medicine & Medical Device",
     image: "/images/services-2/MEDICINE DEVICES.jpg",
     banner: "/images/banner/Medicine-and-Medical-Device.jpg",
-    icon2: <GiMedicines className="w-10 h-10 text-[#3cb9ba]" />,
+    icon2: <GiMedicines className="w-10 h-10 text-black opacity-50" />,
   },
   // {
   //   id: 6,
