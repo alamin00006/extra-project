@@ -24,7 +24,7 @@ const Card = ({ data }) => {
               </span>
             </p>
 
-            <p className="font-bold px-2 my-0 opacity-80 leading-tight ">
+            <p className="font-bold my-0 opacity-80 leading-tight ">
               <span
                 className="text-[#12a88b] bg-white  px-2 py-1 font-bold text-xl inline-block font-bengali"
                 style={{
