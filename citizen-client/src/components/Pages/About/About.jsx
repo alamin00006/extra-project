@@ -78,7 +78,7 @@ const About = () => {
           সচেতন ও সহানুভূতিশীল বাংলাদেশ গঠনে।
         </p>
       </div>
-      <ManagementTeam />
+      {/* <ManagementTeam /> */}
     </div>
   );
 };
