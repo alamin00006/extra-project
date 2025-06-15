@@ -1,4 +1,4 @@
-import ManagementTeam from "./ManagementTeam";
+// import ManagementTeam from "./ManagementTeam";
 
 const About = () => {
   return (

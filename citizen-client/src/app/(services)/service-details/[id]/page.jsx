@@ -1,12 +1,12 @@
-"use client"
-import ServiceDeatails from "@/components/Pages/Services/ServiceDeatails";
+"use client";
+import ServiceDetails from "@/components/Pages/Services/ServiceDetails";
 import { useParams } from "next/navigation";
 
-const ServiceDetailsPage =  () => {
-  const params = useParams()
+const ServiceDetailsPage = () => {
+  const params = useParams();
   return (
     <div>
-      <ServiceDeatails params={params} />
+      <ServiceDetails params={params} />
     </div>
   );
 };
