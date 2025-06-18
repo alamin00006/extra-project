@@ -48,23 +48,23 @@ const ServiceDetails = ({ params }) => {
         />
 
         {menuItem.id === 2 && (
-          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center -mt-36 -ml-64">
-            <p className="text-sm md:text-5xl font-bengali leading-tight text-[#12a88b]  ">
+          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center -mt-36 -ml-[500px]">
+            <p className="text-sm md:text-4xl font-bengali leading-tight text-[#12a88b]  ">
               লয়্যাল মেম্বার হয়ে ঘরে বসে প্রতি মাসে{" "}
               <span className="text-2xl md:text-6xl text-pink-600">১</span> বার
             </p>
-            <p className="text-sm md:text-5xl font-bold font-bengali">
+            <p className="text-sm md:text-4xl font-bold font-bengali">
               <span className="text-pink-600">MBBS ডাক্তারের সেবা নিন।</span>
             </p>
           </div>
         )}
         {menuItem.id === 3 && (
-          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center -mt-36 -ml-96">
-            <p className="text-sm md:text-3xl font-bengali leading-tight text-[#12a88b]  ">
+          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center -mt-36 -ml-[500px]">
+            <p className="text-sm md:text-4xl font-bengali leading-tight text-[#12a88b]  ">
               লয়্যাল মেম্বার হয়ে ঘরে বসে প্রতি মাসে
               <span className="text-2xl md:text-6xl text-pink-600">১</span> বার
             </p>
-            <p className="text-sm md:text-3xl font-bold font-bengali">
+            <p className="text-sm md:text-4xl font-bold font-bengali">
               <span className="text-pink-600">
                 অভিজ্ঞ নিউট্রিশনিস্টের এর পরামর্শ নিন।
               </span>
@@ -72,15 +72,13 @@ const ServiceDetails = ({ params }) => {
           </div>
         )}
         {menuItem.id === 4 && (
-          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center -mt-36 -ml-32">
-            <p className="text-sm md:text-3xl font-bengali leading-tight text-[#12a88b]  ">
+          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center -mt-36 -ml-[100px]">
+            <p className="text-sm md:text-4xl font-bengali leading-tight text-[#12a88b]  ">
               লয়্যাল মেম্বার হয়ে ঘরে বসে প্রতি মাসে
-              <span className="text-2xl md:text-6xl text-pink-600">
-                ২-৪
-              </span>{" "}
-              বার
             </p>
-            <p className="text-sm md:text-3xl font-bold font-bengali">
+            <p className="text-sm md:text-4xl font-bold font-bengali">
+              <span className="text-2xl md:text-6xl text-pink-600">২-৪</span>{" "}
+              <span className="text-[#12a88b]">বার</span>{" "}
               <span className="text-pink-600">নার্সিং সেবা নিন।</span>
             </p>
           </div>
