@@ -34,9 +34,9 @@ const ServiceDetails = ({ params }) => {
   };
 
   return (
-    <div className="container mx-auto px-4 ">
+    <div className=" ">
       {/* Banner Section */}
-      <div className="relative ">
+      <div className="relative custom-container">
         <Image
           src={menuItem.banner || menuItem?.image}
           alt={`Banner for ${menuItem.text} service`}
@@ -48,38 +48,70 @@ const ServiceDetails = ({ params }) => {
         />
 
         {menuItem.id === 2 && (
-          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center -mt-36 -ml-[500px]">
-            <p className="text-sm md:text-4xl font-bengali leading-tight text-[#12a88b]  ">
-              লয়্যাল মেম্বার হয়ে ঘরে বসে প্রতি মাসে{" "}
-              <span className="text-2xl md:text-6xl text-pink-600">১</span> বার
+          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center md:-ml-[200px] sm:-ml-0">
+            <p className="text-sm md:text-4xl font-bengali leading-tight text-[#12a88b] ">
+              লয়্যাল মেম্বার হয়ে ঘরে বসে
+            </p>
+            <p className="text-sm md:text-4xl font-bengali leading-tight text-[#12a88b] ">
+              প্রতি মাসে{" "}
+              <span className="text-2xl md:text-4xl text-pink-600">১</span> বার
             </p>
             <p className="text-sm md:text-4xl font-bold font-bengali">
-              <span className="text-pink-600">MBBS ডাক্তারের সেবা নিন।</span>
+              <span className="text-pink-600">MBBS ডাক্তারের সেবা নিন</span>
             </p>
           </div>
         )}
         {menuItem.id === 3 && (
-          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center -mt-36 -ml-[500px]">
+          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center -mt-10 -ml-[450px]">
             <p className="text-sm md:text-4xl font-bengali leading-tight text-[#12a88b]  ">
-              লয়্যাল মেম্বার হয়ে ঘরে বসে প্রতি মাসে
-              <span className="text-2xl md:text-6xl text-pink-600">১</span> বার
+              লয়্যাল মেম্বার হয়ে ঘরে বসে
             </p>
-            <p className="text-sm md:text-4xl font-bold font-bengali">
-              <span className="text-pink-600">
-                অভিজ্ঞ নিউট্রিশনিস্টের এর পরামর্শ নিন।
+            <p className="text-sm md:text-4xl font-bengali leading-tight text-[#12a88b] -mt-5 ">
+              প্রতি মাসে
+              <span className="text-2xl md:text-6xl text-pink-600">১</span> বার
+              অভিজ্ঞ
+            </p>
+            <p className=" font-bold font-bengali leading-tight">
+              <span className="text-pink-600 text-sm md:text-4xl">
+                নিউট্রিশনিস্টের এর পরামর্শ নিন
               </span>
             </p>
           </div>
         )}
         {menuItem.id === 4 && (
-          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center -mt-36 -ml-[100px]">
+          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center  -ml-[100px]">
             <p className="text-sm md:text-4xl font-bengali leading-tight text-[#12a88b]  ">
               লয়্যাল মেম্বার হয়ে ঘরে বসে প্রতি মাসে
             </p>
             <p className="text-sm md:text-4xl font-bold font-bengali">
               <span className="text-2xl md:text-6xl text-pink-600">২-৪</span>{" "}
               <span className="text-[#12a88b]">বার</span>{" "}
-              <span className="text-pink-600">নার্সিং সেবা নিন।</span>
+              <span className="text-pink-600">নার্সিং সেবা নিন</span>
+            </p>
+          </div>
+        )}
+        {menuItem.id === 5 && (
+          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center -mt-10 md:-ml-[200px]">
+            <p className="text-sm md:text-4xl font-bengali leading-tight text-white bg-pink-600 p-2 rounded-lg">
+              মেডিসিন ও মেডিকেল ডিভাইস
+            </p>
+            <p className="text-sm md:text-4xl font-bold font-bengali">
+              <span className="text-white  ">ফ্রী ডেলিভারি </span>
+            </p>
+          </div>
+        )}
+        {menuItem.id === 6 && (
+          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center  md:-ml-[550px]">
+            <p className="text-sm md:text-4xl font-bengali  text-white bg-pink-600 p-2 rounded-lg ">
+              দেশ থেকে বিদেশ চিকিৎসার
+            </p>
+            <p className="text-sm md:text-4xl font-bengali  text-white  ">
+              সকল ধাপে
+            </p>
+            <p className=" font-bold font-bengali ">
+              <span className="text-white text-sm md:text-4xl bg-pink-600 p-2 rounded-lg">
+                আমরা আছি আপনার পাশে
+              </span>
             </p>
           </div>
         )}
