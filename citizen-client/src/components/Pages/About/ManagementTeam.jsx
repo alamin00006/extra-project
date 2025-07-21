@@ -3,28 +3,29 @@ import Image from "next/image";
 const teamMembers = [
   {
     // name: "Sylvana Quader Sinha",
-    position: "Founder, Chair, & CEO",
+    position: "Chairman",
     image: "/images/services-2/HEALTH GUIDE-01.jpg",
+
     link: "#",
     // bio: "Dr. Simeen M. Akhtar leads clinical .",
   },
   {
     // name: "Mohammad Abdul Matin Emon",
-    position: "Incoming CEO of Praava Health",
+    position: "Managing Director ",
     image: "/images/services-2/HEALTH GUIDE-01.jpg",
     link: "#",
     // bio: "Dr. Simeen M. Akhtar leads clinical .",
   },
   {
     // name: "Dr. Simeen M. Akhtar",
-    position: "Chief Medical Officer",
+    position: "CEO",
     image: "/images/services-2/HEALTH GUIDE-01.jpg",
     link: "#",
     // bio: "Dr. Simeen M. Akhtar leads clinical .",
   },
   {
     // name: "Dr. Simeen M. Akhtar",
-    position: "Chief Medical Officer",
+    position: "Chief Medical officer",
     image: "/images/services-2/HEALTH GUIDE-01.jpg",
     link: "#",
     // bio: "Dr. Simeen M. Akhtar leads clinical .",
