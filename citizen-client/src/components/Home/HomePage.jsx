@@ -7,6 +7,7 @@ import Services from "./services/Services";
 import "./Home.css";
 import LoayalMember from "./loayal-member/LoayalMember";
 import WhyChoosUs from "./WhyChoosUs/WhyChoosUs";
+import PartnerShip from "./partnerShip/PartnerShip";
 
 const HomePage = () => {
   // Get User
@@ -35,7 +36,10 @@ const HomePage = () => {
         <SuccessStories />
       </div>
 
-      <div className="bg-white mt-4">
+      <div className="bg-white md:mx-0 sm:mx-5">
+        <PartnerShip />
+      </div>
+      <div className="bg-white ">
         <Collaborators />
       </div>
     </>

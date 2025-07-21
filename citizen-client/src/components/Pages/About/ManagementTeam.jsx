@@ -2,32 +2,32 @@ import Image from "next/image";
 
 const teamMembers = [
   {
-    name: "Sylvana Quader Sinha",
+    // name: "Sylvana Quader Sinha",
     position: "Founder, Chair, & CEO",
     image: "/images/services-2/HEALTH GUIDE-01.jpg",
     link: "#",
-    bio: "Dr. Simeen M. Akhtar leads clinical .",
+    // bio: "Dr. Simeen M. Akhtar leads clinical .",
   },
   {
-    name: "Mohammad Abdul Matin Emon",
+    // name: "Mohammad Abdul Matin Emon",
     position: "Incoming CEO of Praava Health",
     image: "/images/services-2/HEALTH GUIDE-01.jpg",
     link: "#",
-    bio: "Dr. Simeen M. Akhtar leads clinical .",
+    // bio: "Dr. Simeen M. Akhtar leads clinical .",
   },
   {
-    name: "Dr. Simeen M. Akhtar",
+    // name: "Dr. Simeen M. Akhtar",
     position: "Chief Medical Officer",
     image: "/images/services-2/HEALTH GUIDE-01.jpg",
     link: "#",
-    bio: "Dr. Simeen M. Akhtar leads clinical .",
+    // bio: "Dr. Simeen M. Akhtar leads clinical .",
   },
   {
-    name: "Dr. Simeen M. Akhtar",
+    // name: "Dr. Simeen M. Akhtar",
     position: "Chief Medical Officer",
     image: "/images/services-2/HEALTH GUIDE-01.jpg",
     link: "#",
-    bio: "Dr. Simeen M. Akhtar leads clinical .",
+    // bio: "Dr. Simeen M. Akhtar leads clinical .",
   },
 ];
 

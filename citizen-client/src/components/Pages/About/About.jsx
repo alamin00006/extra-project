@@ -1,5 +1,7 @@
 // import ManagementTeam from "./ManagementTeam";
 
+import ManagementTeam from "./ManagementTeam";
+
 const About = () => {
   return (
     <div className="sm:px-4 md:px-0">
@@ -78,7 +80,7 @@ const About = () => {
           সচেতন ও সহানুভূতিশীল বাংলাদেশ গঠনে।
         </p>
       </div>
-      {/* <ManagementTeam /> */}
+      <ManagementTeam />
     </div>
   );
 };

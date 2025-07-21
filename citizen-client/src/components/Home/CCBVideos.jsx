@@ -16,9 +16,9 @@ const videos = [
   {
     videoUrl: "https://www.youtube.com/embed/lrgHv03tewU",
   },
-  {
-    videoUrl: "https://www.youtube.com/embed/va7unzVNZog",
-  },
+  // {
+  //   videoUrl: "https://www.youtube.com/embed/va7unzVNZog",
+  // },
 ];
 
 export default function SuccessStories() {
@@ -27,11 +27,11 @@ export default function SuccessStories() {
   return (
     <div className="custom-container  ">
       <div className=" text-center md:mx-0 sm:mx-5 md:mt-4 sm:-mt-2 ">
-        <h2 className="md:text-4xl sm:text-xl text-gray-900 my-4 md:mt-0 sm:mt-6">
+        <h2 className="md:text-4xl sm:text-xl  text-gray-900 my-5 md:mt-0 sm:mt-6">
           Our Live Experience
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {videos.map((video, index) => {
             const videoId = video.videoUrl.split("/").pop();
             const thumbnail = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
