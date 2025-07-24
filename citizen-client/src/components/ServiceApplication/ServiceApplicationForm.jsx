@@ -7,6 +7,7 @@ import axios from "axios";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import LoadingModal from "../Home/LoadingModal";
+import Loading from "@/app/loading";
 
 const ServiceApplicationForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -51,11 +52,9 @@ const ServiceApplicationForm = () => {
     // e.target.reset();
   };
 
-  if (isLoading) {
-    <LoadingModal />;
-  }
   return (
     <>
+      {isLoading && <Loading />}
       <div className="custom-container mt-5">
         {/* Application Form */}
         <div className="mb-10 md:p-20 sm:p-0 sm:py-10 shadow-lg rounded">
