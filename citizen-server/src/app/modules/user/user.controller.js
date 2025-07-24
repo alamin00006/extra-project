@@ -145,7 +145,8 @@ const sendOtp = async (req, res, next) => {
       const method = "POST";
       // Send SMS and wait for the response
       try {
-        await CCBSms(bookingMessage, method);
+        const sms = await CCBSms(bookingMessage, method);
+        console.log(sms);
 
         res.status(200).json({ status: "success" });
       } catch (error) {
