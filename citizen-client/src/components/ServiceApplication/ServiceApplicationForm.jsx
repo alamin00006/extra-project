@@ -25,8 +25,8 @@ const ServiceApplicationForm = () => {
     const registrationData = {
       amount: Number(memberFee),
       user: userData?._id,
-      name: name.value,
-      phoneNumber: mobileNumber.value,
+      name: userData?.fullName || name.value,
+      phoneNumber: userData?.phoneNumber || mobileNumber.value,
       email: email?.value,
       streetAddress: streetAddress.value,
       city: city.value,
@@ -78,6 +78,8 @@ const ServiceApplicationForm = () => {
                   required
                   placeholder="Name"
                   name="name"
+                  defaultValue={userData?.fullName || ""}
+                  disabled={userData?.fullName ? true : false}
                 />
               </div>
 
@@ -91,6 +93,9 @@ const ServiceApplicationForm = () => {
                   required
                   placeholder="Contact Number"
                   name="mobileNumber"
+                  defaultValue={userData?.phoneNumber || ""}
+                  onWheel={(e) => e.target.blur()}
+                  disabled={userData?.phoneNumber ? true : false}
                 />
               </div>
 
