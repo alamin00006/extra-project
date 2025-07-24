@@ -1,11 +1,12 @@
 "use client";
-import Loading from "@/app/loading";
+
 import { getBaseUrl } from "@/helpers/config/envConfig";
 import useUserData from "@/hooks/useUserData";
 import axios from "axios";
 
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import LoadingModal from "../Home/LoadingModal";
 
 const ServiceApplicationForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -50,9 +51,9 @@ const ServiceApplicationForm = () => {
     // e.target.reset();
   };
 
-  // if (isLoading) {
-  //   <Loading />;
-  // }
+  if (isLoading) {
+    <LoadingModal />;
+  }
   return (
     <>
       <div className="custom-container mt-5">
