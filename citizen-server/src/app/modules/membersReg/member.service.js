@@ -1,8 +1,7 @@
-import User from "../user/user.model.js";
 import Member from "./member.model.js";
 import { generateMemberId } from "./member.utils.js";
 
-const createMemnber = async (payload) => {
+const createMember = async (payload) => {
   //   const findUserWithId = await User.findOne({ _id: payload?.user });
 
   //   if (findUserWithId) {
@@ -25,5 +24,5 @@ const createMemnber = async (payload) => {
 };
 
 export const MemberService = {
-  createMemnber,
+  createMember,
 };

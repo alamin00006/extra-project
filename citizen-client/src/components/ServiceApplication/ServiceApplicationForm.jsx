@@ -18,9 +18,9 @@ const ServiceApplicationForm = () => {
     if (!memberFee) return toast.error("Please choice any member type");
     setIsLoading(true);
 
-    const { name, mobileNumber, email, streetAddress, city } = e.target;
+    const { name, mobileNumber, email, streetAddress, city, state } = e.target;
 
-    const resgistrationData = {
+    const registrationData = {
       amount: Number(memberFee),
       user: userData?._id,
       name: name.value,
@@ -36,7 +36,7 @@ const ServiceApplicationForm = () => {
     try {
       const { data } = await axios.post(
         `${getBaseUrl()}/bkash/payment/create`,
-        resgistrationData,
+        registrationData,
         { withCredentials: true }
       );
       setIsLoading(false);
@@ -44,7 +44,7 @@ const ServiceApplicationForm = () => {
       // window.location.href = data.bkashURL;
       // return data;
     } catch (error) {
-      // console.log(error);
+      console.log(error);
       setIsLoading(false);
     }
     // e.target.reset();

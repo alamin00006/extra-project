@@ -2,11 +2,11 @@ import catchAsync from "../../../shared/catchAsync.js";
 import sendResponse from "../../../shared/sendResponse.js";
 import { MemberService } from "./member.service.js";
 
-const createMemnber = catchAsync(async (req, res) => {
+const createMember = catchAsync(async (req, res) => {
   const memberData = req.body;
 
   // create new user
-  const result = await MemberService.createMemnber(memberData);
+  const result = await MemberService.createMember(memberData);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -17,5 +17,5 @@ const createMemnber = catchAsync(async (req, res) => {
 });
 
 export const MemberController = {
-  createMemnber,
+  createMember,
 };
