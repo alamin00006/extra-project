@@ -47,6 +47,7 @@ const ServiceApplicationForm = () => {
       // return data;
     } catch (error) {
       console.log(error);
+    } finally {
       setIsLoading(false);
     }
     // e.target.reset();
