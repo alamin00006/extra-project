@@ -28,6 +28,11 @@ const logos = [
     alt: "Wellbeing",
     href: "https://www.united.com.bd/",
   },
+  {
+    src: "/images/partnership/medix.jpg",
+    alt: "Medix Signature Clinic",
+    href: "https://www.facebook.com/medixbd/",
+  },
 ];
 
 const PartnerShip = () => {
