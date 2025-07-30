@@ -31,7 +31,7 @@ const logos = [
   {
     src: "/images/partnership/medix.jpg",
     alt: "Medix Signature Clinic",
-    href: "https://www.facebook.com/medixbd/",
+    href: "https://www.doctorspedia.co/",
   },
 ];
 
