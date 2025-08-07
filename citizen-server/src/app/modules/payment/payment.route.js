@@ -1,12 +1,11 @@
 import express from "express";
-
-import bkash_auth from "../../../middleware/bkashAuth.js";
 import { PaymentController } from "./payment.controller.js";
+import shurjoPay_auth from "../../../middleware/shurjoPay.js";
 
 const router = express.Router();
-router.post("/create", bkash_auth, PaymentController.paymentCreate);
+router.post("/create", shurjoPay_auth, PaymentController.paymentCreate);
 
-router.get("/callback", bkash_auth, PaymentController.callBack);
+router.get("/callback", shurjoPay_auth, PaymentController.callBack);
 
 // router.get("/refund/:trxID", bkash_auth, PaymentController2.refund);
 

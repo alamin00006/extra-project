@@ -105,12 +105,14 @@ export default function ManagementTeam() {
               </div>
             </div>
             <h3 className="mt-4 text-lg sm:text-xl font-semibold text-gray-900">
-              {member.name}
+              {member?.name || ""}
             </h3>
             <p className="text-sm sm:text-base text-gray-700">
               {member.position}
             </p>
-            <p className="mt-2 text-sm text-gray-600 px-4">{member.bio}</p>
+            <p className="mt-2 text-sm text-gray-600 px-4">
+              {member?.bio || ""}
+            </p>
             {/* Uncomment if you want to include the link */}
             {/* <a
               href={member.link}

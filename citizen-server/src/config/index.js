@@ -23,6 +23,12 @@ export default {
   bkash_create_payment_url: process.env.bkash_create_payment_url,
   bkash_execute_payment_url: process.env.bkash_execute_payment_url,
   bkash_refund_transaction_url: process.env.bkash_refund_transaction_url,
+  // shurjopay
+  shurjopay_engine: process.env.shurjopay_engine,
+  shurjopay_user_name: process.env.shurjopay_user_name,
+  shurjopay_password: process.env.shurjopay_password,
+  shurjopay_prefix: process.env.shurjopay_prefix,
+
   server_url: process.env.server_site_url,
   client_url: process.env.client_site_url,
 
