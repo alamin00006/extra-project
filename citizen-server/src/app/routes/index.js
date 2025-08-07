@@ -20,7 +20,7 @@ const moduleRoutes = [
     route: AuthRoutes,
   },
   {
-    path: "/bkash/payment",
+    path: "/payment",
     route: PaymentRoutes,
   },
 ];

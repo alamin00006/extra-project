@@ -8,6 +8,7 @@ import User from "../user/user.model.js";
 import config from "../../../config/index.js";
 import { CCBSms } from "../../../sms/CCBSMS.js";
 import { generateMemberId } from "../membersReg/member.utils.js";
+import { PaymentService } from "./payment.service.js";
 
 // Helper to prepare bkash headers
 const shurjoPayHeaders = async () => {
@@ -34,8 +35,8 @@ const paymentCreate = async (req, res, next) => {
       {
         prefix: config.shurjopay_prefix,
         token: getValue("id_token"),
-        return_url: `${config.server_url}/bkash/payment/callback`,
-        cancel_url: `${config.client_url}/error`,
+        return_url: `${config.return_url}`,
+        cancel_url: `${config.cancel_url}`,
         store_id: getValue("store_id"),
         amount: amount,
         order_id: "Inv" + uuidv4().substring(0, 5),
@@ -47,7 +48,7 @@ const paymentCreate = async (req, res, next) => {
         customer_post_code: "1212",
         client_ip: "102.101.1.1",
       },
-      { headers: await shurjoPayHeaders() }
+      { headers: { Authorization: `Bearer ${getValue("id_token")}` } }
     );
     console.log(data);
 
@@ -57,70 +58,27 @@ const paymentCreate = async (req, res, next) => {
   }
 };
 
-// Callback Method (After Payment Confirmation)
-const callBack = async (req, res) => {
+const verifyPayment = async (req, res) => {
   const { order_id } = req.query;
 
-  console.log(order_id);
   if (!order_id) {
-    return res.redirect(`${config.client_url}/error?message=Missing order_id`);
+    return res.status(400).json({ error: "Missing order_id" });
   }
 
-  const session = await mongoose.startSession();
-  session.startTransaction();
   try {
-    const dataForRegistration = getValue("dataForRegistration"); // Replace with DB storage
+    const token = getValue("id_token");
 
-    // Verify payment
-    const { data } = await axios.post(
-      `${config.shurjopay_engine}/api/verification`,
-      { order_id },
-      { headers: await shurjoPayHeaders() }
-    );
+    const paymentDetails = await PaymentService.verifyPayment(token, order_id);
 
-    if (data && data.statusCode === "1000") {
-      const memberId = await generateMemberId();
-
-      const memberData = new Member({
-        id: memberId,
-        ...dataForRegistration,
-        status: "Approved",
-      });
-
-      const result = await memberData.save({ session });
-
-      const newTransaction = new Payment({
-        member: result?._id,
-        paymentDate: new Date(),
-        amount: parseInt(data?.amount),
-        user: dataForRegistration?.user,
-        acceptableStatus: "Accepted",
-      });
-
-      await newTransaction.save({ session });
-
-      const message = `/api/smsapi?api_key=${config.sms_api_key}&type=text&number=88${dataForRegistration?.phone}&senderid=${config.sms_sender_id}&message=Thank%20You%20for%20being%20our%20loyal%20member`;
-      await CCBSms(message);
-
-      await session.commitTransaction();
-      return res.redirect(`${config.client_url}/success`);
-    } else {
-      await session.abortTransaction();
-      return res.redirect(
-        `${config.client_url}/error?message=${
-          data.statusMessage || "Payment failed"
-        }`
-      );
-    }
+    res.json({
+      paymentDetails,
+    });
   } catch (error) {
-    await session.abortTransaction();
-    return res.redirect(`${config.client_url}/error?message=${error.message}`);
-  } finally {
-    session.endSession();
+    res.status(500).json({ error: error.message });
   }
 };
 
 export const PaymentController = {
   paymentCreate,
-  callBack,
+  verifyPayment,
 };

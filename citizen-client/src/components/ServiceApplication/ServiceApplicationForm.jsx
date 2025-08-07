@@ -31,18 +31,18 @@ const ServiceApplicationForm = () => {
       streetAddress: streetAddress.value,
       city: city.value,
       state: state.value,
-      paymentType: "Bkash",
-      selectMethod: "Bkash",
+      // paymentType: "Bkash",
+      // selectMethod: "Bkash",
     };
 
     try {
       const { data } = await axios.post(
-        `${getBaseUrl()}/bkash/payment/create`,
+        `${getBaseUrl()}/payment/create`,
         registrationData,
         { withCredentials: true }
       );
       setIsLoading(false);
-      window.location.href = data?.bkashURL;
+      window.location.href = data?.checkout_url;
       // window.location.href = data.bkashURL;
       // return data;
     } catch (error) {
@@ -158,7 +158,7 @@ const ServiceApplicationForm = () => {
                       <input
                         type="radio"
                         name="membershipType"
-                        value={4500}
+                        value={10}
                         defaultChecked
                         onChange={(e) => setMemberFee(e.target.value)}
                       />
@@ -173,7 +173,7 @@ const ServiceApplicationForm = () => {
                         onChange={(e) => setMemberFee(e.target.value)}
                         type="radio"
                         name="membershipType"
-                        value={10000}
+                        value={10}
                       />
                       <span className="ml-2">
                         ফ্যামিলির জন্য বাৎসরিক 10,000 টাকা।

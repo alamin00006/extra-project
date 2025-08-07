@@ -31,6 +31,8 @@ export default {
 
   server_url: process.env.server_site_url,
   client_url: process.env.client_site_url,
+  return_url: process.env.RETURN_URL,
+  cancel_url: process.env.CANCEL_URL,
 
   jwt: {
     secret: process.env.ACCESS_TOKEN_SECRET,
