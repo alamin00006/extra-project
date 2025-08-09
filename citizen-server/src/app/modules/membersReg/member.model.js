@@ -15,18 +15,18 @@ const memberSchema = mongoose.Schema(
     },
     name: {
       type: String,
-      required: true,
+      // required: true,
     },
     phoneNumber: {
       type: String,
-      required: true,
+      // required: true,
     },
 
     email: {
       type: String,
       // unique: [true, "This email already exists!"],
       // validate: [validator.isEmail, "Provide a valid email"],
-      lowercase: true,
+      // lowercase: true,
       trim: true,
     },
     streetAddress: {

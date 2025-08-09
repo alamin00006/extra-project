@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import { getValue, setValue } from "node-global-storage";
@@ -23,9 +22,10 @@ const shurjoPayHeaders = async () => {
 const paymentCreate = async (req, res, next) => {
   const { amount, ...dataForRegistration } = req.body;
 
-  // Commented-out user validation
   // const findUser = await User.findOne({ _id: dataForRegistration?.user });
-  // if (!findUser) { return new Error("Sorry! User Not Found"); }
+  // if (!findUser) {
+  //   return new Error("Sorry! User Not Found");
+  // }
 
   setValue("dataForRegistration", dataForRegistration);
 
@@ -41,16 +41,17 @@ const paymentCreate = async (req, res, next) => {
         amount: amount,
         order_id: "Inv" + uuidv4().substring(0, 5),
         currency: "BDT",
-        customer_name: "alamin",
-        customer_address: "dhaka",
-        customer_phone: "01749718743",
-        customer_city: "Dhaka",
+        customer_name: dataForRegistration?.name,
+        customer_address: dataForRegistration?.streetAddress,
+        customer_phone: dataForRegistration?.phoneNumber,
+        customer_city: dataForRegistration?.city,
         customer_post_code: "1212",
+        customer_email: dataForRegistration?.email,
         client_ip: "102.101.1.1",
+        value1: dataForRegistration?.user,
       },
       { headers: { Authorization: `Bearer ${getValue("id_token")}` } }
     );
-    console.log(data);
 
     res.status(200).json({ checkout_url: data.checkout_url });
   } catch (error) {
@@ -64,16 +65,60 @@ const verifyPayment = async (req, res) => {
   if (!order_id) {
     return res.status(400).json({ error: "Missing order_id" });
   }
-
+  const dataForRegistration = getValue("dataForRegistration");
   try {
     const token = getValue("id_token");
 
     const paymentDetails = await PaymentService.verifyPayment(token, order_id);
 
+    const existPayment = await Payment.findOne({
+      sp_order_id: paymentDetails?.order_id,
+    });
+    if (existPayment) {
+      return res.status(400).json({ error: "Payment already exists" });
+    }
+    if (paymentDetails?.sp_massage === "Success") {
+      const memberId = await generateMemberId();
+      const memberData = new Member({
+        id: memberId,
+        user: paymentDetails?.value1,
+        name: paymentDetails?.name,
+        phoneNumber: paymentDetails?.phone_no,
+        email: paymentDetails?.email,
+        streetAddress: paymentDetails?.address,
+        city: paymentDetails?.city,
+        status: "Approved",
+      });
+
+      const result = await memberData.save();
+
+      // Start Create user transaction
+      const newTransaction = new Payment({
+        sp_order_id: paymentDetails?.order_id,
+        customer_order_id: paymentDetails?.customer_order_id,
+        member: result?._id,
+        paymentDate: paymentDetails?.date_time,
+        amount: parseInt(paymentDetails?.recived_amount),
+        paymentType: paymentDetails?.method,
+        paymentNumber: paymentDetails?.card_number,
+        trxID: paymentDetails?.bank_trx_id,
+        memberPhoneNumber: paymentDetails?.phone_no,
+        user: paymentDetails?.value1,
+        acceptableStatus: "Accepted",
+      });
+
+      await newTransaction.save();
+
+      // Phone SMS for booking
+      const message = `/api/smsapi?api_key=${config.sms_api_key}&type=text&number=88${dataForRegistration?.phone}&senderid=${config.sms_sender_id}&message=Thank%20You%20for%20being%20our%20loyal%20member`;
+
+      await CCBSms(message);
+    }
     res.json({
       paymentDetails,
     });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: error.message });
   }
 };

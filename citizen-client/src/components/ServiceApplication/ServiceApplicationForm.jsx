@@ -8,10 +8,11 @@ import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 import Loading from "@/app/loading";
+import Image from "next/image";
 
 const ServiceApplicationForm = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [memberFee, setMemberFee] = useState(2500);
+  const [memberFee, setMemberFee] = useState(4500);
 
   const { userData, error: userError, loading: isLoadingUser } = useUserData();
 
@@ -154,11 +155,11 @@ const ServiceApplicationForm = () => {
                 </label>
                 <ul className="list-style-none ml-4 space-y-2 text-sm text-gray-700 mt-2">
                   <li>
-                    <label>
+                    <label className="cursor-pointer">
                       <input
                         type="radio"
                         name="membershipType"
-                        value={10}
+                        value={4500}
                         defaultChecked
                         onChange={(e) => setMemberFee(e.target.value)}
                       />
@@ -168,12 +169,12 @@ const ServiceApplicationForm = () => {
                     </label>
                   </li>
                   <li>
-                    <label>
+                    <label className="cursor-pointer">
                       <input
                         onChange={(e) => setMemberFee(e.target.value)}
                         type="radio"
                         name="membershipType"
-                        value={10}
+                        value={10000}
                       />
                       <span className="ml-2">
                         ফ্যামিলির জন্য বাৎসরিক 10,000 টাকা।
@@ -185,9 +186,15 @@ const ServiceApplicationForm = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  Payment Type
+                  Payment Method
                 </label>
-                <ul className="list-style-none ml-4 space-y-2 text-sm text-gray-700 mt-2">
+                <Image
+                  src="/images/shurjopay.jpg"
+                  alt="Shurjopay"
+                  width={100}
+                  height={100}
+                />
+                {/* <ul className="list-style-none text-sm text-gray-700 mt-2">
                   <li>
                     <label>
                       <input
@@ -200,7 +207,7 @@ const ServiceApplicationForm = () => {
                       <span className="ml-2">Bkash</span>
                     </label>
                   </li>
-                  {/* <li>
+                  <li>
                   <label>
                     <input
                       type="radio"
@@ -210,8 +217,8 @@ const ServiceApplicationForm = () => {
                     />
                     <span className="ml-2">Cash</span>
                   </label>
-                </li> */}
-                </ul>
+                </li>
+                </ul> */}
               </div>
 
               <div className="md:col-span-2">

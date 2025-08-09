@@ -3,6 +3,14 @@ const { ObjectId } = mongoose.Schema.Types;
 
 const paymentSchema = new mongoose.Schema(
   {
+    sp_order_id: {
+      type: String,
+      unique: true,
+      required: true,
+    },
+    customer_order_id: {
+      type: String,
+    },
     user: {
       type: ObjectId,
       ref: "User",
@@ -10,6 +18,9 @@ const paymentSchema = new mongoose.Schema(
     member: {
       type: ObjectId,
       ref: "Member",
+    },
+    memberPhoneNumber: {
+      type: String,
     },
     amount: {
       type: Number,
