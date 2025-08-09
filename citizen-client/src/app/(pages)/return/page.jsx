@@ -30,7 +30,7 @@ export default function PaymentReturnPage() {
           throw new Error("Failed to fetch payment status");
         }
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         setPaymentDetails(data?.paymentDetails);
       } catch (err) {
         setError("Failed to verify payment");
