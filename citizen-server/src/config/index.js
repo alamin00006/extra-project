@@ -9,7 +9,7 @@ export default {
   database_url: process.env.DATABASE_URL,
   sms_api_key: process.env.SMS_API_KEY_VALUE,
   sms_sender_id: process.env.SMS_SENDER_ID,
-  sms_api_host: process.env.SMS_API_HOST_SITE,
+  sms_api_host: process.env.ALPHA_API_HOST_SITE,
   bcrypt_salt_rounds: process.env.BCRYPT_SALT_ROUNDS,
   secretKey: process.env.secretKey,
   api_key: process.env.API_KEY,

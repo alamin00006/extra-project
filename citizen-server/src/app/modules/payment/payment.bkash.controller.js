@@ -117,9 +117,9 @@ const callBack = async (req, res) => {
         await newTransaction.save({ session });
 
         // Phone SMS for booking
-        const message = `/api/smsapi?api_key=${config.sms_api_key}&type=text&number=88${dataForRegistration?.phone}&senderid=${config.sms_sender_id}&message=Thank%20You%20for%20being%20our%20loyal%20member`;
-
-        await CCBSms(message);
+        const message = `Thank%20You%20for%20being%20our%20loyal%20member`;
+        const to = `88${dataForRegistration?.phone}`;
+        await CCBSms(message, to);
 
         // Commit the transaction if both operations are successful
         await session.commitTransaction();

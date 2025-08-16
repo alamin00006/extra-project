@@ -141,12 +141,12 @@ const sendOtp = async (req, res, next) => {
         message: "Sorry! This Number or Email Already Exists",
       });
     } else {
-      const bookingMessage = `/api/smsapi?api_key=${config.sms_api_key}&type=text&number=88${phoneNumber}&senderid=${config.sms_sender_id}&message=Citizencare%20OTP%20for%20account%20verification%20is%3A%20${customerOtp}.%20Enter%20this%20code%20to%20complete%20your%20Signup%20process.%20Thank%20you`;
+      const bookingMessage = `Citizencare%20OTP%20for%20account%20verification%20is%3A%20${customerOtp}.%20Enter%20this%20code%20to%20complete%20your%20Signup%20process.%20Thank%20you`;
       const method = "POST";
       // Send SMS and wait for the response
+      const to = `88${phoneNumber}`;
       try {
-        const sms = await CCBSms(bookingMessage, method);
-        console.log(sms);
+        await CCBSms(bookingMessage, method, to);
 
         res.status(200).json({ status: "success" });
       } catch (error) {
