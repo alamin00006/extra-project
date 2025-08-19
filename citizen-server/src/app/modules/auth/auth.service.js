@@ -20,12 +20,11 @@ const sendOtp = async (phoneNumber) => {
 
   await User.updateOne({ phoneNumber }, { otp, otpExpiration: expirationTime });
 
-  // const bookingMessage = `/api/smsapi?api_key=${config.sms_api_key}&type=text&number=88${phoneNumber}&senderid=${config.sms_sender_id}&message=You%20have%20requested%20to%20reset%20your%20password%20for%20CCB.%20Your%20OTP%20is%20${otp}.%20If%20this%20wasn't%20you,%20please%20contact%20our%20support%20team%20immediately.%20Call%2009-613166166`;
-  const bookingMessage = `You%20have%20requested%20to%20reset%20your%20password%20for%20CCB.%20Your%20OTP%20is%20${otp}.%20If%20this%20wasn't%20you,%20please%20contact%20our%20support%20team%20immediately.%20Call%2009-613166166`;
-  const method = "POST";
+  const bookingMessage = `You have requested to reset your password for CCB. Your OTP is ${otp}. If this wasn't you, please contact our support team immediately. Call 09-613166166`;
+
   const to = `88${phoneNumber}`;
 
-  await CCBSms(bookingMessage, method, to);
+  await CCBSms(bookingMessage, to);
 };
 
 const verifyOtp = async (phoneNumber, otp) => {

@@ -1,40 +1,20 @@
-import pkg from "follow-redirects";
+import axios from "axios";
 import config from "../config/index.js";
 
-const { http } = pkg;
-
-export function CCBSms(bookingMessage, method = "POST", to) {
-  return new Promise((resolve, reject) => {
-    var options = {
-      method: method,
-      url: `${config.sms_api_host}`,
-      formData: {
-        api_key: "YOUR_API_KEY",
+export async function CCBSms(bookingMessage, to) {
+  try {
+    const response = await axios.post(config.sms_api_host, null, {
+      params: {
+        api_key: config.alpha_api_key,
         msg: bookingMessage,
         to: to,
         sender_id: config.sms_sender_id,
       },
-    };
-
-    var req = http.request(options, function (res) {
-      var chunks = [];
-
-      res.on("data", function (chunk) {
-        chunks.push(chunk);
-      });
-
-      res.on("end", function () {
-        var body = Buffer.concat(chunks);
-        resolve(body.toString());
-      });
-
-      res.on("error", function (error) {
-        reject(error);
-      });
     });
-
-    req.end();
-  });
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
 }
 
 // var request = require("request");

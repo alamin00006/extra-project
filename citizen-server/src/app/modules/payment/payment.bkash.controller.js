@@ -117,7 +117,8 @@ const callBack = async (req, res) => {
         await newTransaction.save({ session });
 
         // Phone SMS for booking
-        const message = `Thank%20You%20for%20being%20our%20loyal%20member`;
+        const message = `Thank You for being our loyal member`;
+
         const to = `88${dataForRegistration?.phone}`;
         await CCBSms(message, to);
 
