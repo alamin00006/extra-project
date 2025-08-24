@@ -169,7 +169,7 @@ const Navbar = () => {
                 </li>
                 <br />
 
-                <li className="custom-navbar">
+                {/* <li className="custom-navbar">
                   <Link
                     href="/blogs"
                     className={` no-underline  ${
@@ -178,6 +178,52 @@ const Navbar = () => {
                   >
                     Blog
                   </Link>
+                </li> */}
+                <li
+                  tabIndex={0}
+                  className="dropdown group pr-5 cursor-pointer "
+                >
+                  <div
+                    className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                  >
+                    Blog
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 inline-block ml-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                  <ul className="p-0 md:-ml-7 sm:-ml-0 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
+                    <li className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
+                      <Link
+                        href="/blogs"
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-sm 
+                           `}
+                      >
+                        Blog
+                      </Link>
+                    </li>
+                    <li className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
+                      <Link
+                        href="/gallery"
+                        className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-sm 
+                           `}
+                      >
+                        Gallery
+                      </Link>
+                    </li>
+                  </ul>
                 </li>
 
                 <li
@@ -383,7 +429,7 @@ const Navbar = () => {
                 </ul>
               </li>
 
-              <li className="pr-5 custom-navbar">
+              {/* <li className="pr-5 custom-navbar">
                 <Link
                   href="/blogs"
                   className={` text-[16px] no-underline  ${
@@ -392,6 +438,36 @@ const Navbar = () => {
                 >
                   Blog
                 </Link>
+              </li> */}
+
+              <li tabIndex={0} className="dropdown group pr-5 cursor-pointer ">
+                <div
+                  className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                >
+                  Blog
+                </div>
+                <ul className="p-0 -ml-7 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
+                  <li className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
+                    <Link
+                      href={`/blogs`}
+                      className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
+                           `}
+                    >
+                      Blog
+                    </Link>
+                  </li>
+                  <li className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
+                    <Link
+                      href={`/gallery`}
+                      className={`no-underline
+                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
+                           `}
+                    >
+                      Gallery
+                    </Link>
+                  </li>
+                </ul>
               </li>
 
               <li tabIndex={0} className="dropdown group pr-5 cursor-pointer ">

@@ -1,39 +1,36 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
 
 const GallerySection = () => {
   const images = [
-    {
-      src: "/images/gallery/image-1.jpg",
-    },
-    {
-      src: "/images/gallery/image-2.jpg",
-    },
-    {
-      src: "/images/gallery/image-3.jpg",
-    },
-    {
-      src: "/images/gallery/image-4.jpg",
-    },
+    { src: "/images/gallery/image-1.jpg", title: "Gallery 1" },
+    { src: "/images/gallery/image-2.jpg", title: "Gallery 2" },
+    { src: "/images/gallery/image-3.jpg", title: "Gallery 3" },
+    { src: "/images/gallery/image-4.jpg", title: "Gallery 4" },
     {
       src: "/images/gallery/Senior Festival 1.webp",
+      title: "Senior Festival 1",
     },
     {
       src: "/images/gallery/Senior Festival 2.webp",
+      title: "Senior Festival 2",
     },
     {
       src: "/images/gallery/Senior Festival 3.webp",
+      title: "Senior Festival 3",
     },
     {
       src: "/images/gallery/Senior Festival 4.webp",
+      title: "Senior Festival 4",
     },
   ];
 
   return (
-    <div className="bg-white dark:bg-gray-800 mb-5">
+    <div className="custom-container bg-white dark:bg-gray-800 mb-5 mt-2">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
         <div className="flex items-center justify-center gap-12 mb-3">
           <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white">
@@ -58,15 +55,16 @@ const GallerySection = () => {
                     onClick={open}
                     className="group relative flex h-48 md:h-80 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg cursor-pointer"
                   >
-                    <img
+                    <Image
                       src={img.src}
                       alt={img.title}
-                      className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                      fill
+                      className="absolute inset-0 object-cover object-center transition-transform duration-200 group-hover:scale-110"
+                      sizes="(max-width: 768px) 100vw, 
+                             (max-width: 1200px) 50vw, 
+                             33vw"
                     />
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
-                    <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
-                      {img.title}
-                    </span>
                   </div>
                 )}
               </Item>

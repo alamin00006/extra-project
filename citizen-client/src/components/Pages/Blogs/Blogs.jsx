@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import GallerySection from "@/components/photo-gallery/Gallery";
 
 const videos = [
   {
@@ -88,7 +87,6 @@ const Blogs = () => {
           </div>
         </div>
       )}
-      <GallerySection />
     </div>
   );
 };
