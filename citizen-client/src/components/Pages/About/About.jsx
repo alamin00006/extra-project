@@ -1,6 +1,3 @@
-// import ManagementTeam from "./ManagementTeam";
-
-import Gallery from "@/components/photo-gallery/Gallery";
 import ManagementTeam from "./ManagementTeam";
 
 const About = () => {
@@ -82,7 +79,6 @@ const About = () => {
         </p>
       </div>
       <ManagementTeam />
-      <Gallery />
     </div>
   );
 };
