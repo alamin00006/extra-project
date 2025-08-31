@@ -16,12 +16,15 @@ const HeroSlider = ({ userData }) => {
   const router = useRouter();
 
   const handleRegistration = () => {
-    if (!userData) {
-      return router.push(`/login`);
-    } else {
-      return router.push(`/service-application`);
-    }
+    return router.push(`/service-application`);
   };
+  // const handleRegistration = () => {
+  //   if (!userData) {
+  //     return router.push(`/login`);
+  //   } else {
+  //     return router.push(`/service-application`);
+  //   }
+  // };
 
   return (
     <div className="relative w-full">

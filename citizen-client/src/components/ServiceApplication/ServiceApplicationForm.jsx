@@ -9,11 +9,12 @@ import toast, { Toaster } from "react-hot-toast";
 
 import Loading from "@/app/loading";
 import Image from "next/image";
+import { Eye, EyeOff } from "lucide-react";
 
 const ServiceApplicationForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [memberFee, setMemberFee] = useState(4500);
-
+  const [showPassword, setShowPassword] = useState(false);
   const { userData, error: userError, loading: isLoadingUser } = useUserData();
 
   const handleSubmit = async (e) => {
@@ -21,17 +22,19 @@ const ServiceApplicationForm = () => {
     if (!memberFee) return toast.error("Please choice any member type");
     setIsLoading(true);
 
-    const { name, mobileNumber, email, streetAddress, city, state } = e.target;
+    const { name, mobileNumber, email, streetAddress, city, state, password } =
+      e.target;
 
     const registrationData = {
       amount: Number(memberFee),
-      user: userData?._id,
-      name: userData?.fullName || name.value,
-      phoneNumber: userData?.phoneNumber || mobileNumber.value,
+      // user: userData?._id,
+      name: name.value,
+      phoneNumber: mobileNumber.value,
       email: email?.value,
       streetAddress: streetAddress.value,
       city: city.value,
       state: state.value,
+      password: password.value,
       // paymentType: "Bkash",
       // selectMethod: "Bkash",
     };
@@ -80,7 +83,6 @@ const ServiceApplicationForm = () => {
                   placeholder="Name"
                   name="name"
                   defaultValue={userData?.fullName || ""}
-                  disabled={userData?.fullName ? true : false}
                 />
               </div>
 
@@ -96,7 +98,6 @@ const ServiceApplicationForm = () => {
                   name="mobileNumber"
                   defaultValue={userData?.phoneNumber || ""}
                   onWheel={(e) => e.target.blur()}
-                  disabled={userData?.phoneNumber ? true : false}
                 />
               </div>
 
@@ -149,6 +150,26 @@ const ServiceApplicationForm = () => {
                 />
               </div>
 
+              <div className="relative">
+                <label className="block text-sm font-semibold text-gray-700 mb-1">
+                  Password (For Login)
+                </label>
+                <input
+                  type={showPassword ? "text" : "password"}
+                  name="password"
+                  className="mt-1 block w-full h-[50px] px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  required
+                  placeholder="Password"
+                />
+                <button
+                  type="button"
+                  className="absolute right-3 top-10 text-gray-500 hover:text-gray-700"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                </button>
+              </div>
+
               <div>
                 <label className="block text-sm font-medium text-gray-700">
                   লয়্যাল মেম্বার ফি (Choose Any One)
@@ -194,31 +215,6 @@ const ServiceApplicationForm = () => {
                   width={100}
                   height={100}
                 />
-                {/* <ul className="list-style-none text-sm text-gray-700 mt-2">
-                  <li>
-                    <label>
-                      <input
-                        type="radio"
-                        name="paymentType"
-                        value="bkash"
-                        required
-                        defaultChecked
-                      />
-                      <span className="ml-2">Bkash</span>
-                    </label>
-                  </li>
-                  <li>
-                  <label>
-                    <input
-                      type="radio"
-                      name="paymentType"
-                      value="Cash"
-                      required
-                    />
-                    <span className="ml-2">Cash</span>
-                  </label>
-                </li>
-                </ul> */}
               </div>
 
               <div className="md:col-span-2">

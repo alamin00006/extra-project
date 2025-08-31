@@ -3,20 +3,21 @@ import { v4 as uuidv4 } from "uuid";
 import { getValue, setValue } from "node-global-storage";
 import Member from "../membersReg/member.model.js";
 import Payment from "./payment.model.js";
-import User from "../user/user.model.js";
+// import User from "../user/user.model.js";
 import config from "../../../config/index.js";
 import { CCBSms } from "../../../sms/CCBSMS.js";
 import { generateMemberId } from "../membersReg/member.utils.js";
 import { PaymentService } from "./payment.service.js";
+import { userService } from "../user/user.service.js";
 
 // Helper to prepare bkash headers
-const shurjoPayHeaders = async () => {
-  return {
-    "Content-Type": "application/json",
-    Accept: "application/json",
-    authorization: getValue("id_token"),
-  };
-};
+// const shurjoPayHeaders = async () => {
+//   return {
+//     "Content-Type": "application/json",
+//     Accept: "application/json",
+//     authorization: getValue("id_token"),
+//   };
+// };
 
 // Create Payment Method
 const paymentCreate = async (req, res, next) => {
@@ -48,7 +49,7 @@ const paymentCreate = async (req, res, next) => {
         customer_post_code: "1212",
         customer_email: dataForRegistration?.email,
         client_ip: "102.101.1.1",
-        value1: dataForRegistration?.user,
+        value1: dataForRegistration?.password,
       },
       { headers: { Authorization: `Bearer ${getValue("id_token")}` } }
     );
@@ -103,24 +104,31 @@ const verifyPayment = async (req, res) => {
         paymentNumber: paymentDetails?.card_number,
         trxID: paymentDetails?.bank_trx_id,
         memberPhoneNumber: paymentDetails?.phone_no,
-        user: paymentDetails?.value1,
+        // user: paymentDetails?.value1,
         acceptableStatus: "Accepted",
       });
 
       await newTransaction.save();
 
-      // Phone SMS for booking
-      // const message = `/api/smsapi?api_key=${config.sms_api_key}&type=text&number=88${dataForRegistration?.phone}&senderid=${config.sms_sender_id}&message=Thank%20You%20for%20being%20our%20loyal%20member`;
+      // Phone SMS for Loyal Member
       const message = `Thank You for being our loyal member`;
 
       const to = `88${dataForRegistration?.phone}`;
       await CCBSms(message, to);
+
+      const userData = {
+        fullName: paymentDetails?.name,
+        phoneNumber: paymentDetails?.phone_no,
+        password: paymentDetails?.value1,
+        streetAddress: paymentDetails?.address,
+      };
+      await userService.createUser(userData);
     }
     res.json({
       paymentDetails,
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).json({ error: error.message });
   }
 };

@@ -6,11 +6,7 @@ const LoayalMember = ({ userData }) => {
   const router = useRouter();
 
   const handleRegistration = () => {
-    if (!userData) {
-      return router.push(`/login`);
-    } else {
-      return router.push(`/service-application`);
-    }
+    return router.push(`/service-application`);
   };
 
   return (

@@ -136,7 +136,7 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
       setIsSinUpPage(false);
       setIsOtpPage(true);
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       dispatch(placeLoadingShow(false));
 
       return toast.error(error?.response?.data?.message);

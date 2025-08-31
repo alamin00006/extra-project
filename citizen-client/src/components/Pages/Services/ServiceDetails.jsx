@@ -26,11 +26,7 @@ const ServiceDetails = ({ params }) => {
   }
 
   const handleRegistration = () => {
-    if (!userData) {
-      router.push("/login");
-    } else {
-      router.push("/service-application");
-    }
+    return router.push("/service-application");
   };
 
   return (
