@@ -7,25 +7,134 @@ import "photoswipe/dist/photoswipe.css";
 
 const GallerySection = () => {
   const images = [
-    { src: "/images/gallery/image-1.jpg", title: "Gallery 1" },
-    { src: "/images/gallery/image-2.jpg", title: "Gallery 2" },
-    { src: "/images/gallery/image-3.jpg", title: "Gallery 3" },
-    { src: "/images/gallery/image-4.jpg", title: "Gallery 4" },
     {
-      src: "/images/gallery/Senior Festival 1.webp",
-      title: "Senior Festival 1",
+      src: "/images/gallery/mou-sing/mou-1.webp",
     },
     {
-      src: "/images/gallery/Senior Festival 2.webp",
-      title: "Senior Festival 2",
+      src: "/images/gallery/mou-sing/mou-2.webp",
     },
     {
-      src: "/images/gallery/Senior Festival 3.webp",
-      title: "Senior Festival 3",
+      src: "/images/gallery/mou-sing/mou-3.webp",
     },
     {
-      src: "/images/gallery/Senior Festival 4.webp",
-      title: "Senior Festival 4",
+      src: "/images/gallery/mou-sing/mou-4.webp",
+    },
+    {
+      src: "/images/gallery/mou-sing/mou-5.webp",
+    },
+    {
+      src: "/images/gallery/mou-sing/mou-6.webp",
+    },
+    {
+      src: "/images/gallery/mou-sing/mou-7.webp",
+    },
+    {
+      src: "/images/gallery/mou-sing/mou-8.webp",
+    },
+    {
+      src: "/images/gallery/mou-sing/mou-9.webp",
+    },
+    {
+      src: "/images/gallery/mou-sing/mou-10.webp",
+    },
+    {
+      src: "/images/gallery/mou-sing/mou-11.webp",
+    },
+    {
+      src: "/images/gallery/mou-sing/mou-12.webp",
+    },
+    {
+      src: "/images/gallery/corporate/corporate-1.png",
+    },
+    {
+      src: "/images/gallery/corporate/corporate-2.webp",
+    },
+    {
+      src: "/images/gallery/others/Senior-Festival-1.webp",
+    },
+    {
+      src: "/images/gallery/others/Senior-Festival-2.webp",
+    },
+    {
+      src: "/images/gallery/others/Senior-Festival-3.webp",
+    },
+    {
+      src: "/images/gallery/others/Senior-Festival-4.webp",
+    },
+    {
+      src: "/images/gallery/others/probin-1.webp",
+    },
+    {
+      src: "/images/gallery/others/probin-2.webp",
+    },
+    {
+      src: "/images/gallery/others/probin-3.webp",
+    },
+    {
+      src: "/images/gallery/others/probin-4.webp",
+    },
+    {
+      src: "/images/gallery/others/1.webp",
+    },
+    {
+      src: "/images/gallery/others/2.webp",
+    },
+    {
+      src: "/images/gallery/others/3.webp",
+    },
+    {
+      src: "/images/gallery/others/4.webp",
+    },
+    {
+      src: "/images/gallery/others/5.webp",
+    },
+    {
+      src: "/images/gallery/others/6.webp",
+    },
+    {
+      src: "/images/gallery/others/7.webp",
+    },
+    {
+      src: "/images/gallery/others/8.webp",
+    },
+    {
+      src: "/images/gallery/others/9.webp",
+    },
+    {
+      src: "/images/gallery/others/10.webp",
+    },
+    {
+      src: "/images/gallery/others/11.webp",
+    },
+    {
+      src: "/images/gallery/others/12.webp",
+    },
+    {
+      src: "/images/gallery/others/13.webp",
+    },
+    {
+      src: "/images/gallery/others/14.webp",
+    },
+    {
+      src: "/images/gallery/others/15.webp",
+    },
+    {
+      src: "/images/gallery/milon-mela/1.webp",
+    },
+    {
+      src: "/images/gallery/milon-mela/2.webp",
+    },
+    {
+      src: "/images/gallery/milon-mela/3.webp",
+    },
+    {
+      src: "/images/gallery/milon-mela/4.webp",
+    },
+    {
+      src: "/images/gallery/milon-mela/5.webp",
+    },
+    {
+      src: "/images/gallery/milon-mela/6.webp",
     },
   ];
 
@@ -33,7 +142,7 @@ const GallerySection = () => {
     <div className="custom-container bg-white dark:bg-gray-800 mb-5 mt-2">
       <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
         <div className="flex items-center justify-center gap-12 mb-3">
-          <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white">
+          <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white my-3">
             Gallery
           </h2>
         </div>
@@ -47,7 +156,7 @@ const GallerySection = () => {
                 thumbnail={img.src}
                 width="1200"
                 height="800"
-                title={img.title}
+                // title={img.title}
               >
                 {({ ref, open }) => (
                   <div
@@ -57,7 +166,7 @@ const GallerySection = () => {
                   >
                     <Image
                       src={img.src}
-                      alt={img.title}
+                      alt={"Gallery Image"}
                       fill
                       className="absolute inset-0 object-cover object-center transition-transform duration-200 group-hover:scale-110"
                       sizes="(max-width: 768px) 100vw, 
