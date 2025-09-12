@@ -16,30 +16,22 @@ const GallerySection = () => {
     {
       src: "/images/gallery/mou-sing/mou-3.webp",
     },
-    {
-      src: "/images/gallery/mou-sing/mou-4.webp",
-    },
+
     {
       src: "/images/gallery/mou-sing/mou-5.webp",
     },
     {
       src: "/images/gallery/mou-sing/mou-6.webp",
     },
-    {
-      src: "/images/gallery/mou-sing/mou-7.webp",
-    },
+
     {
       src: "/images/gallery/mou-sing/mou-8.webp",
     },
-    {
-      src: "/images/gallery/mou-sing/mou-9.webp",
-    },
+
     {
       src: "/images/gallery/mou-sing/mou-10.webp",
     },
-    {
-      src: "/images/gallery/mou-sing/mou-11.webp",
-    },
+
     {
       src: "/images/gallery/mou-sing/mou-12.webp",
     },
@@ -73,9 +65,7 @@ const GallerySection = () => {
     {
       src: "/images/gallery/others/probin-4.webp",
     },
-    {
-      src: "/images/gallery/others/1.webp",
-    },
+
     {
       src: "/images/gallery/others/2.webp",
     },
@@ -85,9 +75,7 @@ const GallerySection = () => {
     {
       src: "/images/gallery/others/4.webp",
     },
-    {
-      src: "/images/gallery/others/5.webp",
-    },
+
     {
       src: "/images/gallery/others/6.webp",
     },
