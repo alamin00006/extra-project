@@ -1,0 +1,15 @@
+<!-- modal 
+............................................. -->
+<!-- delete:::::
+      <DeleteModal
+  buttonText={<FaTrash />}
+  buttonClassName="btn btn-sm btn-outline btn-error"
+  buttonTitle="Delete Item"
+  modalData={{ _id: "abc123", name: "Sample Discount" }}
+  onDelete={handleDelete}
+/> -->
+
+<!-- other modal::::
+<div className="flex items-center justify-center">
+    <DiscountFormModal  buttonText={<FaPlus/> } buttonClassName="text-green-600 cursor-pointer " buttonTitle="Add Discount"/>
+ </div> -->
