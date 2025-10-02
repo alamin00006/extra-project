@@ -34,23 +34,23 @@ instance.interceptors.request.use(
 // Response interceptor — just return response
 instance.interceptors.response.use(
   (response: AxiosResponse) => response,
-  async (error) => {
-    const config = error.config as AxiosRequestConfig & { sent?: boolean };
+  // async (error) => {
+  //   const config = error.config as AxiosRequestConfig & { sent?: boolean };
 
-    if (error?.response?.status === 403 && !config.sent) {
-      config.sent = true;
-      const response = await getNewAccessToken();
-      const accessToken = response?.data?.accessToken;
-      config.headers = {
-        ...config.headers,
-        Authorization: accessToken,
-      };
-      setToLocalStorage(authKey, accessToken);
-      return instance(config);
-    }
+  //   if (error?.response?.status === 403 && !config.sent) {
+  //     config.sent = true;
+  //     const response = await getNewAccessToken();
+  //     const accessToken = response?.data?.accessToken;
+  //     config.headers = {
+  //       ...config.headers,
+  //       Authorization: accessToken,
+  //     };
+  //     setToLocalStorage(authKey, accessToken);
+  //     return instance(config);
+  //   }
 
-    return Promise.reject(error);
-  },
+  //   return Promise.reject(error);
+  // },
 );
 
 export const request = async <T = any>(
