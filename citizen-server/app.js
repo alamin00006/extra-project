@@ -22,6 +22,8 @@ const allowedOrigins = [
   "http://localhost:3001",
   "https://citizencarebd.com",
   "https://www.citizencarebd.com",
+  "https://admin.citizencarebd.com",
+  "https://www.admin.citizencarebd.com",
 ];
 
 const io = new Server(server, {
