@@ -29,7 +29,7 @@ const navItems: NavItem[] = [
   {
     icon: <FaMoneyBillWave />,
     name: "Payments",
-    subItems: [{ name: "Payment List", path: "/payment-list" }],
+    subItems: [{ name: "Payment List", path: "/payment" }],
   },
   {
     icon: <FaHospital />,
