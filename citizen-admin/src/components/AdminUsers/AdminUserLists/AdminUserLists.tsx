@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useGetAllUsersQuery, useGetUserQuery } from "@/redux/api/authApi";
 
 import { AiOutlineEye } from "react-icons/ai";
-import { FaRegEdit, FaTrashAlt } from "react-icons/fa";
+import { FaRegEdit } from "react-icons/fa";
 import SeeAdminUserDetails from "./SeeAdminUserDetails";
 import EditAdminUserForm from "./EditAdminUserForm";
 import { Toaster } from "react-hot-toast";
@@ -15,11 +15,7 @@ const AdminUserLists = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showEditAdminUser, setShowEditAdminUser] = useState(false);
   // Get login user
-  const {
-    data: loinUser,
-    error: userError,
-    isLoading: userIsLoading,
-  } = useGetUserQuery();
+  const { data: loinUser } = useGetUserQuery();
 
   // get All Users
   const userParams = {
@@ -28,9 +24,9 @@ const AdminUserLists = () => {
     ].filter(Boolean),
   };
 
-  const { data, error, isLoading } = useGetAllUsersQuery(userParams) as any;
+  const { data } = useGetAllUsersQuery(userParams) as any;
 
-  const handleViewDetails = (user) => {
+  const handleViewDetails = (user: any) => {
     setSelectedUser(user);
     setIsModalOpen(true);
   };
@@ -40,7 +36,7 @@ const AdminUserLists = () => {
     setSelectedUser(null);
   };
 
-  const handleEditUser = (user) => {
+  const handleEditUser = (user: any) => {
     setSelectedUser(user);
     setShowEditAdminUser(true);
   };

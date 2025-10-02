@@ -7,19 +7,11 @@ import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
 import { getBaseUrl } from "@/helpers/config/envConfig";
 import { USER_ROLE } from "@/constants/role";
-import { useGetUserQuery } from "@/redux/api/authApi";
 
 const AddAdminUser = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [gender, setGender] = useState("");
   const [role, setRole] = useState("");
-
-  // Get login user
-  const {
-    data: userData,
-    error: userError,
-    isLoading: userIsLoading,
-  } = useGetUserQuery();
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);

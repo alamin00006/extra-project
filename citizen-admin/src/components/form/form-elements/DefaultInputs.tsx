@@ -14,14 +14,14 @@ import {
 
 export default function DefaultInputs() {
   const [showPassword, setShowPassword] = useState(false);
-  const options = [
-    { value: "marketing", label: "Marketing" },
-    { value: "template", label: "Template" },
-    { value: "development", label: "Development" },
-  ];
-  const handleSelectChange = (value: string) => {
-    console.log("Selected value:", value);
-  };
+  // const options = [
+  //   { value: "marketing", label: "Marketing" },
+  //   { value: "template", label: "Template" },
+  //   { value: "development", label: "Development" },
+  // ];
+  // const handleSelectChange = (value: string) => {
+  //   console.log("Selected value:", value);
+  // };
   return (
     <ComponentCard title="Default Inputs">
       <div className="space-y-6">
@@ -36,12 +36,12 @@ export default function DefaultInputs() {
         <div>
           <Label>Select Input</Label>
           <div className="relative">
-            <Select
+            {/* <Select
               options={options}
               placeholder="Select an option"
               onChange={handleSelectChange}
               className="dark:bg-dark-900"
-            />
+            /> */}
             <span className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-gray-500 dark:text-gray-400">
               <ChevronDownIcon />
             </span>

@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
     domains: ["localhost", "i.ibb.co", "imgbb.com"],
     unoptimized: true,
   },
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

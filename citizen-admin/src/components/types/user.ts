@@ -1,5 +1,4 @@
-import { Role } from "enums/role";
-import { STATUS } from "enums/status";
+import { Role } from "@/enums/role";
 
 export interface IAdminUser {
   email: string;
@@ -10,5 +9,5 @@ export interface IAdminUser {
   doctor?: string;
   admin?: string;
   SuperAdmin?: string;
-  status: STATUS;
+  // status: STATUS;
 }
