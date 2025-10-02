@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 import { useGetAllUsersQuery, useGetUserQuery } from "@/redux/api/authApi";
-import { USER_ROLE } from "@/constants/role";
+
 import { AiOutlineEye } from "react-icons/ai";
 import { FaRegEdit, FaTrashAlt } from "react-icons/fa";
 import SeeAdminUserDetails from "./SeeAdminUserDetails";
@@ -16,21 +16,19 @@ const AdminUserLists = () => {
   const [showEditAdminUser, setShowEditAdminUser] = useState(false);
   // Get login user
   const {
-    data: userData,
+    data: loinUser,
     error: userError,
     isLoading: userIsLoading,
   } = useGetUserQuery();
 
-  // console.log("hello");
   // get All Users
   const userParams = {
     excludeRole: [
-      USER_ROLE.COMPANY,
-      userData?.role === USER_ROLE.COMPANY ? USER_ROLE.SUPER_ADMIN : null,
+      // userData?.role === USER_ROLE.ADMIN ? USER_ROLE.SUPER_ADMIN : null,
     ].filter(Boolean),
   };
 
-  const { data, error, isLoading } = useGetAllUsersQuery(userParams);
+  const { data, error, isLoading } = useGetAllUsersQuery(userParams) as any;
 
   const handleViewDetails = (user) => {
     setSelectedUser(user);
@@ -70,26 +68,22 @@ const AdminUserLists = () => {
               <th>Id</th>
               <th>Name</th>
               <th>Email</th>
-              <th>Gender</th>
+              {/* <th>Gender</th> */}
               <th>User Status</th>
               <th>Role</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            {data?.map((user: any, index) => (
+            {data?.map((user: any, index: number) => (
               <tr key={user._id}>
                 <td>{index + 1}</td>
                 <td>#{user.id}</td>
-                <td>{user?.PRManager?.name || user?.SuperAdmin?.name || ""}</td>
-                <td>{user.email}</td>
-                <td>
-                  {user?.PRManager?.gender || user?.SuperAdmin?.gender || ""}
-                </td>
-                <td>{user.status}</td>
-                <td className="font-bold uppercase">
-                  {user.role} - {user?.company?.name}
-                </td>
+                <td>{user?.name || ""}</td>
+                <td>{user?.email}</td>
+                {/* <td>{user?.gender || ""}</td> */}
+                <td>{user?.status}</td>
+                <td className="font-bold uppercase">{user.role}</td>
                 <td className="text-center">
                   <button
                     onClick={() => handleViewDetails(user)}
@@ -111,16 +105,13 @@ const AdminUserLists = () => {
       </div>
 
       {isModalOpen && (
-        <SeeAdminUserDetails
-          waitingList={selectedUser}
-          onClose={handleCloseModal}
-        />
+        <SeeAdminUserDetails user={selectedUser} onClose={handleCloseModal} />
       )}
 
       {showEditAdminUser && (
         <EditAdminUserForm
           user={selectedUser}
-          loginUser={userData}
+          loginUser={loinUser}
           showEditAdminUser={showEditAdminUser}
           setShowEditAdminUser={setShowEditAdminUser}
         />

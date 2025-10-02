@@ -1,51 +1,40 @@
-import { get_api_key } from "../config/envConfig";
+import { getBaseUrl } from "../config/envConfig";
 import { instance as axiosInstance } from "./axiosInstance";
-import { AxiosRequestConfig, AxiosResponse } from "axios";
+import { AxiosRequestConfig } from "axios";
 
-type AxiosBaseQueryArgs = {
+interface AxiosBaseQueryArgs {
   url: string;
   method: AxiosRequestConfig["method"];
   data?: any;
-  params?: Record<string, any>;
+  params?: any;
   contentType?: string;
-};
+}
 
-type AxiosBaseQueryResult<T = any> =
-  | AxiosResponse<T>
-  | {
-      error: {
-        status?: number;
-        data: any;
-      };
-    };
+interface AxiosBaseQueryOptions {
+  baseUrl?: string;
+}
 
 export const axiosBaseQuery =
-  ({ baseUrl }: { baseUrl?: string } = { baseUrl: "" }) =>
-  async <T = any>({
-    url,
-    method,
-    data,
-    params,
-    contentType,
-  }: AxiosBaseQueryArgs): Promise<AxiosBaseQueryResult<T>> => {
+  ({ baseUrl = "" }: AxiosBaseQueryOptions = {}) =>
+  async ({ url, method, data, params, contentType }: AxiosBaseQueryArgs) => {
     try {
-      const result = await axiosInstance<T>({
+      const result = await axiosInstance({
         url: baseUrl + url,
         method,
         data,
         params,
         headers: {
           "Content-Type": contentType || "application/json",
-          // "x-api-key": get_api_key(),
         },
         withCredentials: true,
       });
-      return result;
-    } catch (err: any) {
+
+      return { data: result.data?.data };
+    } catch (axiosError: any) {
       return {
         error: {
-          status: err.response?.status,
-          data: err.response?.data || err.message,
+          status: axiosError.response?.status,
+          data: axiosError.response?.data || axiosError.message,
         },
       };
     }

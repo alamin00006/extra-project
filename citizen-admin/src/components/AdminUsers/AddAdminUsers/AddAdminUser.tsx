@@ -47,7 +47,7 @@ const AddAdminUser = () => {
       toast.success("Account Created");
       e.target.reset();
     } catch (err: any) {
-      // console.log(err);
+      console.log(err);
       toast.error(err?.response?.data?.message || "Something went wrong");
     }
   };
@@ -138,38 +138,23 @@ const AddAdminUser = () => {
                 <option disabled value="">
                   Select a Role
                 </option>
-
-                {userData?.role === USER_ROLE.SUPER_ADMIN ? (
+                <option value={USER_ROLE.ADMIN}>Admin</option>
+                <option value={USER_ROLE.SUPER_ADMIN}>Super Admin</option>
+                {/* {userData?.role === USER_ROLE.SUPER_ADMIN ? (
                   <option value={USER_ROLE.SUPER_ADMIN}>Super Admin</option>
                 ) : (
                   ""
                 )}
 
-                {userData?.role === USER_ROLE.COMPANY ? (
-                  // <option value="admin">Admin</option>
-                  <option value={USER_ROLE.PR_MANAGER}>PR Manager</option>
+                {userData?.role === USER_ROLE.ADMIN ? (
+                  <option value={USER_ROLE.ADMIN}>Admin</option>
                 ) : (
                   ""
-                )}
+                )} */}
               </select>
             </div>
           </div>
-          {role === USER_ROLE.PR_MANAGER ? (
-            <div>
-              <label className="mb-2 block text-lg font-semibold">
-                Incentive
-              </label>
-              <input
-                type="number"
-                className="w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-teal-500 focus:outline-none"
-                placeholder="Incentive"
-                name="incentive"
-                required
-              />
-            </div>
-          ) : (
-            ""
-          )}
+
           <div>
             <label className="mb-2 block text-lg font-semibold">Gender</label>
             <select

@@ -15,6 +15,8 @@ import {
 } from "@/redux/api/authApi";
 import { useRouter } from "next/navigation";
 import { authKey } from "@/constants/authKey";
+import { getBaseUrl } from "@/helpers/config/envConfig";
+import axios from "axios";
 
 export default function SignInForm() {
   const [userLogin] = useUserLoginMutation();
@@ -32,16 +34,25 @@ export default function SignInForm() {
       };
 
       // Perform the login request
-      const res: LoginUserResponse = await userLogin(payload).unwrap();
+      // const res: LoginUserResponse = await userLogin(payload).unwrap();
+
+      const res: LoginUserResponse = await axios.post(
+        `${getBaseUrl()}/admin-users/login`,
+        payload,
+        // {
+        //   withCredentials: true,
+        // },
+      );
       // Check if the token is defined and not empty
 
-      if (res?.data.token) {
-        toast.success("Login Success");
-        localStorage.setItem(authKey, res?.data.token);
-        router.push("/");
-      }
+      toast.success(res?.data?.message);
+      localStorage.setItem(authKey, res?.data?.data?.token);
+      router.push("/dashboard");
     } catch (error: any) {
-      toast.error(error?.data?.message || "An error occurred during login");
+      // console.log(error);
+      toast.error(
+        error?.response?.data?.message || "An error occurred during login",
+      );
     } finally {
       setIsLoading(false);
     }
@@ -87,14 +98,14 @@ export default function SignInForm() {
                   />
                 </div>
               </div>
-              <div className="flex items-center justify-between">
+              {/* <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <Checkbox checked={isChecked} onChange={setIsChecked} />
                   <span className="text-theme-sm block font-normal text-gray-700 dark:text-gray-400">
                     Keep me logged in
                   </span>
                 </div>
-              </div>
+              </div> */}
               <div>
                 <Button className="w-full" size="sm">
                   Sign in

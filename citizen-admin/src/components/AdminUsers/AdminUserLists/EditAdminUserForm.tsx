@@ -83,11 +83,7 @@ const EditAdminUserForm = ({
                       placeholder="Add User Name"
                       name="name"
                       required
-                      defaultValue={
-                        user?.role === USER_ROLE.PR_MANAGER
-                          ? user?.PRManager?.name
-                          : user?.company?.name || user?.SuperAdmin?.name || ""
-                      }
+                      defaultValue={user?.name}
                     />
                   </div>
 
@@ -138,11 +134,7 @@ const EditAdminUserForm = ({
                       placeholder="Mobile Number"
                       name="phone"
                       required
-                      defaultValue={
-                        user?.PRManager?.phoneNumber
-                          ? user?.PRManager?.phoneNumber
-                          : user?.SuperAdmin?.phoneNumber
-                      }
+                      defaultValue={user?.phoneNumber}
                     />
                   </div>
 
@@ -167,33 +159,10 @@ const EditAdminUserForm = ({
                       ) : (
                         ""
                       )}
-
-                      {loginUser?.role === USER_ROLE.COMPANY ? (
-                        // <option value="admin">Admin</option>
-                        <option value={USER_ROLE.PR_MANAGER}>PR Manager</option>
-                      ) : (
-                        ""
-                      )}
                     </select>
                   </div>
                 </div>
-                {user?.role === USER_ROLE.PR_MANAGER ? (
-                  <div>
-                    <label className="mb-2 block text-lg font-semibold">
-                      Incentive
-                    </label>
-                    <input
-                      type="number"
-                      className="w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-teal-500 focus:outline-none"
-                      placeholder="Incentive"
-                      name="incentive"
-                      required
-                      defaultValue={user?.PRManager?.incentive}
-                    />
-                  </div>
-                ) : (
-                  ""
-                )}
+
                 <div>
                   <label className="mb-2 block text-lg font-semibold">
                     Gender
@@ -201,11 +170,7 @@ const EditAdminUserForm = ({
                   <select
                     className="w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-teal-500 focus:outline-none"
                     name="gender"
-                    defaultValue={
-                      user?.PRManager?.gender
-                        ? user?.PRManager?.gender
-                        : user?.SuperAdmin?.gender
-                    }
+                    defaultValue={user?.gender}
                     required
                   >
                     <option value="">Select gender</option>
