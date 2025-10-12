@@ -5,14 +5,26 @@ import httpStatus from "http-status";
 import config from "../../../config/index.js";
 
 const createAdminUser = catchAsync(async (req, res) => {
-  const { email, password, role, company = null, ...userOthersData } = req.body;
+  const {
+    name,
+    phoneNumber,
+    email,
+    gender,
+    password,
+    role,
+    address = null,
+    ...userOthersData
+  } = req.body;
 
   // user data for AdminUser
   const userData = {
     email,
     password,
     role,
-    company,
+    name,
+    phoneNumber,
+    gender,
+    address,
   };
 
   // create new user
@@ -194,7 +206,6 @@ export const AdminUsersController = {
   refreshToken,
   getMe,
   allAdminUser,
-
   updateAdminUser,
   updateAdminUserOnlyPassword,
   updateProfilePhoto,

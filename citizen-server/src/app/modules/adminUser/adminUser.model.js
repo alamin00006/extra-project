@@ -11,6 +11,20 @@ const adminUserSchema = mongoose.Schema(
       required: true,
       unique: true,
     },
+    name: {
+      type: String,
+      required: true,
+    },
+    phoneNumber: {
+      type: String,
+      required: true,
+    },
+
+    gender: {
+      type: String,
+      enum: ["Male", "Female"],
+    },
+
     email: {
       type: String,
       required: true,
@@ -21,18 +35,9 @@ const adminUserSchema = mongoose.Schema(
     },
     role: {
       type: String,
-      enum: ["SuperAdmin", "admin", "pr-manager", "company"],
-      default: "pr-manager",
+      enum: ["SuperAdmin", "admin"],
+      default: "admin",
       required: true,
-    },
-    company: {
-      type: ObjectId,
-      ref: "Company",
-      // default: null,
-    },
-    PRManager: {
-      type: ObjectId,
-      ref: "PRManager",
     },
     SuperAdmin: {
       type: ObjectId,
@@ -40,8 +45,15 @@ const adminUserSchema = mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["Active", "DeActive", "Blocked"],
+      enum: ["Active", "Deactive", "Blocked"],
       default: "Active",
+    },
+    address: {
+      type: String,
+      default: null,
+    },
+    userPhoto: {
+      type: String,
     },
   },
   {

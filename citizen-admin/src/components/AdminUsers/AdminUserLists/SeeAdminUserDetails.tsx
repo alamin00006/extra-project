@@ -2,8 +2,8 @@ import { AiOutlineClose, AiOutlineIdcard, AiOutlineMail } from "react-icons/ai";
 import { BsPersonFill, BsGenderAmbiguous, BsShieldCheck } from "react-icons/bs";
 import { FaUserTag } from "react-icons/fa";
 
-const SeeAdminUserDetails = ({ waitingList, onClose }: any) => {
-  if (!waitingList) {
+const SeeAdminUserDetails = ({ user, onClose }: any) => {
+  if (!user) {
     return (
       <div className="text-center text-gray-500">No details available</div>
     );
@@ -29,33 +29,27 @@ const SeeAdminUserDetails = ({ waitingList, onClose }: any) => {
         <div className="space-y-3">
           <p className="flex items-center">
             <AiOutlineIdcard className="mr-2 text-blue-500" />
-            <strong className="mr-1">ID:</strong> {waitingList.id}
+            <strong className="mr-1">ID:</strong> {user.id}
           </p>
           <p className="flex items-center">
             <BsPersonFill className="mr-2 text-green-500" />
-            <strong className="mr-1">Name:</strong>{" "}
-            {waitingList?.PRManager?.name ||
-              waitingList?.SuperAdmin?.name ||
-              ""}
+            <strong className="mr-1">Name:</strong> {user?.name || ""}
           </p>
           <p className="flex items-center">
             <AiOutlineMail className="mr-2 text-red-500" />
-            <strong className="mr-1">Email:</strong> {waitingList.email}
+            <strong className="mr-1">Email:</strong> {user.email}
           </p>
           <p className="flex items-center">
             <BsGenderAmbiguous className="mr-2 text-purple-500" />
-            <strong className="mr-1">Gender:</strong>{" "}
-            {waitingList?.PRManager?.gender ||
-              waitingList?.SuperAdmin?.gender ||
-              ""}
+            <strong className="mr-1">Gender:</strong> {user?.gender || ""}
           </p>
           <p className="flex items-center">
             <BsShieldCheck className="mr-2 text-yellow-500" />
-            <strong className="mr-1">Status:</strong> {waitingList.status}
+            <strong className="mr-1">Status:</strong> {user.status}
           </p>
           <p className="flex items-center">
             <FaUserTag className="mr-2 text-indigo-500" />
-            <strong className="mr-1">Role:</strong> {waitingList.role}
+            <strong className="mr-1">Role:</strong> {user.role}
           </p>
         </div>
       </div>

@@ -58,7 +58,7 @@ const LoadingModal = ({
             <div className="absolute inset-0 rounded-2xl bg-blue-500/10 blur-2xl" />
 
             {/* Loader */}
-            <motion.div variants={loaderVariants} animate="animate">
+            <motion.div animate="animate">
               <Loader2 className="h-12 w-12 text-blue-600 dark:text-blue-400" />
             </motion.div>
 

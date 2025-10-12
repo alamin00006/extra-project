@@ -7,19 +7,11 @@ import toast, { Toaster } from "react-hot-toast";
 import Link from "next/link";
 import { getBaseUrl } from "@/helpers/config/envConfig";
 import { USER_ROLE } from "@/constants/role";
-import { useGetUserQuery } from "@/redux/api/authApi";
 
 const AddAdminUser = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [gender, setGender] = useState("");
   const [role, setRole] = useState("");
-
-  // Get login user
-  const {
-    data: userData,
-    error: userError,
-    isLoading: userIsLoading,
-  } = useGetUserQuery();
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -47,7 +39,7 @@ const AddAdminUser = () => {
       toast.success("Account Created");
       e.target.reset();
     } catch (err: any) {
-      // console.log(err);
+      console.log(err);
       toast.error(err?.response?.data?.message || "Something went wrong");
     }
   };
@@ -138,38 +130,23 @@ const AddAdminUser = () => {
                 <option disabled value="">
                   Select a Role
                 </option>
-
-                {userData?.role === USER_ROLE.SUPER_ADMIN ? (
+                <option value={USER_ROLE.ADMIN}>Admin</option>
+                <option value={USER_ROLE.SUPER_ADMIN}>Super Admin</option>
+                {/* {userData?.role === USER_ROLE.SUPER_ADMIN ? (
                   <option value={USER_ROLE.SUPER_ADMIN}>Super Admin</option>
                 ) : (
                   ""
                 )}
 
-                {userData?.role === USER_ROLE.COMPANY ? (
-                  // <option value="admin">Admin</option>
-                  <option value={USER_ROLE.PR_MANAGER}>PR Manager</option>
+                {userData?.role === USER_ROLE.ADMIN ? (
+                  <option value={USER_ROLE.ADMIN}>Admin</option>
                 ) : (
                   ""
-                )}
+                )} */}
               </select>
             </div>
           </div>
-          {role === USER_ROLE.PR_MANAGER ? (
-            <div>
-              <label className="mb-2 block text-lg font-semibold">
-                Incentive
-              </label>
-              <input
-                type="number"
-                className="w-full rounded-md border border-gray-300 px-4 py-2 focus:ring-2 focus:ring-teal-500 focus:outline-none"
-                placeholder="Incentive"
-                name="incentive"
-                required
-              />
-            </div>
-          ) : (
-            ""
-          )}
+
           <div>
             <label className="mb-2 block text-lg font-semibold">Gender</label>
             <select

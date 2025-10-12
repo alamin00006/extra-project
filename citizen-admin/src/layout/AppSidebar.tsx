@@ -5,8 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSidebar } from "../context/SidebarContext";
 import { ChevronDownIcon, HorizontaLDots, PieChartIcon } from "../icons/index";
-import { FaHospital, FaThLarge, FaStethoscope } from "react-icons/fa";
-import { FaUserDoctor } from "react-icons/fa6";
+import {
+  FaHospital,
+  FaThLarge,
+  FaStethoscope,
+  FaMoneyBillWave,
+} from "react-icons/fa";
+import { useGetUserQuery } from "@/redux/api/authApi";
 
 type NavItem = {
   name: string;
@@ -22,34 +27,17 @@ const navItems: NavItem[] = [
     path: "/",
   },
   {
-    icon: <FaHospital />,
-    name: "Hospital",
-    subItems: [
-      { name: "Add New Hospital", path: "/add-hospital" },
-      { name: "Hospital List", path: "/hospital-list" },
-    ],
-  },
-  {
-    icon: <FaStethoscope />,
-    name: "Services",
-    subItems: [
-      { name: "Add New Service", path: "/add-service" },
-      { name: "Services List", path: "/service-list" },
-    ],
-  },
-  {
-    icon: <FaUserDoctor />,
-    name: "Doctors",
-    subItems: [
-      { name: "Add New Doctor", path: "/add-doctor" },
-      { name: "Doctors List", path: "/doctors-list" },
-    ],
+    icon: <FaMoneyBillWave />,
+    name: "Payments",
+    subItems: [{ name: "Payment List", path: "/payment" }],
   },
   {
     icon: <FaHospital />,
-
-    name: "Appointment",
-    subItems: [{ name: "Appointment List", path: "/appointment-list" }],
+    name: "Admins",
+    subItems: [
+      { name: "Add New Admin", path: "/add-new-user" },
+      { name: "Admin List", path: "/admin-users" },
+    ],
   },
 ];
 const othersItems: NavItem[] = [
@@ -61,8 +49,20 @@ const othersItems: NavItem[] = [
 ];
 
 const AppSidebar: React.FC = () => {
+  const {
+    data: loginUser,
+    error: userError,
+    isLoading: userIsLoading,
+  } = useGetUserQuery() as any;
+
   const { isExpanded, isMobileOpen, isHovered, setIsHovered } = useSidebar();
   const pathname = usePathname();
+
+  // Filter navItems based on user role
+  const filteredNavItems =
+    loginUser?.role === "admin"
+      ? navItems.filter((item) => item.name !== "Admins")
+      : navItems;
 
   const renderMenuItems = (
     navItems: NavItem[],
@@ -155,30 +155,6 @@ const AppSidebar: React.FC = () => {
                       }`}
                     >
                       {subItem.name}
-                      <span className="ml-auto flex items-center gap-1">
-                        {subItem.new && (
-                          <span
-                            className={`ml-auto ${
-                              isActive(subItem.path)
-                                ? "menu-dropdown-badge-active"
-                                : "menu-dropdown-badge-inactive"
-                            } menu-dropdown-badge`}
-                          >
-                            new
-                          </span>
-                        )}
-                        {subItem.pro && (
-                          <span
-                            className={`ml-auto ${
-                              isActive(subItem.path)
-                                ? "menu-dropdown-badge-active"
-                                : "menu-dropdown-badge-inactive"
-                            } menu-dropdown-badge`}
-                          >
-                            pro
-                          </span>
-                        )}
-                      </span>
                     </Link>
                   </li>
                 ))}
@@ -274,10 +250,10 @@ const AppSidebar: React.FC = () => {
         <Link href="/">
           {isExpanded || isHovered || isMobileOpen ? (
             <>
-              <h3>Doc Ticket Admin</h3>
+              <h3>Citizen Admin</h3>
             </>
           ) : (
-            <h3>Doc Ticket Admin</h3>
+            <h3>Citizen Admin</h3>
           )}
         </Link>
       </div>
@@ -298,7 +274,7 @@ const AppSidebar: React.FC = () => {
                   <HorizontaLDots />
                 )}
               </h2>
-              {renderMenuItems(navItems, "main")}
+              {renderMenuItems(filteredNavItems, "main")}
             </div>
 
             <div className="">

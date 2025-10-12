@@ -6,7 +6,7 @@ import { jwtHelpers } from "../../../helpers/jwtHelpers.js";
 import config from "../../../config/index.js";
 import httpStatus from "http-status";
 import ApiError from "../../../error/ApiError2.js";
-
+import bcrypt from "bcryptjs";
 const createAdminUser = async (adminUserData, user) => {
   // Check exists email
   const findUser = await AdminUser.findOne({ email: user.email });
@@ -53,103 +53,77 @@ const createAdminUser = async (adminUserData, user) => {
 
 // Update admin user
 
-// const updateAdminUserOnlyPassword = async (userId, userPassword) => {
-//   // Check if the user exists
-//   const existingUser = await AdminUser.findById(userId);
-//   if (!existingUser) {
-//     throw new ApiError(httpStatus.NOT_FOUND, "Sorry! No account found.");
-//   }
+const updateAdminUserOnlyPassword = async (userId, userPassword) => {
+  // Check if the user exists
+  const existingUser = await AdminUser.findById(userId);
+  if (!existingUser) {
+    throw new ApiError(httpStatus.NOT_FOUND, "Sorry! No account found.");
+  }
 
-//   // Check if oldPassword and newPassword are provided
-//   let updatedUser;
-//   if (userPassword.oldPassword && userPassword.password) {
-//     // Compare the old password
-//     const passwordMatch = await bcrypt.compare(
-//       userPassword.oldPassword,
-//       existingUser.password
-//     );
+  // Check if oldPassword and newPassword are provided
+  let updatedUser;
+  if (userPassword.oldPassword && userPassword.password) {
+    // Compare the old password
+    const passwordMatch = await bcrypt.compare(
+      userPassword.oldPassword,
+      existingUser.password
+    );
 
-//     if (!passwordMatch) {
-//       throw new ApiError(httpStatus.UNAUTHORIZED, "Old password is incorrect.");
-//     }
+    if (!passwordMatch) {
+      throw new ApiError(httpStatus.UNAUTHORIZED, "Old password is incorrect.");
+    }
 
-//     // Hash the new password
-//     const hashedPassword = await bcrypt.hash(
-//       userPassword.password,
-//       Number(config.bcrypt_salt_rounds)
-//     );
+    // Hash the new password
+    const hashedPassword = await bcrypt.hash(
+      userPassword.password,
+      Number(config.bcrypt_salt_rounds)
+    );
 
-//     // Save the updated user
-//     updatedUser = await AdminUser.updateOne(
-//       { _id: userId },
-//       {
-//         $set: {
-//           password: hashedPassword,
-//         },
-//       },
-//       { new: true }
-//     );
-//   } else {
-//     throw new ApiError(
-//       httpStatus.BAD_REQUEST,
-//       "Both old and new passwords are required."
-//     );
-//   }
+    // Save the updated user
+    updatedUser = await AdminUser.updateOne(
+      { _id: userId },
+      {
+        $set: {
+          password: hashedPassword,
+        },
+      },
+      { new: true }
+    );
+  } else {
+    throw new ApiError(
+      httpStatus.BAD_REQUEST,
+      "Both old and new passwords are required."
+    );
+  }
 
-//   if (!updatedUser) {
-//     throw new ApiError(
-//       httpStatus.INTERNAL_SERVER_ERROR,
-//       "Failed to update user."
-//     );
-//   }
+  if (!updatedUser) {
+    throw new ApiError(
+      httpStatus.INTERNAL_SERVER_ERROR,
+      "Failed to update user."
+    );
+  }
 
-//   return updatedUser;
-// };
+  return updatedUser;
+};
 
 // Update Only Profile Photo admin user
 
-// const updateProfilePhoto = async (id, updateData) => {
-//   const { role, profilePhoto } = updateData;
+const updateProfilePhoto = async (id, updateData) => {
+  const { role, profilePhoto } = updateData;
 
-//   let updateUser;
+  const updateUser = await AdminUser.updateOne(
+    {
+      _id: id,
+    },
+    {
+      $set: {
+        userPhoto: profilePhoto,
+      },
+    }
+  );
 
-//   if (role === ENUM_USER_ROLE.PR_MANAGER) {
-//     updateUser = await PRManager.updateOne(
-//       {
-//         _id: id,
-//       },
-//       {
-//         $set: {
-//           userPhoto: profilePhoto,
-//         },
-//       }
-//     );
-//   } else if (role === ENUM_USER_ROLE.SUPER_ADMIN) {
-//     updateUser = await SuperAdmin.updateOne(
-//       {
-//         _id: id,
-//       },
-//       {
-//         $set: {
-//           userPhoto: profilePhoto,
-//         },
-//       }
-//     );
-//   } else {
-//     updateUser = await Company.updateOne(
-//       {
-//         _id: id,
-//       },
-//       {
-//         $set: {
-//           companyLogo: profilePhoto,
-//         },
-//       }
-//     );
-//   }
-
-//   return updateUser;
-// };
+  return updateUser;
+};
 
 const createLogin = async (email, password) => {
   if (!email || !password) {
@@ -205,9 +179,7 @@ const getAdminUserByEmail = async (email) => {
     throw new Error("Email is required");
   }
 
-  const adminUser = await AdminUser.findOne({ email }).populate(
-    "PRManager company SuperAdmin"
-  );
+  const adminUser = await AdminUser.findOne({ email });
   if (!adminUser) {
     throw new Error("No account found with this email");
   }
@@ -217,19 +189,18 @@ const getAdminUserByEmail = async (email) => {
 };
 
 const getAllAdminUsers = async (params) => {
-  const { role, company, excludeRole } = params;
+  const { role, excludeRole } = params;
 
   let query = {};
 
   if (role) query["role"] = role;
-  if (company) query["company"] = company;
 
   if (excludeRole && Array.isArray(excludeRole)) {
     query["role"] = { $nin: excludeRole };
   }
-  const adminUsers = await AdminUser.find(query)
-    .populate("PRManager company SuperAdmin")
-    .sort({ createdAt: -1 });
+  const adminUsers = await AdminUser.find(query).sort({ createdAt: -1 });
+
+  console.log(adminUsers);
   return adminUsers;
 };
 
@@ -240,6 +211,6 @@ export const adminUserService = {
   getAdminUserByEmail,
   getAllAdminUsers,
   // updateAdminUser,
-  // updateAdminUserOnlyPassword,
-  // updateProfilePhoto,
+  updateAdminUserOnlyPassword,
+  updateProfilePhoto,
 };
