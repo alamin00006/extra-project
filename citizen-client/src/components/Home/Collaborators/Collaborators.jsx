@@ -22,26 +22,26 @@ const collaborators = [
     logo: "/images/collaborators/unicef-min.png",
     link: "https://www.unicef.org/",
   },
-  {
-    name: "ARMY",
-    logo: "/images/collaborators/army-min.png",
-    link: "https://www.army.mil.bd/",
-  },
-  {
-    name: "BANGLA ACADEMY",
-    logo: "/images/collaborators/bacademy-min.png",
-    link: "https://banglaacademy.gov.bd/",
-  },
-  {
-    name: "DU",
-    logo: "/images/collaborators/du-min.png",
-    link: "https://www.du.ac.bd/",
-  },
-  {
-    name: "BIMAN",
-    logo: "/images/collaborators/biman-min.png",
-    link: "https://www.biman-airlines.com/",
-  },
+  // {
+  //   name: "ARMY",
+  //   logo: "/images/collaborators/army-min.png",
+  //   link: "https://www.army.mil.bd/",
+  // },
+  // {
+  //   name: "BANGLA ACADEMY",
+  //   logo: "/images/collaborators/bacademy-min.png",
+  //   link: "https://banglaacademy.gov.bd/",
+  // },
+  // {
+  //   name: "DU",
+  //   logo: "/images/collaborators/du-min.png",
+  //   link: "https://www.du.ac.bd/",
+  // },
+  // {
+  //   name: "BIMAN",
+  //   logo: "/images/collaborators/biman-min.png",
+  //   link: "https://www.biman-airlines.com/",
+  // },
 ];
 
 const Collaborators = () => {
