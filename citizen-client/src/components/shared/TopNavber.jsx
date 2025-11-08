@@ -12,7 +12,11 @@ const TopNavbar = () => {
   return (
     <nav className="bg-pink-600">
       <div className="custom-container flex flex-wrap items-center justify-between">
-        <div className="flex items-center text-white border-base-100 px-2 border-r border-l py-2.5 gap-1">
+        <div className="flex items-center text-white border-base-100 px-2 border-r border-l py-2.5 gap-1 sm:hidden md:flex">
+          <IoCallOutline size={20} />
+          <span className="text-sm">09-613166166</span>
+        </div>
+        <div className="flex items-center text-white border-base-100 px-2 py-2.5 gap-1 md:hidden sm:flex">
           <IoCallOutline size={20} />
           <span className="text-sm">09-613166166</span>
         </div>
@@ -37,7 +41,7 @@ const TopNavbar = () => {
               size={16}
             />
           </Link>
-          <Link
+          {/* <Link
             href="https://bd.linkedin.com/company/citizen-care-bangladesh-ccb"
             target="_blank"
             className="border-base-100 px-3 border-l py-3 bg-pink-600 hover:bg-pink-600"
@@ -46,7 +50,7 @@ const TopNavbar = () => {
               className="text-white hover:text-[hoverColor]1"
               size={16}
             />
-          </Link>
+          </Link> */}
           <Link
             href="#"
             target="_blank"

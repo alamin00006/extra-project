@@ -28,7 +28,6 @@ const Footer = () => {
             backgroundSize: "contain",
             backgroundPosition: "center",
             pointerEvents: "none",
-       
           }}
         ></div>
 
@@ -63,7 +62,7 @@ const Footer = () => {
               <li className="flex items-center gap-2">
                 <IoCallOutline size={20} />
                 <span>
-                  <span className="font-bold">Phone:</span> 09-613166166 
+                  <span className="font-bold">Phone:</span> 09-613166166
                 </span>
               </li>
 
@@ -146,11 +145,10 @@ const Footer = () => {
           <div>
             {/* Social Media Links */}
             <div
-              className={`transition-all duration-500 transform ${
-                isSocial
-                  ? "translate-y-0 opacity-100 scale-100"
-                  : "translate-y-20 opacity-0 scale-90"
-              } flex flex-col items-center `}
+              className={`transition-all duration-500 transform 
+                   translate-y-0 opacity-100 scale-100
+                  
+               flex flex-col items-center `}
             >
               <a
                 href="https://wa.me/8801894671875"
@@ -179,16 +177,16 @@ const Footer = () => {
             </div>
 
             {/* Toggle Button */}
-            <button
+            {/* <button
               onClick={() => setSocial(!isSocial)}
               className={`flex items-center justify-center p-2.5 mt-2 rounded-full bg-[#39bcbc] hover:bg-[#39bcbc] text-white transition-transform duration-300  ${
                 isSocial ? "rotate-180" : "rotate-0"
               }`}
             >
-              {/* Hamburger Icon */}
+       
               {!isSocial && <TbMessage size={35} />}
 
-              {/* Close Icon */}
+   
               {isSocial && (
                 <svg
                   className="fill-current"
@@ -200,7 +198,7 @@ const Footer = () => {
                   <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
                 </svg>
               )}
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

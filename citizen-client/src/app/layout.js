@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
           />
         </Head>
         <body className="antialiased">
-          <div className="hidden md:block">
+          <div className="">
             <TopNavber />
           </div>
 
