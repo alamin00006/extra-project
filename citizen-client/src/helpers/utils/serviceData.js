@@ -76,9 +76,17 @@ export const cardData = [
           লয়্যাল মেম্বার ফি:
         </p>
         <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
-          <li>একজনের জন্য বাৎসরিক 4,500 টাকা।</li>
-          <li>ফ্যামিলির জন্য বাৎসরিক 10,000 টাকা।</li>
-          <li>মাসিক চার্জ 2,000 টাকা।</li>
+          <li>একজনের জন্য বাৎসরিক 5,000 টাকা।</li>
+          <li>ফ্যামিলির জন্য বাৎসরিক 9,999 টাকা।</li>
+
+          <li className="font-bold font-bengali ">
+            Single মাসিক চার্জ <span className="text-[#3abbba]"> চার্জ </span>
+            <span className="text-pink-500">4,444 </span> টাকা
+          </li>
+          <li className="font-bold font-bengali ">
+            Family মাসিক <span className="text-[#3abbba]"> চার্জ </span>
+            <span className="text-pink-500">8,888 </span> টাকা
+          </li>
         </ul>
       </div>
     ),

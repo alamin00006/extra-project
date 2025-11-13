@@ -13,12 +13,7 @@ const Card = ({ data }) => {
             </p>
 
             <p className=" font-black px-2 my-0 leading-tight ">
-              <span
-                className=" text-pink-600 text-xl font-bold inline-block font-bengali"
-                // style={{
-                //   clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
-                // }}
-              >
+              <span className=" text-pink-600 text-xl font-bold inline-block font-bengali">
                 {/* রেজিস্টার্ড */}
                 MBBS ডাক্তার
               </span>
@@ -34,14 +29,6 @@ const Card = ({ data }) => {
                 আপনার বাসায়
               </span>
             </p>
-            {/* <p className="text-[10px] font-black py-1 px-2 my-0 leading-tight">
-              <span
-                className="bg-[#39bcbc] text-white p-2 inline-block"
-                style={{ clipPath: "polygon(0 0, 100% 0, 93% 100%, 0% 100%)" }}
-              >
-                জরুরি প্রয়োজনে টেলিমেডিসিন সেবা
-              </span>
-            </p> */}
           </div>
         )}
         {data.id === 3 && (
@@ -51,23 +38,13 @@ const Card = ({ data }) => {
             </p>
 
             <p className="font-black px-2 my-0 leading-tight ">
-              <span
-                className="text-xl font-bold text-pink-600 inline-block font-bengali"
-                // style={{
-                //   clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
-                // }}
-              >
+              <span className="text-xl font-bold text-pink-600 inline-block font-bengali">
                 অভিজ্ঞ নিউট্রিশনিস্ট
               </span>
             </p>
 
             <p className=" font-bold px-2 my-0 leading-tight ">
-              <span
-                className="text-[#12a88b] text-xl inline-block font-bengali"
-                // style={{
-                //   clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
-                // }}
-              >
+              <span className="text-[#12a88b] text-xl inline-block font-bengali">
                 আপনার বাসায়
               </span>
             </p>
@@ -80,22 +57,12 @@ const Card = ({ data }) => {
             </p>
 
             <p className=" font-black px-2 my-0 leading-tight ">
-              <span
-                className=" text-pink-600 font-bold text-xl inline-block font-bengali"
-                // style={{
-                //   clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
-                // }}
-              >
+              <span className=" text-pink-600 font-bold text-xl inline-block font-bengali">
                 BSc নার্স/SACMO
               </span>
             </p>
             <p className=" font-bold  px-2 my-0 leading-tight   ">
-              <span
-                className="text-[#12a88b] text-xl inline-block font-bengali "
-                // style={{
-                //   clipPath: "polygon(0 0, 100% 0, 94.5% 100%, 0% 100%)",
-                // }}
-              >
+              <span className="text-[#12a88b] text-xl inline-block font-bengali ">
                 আপনার বাসায়
               </span>
             </p>

@@ -6,7 +6,7 @@ import Collaborators from "./Collaborators/Collaborators";
 import Services from "./services/Services";
 import "./Home.css";
 import LoayalMember from "./loayal-member/LoayalMember";
-import WhyChoosUs from "./WhyChoosUs/WhyChoosUs";
+import WhyChooseUs from "./WhyChoosUs/WhyChooseUs";
 import PartnerShip from "./partnerShip/PartnerShip";
 
 const HomePage = () => {
@@ -21,7 +21,7 @@ const HomePage = () => {
         <Banner2 userData={userData} />
       </div>
       <div className="bg-white mt-4">
-        <WhyChoosUs userData={userData} />
+        <WhyChooseUs userData={userData} />
       </div>
       {/* <div className="md:hidden  xs:block">
         <NoticeBoard />

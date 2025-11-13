@@ -13,7 +13,7 @@ import { Eye, EyeOff } from "lucide-react";
 
 const ServiceApplicationForm = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [memberFee, setMemberFee] = useState(4500);
+  const [memberFee, setMemberFee] = useState(5000);
   const [showPassword, setShowPassword] = useState(false);
   const { userData, error: userError, loading: isLoadingUser } = useUserData();
 
@@ -50,7 +50,7 @@ const ServiceApplicationForm = () => {
       // window.location.href = data.bkashURL;
       // return data;
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     } finally {
       setIsLoading(false);
     }
@@ -180,12 +180,12 @@ const ServiceApplicationForm = () => {
                       <input
                         type="radio"
                         name="membershipType"
-                        value={4500}
+                        value={5000}
                         defaultChecked
                         onChange={(e) => setMemberFee(e.target.value)}
                       />
                       <span className="ml-2">
-                        একজনের জন্য বাৎসরিক 4,500 টাকা।
+                        একজনের জন্য বাৎসরিক 5,000 টাকা।
                       </span>
                     </label>
                   </li>
@@ -195,10 +195,10 @@ const ServiceApplicationForm = () => {
                         onChange={(e) => setMemberFee(e.target.value)}
                         type="radio"
                         name="membershipType"
-                        value={10000}
+                        value={9999}
                       />
                       <span className="ml-2">
-                        ফ্যামিলির জন্য বাৎসরিক 10,000 টাকা।
+                        ফ্যামিলির জন্য বাৎসরিক 9,999 টাকা।
                       </span>
                     </label>
                   </li>
