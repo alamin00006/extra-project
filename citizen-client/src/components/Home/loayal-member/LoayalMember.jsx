@@ -439,7 +439,7 @@ const LoayalMember = ({ userData }) => {
             </li>
           </ul>
 
-          <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+          {/* <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
             এছাড়াও আমাদের লয়্যাল মেম্বার হলে আপনি পাচ্ছেন:
           </p>
           <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
@@ -460,7 +460,7 @@ const LoayalMember = ({ userData }) => {
             <span className="text-[#3abbba] font-bold">লয়্যাল মেম্বার</span> হয়ে
             নিজেকে সুস্থ রাখতে আরো মনযোগী হোন, ডাক্তার, নিউট্রিশনিস্ট, নার্সের
             সেবা নিন এবং স্বাস্থ্য ঝুঁকি প্রতিরোধে সচেষ্ট থাকুন।
-          </p>
+          </p> */}
 
           <div className="mt-5">
             <button
