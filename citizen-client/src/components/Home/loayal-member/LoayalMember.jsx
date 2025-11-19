@@ -415,18 +415,21 @@ const LoayalMember = ({ userData }) => {
           {/* <p className="text-sm md:text-base  text-[#565656]  ">মেম্বার ফি</p> */}
           <Link
             href={"/service-details/1"}
-            className="flex justify-end text-sm text-[#3abbba] hover:text-[#1c7d7d]"
+            className="flex justify-end text-sm text-[#3abbba] hover:text-[#1c7d7d] mb-2"
           >
             আরো পড়ুন
           </Link>
           <ul className="list-disc ml-4 space-y-2 text-base  ">
             <li className="font-bold font-bengali  ">
-              লয়্যাল <span className="text-[#3abbba]">মেম্বার ফি</span> একজনের
-              জন্য বাৎসরিক <span className="text-pink-500">5,000</span> টাকা
+              লয়্যাল{" "}
+              <span className="text-[#3abbba]">মেম্বার Registration </span> ফি
+              একজনের জন্য বাৎসরিক <span className="text-pink-500">5,000</span>{" "}
+              টাকা
             </li>
             <li className="font-bold font-bengali ">
-              লয়্যাল <span className="text-[#3abbba]"> মেম্বার ফি </span>
-              ফ্যামিলির জন্য বাৎসরিক{" "}
+              লয়্যাল{" "}
+              <span className="text-[#3abbba]"> মেম্বার Registration </span>
+              ফি ফ্যামিলির জন্য বাৎসরিক{" "}
               <span className="text-pink-500">9,999</span> টাকা
             </li>
             <li className="font-bold font-bengali ">

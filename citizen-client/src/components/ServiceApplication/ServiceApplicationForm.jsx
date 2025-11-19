@@ -185,7 +185,7 @@ const ServiceApplicationForm = () => {
                         onChange={(e) => setMemberFee(e.target.value)}
                       />
                       <span className="ml-2">
-                        একজনের জন্য বাৎসরিক 5,000 টাকা।
+                        Single সদস্যের জন্য বাৎসরিক 5,000 টাকা।
                       </span>
                     </label>
                   </li>
@@ -198,7 +198,7 @@ const ServiceApplicationForm = () => {
                         value={9999}
                       />
                       <span className="ml-2">
-                        ফ্যামিলির জন্য বাৎসরিক 9,999 টাকা।
+                        Family সদস্যের জন্য বাৎসরিক 9,999 টাকা।
                       </span>
                     </label>
                   </li>

@@ -48,14 +48,14 @@ const WhyChooseUs = ({ userData }) => {
       </div>
 
       <div className="mb-4 ">
-        <div className="custom-container md:shadow-md sm:shadow-sm rounded-md md:py-5 sm:py-2 bg-white">
+        <div className="custom-container md:shadow-md sm:shadow-sm rounded-md py-0 bg-white">
           <div
             className="stats flex flex-col md:flex-row md:justify-between w-full"
             ref={ref}
           >
             <div className="stat place-items-center">
               <div className="stat-title"> Loyal Members</div>
-              <div className="stat-value text-[#39bcbc]">
+              <div className="stat-value text-[#39bcbc] text-3xl">
                 {inView && (
                   <CountUp
                     start={0}
@@ -71,7 +71,7 @@ const WhyChooseUs = ({ userData }) => {
 
             <div className="stat place-items-center">
               <div className="stat-title">Doctors</div>
-              <div className="stat-value text-pink-600">
+              <div className="stat-value text-pink-600 text-3xl">
                 {" "}
                 {inView && (
                   <CountUp
@@ -87,7 +87,7 @@ const WhyChooseUs = ({ userData }) => {
 
             <div className="stat place-items-center">
               <div className="stat-title">Nutritionists</div>
-              <div className="stat-value text-[#39bcbc]">
+              <div className="stat-value text-[#39bcbc] text-3xl">
                 {" "}
                 {inView && (
                   <CountUp
@@ -102,7 +102,7 @@ const WhyChooseUs = ({ userData }) => {
             </div>
             <div className="stat place-items-center">
               <div className="stat-title">Nurses</div>
-              <div className="stat-value text-pink-600">
+              <div className="stat-value text-pink-600 text-3xl">
                 {" "}
                 {inView && (
                   <CountUp

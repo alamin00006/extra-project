@@ -43,7 +43,7 @@ const HeroSlider = ({ userData }) => {
       >
         {images.map((image, index) => (
           <SplideSlide key={index}>
-            <div className="relative w-screen sm:hidden md:block h-[calc(100vh-250px)] ">
+            <div className="relative w-screen sm:hidden md:block h-[calc(100vh-230px)] ">
               <Image src={image} alt={`Slide ${index + 1}`} fill priority />
             </div>
             <div className="md:hidden sm:block w-screen h-[170px]">
