@@ -2,7 +2,6 @@
 import useUserData from "@/hooks/useUserData";
 import Banner2 from "./Banner2";
 import SuccessStories from "./CCBVideos";
-import Collaborators from "./Collaborators/Collaborators";
 import Services from "./services/Services";
 import "./Home.css";
 import LoayalMember from "./loayal-member/LoayalMember";
@@ -32,16 +31,16 @@ const HomePage = () => {
       <div className="">
         <Services />
       </div>
-      <div>
-        <SuccessStories />
-      </div>
-
       <div className="bg-white md:mx-0 sm:mx-5">
         <PartnerShip />
       </div>
-      <div className="bg-white ">
-        <Collaborators />
+      <div className="pb-5">
+        <SuccessStories />
       </div>
+
+      {/* <div className="bg-white ">
+        <Collaborators />
+      </div> */}
     </>
   );
 };

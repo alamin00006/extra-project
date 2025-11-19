@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState, useRef } from "react";
 import { MdOutlineDehaze } from "react-icons/md";
 
 import { isLoggedIn } from "@/services/auth.service";
@@ -15,6 +15,7 @@ import useUserData from "@/hooks/useUserData";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const router = useRouter();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
 
@@ -25,6 +26,10 @@ const Navbar = () => {
   const [isInitialLoad, setIsInitialLoad] = useState(true);
 
   const [isUser, setIsUser] = useState(false);
+
+  // Ref for the dropdown
+  const dropdownRef = useRef(null);
+
   // Check if the user is logged in
   const userLoggedIn = isLoggedIn();
 
@@ -35,12 +40,34 @@ const Navbar = () => {
       setIsUser(false);
     }
   }, [userLoggedIn]);
+
   // Get User
   const {
     userData,
     error: userError,
     loading: isLoadingUser,
   } = useUserData(isUser);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+        setIsServiceOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  // Close dropdown when route changes
+  useEffect(() => {
+    setIsDropdownOpen(false);
+    setIsServiceOpen(false);
+  }, [pathname]);
 
   // Scroll event handler
   const handleScroll = () => {
@@ -72,8 +99,29 @@ const Navbar = () => {
   const logOut = () => {
     removeUserInfo(authKey);
     router.push("/");
-    // setIsDropdownOpen(false);
+    setIsDropdownOpen(false);
     window.location.reload();
+  };
+
+  // Close mobile menu
+  const closeMobileMenu = () => {
+    setIsDropdownOpen(false);
+    setIsServiceOpen(false);
+  };
+
+  // Handle link click for mobile
+  const handleMobileLinkClick = () => {
+    closeMobileMenu();
+  };
+
+  // Toggle service dropdown for mobile
+  const toggleServiceDropdown = () => {
+    setIsServiceOpen(!isServiceOpen);
+  };
+
+  // Toggle main dropdown for mobile
+  const toggleMainDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
@@ -83,11 +131,11 @@ const Navbar = () => {
       }`}
     >
       <div className="custom-container">
-        <div className="md:flex justify-between flex-none  ">
+        <div className="md:flex justify-between flex-none">
           <div className="col-span-2 relative">
-            <div className="dropdown flex justify-between">
-              <div className="md:hidden sm:block md:ps-0 sm:ps-2 ">
-                <Link href="/">
+            <div className="dropdown flex justify-between" ref={dropdownRef}>
+              <div className="md:hidden sm:block md:ps-0 sm:ps-2">
+                <Link href="/" onClick={handleMobileLinkClick}>
                   <Image
                     src="/images/logo.png"
                     alt="Logo"
@@ -101,25 +149,26 @@ const Navbar = () => {
                 tabIndex={0}
                 role="button"
                 className="md:hidden sm:block relative md:pr-0 sm:pr-2"
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                onClick={toggleMainDropdown}
               >
-                <div className="bg-[#39bcbc] py-2.5 px-3 rounded  ">
+                <div className="bg-[#39bcbc] py-2.5 px-3 rounded">
                   <MdOutlineDehaze className="text-white text-2xl" />
                 </div>
               </div>
               {/* For Mobile Screen */}
               <ul
                 tabIndex={0}
-                className={`menu menu-sm dropdown-content text-base z-[1] mt-5 w-screen  pb-8 shadow bg-white text-black dark:bg-white dark:text-black ${
+                className={`menu menu-sm dropdown-content text-base z-[1] mt-5 w-screen pb-8 shadow bg-white text-black dark:bg-white dark:text-black ${
                   isDropdownOpen ? "block" : "hidden"
                 }`}
               >
                 <li className="custom-navbar">
                   <Link
                     href="/"
-                    className={`  no-underline text-black ${
+                    className={`no-underline text-black ${
                       pathname === "/" ? "text-[#39bcbc]" : "text-black"
                     }`}
+                    onClick={handleMobileLinkClick}
                   >
                     Home
                   </Link>
@@ -127,8 +176,8 @@ const Navbar = () => {
 
                 <li tabIndex={0} className="dropdown group">
                   <div
-                    className={` no-underline dropdown_text`}
-                    onClick={() => setIsServiceOpen(!isServiceOpen)}
+                    className={`no-underline dropdown_text`}
+                    onClick={toggleServiceDropdown}
                   >
                     Services
                     <svg
@@ -147,19 +196,20 @@ const Navbar = () => {
                     </svg>
                   </div>
                   <ul
-                    className={`p-2 bg-white dark:bg-gray-800 dark:text-black   ${
+                    className={`p-2 bg-white dark:bg-gray-800 dark:text-black ${
                       isServiceOpen ? "block" : "hidden"
                     }`}
                   >
                     {cardData.map((item) => (
-                      <li key={item.id} className="dropdown_link ">
+                      <li key={item.id} className="dropdown_link">
                         <Link
                           href={`/service-details/${item.id}`}
-                          className={` uppercase no-underline text-black ${
+                          className={`uppercase no-underline text-black ${
                             pathname === `/service-details/${item.id}`
                               ? "text-[#39bcbc]"
                               : "text-black"
                           }`}
+                          onClick={handleMobileLinkClick}
                         >
                           {item.enTitle}
                         </Link>
@@ -169,22 +219,9 @@ const Navbar = () => {
                 </li>
                 <br />
 
-                {/* <li className="custom-navbar">
-                  <Link
-                    href="/blogs"
-                    className={` no-underline  ${
-                      pathname === "/blogs" ? "text-[#39bcbc]" : "text-black"
-                    }`}
-                  >
-                    Blog
-                  </Link>
-                </li> */}
-                <li
-                  tabIndex={0}
-                  className="dropdown group pr-5 cursor-pointer "
-                >
+                <li tabIndex={0} className="dropdown group pr-5 cursor-pointer">
                   <div
-                    className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                    className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
                   >
                     Blog
                     <svg
@@ -203,22 +240,20 @@ const Navbar = () => {
                     </svg>
                   </div>
                   <ul className="p-0 md:-ml-7 sm:-ml-0 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
-                    <li className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
+                    <li className="dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600">
                       <Link
                         href="/blogs"
-                        className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-sm 
-                           `}
+                        className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-sm`}
+                        onClick={handleMobileLinkClick}
                       >
                         Blog
                       </Link>
                     </li>
-                    <li className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
+                    <li className="dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600">
                       <Link
                         href="/gallery"
-                        className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-sm 
-                           `}
+                        className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-sm`}
+                        onClick={handleMobileLinkClick}
                       >
                         Gallery
                       </Link>
@@ -226,12 +261,9 @@ const Navbar = () => {
                   </ul>
                 </li>
 
-                <li
-                  tabIndex={0}
-                  className="dropdown group pr-5 cursor-pointer "
-                >
+                <li tabIndex={0} className="dropdown group pr-5 cursor-pointer">
                   <div
-                    className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                    className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
                   >
                     Appointments
                     <svg
@@ -250,12 +282,11 @@ const Navbar = () => {
                     </svg>
                   </div>
                   <ul className="p-0 md:-ml-7 sm:-ml-0 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
-                    <li className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
+                    <li className="dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600">
                       <Link
                         href={`/doctors`}
-                        className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-sm 
-                           `}
+                        className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-sm`}
+                        onClick={handleMobileLinkClick}
                       >
                         Book an Appointment
                       </Link>
@@ -268,7 +299,7 @@ const Navbar = () => {
                   className="dropdown group pr-5 cursor-pointer custom-navbar"
                 >
                   <div
-                    className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                    className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
                   >
                     About Us
                     <svg
@@ -290,49 +321,44 @@ const Navbar = () => {
                     <li className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
                       <Link
                         href={`/about-us`}
-                        className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
-                           `}
+                        className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
+                        onClick={handleMobileLinkClick}
                       >
                         Who We Are
                       </Link>
                     </li>
-                    <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                    <li className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
                       <Link
                         href={`/company-profile`}
-                        className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
-                           `}
+                        className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
+                        onClick={handleMobileLinkClick}
                       >
                         Company Profile
                       </Link>
                     </li>
-                    <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                    <li className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
                       <Link
                         href={`/mission-vision`}
-                        className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
-                           `}
+                        className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
+                        onClick={handleMobileLinkClick}
                       >
                         Mission & Vission
                       </Link>
                     </li>
-                    <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                    <li className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
                       <Link
                         href={`/career`}
-                        className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
-                           `}
+                        className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
+                        onClick={handleMobileLinkClick}
                       >
                         Careers
                       </Link>
                     </li>
-                    <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                    <li className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
                       <Link
                         href={`/terms-condition`}
-                        className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
-                           `}
+                        className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
+                        onClick={handleMobileLinkClick}
                       >
                         Terms & Condition
                       </Link>
@@ -344,27 +370,34 @@ const Navbar = () => {
                   {!isUser ? (
                     <Link
                       href="/Login"
-                      className={` uppercase no-underline  ${
+                      className={`uppercase no-underline ${
                         pathname === "/Login" ? "text-[#39bcbc]" : "text-black"
                       }`}
+                      onClick={handleMobileLinkClick}
                     >
                       Login
                     </Link>
                   ) : (
                     <Link
                       href="/profile"
-                      className={` uppercase no-underline  ${
+                      className={`uppercase no-underline ${
                         pathname === "/profile"
                           ? "text-[#39bcbc]"
                           : "text-black"
                       }`}
+                      onClick={handleMobileLinkClick}
                     >
                       My Profile
                     </Link>
                   )}
                 </li>
                 {isUser && (
-                  <li onClick={logOut}>
+                  <li
+                    onClick={() => {
+                      logOut();
+                      handleMobileLinkClick();
+                    }}
+                  >
                     <Link
                       href="#"
                       className={`uppercase no-underline text-black`}
@@ -375,10 +408,7 @@ const Navbar = () => {
                 )}
               </ul>
             </div>
-            <div
-              className=" md:p-0 md:w-[300px] sm:w-[200px] md:block sm:hidden 
-            mt-2.5"
-            >
+            <div className="md:p-0 md:w-[300px] sm:w-[200px] md:block sm:hidden mt-2.5">
               <Link href="/">
                 <Image
                   src="/images/logo.png"
@@ -391,36 +421,35 @@ const Navbar = () => {
             </div>
           </div>
           {/* For Desktop */}
-          <div className="navbar-center hidden lg:flex col-span-10 mt-4  z-10 ">
+          <div className="navbar-center hidden lg:flex col-span-10 mt-4 z-10">
             <ul className="custom_menu menu-horizontal text-black">
+              {/* ... Desktop menu items remain the same ... */}
               <li className="pr-5 custom-navbar">
                 <Link
                   href="/"
-                  className={` no-underline text-[16px] ${
-                    pathname === "/" ? "text-[#39bcbc]" : "text-black "
+                  className={`no-underline text-[16px] ${
+                    pathname === "/" ? "text-[#39bcbc]" : "text-black"
                   }`}
                 >
                   Home
                 </Link>
               </li>
 
-              <li className="dropdown group pr-5 cursor-pointer ">
+              <li className="dropdown group pr-5 cursor-pointer">
                 <div
                   className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
                 >
-                  Services
+                  Our packages
                 </div>
                 <ul className="p-0 bg-white hidden shadow-lg group-hover:block absolute w-[300px] -ml-5 dark:bg-gray-800 dark:text-black">
                   {cardData.map((item) => (
                     <li
                       key={item.id}
-                      className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600"
+                      className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600"
                     >
                       <Link
                         href={`/service-details/${item.id}`}
-                        className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
-                           `}
+                        className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
                       >
                         {item.enTitle}
                       </Link>
@@ -429,40 +458,25 @@ const Navbar = () => {
                 </ul>
               </li>
 
-              {/* <li className="pr-5 custom-navbar">
-                <Link
-                  href="/blogs"
-                  className={` text-[16px] no-underline  ${
-                    pathname === "/blogs" ? "text-[#39bcbc]" : "text-black"
-                  }`}
-                >
-                  Blog
-                </Link>
-              </li> */}
-
-              <li tabIndex={0} className="dropdown group pr-5 cursor-pointer ">
+              <li tabIndex={0} className="dropdown group pr-5 cursor-pointer">
                 <div
-                  className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                  className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
                 >
                   Blog
                 </div>
                 <ul className="p-0 -ml-7 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
-                  <li className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
+                  <li className="dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600">
                     <Link
                       href={`/blogs`}
-                      className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
-                           `}
+                      className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
                     >
                       Blog
                     </Link>
                   </li>
-                  <li className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
+                  <li className="dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600">
                     <Link
                       href={`/gallery`}
-                      className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
-                           `}
+                      className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
                     >
                       Gallery
                     </Link>
@@ -470,28 +484,26 @@ const Navbar = () => {
                 </ul>
               </li>
 
-              <li tabIndex={0} className="dropdown group pr-5 cursor-pointer ">
+              <li tabIndex={0} className="dropdown group pr-5 cursor-pointer">
                 <div
-                  className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                  className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
                 >
-                  Appointments
+                  Registration
                 </div>
                 <ul className="p-0 -ml-7 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
-                  <li className=" dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600 ">
+                  <li className="dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600">
                     <Link
                       href={`/doctors`}
-                      className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
-                           `}
+                      className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
                     >
                       Book an Appointment
                     </Link>
                   </li>
                 </ul>
               </li>
-              <li tabIndex={0} className="dropdown group pr-5 cursor-pointer ">
+              <li tabIndex={0} className="dropdown group pr-5 cursor-pointer">
                 <div
-                  className={`text-black  hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                  className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
                 >
                   About Us
                 </div>
@@ -499,49 +511,39 @@ const Navbar = () => {
                   <li className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
                     <Link
                       href={`/about-us`}
-                      className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
-                           `}
+                      className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
                     >
                       Who We Are
                     </Link>
                   </li>
-                  <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                  <li className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
                     <Link
                       href={`/company-profile`}
-                      className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
-                           `}
+                      className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
                     >
                       Company Profile
                     </Link>
                   </li>
-                  <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                  <li className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
                     <Link
                       href={`/mission-vision`}
-                      className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
-                           `}
+                      className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
                     >
                       Mission & Vission
                     </Link>
                   </li>
-                  <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                  <li className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
                     <Link
                       href={`/career`}
-                      className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
-                           `}
+                      className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
                     >
                       Careers
                     </Link>
                   </li>
-                  <li className=" dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600 ">
+                  <li className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
                     <Link
                       href={`/terms-condition`}
-                      className={`no-underline
-                           text-black dark:hover:text-gray-200 px-2 py-1 text-[16px] 
-                           `}
+                      className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
                     >
                       Terms & Condition
                     </Link>
@@ -555,7 +557,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     href="/login"
-                    className={`rounded text-[16px] no-underline px-3 py-2.5 bg-[#39bcbc] hover:bg-pink-600 text-white hover:text-white `}
+                    className={`rounded text-[16px] no-underline px-3 py-2.5 bg-[#39bcbc] hover:bg-pink-600 text-white hover:text-white`}
                   >
                     Login
                   </Link>
