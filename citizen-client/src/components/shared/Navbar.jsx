@@ -18,6 +18,8 @@ const Navbar = () => {
   const router = useRouter();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isServiceOpen, setIsServiceOpen] = useState(false);
+  const [isBlogOpen, setIsBlogOpen] = useState(false);
+  const [isRegisOpen, setIsRegisOpen] = useState(false);
 
   const [menuItems, setMenuItems] = useState([]);
 
@@ -118,6 +120,12 @@ const Navbar = () => {
   const toggleServiceDropdown = () => {
     setIsServiceOpen(!isServiceOpen);
   };
+  const toggleRegisDropdown = () => {
+    setIsRegisOpen(!isRegisOpen);
+  };
+  const toggleBlogDropdown = () => {
+    setIsBlogOpen(!isBlogOpen);
+  };
 
   // Toggle main dropdown for mobile
   const toggleMainDropdown = () => {
@@ -165,7 +173,7 @@ const Navbar = () => {
                 <li className="custom-navbar">
                   <Link
                     href="/"
-                    className={`no-underline text-black ${
+                    className={`no-underline text-black text-[16px] ${
                       pathname === "/" ? "text-[#39bcbc]" : "text-black"
                     }`}
                     onClick={handleMobileLinkClick}
@@ -176,7 +184,7 @@ const Navbar = () => {
 
                 <li tabIndex={0} className="dropdown group">
                   <div
-                    className={`no-underline dropdown_text`}
+                    className={`no-underline dropdown_text text-[16px]`}
                     onClick={toggleServiceDropdown}
                   >
                     Services
@@ -221,7 +229,8 @@ const Navbar = () => {
 
                 <li tabIndex={0} className="dropdown group pr-5 cursor-pointer">
                   <div
-                    className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                    className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-2`}
+                    onClick={toggleBlogDropdown}
                   >
                     Blog
                     <svg
@@ -239,7 +248,11 @@ const Navbar = () => {
                       />
                     </svg>
                   </div>
-                  <ul className="p-0 md:-ml-7 sm:-ml-0 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
+                  <ul
+                    className={`p-2 bg-white dark:bg-gray-800 dark:text-black ${
+                      isBlogOpen ? "block" : "hidden"
+                    }`}
+                  >
                     <li className="dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600">
                       <Link
                         href="/blogs"
@@ -261,11 +274,15 @@ const Navbar = () => {
                   </ul>
                 </li>
 
-                <li tabIndex={0} className="dropdown group pr-5 cursor-pointer">
+                <li
+                  tabIndex={0}
+                  className="dropdown group pr-5 cursor-pointer d-block -mb-3"
+                >
                   <div
-                    className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                    className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] mt-1`}
+                    onClick={toggleRegisDropdown}
                   >
-                    Appointments
+                    Registration
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4 inline-block ml-1"
@@ -281,7 +298,11 @@ const Navbar = () => {
                       />
                     </svg>
                   </div>
-                  <ul className="p-0 md:-ml-7 sm:-ml-0 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
+                  <ul
+                    className={`p-2 bg-white dark:bg-gray-800 dark:text-black ${
+                      isRegisOpen ? "block" : "hidden"
+                    }`}
+                  >
                     <li className="dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600">
                       <Link
                         href={`/doctors`}
@@ -299,7 +320,7 @@ const Navbar = () => {
                   className="dropdown group pr-5 cursor-pointer custom-navbar"
                 >
                   <div
-                    className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+                    className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3 `}
                   >
                     About Us
                     <svg
