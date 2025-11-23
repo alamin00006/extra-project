@@ -89,7 +89,7 @@ const getUserByPhone = catchAsync(async (req, res) => {
   // Call the service function
   const userData = await userService.getUserByPhone(phoneNumber);
 
-  const encryptedData = encrypt(userData);
+  // const encryptedData = encrypt(userData);
 
   // console.log("Encrypted:", encryptedData);
 
@@ -100,7 +100,7 @@ const getUserByPhone = catchAsync(async (req, res) => {
     statusCode: httpStatus.OK,
     success: true,
     message: "get Success",
-    data: encryptedData,
+    data: userData,
   });
 });
 
