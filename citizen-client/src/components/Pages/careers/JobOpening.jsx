@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function JobOpenings() {
   const jobs = [
     {
@@ -13,6 +15,7 @@ export default function JobOpenings() {
       location: "Inside Dhaka",
       office: "32/A, Road-02, Dhanmondi, Dhaka-1205",
       email: "citizencarebd@gmail.com",
+      image: "/images/careers/medical-info-officer.jpg",
     },
     {
       title: "Nutritionist and Diet Consultant",
@@ -22,6 +25,7 @@ export default function JobOpenings() {
       location: "Inside Dhaka",
       office: "32/A, Road-02, Dhanmondi, Dhaka-1205",
       email: "citizencarebd@gmail.com",
+      image: "/images/careers/Job-Opening-Nutritionist.jpeg",
     },
     {
       title: "Community Nurse",
@@ -32,6 +36,7 @@ export default function JobOpenings() {
       location: "Dhanmondi, Dhaka",
       office: "32/A, Road-02, Dhanmondi, Dhaka-1205",
       email: "citizencarebd@gmail.com",
+      image: "/images/careers/Job-Opening-Nurse.jpeg",
     },
   ];
 
@@ -47,6 +52,15 @@ export default function JobOpenings() {
             className="border border-gray-300 p-6 sm:p-6 rounded-lg shadow-md bg-white flex flex-col md:flex-row justify-between items-start md:items-center"
           >
             <div className="flex-1">
+              <div className="mb-3">
+                <Image
+                  src={job.image}
+                  alt={job.title}
+                  width={500}
+                  height={400}
+                  className="w-[500px] h-[400px] rounded-md"
+                />
+              </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                 {job.title}
               </h3>

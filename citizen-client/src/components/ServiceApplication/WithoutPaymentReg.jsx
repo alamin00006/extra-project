@@ -8,10 +8,10 @@ import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 import Loading from "@/app/loading";
-import Image from "next/image";
+
 import { Eye, EyeOff } from "lucide-react";
 
-const ServiceApplicationForm = () => {
+const WithoutPaymentReg = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [memberFee, setMemberFee] = useState(5000);
   const [showPassword, setShowPassword] = useState(false);
@@ -19,14 +19,11 @@ const ServiceApplicationForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!memberFee) return toast.error("Please choice any member type");
-    setIsLoading(true);
 
     const { name, mobileNumber, email, streetAddress, city, state, password } =
       e.target;
 
     const registrationData = {
-      amount: Number(memberFee),
       // user: userData?._id,
       name: name.value,
       phoneNumber: mobileNumber.value,
@@ -40,17 +37,17 @@ const ServiceApplicationForm = () => {
     };
 
     try {
-      const { data } = await axios.post(
-        `${getBaseUrl()}/payment/create`,
-        registrationData,
-        { withCredentials: true }
+      await axios.post(
+        `${getBaseUrl()}/member/create-without-payment`,
+        registrationData
       );
       setIsLoading(false);
-      window.location.href = data?.checkout_url;
-      // window.location.href = data.bkashURL;
+      e.target.reset();
+      toast.success("Registration successful!");
       // return data;
     } catch (error) {
-      // console.log(error);
+      console.log(error);
+      toast.error(error.response?.data?.message || "Registration failed.");
     } finally {
       setIsLoading(false);
     }
@@ -170,53 +167,6 @@ const ServiceApplicationForm = () => {
                 </button>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  লয়্যাল মেম্বার ফি (Choose Any One)
-                </label>
-                <ul className="list-style-none ml-4 space-y-2 text-sm text-gray-700 mt-2">
-                  <li>
-                    <label className="cursor-pointer">
-                      <input
-                        type="radio"
-                        name="membershipType"
-                        value={5000}
-                        defaultChecked
-                        onChange={(e) => setMemberFee(e.target.value)}
-                      />
-                      <span className="ml-2">
-                        Single সদস্যের জন্য বাৎসরিক 5,000 টাকা।
-                      </span>
-                    </label>
-                  </li>
-                  <li>
-                    <label className="cursor-pointer">
-                      <input
-                        onChange={(e) => setMemberFee(e.target.value)}
-                        type="radio"
-                        name="membershipType"
-                        value={9999}
-                      />
-                      <span className="ml-2">
-                        Family সদস্যের জন্য বাৎসরিক 9,999 টাকা।
-                      </span>
-                    </label>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700">
-                  Payment Method
-                </label>
-                <Image
-                  src="/images/shurjopay.jpg"
-                  alt="Shurjopay"
-                  width={100}
-                  height={100}
-                />
-              </div>
-
               <div className="md:col-span-2">
                 <button
                   type="submit"
@@ -238,4 +188,4 @@ const ServiceApplicationForm = () => {
   );
 };
 
-export default ServiceApplicationForm;
+export default WithoutPaymentReg;

@@ -44,21 +44,21 @@ const ServiceDetails = ({ params }) => {
         />
 
         {menuItem.id === 2 && (
-          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center md:-ml-[200px] sm:-ml-0">
-            <p className="text-sm md:text-4xl font-bengali leading-tight text-[#12a88b] ">
+          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center md:-ml-[200px] sm:-ml-[100px] sm:mt-5 md:mt-0">
+            <p className="text-sm md:text-4xl font-bengali  text-[#12a88b] ">
               লয়্যাল মেম্বার হয়ে ঘরে বসে
             </p>
-            <p className="text-sm md:text-4xl font-bengali leading-tight text-[#12a88b] ">
+            <p className="text-sm md:text-4xl font-bengali text-[#12a88b] sm:-mt-5 md:-mt-0">
               প্রতি মাসে{" "}
               <span className="text-2xl md:text-4xl text-pink-600">১</span> বার
             </p>
-            <p className="text-sm md:text-4xl font-bold font-bengali">
+            <p className="sm:text-sm md:text-4xl font-bold font-bengali sm:-mt-4 md:-mt-0">
               <span className="text-pink-600">MBBS ডাক্তারের সেবা নিন</span>
             </p>
           </div>
         )}
         {menuItem.id === 3 && (
-          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center -mt-10 -ml-[450px]">
+          <div className="absolute inset-0 flex flex-col justify-center items-center p-4 text-center md:-mt-10 sm:mt-5 md:-ml-[450px] sm:-ml-[140px]">
             <p className="text-sm md:text-4xl font-bengali leading-tight text-[#12a88b]  ">
               লয়্যাল মেম্বার হয়ে ঘরে বসে
             </p>
@@ -67,8 +67,8 @@ const ServiceDetails = ({ params }) => {
               <span className="text-2xl md:text-6xl text-pink-600">১</span> বার
               অভিজ্ঞ
             </p>
-            <p className=" font-bold font-bengali leading-tight">
-              <span className="text-pink-600 text-sm md:text-4xl">
+            <p className=" font-bold font-bengali leading-tight sm:-mt-4 md:mt-0">
+              <span className="text-black font-bold sm:text-xs md:text-4xl">
                 নিউট্রিশনিস্টের এর পরামর্শ নিন
               </span>
             </p>
@@ -115,8 +115,8 @@ const ServiceDetails = ({ params }) => {
 
       {/* Content Section */}
       <div className="mt-8">
-        <h3 className="text-2xl md:text-3xl font-bold text-gray-800 font-bengali mb-4">
-          {menuItem?.text}
+        <h3 className="sm:text-2xl md:text-3xl font-bold text-gray-800 font-bengali mb-4">
+          {menuItem?.enTitle} - {menuItem?.text}
         </h3>
         <div className="text-gray-700 text-base md:text-lg font-bengali leading-relaxed">
           {menuItem?.content}

@@ -260,7 +260,6 @@ const SignUpPage = ({ setIsLoginPage, setIsSinUpPage, setIsOtpPage }) => {
               name="streetAddress"
               onChange={(e) => setAddress(e.target.value)}
               className="mt-1 block w-full h-20 px-3 py-2 border dark:bg-white placeholder-gray-700 border-gray-300 rounded-md shadow-sm  focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-              required
               placeholder="Address"
             />
           </div>

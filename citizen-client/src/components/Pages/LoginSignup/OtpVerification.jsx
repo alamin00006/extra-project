@@ -55,9 +55,12 @@ const OtpVerification = ({ setIsOtpPage, setIsSinUpPage }) => {
         removeUserVerificationData(userDataKey);
 
         if (res?.token) {
-          toast.success("Successfully created account!");
+          toast.success("Account created successfully!");
+
           localStorage.setItem(authKey, res.token);
-          router.back();
+          setTimeout(() => {
+            router.back();
+          }, 1500);
         }
       } catch (error) {
         toast.error("Failed to create account. Please try again.");

@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { getFromLocalStorage } from "@/helpers/utils/local-storage";
 import { authKey } from "@/constants/storageKey";
-import { get_api_key, getBaseUrl } from "@/helpers/config/envConfig";
-import { decrypt } from "@/helpers/utils/decrypt";
+import { getBaseUrl } from "@/helpers/config/envConfig";
 
 const useUserData = (isUser) => {
   const [userData, setUserData] = useState(null);
@@ -34,12 +33,8 @@ const useUserData = (isUser) => {
         const data = await res.json();
 
         // Assuming the backend sends 'content' (encrypted data) and 'iv' (IV)
-        if (data?.data?.content && data?.data?.iv) {
-          const decrypted = decrypt(data?.data.content, data?.data.iv);
-          setUserData(decrypted); // Set decrypted data to state
-        } else {
-          throw new Error("Encrypted data or IV is missing");
-        }
+
+        setUserData(data?.data); // Set decrypted data to state
       } catch (err) {
         setError(err.message);
       } finally {

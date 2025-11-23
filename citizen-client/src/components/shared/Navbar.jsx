@@ -12,6 +12,7 @@ import DropdownUser from "./DropdownUser";
 import { useGetUserQuery } from "@/redux/api/authApi";
 import { cardData } from "@/helpers/utils/serviceData";
 import useUserData from "@/hooks/useUserData";
+import { Menu, User, UserIcon } from "lucide-react";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -20,6 +21,7 @@ const Navbar = () => {
   const [isServiceOpen, setIsServiceOpen] = useState(false);
   const [isBlogOpen, setIsBlogOpen] = useState(false);
   const [isRegisOpen, setIsRegisOpen] = useState(false);
+  const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
 
   const [menuItems, setMenuItems] = useState([]);
 
@@ -120,9 +122,10 @@ const Navbar = () => {
   const toggleServiceDropdown = () => {
     setIsServiceOpen(!isServiceOpen);
   };
-  const toggleRegisDropdown = () => {
-    setIsRegisOpen(!isRegisOpen);
+  const toggleAboutUsDropdown = () => {
+    setIsAboutUsOpen(!isAboutUsOpen);
   };
+
   const toggleBlogDropdown = () => {
     setIsBlogOpen(!isBlogOpen);
   };
@@ -147,20 +150,38 @@ const Navbar = () => {
                   <Image
                     src="/images/logo.png"
                     alt="Logo"
-                    width={300}
+                    width={200}
                     height={20}
-                    className="md:p-0 md:w-[300px] sm:w-[230px]"
+                    className="md:p-0 w-[200px]"
                   />
                 </Link>
               </div>
-              <div
-                tabIndex={0}
-                role="button"
-                className="md:hidden sm:block relative md:pr-0 sm:pr-2"
-                onClick={toggleMainDropdown}
-              >
-                <div className="bg-[#39bcbc] py-2.5 px-3 rounded">
-                  <MdOutlineDehaze className="text-white text-2xl" />
+              <div className="md:hidden sm:flex relative md:pr-0 sm:pr-2 items-center gap-2">
+                {!isUser ? (
+                  <Link
+                    href="/login"
+                    className={` no-underline text-sm ${
+                      pathname === "/login" ? "text-[#39bcbc]" : "text-black"
+                    }`}
+                  >
+                    Login
+                  </Link>
+                ) : (
+                  <Link
+                    href="/profile"
+                    className={`no-underline text-sm ${
+                      pathname === "/profile" ? "text-[#39bcbc]" : "text-black"
+                    }`}
+                  >
+                    <button className="rounded-lg hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                      <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br bg-[#39bcbc] rounded-full">
+                        <UserIcon className="w-4 h-4 text-white" />
+                      </div>
+                    </button>
+                  </Link>
+                )}
+                <div tabIndex={0} onClick={toggleMainDropdown}>
+                  <Menu className="text-black text-2xl" />
                 </div>
               </div>
               {/* For Mobile Screen */}
@@ -182,7 +203,7 @@ const Navbar = () => {
                   </Link>
                 </li>
 
-                <li tabIndex={0} className="dropdown group">
+                <li tabIndex={0} className="dropdown group mt-1">
                   <div
                     className={`no-underline dropdown_text text-[16px]`}
                     onClick={toggleServiceDropdown}
@@ -227,7 +248,10 @@ const Navbar = () => {
                 </li>
                 <br />
 
-                <li tabIndex={0} className="dropdown group pr-5 cursor-pointer">
+                <li
+                  tabIndex={0}
+                  className="dropdown group pr-5 cursor-pointer mt-1"
+                >
                   <div
                     className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-2`}
                     onClick={toggleBlogDropdown}
@@ -274,53 +298,27 @@ const Navbar = () => {
                   </ul>
                 </li>
 
-                <li
-                  tabIndex={0}
-                  className="dropdown group pr-5 cursor-pointer d-block -mb-3"
-                >
-                  <div
-                    className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] mt-1`}
-                    onClick={toggleRegisDropdown}
+                <li className="custom-navbar mt-1">
+                  <Link
+                    href="/without-payment"
+                    className={`no-underline text-black text-[16px] ${
+                      pathname === "/without-payment"
+                        ? "text-[#39bcbc]"
+                        : "text-black"
+                    }`}
+                    onClick={handleMobileLinkClick}
                   >
                     Registration
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 inline-block ml-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </div>
-                  <ul
-                    className={`p-2 bg-white dark:bg-gray-800 dark:text-black ${
-                      isRegisOpen ? "block" : "hidden"
-                    }`}
-                  >
-                    <li className="dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600">
-                      <Link
-                        href={`/doctors`}
-                        className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-sm`}
-                        onClick={handleMobileLinkClick}
-                      >
-                        Book an Appointment
-                      </Link>
-                    </li>
-                  </ul>
+                  </Link>
                 </li>
-                <br />
+
                 <li
                   tabIndex={0}
-                  className="dropdown group pr-5 cursor-pointer custom-navbar"
+                  className="dropdown group pr-5 cursor-pointer custom-navbar mt-1"
                 >
                   <div
                     className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3 `}
+                    onClick={toggleAboutUsDropdown}
                   >
                     About Us
                     <svg
@@ -338,7 +336,11 @@ const Navbar = () => {
                       />
                     </svg>
                   </div>
-                  <ul className="p-0 md:-ml-7 sm:-ml-0 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
+                  <ul
+                    className={`p-2 bg-white dark:bg-gray-800 dark:text-black ${
+                      isAboutUsOpen ? "block" : "hidden"
+                    }`}
+                  >
                     <li className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600">
                       <Link
                         href={`/about-us`}
@@ -387,12 +389,12 @@ const Navbar = () => {
                   </ul>
                 </li>
 
-                <li className="custom-navbar">
+                <li className="custom-navbar -mt-1">
                   {!isUser ? (
                     <Link
-                      href="/Login"
+                      href="/login"
                       className={`uppercase no-underline ${
-                        pathname === "/Login" ? "text-[#39bcbc]" : "text-black"
+                        pathname === "/login" ? "text-[#39bcbc]" : "text-black"
                       }`}
                       onClick={handleMobileLinkClick}
                     >
@@ -505,22 +507,18 @@ const Navbar = () => {
                 </ul>
               </li>
 
-              <li tabIndex={0} className="dropdown group pr-5 cursor-pointer">
-                <div
-                  className={`text-black hover:text-[#39bcbc] no-underline dropdown_text text-[16px] pb-3`}
+              <li className="custom-navbar mr-4">
+                <Link
+                  href="/without-payment"
+                  className={`no-underline text-black text-[16px] ${
+                    pathname === "/without-payment"
+                      ? "text-[#39bcbc]"
+                      : "text-black"
+                  }`}
+                  onClick={handleMobileLinkClick}
                 >
                   Registration
-                </div>
-                <ul className="p-0 -ml-7 bg-white hidden shadow-lg group-hover:block absolute z-10 w-[200px] dark:bg-gray-800 dark:text-black">
-                  <li className="dropdown_link my-1 py-1 hover:border-l-4 border-l-pink-600">
-                    <Link
-                      href={`/doctors`}
-                      className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
-                    >
-                      Book an Appointment
-                    </Link>
-                  </li>
-                </ul>
+                </Link>
               </li>
               <li tabIndex={0} className="dropdown group pr-5 cursor-pointer">
                 <div
