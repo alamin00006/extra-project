@@ -2,25 +2,20 @@ import Member from "./member.model.js";
 
 const findLastMemberId = async () => {
   const lastMember = await Member.findOne({}, { id: 1, _id: 0 })
-    .sort({
-      createdAt: -1,
-    })
+    .sort({ createdAt: -1 })
     .lean();
 
   return lastMember?.id;
 };
 
 export const generateMemberId = async () => {
-  let previousId = await findLastMemberId();
-  let convertNumberPreviousId = previousId
-    ? previousId.slice(2)
-    : (0).toString().padStart(4, "0");
+  const previousId = await findLastMemberId();
 
-  // Increment by 1
-  let incrementedId = (parseInt(convertNumberPreviousId) + 1)
-    .toString()
-    .padStart(5, "0");
-  incrementedId = "CCB".toLowerCase() + incrementedId;
+  const numericPart = previousId
+    ? previousId.slice(3) // slice 3 chars instead of 2
+    : "0".padStart(5, "0");
 
-  return incrementedId;
+  const incrementedId = (parseInt(numericPart) + 1).toString().padStart(5, "0");
+
+  return "ccb" + incrementedId; // lowercase prefix
 };

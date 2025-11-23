@@ -4,16 +4,18 @@ import { generateUserId } from "./user.utils.js";
 import { jwtHelpers } from "../../../helpers/jwtHelpers.js";
 import config from "../../../config/index.js";
 import User from "./user.model.js";
-const createUser = async (user) => {
+const createUser = async (user, session = null) => {
   const phoneNumber = user?.phoneNumber;
 
   const findUserWithPhone = await User.findOne({ phoneNumber });
+  const findUserWithEmail = await User.findOne({ email: user?.email });
 
   if (findUserWithPhone) {
-    return {
-      status: "fail",
-      message: "Sorry! Already Account Created with Phone number",
-    };
+    throw new Error("Sorry! Already Account Created with Phone Number");
+  }
+
+  if (findUserWithEmail) {
+    throw new Error("Sorry! Already Account Created with Email");
   }
 
   const id = await generateUserId();
@@ -28,7 +30,13 @@ const createUser = async (user) => {
   };
 
   const newUser = new User(userData);
-  const result = await newUser.save();
+  let result;
+  if (session) {
+    result = await newUser.save({ session });
+  } else {
+    result = await newUser.save();
+  }
+
   const token = jwtHelpers.generateToken(result);
   const refreshToken = jwtHelpers.generateRefreshToken(result);
 

@@ -3,6 +3,7 @@ import { AdminUserRoutes } from "../modules/adminUser/adminUser.route.js";
 import { UserRoutes } from "../modules/user/user.route.js";
 import { AuthRoutes } from "../modules/auth/auth.route.js";
 import { PaymentRoutes } from "../modules/payment/payment.route.js";
+import { MemberRoutes } from "../modules/membersReg/member.route.js";
 
 const router = express.Router();
 
@@ -18,6 +19,10 @@ const moduleRoutes = [
   {
     path: "/user-verify",
     route: AuthRoutes,
+  },
+  {
+    path: "/member",
+    route: MemberRoutes,
   },
   {
     path: "/payment",
