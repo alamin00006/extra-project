@@ -208,7 +208,7 @@ const Navbar = () => {
                     className={`no-underline dropdown_text text-[16px]`}
                     onClick={toggleServiceDropdown}
                   >
-                    Services
+                    Our packages
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4 inline-block ml-1"

@@ -33,6 +33,11 @@ const logos = [
     alt: "Medix Signature Clinic",
     href: "https://www.doctorspedia.co/",
   },
+  {
+    src: "/images/partnership/puls.jpeg",
+    alt: "pulse",
+    href: "https://pulseservicesbd.com/",
+  },
 ];
 
 const PartnerShip = () => {

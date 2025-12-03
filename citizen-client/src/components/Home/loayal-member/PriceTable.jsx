@@ -11,7 +11,7 @@ const PriceTable = () => {
             <tr className="bg-gray-100 text-sm">
               <th className="border border-gray-300 px-3 py-2">সদস্য সংখ্যা</th>
               <th className="border border-gray-300 px-3 py-2">
-                রেজিস্ট্রেশন ফি
+                রেজিস্ট্রেশন ফি (বাৎসরিক)
               </th>
               <th className="border border-gray-300 px-3 py-2">
                 মাসিক সেবা চার্জ
