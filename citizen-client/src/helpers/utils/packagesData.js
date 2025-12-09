@@ -1,17 +1,14 @@
-import { FaAppleAlt } from "react-icons/fa"; // Import icons
-import { FaUserDoctor } from "react-icons/fa6";
 import { IoHomeOutline } from "react-icons/io5";
-import { GiMedicines } from "react-icons/gi";
 
-export const cardData = [
+export const packagesData = [
   {
-    id: 1,
-    image: "/images/category/premium-package.png",
+    id: 10,
+    image: "/images/packages/POST-1.png",
+    banner: "/images/packages/premimum.jpeg",
     text: "Premium Package",
     enTitle: "Premium Package",
     path: "/premium-package",
-    homePage: true,
-    isLogin: "active",
+    icon2: <IoHomeOutline className="w-10 h-10 text-black opacity-50" />,
     content: (
       <div>
         <h3 className="text-xl font-semibold mb-4">সেবা সমূহ:</h3>
@@ -60,13 +57,13 @@ export const cardData = [
     ),
   },
   {
-    id: 2,
-    image: "/images/category/pregnant-package.png",
+    id: 11,
+    image: "/images/packages/POST-2.png",
+    banner: "/images/packages/POST-2.png",
     text: "Pregnant Woman Package",
     enTitle: "Pregnant Woman Package",
     path: "/pregnant-woman-package",
-    homePage: true,
-    isLogin: "active",
+    icon2: <IoHomeOutline className="w-10 h-10 text-black opacity-50" />,
     content: (
       <div>
         {" "}
@@ -88,7 +85,7 @@ export const cardData = [
           <tr>
             <td className="border p-2">একক সদস্য</td>
             <td className="border p-2">৫০০০ টাকা</td>
-            <td className="border p-2">৪৪৪৪ টাকা</td>
+            <td className="border p-2">{"৪৪৪৪"} টাকা</td>
           </tr>
         </table>
         <h3 className="text-xl font-semibold mt-6 mb-2">
@@ -109,13 +106,13 @@ export const cardData = [
     ),
   },
   {
-    id: 3,
-    image: "/images/category/corporate-package.png",
+    id: 12,
+    image: "/images/packages/POST-3.png",
+    banner: "/images/packages/POST-3.png",
     text: "Corporate Package",
     enTitle: "Corporate Package",
     path: "/corporate-package",
-    homePage: true,
-    isLogin: "active",
+    icon2: <IoHomeOutline className="w-10 h-10 text-black opacity-50" />,
     content: (
       <div>
         <h3 className="text-xl font-semibold mb-4">কর্পোরেট প্যাকেজ:</h3>
@@ -143,13 +140,13 @@ export const cardData = [
     ),
   },
   {
-    id: 4,
-    image: "/images/category/child-package.png",
+    id: 14,
+    image: "/images/packages/POST-3.png",
+    banner: "/images/packages/POST-3.png",
     text: "Child Package",
     enTitle: "Child Package",
     path: "/child-package",
-    homePage: true,
-    isLogin: "active",
+    icon2: <IoHomeOutline className="w-10 h-10 text-black opacity-50" />,
     content: (
       <div>
         <h3 className="text-xl font-semibold mb-4">সুবিধাসমূহ:</h3>

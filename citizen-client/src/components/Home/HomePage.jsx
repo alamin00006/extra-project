@@ -7,6 +7,7 @@ import "./Home.css";
 import LoayalMember from "./loayal-member/LoayalMember";
 import WhyChooseUs from "./WhyChoosUs/WhyChooseUs";
 import PartnerShip from "./partnerShip/PartnerShip";
+import Packages from "./packages/Packages";
 
 const HomePage = () => {
   // Get User
@@ -27,6 +28,9 @@ const HomePage = () => {
       </div> */}
       <div className=" md:mt-0 sm:mt-0 md:mx-0 sm:mx-5 ">
         <LoayalMember userData={userData} />
+      </div>
+      <div className="">
+        <Packages />
       </div>
       <div className="">
         <Services />
