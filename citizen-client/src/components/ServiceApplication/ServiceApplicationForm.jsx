@@ -172,7 +172,7 @@ const ServiceApplicationForm = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700">
-                  লয়্যাল মেম্বার ফি (Choose Any One)
+                  লয়্যাল মেম্বার রেজিস্ট্রেশন ফি (Choose Any One)
                 </label>
                 <ul className="list-style-none ml-4 space-y-2 text-sm text-gray-700 mt-2">
                   <li>

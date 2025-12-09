@@ -130,7 +130,7 @@ const Footer = () => {
 
           {/* Right Section */}
 
-          <div className=" md:mt-0 sm:mt-5  ">
+          <div className=" md:mt-0 sm:mt-5  z-0">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14609.418450867022!2d90.36257800319694!3d23.73473070889417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b8fbbd6745%3A0xce196d754cb46b35!2sCitizencare%20Bangladesh!5e0!3m2!1sen!2sbd!4v1738339417866!5m2!1sen!2sbd"
               className=" h-[200px] rounded"
@@ -141,7 +141,7 @@ const Footer = () => {
         </div>
 
         {/* Social Media Toggle */}
-        <div className="flex justify-end overflow-hidden fixed bottom-6 right-6">
+        <div className="flex justify-end overflow-hidden fixed bottom-6 right-6 z-10">
           <div>
             {/* Social Media Links */}
             <div
