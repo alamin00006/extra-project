@@ -10,9 +10,9 @@ import { authKey } from "@/constants/storageKey";
 import { removeUserInfo } from "@/helpers/utils/local-storage";
 import DropdownUser from "./DropdownUser";
 import { useGetUserQuery } from "@/redux/api/authApi";
-import { cardData } from "@/helpers/utils/serviceData";
 import useUserData from "@/hooks/useUserData";
 import { Menu, User, UserIcon } from "lucide-react";
+import { packagesData } from "@/helpers/utils/packagesData";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -229,12 +229,12 @@ const Navbar = () => {
                       isServiceOpen ? "block" : "hidden"
                     }`}
                   >
-                    {cardData.map((item) => (
+                    {packagesData.map((item) => (
                       <li key={item.id} className="dropdown_link">
                         <Link
-                          href={`/service-details/${item.id}`}
+                          href={`/package-details/${item.id}`}
                           className={`uppercase no-underline text-black ${
-                            pathname === `/service-details/${item.id}`
+                            pathname === `/package-details/${item.id}`
                               ? "text-[#39bcbc]"
                               : "text-black"
                           }`}
@@ -465,13 +465,13 @@ const Navbar = () => {
                   Our packages
                 </div>
                 <ul className="p-0 bg-white hidden shadow-lg group-hover:block absolute w-[300px] -ml-5 dark:bg-gray-800 dark:text-black">
-                  {cardData.map((item) => (
+                  {packagesData.map((item) => (
                     <li
                       key={item.id}
                       className="dropdown_link text-sm my-1 border-b py-1 hover:border-l-4 border-l-pink-600"
                     >
                       <Link
-                        href={`/service-details/${item.id}`}
+                        href={`/package-details/${item.id}`}
                         className={`no-underline text-black dark:hover:text-gray-200 px-2 py-1 text-[16px]`}
                       >
                         {item.enTitle}

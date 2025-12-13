@@ -14,15 +14,15 @@ const LoayalMember = ({ userData }) => {
 
   return (
     <>
-      <div className="custom-container shadow-md">
-        <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full gap-5 md:p-5 sm:px-5 sm:py-5 mt-0">
+      <div className="custom-container shadow-md rounded-lg my-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 w-full h-full  md:p-2  sm:px-5 sm:py-5 mt-0">
           {/* Desktop Image */}
           <div className="md:col-span-6 w-full h-full sm:hidden md:block">
             <Image
-              src={"/images/registration/Doing Registration Picture.jpg"}
-              width={600}
-              height={600}
-              className="w-full h-full object-cover"
+              src={"/images/registration/Doing Registration Picture-2.webp"}
+              width={700}
+              height={700}
+              className="w-full h-full object-contain"
               alt="banner"
             />
           </div>
@@ -30,7 +30,7 @@ const LoayalMember = ({ userData }) => {
           {/* Mobile Image */}
           <div className="md:col-span-6 w-full h-full md:hidden sm:block">
             <Image
-              src={"/images/registration/Doing Registration Picture.jpg"}
+              src={"/images/registration/Doing Registration Picture-2.webp"}
               width={600}
               height={600}
               className="w-full h-full object-contain"
@@ -95,7 +95,7 @@ const LoayalMember = ({ userData }) => {
             <div className="mt-4">
               <button
                 onClick={handleRegistration}
-                className="uppercase px-6 py-3 bg-[#39bcbc] hover:bg-pink-600 text-white rounded text-sm"
+                className="uppercase px-6 py-3 sm:mb-0 md:mb-2 bg-[#39bcbc] hover:bg-pink-600 text-white rounded text-sm"
               >
                 Registration Now
               </button>

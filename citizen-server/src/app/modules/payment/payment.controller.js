@@ -116,13 +116,13 @@ const verifyPayment = async (req, res) => {
       const to = `88${dataForRegistration?.phone}`;
       await CCBSms(message, to);
 
-      const userData = {
-        fullName: paymentDetails?.name,
-        phoneNumber: paymentDetails?.phone_no,
-        password: paymentDetails?.value1,
-        streetAddress: paymentDetails?.address,
-      };
-      await userService.createUser(userData);
+      // const userData = {
+      //   fullName: paymentDetails?.name,
+      //   phoneNumber: paymentDetails?.phone_no,
+      //   password: paymentDetails?.value1,
+      //   streetAddress: paymentDetails?.address,
+      // };
+      // await userService.createUser(userData);
     }
     res.json({
       paymentDetails,

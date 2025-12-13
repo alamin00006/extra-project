@@ -24,7 +24,8 @@ const createWithOutPaymentMember = catchAsync(async (req, res) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "Thanks For Membership Request",
+    message:
+      "Thanks for membership registration, we will contact you very soon",
     data: result,
   });
 });

@@ -4,12 +4,13 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const images = [
-  "/images/home-page/Health-Care.jpg",
+  "/images/home-page/1800-1.webp",
+  "/images/home-page/1800-2.webp",
+  "/images/home-page/1800-3.webp",
+  "/images/home-page/1800-4.webp",
   "/images/home-page/Home-Page-Front.jpg",
   "/images/home-page/CCB-CUMMUNITY.jpg",
   "/images/home-page/Awerness-Program.jpg",
-  // "/images/home-page/Awerness-Program.jpg",
-  "/images/home-page/Medicine Supply.jpg",
 ];
 
 const HeroSlider = ({ userData }) => {
@@ -18,13 +19,6 @@ const HeroSlider = ({ userData }) => {
   const handleRegistration = () => {
     return router.push(`/service-application`);
   };
-  // const handleRegistration = () => {
-  //   if (!userData) {
-  //     return router.push(`/login`);
-  //   } else {
-  //     return router.push(`/service-application`);
-  //   }
-  // };
 
   return (
     <div className="relative w-full">
@@ -44,24 +38,10 @@ const HeroSlider = ({ userData }) => {
         {images.map((image, index) => (
           <SplideSlide key={index}>
             <div className="relative w-screen sm:hidden md:block h-[calc(100vh-230px)]">
-              <Image
-                src={image}
-                alt={`Slide ${index + 1}`}
-                fill
-                priority
-                className="object-cover"
-                sizes="100vw"
-              />
+              <Image src={image} alt={`Slide ${index + 1}`} fill priority />
             </div>
-            <div className="md:hidden sm:block relative w-screen h-[170px]">
-              <Image
-                src={image}
-                alt={`Slide ${index + 1}`}
-                fill
-                priority
-                className="object-cover"
-                sizes="100vw"
-              />
+            <div className="md:hidden sm:block relative w-screen h-[150px]">
+              <Image src={image} alt={`Slide ${index + 1}`} fill priority />
             </div>
           </SplideSlide>
         ))}
