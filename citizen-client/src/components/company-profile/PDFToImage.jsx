@@ -6,6 +6,7 @@ import html2canvas from "html2canvas";
 
 // Use the correct worker from pdfjs-dist
 import * as pdfjsWorker from "pdfjs-dist/build/pdf.worker.entry";
+import Image from "next/image";
 
 // Set the workerSrc dynamically
 pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
@@ -47,7 +48,17 @@ const PDFToImage = ({ pdfUrl }) => {
   return (
     <div>
       <canvas ref={canvasRef} style={{ display: "none" }} />
-      {imageUrl ? <img src={imageUrl} alt="PDF page as image" /> : <p>Loading PDF...</p>}
+      {imageUrl ? (
+        <Image
+          src={imageUrl}
+          alt="PDF page as image"
+          layout="responsive"
+          width={600}
+          height={800}
+        />
+      ) : (
+        <p>Loading PDF...</p>
+      )}
     </div>
   );
 };

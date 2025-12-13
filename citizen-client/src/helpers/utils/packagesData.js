@@ -295,10 +295,10 @@ export const packagesData = [
               <tr className="hover:bg-gray-50">
                 <td className="border border-gray-400 p-2">একক সদস্য (শিশু)</td>
                 <td className="border border-gray-400 p-2 font-bold">
-                  ৫,০০০ টাকা
+                  {`৫,০০০`} টাকা
                 </td>
                 <td className="border border-gray-400 p-2 font-bold">
-                  ২,২২২ টাকা
+                  {`২,২২২`} টাকা
                 </td>
               </tr>
             </tbody>
@@ -507,10 +507,10 @@ export const packagesData = [
               <tr className="hover:bg-gray-50">
                 <td className="border border-gray-400 p-2">একক সদস্য</td>
                 <td className="border border-gray-400 p-2 font-bold">
-                  ৫,০০০ টাকা
+                  {`৫,০০০`} টাকা
                 </td>
                 <td className="border border-gray-400 p-2 font-bold">
-                  ৪,৪৪৪ টাকা
+                  {`৪,৪৪৪`} টাকা
                 </td>
               </tr>
             </tbody>
@@ -647,7 +647,7 @@ export const packagesData = [
               দ্রুত শনাক্ত করা যায়।
             </li>
             <li>
-              <span className="font-bold">"সাইলেন্ট ডিজিজ":</span> কর্পোরেট
+              <span className="font-bold">{"সাইলেন্ট ডিজিজ"}:</span> কর্পোরেট
               মানুষদের মধ্যে সবচেয়ে বেশি দেখা যায়: সাইলেন্ট হাইপারটেনশন, উচ্চ
               কোলেস্টেরল, ডায়াবেটিস। এই রোগগুলো শুরুতে কোনো উপসর্গ দেখায় না।
               রেগুলার হেলথ মনিটরিং ছাড়া এগুলো বোঝা প্রায় অসম্ভব। দেরিতে ধরা
@@ -673,7 +673,7 @@ export const packagesData = [
 
         <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
           ব্যস্ত রুটিনে আমরা স্বাস্থ্যকে উপেক্ষা করি। কর্পোরেট জীবনে নিজের
-          স্বাস্থ্যকে আমরা প্রায়শই "পরে দেখবো" তালিকায় ফেলে রাখি। কিন্তু
+          স্বাস্থ্যকে আমরা প্রায়শই {"পরে দেখবো"} তালিকায় ফেলে রাখি। কিন্তু
           রেগুলার হেলথ মনিটরিং মানে: নিজের জন্য কয়েক মিনিট সময় বের করা,
           স্বাস্থ্যের অদৃশ্য সমস্যাগুলো চিহ্নিত করা, সময়মতো চিকিৎসা শুরু করা।
           এতে বড় কোনো জটিলতা হওয়ার আগেই প্রতিরোধ করা যায়।

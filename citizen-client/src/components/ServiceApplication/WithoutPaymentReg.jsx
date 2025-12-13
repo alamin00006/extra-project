@@ -151,7 +151,7 @@ const WithoutPaymentReg = () => {
                       Registration Form
                     </h2>
                     <p className="text-cyan-100 mt-2">
-                      Let us know about you, and we'll handle the rest
+                      Let us know about you, and {"we'll"} handle the rest
                     </p>
                   </div>
                 </div>
