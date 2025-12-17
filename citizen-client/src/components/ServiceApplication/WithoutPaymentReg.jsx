@@ -16,6 +16,8 @@ import {
   Clock,
   Shield,
   MessageSquare,
+  LocateIcon,
+  LocationEdit,
 } from "lucide-react";
 
 const WithoutPaymentReg = () => {
@@ -25,13 +27,14 @@ const WithoutPaymentReg = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, mobileNumber, occupation, email } = e.target;
+    const { name, mobileNumber, address, occupation, email } = e.target;
 
     const registrationData = {
       name: name.value,
       phoneNumber: mobileNumber.value,
       email: email?.value ? email.value : null,
       occupation: occupation?.value ? occupation.value : null,
+      address: address?.value ? address.value : null,
     };
 
     setIsLoading(true);
@@ -207,6 +210,27 @@ const WithoutPaymentReg = () => {
                       </div>
                     </div>
 
+                    {/* Address Field */}
+                    <div className="space-y-2">
+                      <label className="flex items-center text-sm font-semibold text-gray-700 mb-2">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-50 to-teal-50 flex items-center justify-center mr-2">
+                          <LocationEdit
+                            className="w-4 h-4"
+                            style={{ color: "#39bcbc" }}
+                          />
+                        </div>
+                        Address
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          name="address"
+                          className="w-full h-14 pl-12 pr-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 hover:border-teal-400"
+                          placeholder="Your current address"
+                        />
+                        <LocationEdit className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      </div>
+                    </div>
                     {/* Occupation Field */}
                     <div className="space-y-2">
                       <label className="flex items-center text-sm font-semibold text-gray-700 mb-2">

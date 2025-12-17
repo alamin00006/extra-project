@@ -37,7 +37,7 @@ const HeroSlider = ({ userData }) => {
       >
         {images.map((image, index) => (
           <SplideSlide key={index}>
-            <div className="relative w-screen sm:hidden md:block h-[calc(100vh-230px)]">
+            <div className="relative w-screen sm:hidden md:block h-[calc(100vh-230px)] relative">
               <Image src={image} alt={`Slide ${index + 1}`} fill priority />
             </div>
             <div className="md:hidden sm:block relative w-screen h-[150px]">
@@ -48,21 +48,20 @@ const HeroSlider = ({ userData }) => {
       </Splide>
 
       {/* Two-Column Content */}
-      <div className="custom-container inset-0 absolute top-0 left-0 z-[1] md:flex hidden flex-col md:flex-row items-center text-black gap-8 h-full">
+      <div className="custom-container  -mt-[145px] z-[1] md:flex hidden flex-col md:flex-row items-center text-black gap-8 h-full">
         <div>
-          {/* Left-Aligned Text Content */}
-          <div className="w-full md:w-1/2 bg-[#e8ffff] p-3 opacity-75 rounded md:mt-0 sm:mt-5">
-            <h1 className="text-xl md:text-3xl font-bold mb-4 text-pink-600">
+          <div className="w-full bg-[#e8ffff] p-3 opacity-75 rounded md:mt-0 sm:mt-5">
+            <h1 className="md:text-2xl 2xl:text-4xl font-bold mb-4 text-pink-600">
               Welcome to Our Service
             </h1>
-            <p className="text-sm md:text-base mb-8 font-bengali">
+            {/* <p className="text-sm md:text-base mb-8 font-bengali">
               Citizen Care Bangladesh - এর লয়্যাল মেম্বার হয়ে বছর জুড়ে MBBS
               ডাক্তার, নিউট্রিশনিস্ট, রেজিস্টার্ড নার্সের নিয়মিত স্বাস্থ্যসেবা
               নিন ঘরে বসেই।
-            </p>
+            </p> */}
             <button
               onClick={handleRegistration}
-              className="text-sm md:text-lg border-2 border-pink-500 hover:bg-pink-600 text-pink-600 hover:text-white font-bold py-3 px-6 rounded-lg"
+              className="text-sm border-2 border-pink-500 hover:bg-pink-600 text-pink-600 hover:text-white font-bold py-3 px-6 rounded-lg"
             >
               Registration Now
             </button>
