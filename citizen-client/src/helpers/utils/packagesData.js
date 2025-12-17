@@ -172,7 +172,7 @@ export const packagesData = [
     image: "/images/packages/pegnancy.webp",
     banner: "/images/packages-banner/pegnancy.jpeg",
     path: "/pregnant-woman-package",
-    iconColor: "text-[#39bcbc]",
+    iconColor: "text-pink-500",
     badgeColor: "bg-pink-100 border-pink-200",
     content: (
       <div>
@@ -403,7 +403,7 @@ export const packagesData = [
     image: "/images/packages/corporate.webp",
     banner: "/images/packages-banner/corporate.webp",
     path: "/corporate-package",
-    iconColor: "text-pink-500",
+    iconColor: "text-[#39bcbc]",
     badgeColor: "bg-blue-100 border-blue-200",
     content: (
       <div>
@@ -712,10 +712,37 @@ export const packagesData = [
           পুষ্টিবিদের পরামর্শ শিশুর এই প্রয়োজনগুলোকে বৈজ্ঞানিকভাবে নিশ্চিত করে।
         </p>
 
+        {/* for only Card */}
+        <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656] hidden">
+          <li>
+            <span className="text-[#565656] font-bold">
+              মাসে ১ বার পুষ্টিবিদ (৩–৫ বছরের অভিজ্ঞতা):
+            </span>{" "}
+            অভিজ্ঞ পুষ্টিবিদ শিশুর বয়স, ওজন, উচ্চতা, দৈনন্দিন অভ্যাস ও প্রয়োজন
+            অনুযায়ী ব্যক্তিগত ডায়েট চার্ট তৈরি করবেন
+          </li>
+          <li>
+            <span className="text-[#565656] font-bold">
+              বয়সভিত্তিক ডায়েট চার্ট ও পুষ্টি পরিকল্পনা:
+            </span>{" "}
+            শিশুর বয়স অনুযায়ী বৈজ্ঞানিক পুষ্টি পরিকল্পনা
+          </li>
+          <li>
+            <span className="text-[#565656] font-bold">
+              শিশুর বৃদ্ধির নিয়মিত মনিটরিং:
+            </span>{" "}
+            উচ্চতা, ওজন ও সামগ্রিক বৃদ্ধি ট্র্যাকিং
+          </li>
+          <li>
+            <span className="text-[#565656] font-bold">
+              অভিভাবকদের জন্য গাইডলাইন:
+            </span>{" "}
+            শিশুর যত্ন ও লালন-পালনের সম্পূর্ণ গাইডলাইন
+          </li>
+        </ul>
         <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
           বয়সভিত্তিক পুষ্টির গুরুত্ব:
         </p>
-
         <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
           <li>শারীরিক বৃদ্ধি ও মাংশপেশীর বিকাশ</li>
           <li>হাড়ের শক্তি ও দাঁতের গঠন</li>
