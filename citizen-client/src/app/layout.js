@@ -10,33 +10,33 @@ import Footer from "@/components/Home/Footer";
 import TopNavber from "@/components/shared/TopNavber";
 import { Providers } from "@/redux/providers";
 import Head from "next/head";
+import FacebookPixel from "@/components/pixel/FacebookPixel";
 
 export default function RootLayout({ children }) {
   return (
-    <Providers>
-      <html lang="en">
-        <Head>
-          <link
-            rel="preload"
-            href="/images/logo.png"
-            as="image"
-            type="image/png"
-          />
-        </Head>
-        <body className="antialiased">
-          <div className="">
-            <TopNavber />
-          </div>
+    <html lang="en">
+      <Head>
+        <link
+          rel="preload"
+          href="/images/logo.png"
+          as="image"
+          type="image/png"
+        />
+      </Head>
+      <body className="antialiased">
+        <Providers>
+          <FacebookPixel />
 
-          {/* Apply the sticky-navbar class on page load and after scroll */}
+          <TopNavber />
+
           <nav className="sticky top-0 z-50 transition-all duration-300 ease-in-out">
             <Navbar />
           </nav>
 
           {children}
           <Footer />
-        </body>
-      </html>
-    </Providers>
+        </Providers>
+      </body>
+    </html>
   );
 }

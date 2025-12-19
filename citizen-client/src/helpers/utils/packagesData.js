@@ -170,7 +170,7 @@ export const packagesData = [
     miniText: "প্রেগন্যান্ট ওম্যান প্যাকেজ",
     enTitle: "Pregnant Woman Package",
     image: "/images/packages/pegnancy.webp",
-    banner: "/images/packages-banner/pegnancy.jpeg",
+    banner: "/images/packages-banner/pegnancy.webp",
     path: "/pregnant-woman-package",
     iconColor: "text-pink-500",
     badgeColor: "bg-pink-100 border-pink-200",
