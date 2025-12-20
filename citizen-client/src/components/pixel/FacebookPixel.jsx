@@ -3,6 +3,7 @@
 import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const FB_PIXEL_ID = "1568445817501030";
 
@@ -10,8 +11,24 @@ export default function FacebookPixel() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (!window.fbq) return;
-    window.fbq("track", "PageView");
+    if (typeof window === "undefined" || !window.fbq) return;
+
+    const eventId = uuidv4();
+
+    // Browser Pixel
+    window.fbq("track", "PageView", {}, { eventID: eventId });
+
+    // Send event to backend (Conversions API)
+    fetch("/api/facebook/capi", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        event_name: "PageView",
+        event_id: eventId,
+        url: window.location.href,
+        user_agent: navigator.userAgent,
+      }),
+    });
   }, [pathname]);
 
   return (
@@ -40,6 +57,7 @@ export default function FacebookPixel() {
           width="1"
           style={{ display: "none" }}
           src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+          alt=""
         />
       </noscript>
     </>

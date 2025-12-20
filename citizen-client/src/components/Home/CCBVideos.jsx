@@ -4,6 +4,16 @@ import Image from "next/image";
 
 const videos = [
   {
+    videoUrl: "https://www.youtube.com/embed/iHVxFWGAnuo",
+  },
+  {
+    videoUrl: "https://www.youtube.com/embed/UB_F2ZUNVU8",
+  },
+  // {
+  //   videoUrl: "https://youtube.com/shorts/WIu5ZJqWV3o",
+  // },
+
+  {
     videoUrl: "https://www.youtube.com/embed/qyl1cJqohJs",
   },
   {

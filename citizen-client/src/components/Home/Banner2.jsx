@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const images = [
+  "/images/home-page/1800-4.webp",
   "/images/home-page/1800-1.webp",
   "/images/home-page/1800-2.webp",
   "/images/home-page/1800-3.webp",
-  "/images/home-page/1800-4.webp",
   "/images/home-page/Home-Page-Front.jpg",
   "/images/home-page/CCB-CUMMUNITY.jpg",
   "/images/home-page/Awerness-Program.jpg",
@@ -28,7 +28,7 @@ const HeroSlider = ({ userData }) => {
           type: "fade",
           rewind: true,
           autoplay: true,
-          interval: 5000,
+          interval: 2000,
           arrows: false,
           pagination: false,
           speed: 1000,
