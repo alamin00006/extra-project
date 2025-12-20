@@ -300,9 +300,9 @@ const Navbar = () => {
 
                 <li className="custom-navbar mt-1">
                   <Link
-                    href="/without-payment"
+                    href="/registration"
                     className={`no-underline text-black text-[16px] ${
-                      pathname === "/without-payment"
+                      pathname === "/registration"
                         ? "text-[#39bcbc]"
                         : "text-black"
                     }`}
@@ -509,9 +509,9 @@ const Navbar = () => {
 
               <li className="custom-navbar mr-4">
                 <Link
-                  href="/without-payment"
+                  href="/registration"
                   className={`no-underline text-black text-[16px] ${
-                    pathname === "/without-payment"
+                    pathname === "/registration"
                       ? "text-[#39bcbc]"
                       : "text-black"
                   }`}

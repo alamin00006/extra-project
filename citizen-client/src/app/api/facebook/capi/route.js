@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 
-const FB_PIXEL_ID = process.env.FB_PIXEL_ID;
-const FB_ACCESS_TOKEN = process.env.FB_ACCESS_TOKEN;
+const FB_PIXEL_ID = "1568445817501030";
+const FB_ACCESS_TOKEN =
+  "EAAXBFf3smIYBQITAfWwefvPLWk1qG4gvMmcZCLV4ls9Qp2zAKJfIgeu9W5iV5wWgXhlt0bOjhctz0PZACK6e9sVIPC0JyPY5yZAnQWdDfstVM8J6Op8oTPuoiRlwERGGQnZBwuhyxy93gqlwOC2JuTgT6F1bZA96WVp5PTE3ua70wpdNEoRciUGeT4BgnCgZDZD";
 
 export async function POST(req) {
   const body = await req.json();
