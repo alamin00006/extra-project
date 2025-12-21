@@ -30,7 +30,55 @@ const createWithOutPaymentMember = catchAsync(async (req, res) => {
   });
 });
 
+const getMembers = catchAsync(async (req, res) => {
+  const result = await MemberService.getMembers();
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "Members retrieved successfully",
+    data: result,
+  });
+});
+
+const getMember = catchAsync(async (req, res) => {
+  const { memberId } = req.params;
+  const result = await MemberService.getMember(memberId);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "Member retrieved successfully",
+    data: result,
+  });
+});
+
+const updateMember = catchAsync(async (req, res) => {
+  const { memberId } = req.params;
+  const updateData = req.body;
+  const result = await MemberService.updateMember(memberId, updateData);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "Member status updated successfully",
+    data: result,
+  });
+});
+
+const deleteMember = catchAsync(async (req, res) => {
+  const { memberId } = req.params;
+  const result = await MemberService.deleteMember(memberId);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "Member status updated successfully",
+    data: result,
+  });
+});
+
 export const MemberController = {
   createMember,
   createWithOutPaymentMember,
+  getMembers,
+  getMember,
+  updateMember,
+  deleteMember,
 };

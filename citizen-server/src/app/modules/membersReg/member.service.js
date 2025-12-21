@@ -83,7 +83,32 @@ const createWithOutPaymentMember = async (payload) => {
   }
 };
 
+const getMembers = async () => {
+  const members = await Member.find({});
+  return members;
+};
+const getMember = async (memberId) => {
+  const member = await Member.findById(memberId);
+  return member;
+};
+
+const updateMember = async (memberId, payload) => {
+  const updatedMember = await Member.findByIdAndUpdate(memberId, payload, {
+    new: true,
+  });
+  return updatedMember;
+};
+
+const deleteMember = async (memberId) => {
+  const deletedMember = await Member.findByIdAndDelete(memberId);
+  return deletedMember;
+};
+
 export const MemberService = {
   createMember,
   createWithOutPaymentMember,
+  getMembers,
+  getMember,
+  updateMember,
+  deleteMember,
 };

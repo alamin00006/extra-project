@@ -47,22 +47,11 @@ const WithoutPaymentReg = () => {
 
       // Reset submitted state after 5 seconds
     } catch (error) {
-      toast.error(
-        error.response?.data?.message ||
-          "Registration failed. Please try again.",
-        {
-          duration: 4000,
-          position: "top-center",
-        }
-      );
+      toast.error(error.response?.data?.message);
     } finally {
       setIsLoading(false);
     }
   };
-
-  if (isLoading) {
-    return <Loading />;
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">

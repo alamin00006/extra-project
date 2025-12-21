@@ -48,7 +48,7 @@ const PaymentsTable: React.FC<PaymentsTableProps> = ({
   const [actionMenu, setActionMenu] = useState<string | null>(null);
 
   // Filter payments based on search term and type
-  const filteredPayments = payments.filter((payment) => {
+  const filteredPayments = payments?.filter((payment) => {
     const matchesSearch =
       payment.trxID.toLowerCase().includes(searchTerm.toLowerCase()) ||
       payment.paymentNumber.includes(searchTerm) ||
@@ -62,14 +62,16 @@ const PaymentsTable: React.FC<PaymentsTableProps> = ({
   });
 
   // Sort payments
-  const sortedPayments = [...filteredPayments].sort((a, b) => {
-    let aValue: any = a[sortField];
-    let bValue: any = b[sortField];
+  const sortedPayments = filteredPayments
+    ? [...filteredPayments].sort((a, b) => {
+        let aValue: any = a[sortField];
+        let bValue: any = b[sortField];
 
-    if (aValue < bValue) return sortDirection === "asc" ? -1 : 1;
-    if (aValue > bValue) return sortDirection === "asc" ? 1 : -1;
-    return 0;
-  });
+        if (aValue < bValue) return sortDirection === "asc" ? -1 : 1;
+        if (aValue > bValue) return sortDirection === "asc" ? 1 : -1;
+        return 0;
+      })
+    : [];
 
   // Pagination
   const totalPages = Math.ceil(sortedPayments.length / itemsPerPage);
@@ -143,7 +145,7 @@ const PaymentsTable: React.FC<PaymentsTableProps> = ({
     );
   };
 
-  const paymentTypes = [...new Set(payments.map((p) => p.paymentType))];
+  const paymentTypes = [...new Set(payments?.map((p) => p.paymentType))];
 
   return (
     <div className="rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:shadow-gray-900/30">
@@ -168,43 +170,6 @@ const PaymentsTable: React.FC<PaymentsTableProps> = ({
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full rounded-lg border border-gray-300 py-2 pr-4 pl-10 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none sm:w-64 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:ring-blue-400"
               />
-            </div>
-            <div className="flex gap-3">
-              <div className="relative">
-                <Filter className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 transform text-gray-400" />
-                <select
-                  value={selectedType}
-                  onChange={(e) => setSelectedType(e.target.value)}
-                  className="appearance-none rounded-lg border border-gray-300 bg-white py-2 pr-8 pl-10 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:ring-blue-400"
-                >
-                  <option value="all">All Types</option>
-                  {paymentTypes.map((type) => (
-                    <option key={type} value={type}>
-                      {type.toUpperCase()}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <select
-                value={itemsPerPage}
-                onChange={(e) => {
-                  setItemsPerPage(Number(e.target.value));
-                  setCurrentPage(1);
-                }}
-                className="rounded-lg border border-gray-300 px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:focus:ring-blue-400"
-              >
-                <option value={5}>5 per page</option>
-                <option value={10}>10 per page</option>
-                <option value={25}>25 per page</option>
-                <option value={50}>50 per page</option>
-              </select>
-              {/* <button
-                onClick={() => onExport?.(sortedPayments)}
-                className="flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600"
-              >
-                <Download className="h-4 w-4" />
-                Export
-              </button> */}
             </div>
           </div>
         </div>

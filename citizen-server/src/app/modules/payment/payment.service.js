@@ -1,5 +1,6 @@
 import axios from "axios";
 import config from "../../../config/index.js";
+import Payment from "./payment.model.js";
 
 const verifyPayment = async (token, order_id) => {
   try {
@@ -19,6 +20,12 @@ const verifyPayment = async (token, order_id) => {
     );
   }
 };
+
+const getAllPayments = async () => {
+  const payments = await Payment.find({});
+  return payments;
+};
 export const PaymentService = {
   verifyPayment,
+  getAllPayments,
 };

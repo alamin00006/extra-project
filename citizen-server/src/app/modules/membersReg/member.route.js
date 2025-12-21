@@ -8,4 +8,8 @@ router.post(
   MemberController.createWithOutPaymentMember
 );
 
+router.get("/", MemberController.getMembers);
+router.get("/:memberId", MemberController.getMember);
+router.patch("/:memberId", MemberController.updateMember);
+router.delete("/:memberId", MemberController.deleteMember);
 export const MemberRoutes = router;

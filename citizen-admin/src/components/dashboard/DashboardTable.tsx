@@ -10,6 +10,9 @@ import {
   Trash2,
   Eye,
 } from "lucide-react";
+import axios from "axios";
+import toast, { Toaster } from "react-hot-toast";
+import { getBaseUrl } from "@/helpers/config/envConfig";
 
 interface User {
   _id: string;
@@ -27,17 +30,19 @@ interface User {
 
 interface UsersTableProps {
   users: any;
-  onStatusUpdate?: (userId: string, newStatus: User["status"]) => void;
+  refetch: () => void;
+  onView?: (user: User) => void;
   onEdit?: (user: User) => void;
   onDelete?: (userId: string) => void;
-  onView?: (user: User) => void;
+  onStatusUpdate?: (userId: string, newStatus: User["status"]) => void;
 }
 
 const DashboardTable: React.FC<UsersTableProps> = ({
   users,
-  onStatusUpdate,
-  onEdit,
+  refetch,
   onDelete,
+  onEdit,
+  onStatusUpdate,
   onView,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -49,12 +54,12 @@ const DashboardTable: React.FC<UsersTableProps> = ({
   const [actionMenu, setActionMenu] = useState<string | null>(null);
 
   // Filter users based on search term and status
-  const filteredUsers = users.filter((user) => {
+  const filteredUsers = users?.filter((user) => {
     const matchesSearch =
       user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       user.phoneNumber.includes(searchTerm) ||
       user.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      user.city.toLowerCase().includes(searchTerm.toLowerCase());
+      user.city?.toLowerCase().includes(searchTerm?.toLowerCase());
 
     const matchesStatus =
       selectedStatus === "all" || user.status === selectedStatus;
@@ -63,14 +68,16 @@ const DashboardTable: React.FC<UsersTableProps> = ({
   });
 
   // Sort users
-  const sortedUsers = [...filteredUsers].sort((a, b) => {
-    let aValue: any = a[sortField];
-    let bValue: any = b[sortField];
+  const sortedUsers = filteredUsers
+    ? [...filteredUsers]?.sort((a, b) => {
+        let aValue: any = a[sortField];
+        let bValue: any = b[sortField];
 
-    if (aValue < bValue) return sortDirection === "asc" ? -1 : 1;
-    if (aValue > bValue) return sortDirection === "asc" ? 1 : -1;
-    return 0;
-  });
+        if (aValue < bValue) return sortDirection === "asc" ? -1 : 1;
+        if (aValue > bValue) return sortDirection === "asc" ? 1 : -1;
+        return 0;
+      })
+    : [];
 
   // Pagination
   const totalPages = Math.ceil(sortedUsers.length / itemsPerPage);
@@ -127,6 +134,30 @@ const DashboardTable: React.FC<UsersTableProps> = ({
     );
   };
 
+  const updateStatus = async (userId: string, newStatus: User["status"]) => {
+    try {
+      const { data } = await axios.patch(`${getBaseUrl()}/member/${userId}`, {
+        status: newStatus,
+      });
+      toast.success(data.message || "Status updated successfully");
+      refetch();
+    } catch (error) {
+      toast.error(error?.response?.data?.message || "Failed to update status");
+      console.error("Failed to update status", error);
+    }
+  };
+
+  const deleteMember = async (userId: string) => {
+    try {
+      const { data } = await axios.delete(`${getBaseUrl()}/member/${userId}`);
+      toast.success(data.message || "Member deleted successfully");
+      refetch();
+    } catch (error) {
+      toast.error(error?.response?.data?.message || "Failed to delete member");
+      console.error("Failed to delete member", error);
+    }
+  };
+
   return (
     <div className="rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:shadow-gray-900/30">
       {/* Table Header with Search and Filters */}
@@ -165,7 +196,7 @@ const DashboardTable: React.FC<UsersTableProps> = ({
                   <option value="Rejected">Rejected</option>
                 </select>
               </div>
-              <select
+              {/* <select
                 value={itemsPerPage}
                 onChange={(e) => {
                   setItemsPerPage(Number(e.target.value));
@@ -177,7 +208,7 @@ const DashboardTable: React.FC<UsersTableProps> = ({
                 <option value={10}>10 per page</option>
                 <option value={25}>25 per page</option>
                 <option value={50}>50 per page</option>
-              </select>
+              </select> */}
             </div>
           </div>
         </div>
@@ -278,7 +309,7 @@ const DashboardTable: React.FC<UsersTableProps> = ({
                     <select
                       value={user.status}
                       onChange={(e) =>
-                        onStatusUpdate?.(
+                        updateStatus?.(
                           user._id,
                           e.target.value as User["status"],
                         )
@@ -327,7 +358,7 @@ const DashboardTable: React.FC<UsersTableProps> = ({
                             </button>
                             <button
                               onClick={() => {
-                                onDelete?.(user._id);
+                                deleteMember?.(user._id);
                                 setActionMenu(null);
                               }}
                               className="flex w-full items-center px-4 py-2 text-left text-sm text-red-600 hover:bg-gray-100 dark:text-red-400 dark:hover:bg-gray-600"
@@ -419,6 +450,11 @@ const DashboardTable: React.FC<UsersTableProps> = ({
           </div>
         </div>
       )}
+      <Toaster
+        position="top-center"
+        containerStyle={{ marginTop: "80px" }}
+        reverseOrder={false}
+      />
     </div>
   );
 };

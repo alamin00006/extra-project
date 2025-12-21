@@ -9,4 +9,6 @@ router.get("/return", shurjoPay_auth, PaymentController.verifyPayment);
 
 // router.get("/refund/:trxID", bkash_auth, PaymentController2.refund);
 
+router.get("/", PaymentController.getAllPayments);
+
 export const PaymentRoutes = router;

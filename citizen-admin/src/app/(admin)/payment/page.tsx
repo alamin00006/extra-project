@@ -1,11 +1,9 @@
+"use client";
+
 import PaymentOverview from "@/components/payments/PaymentOverview";
 import PaymentsTable from "@/components/payments/PaymentTable";
+import { useGetAllPaymentsQuery } from "@/redux/api/paymentApi";
 import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Citizen | Payments",
-  description: "Citizen | Payments",
-};
 
 const demoPayments = [
   {
@@ -71,10 +69,12 @@ const demoPayments = [
 ];
 
 export default function Payments() {
+  const { data, isLoading, refetch } = useGetAllPaymentsQuery(null);
+  console.log(data);
   return (
     <div>
-      <PaymentOverview payments={demoPayments} />
-      <PaymentsTable payments={demoPayments} />
+      <PaymentOverview payments={data} />
+      <PaymentsTable payments={data} />
     </div>
   );
 }

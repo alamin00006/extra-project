@@ -200,7 +200,6 @@ const getAllAdminUsers = async (params) => {
   }
   const adminUsers = await AdminUser.find(query).sort({ createdAt: -1 });
 
-  console.log(adminUsers);
   return adminUsers;
 };
 
