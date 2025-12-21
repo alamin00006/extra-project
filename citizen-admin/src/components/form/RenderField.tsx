@@ -1,5 +1,4 @@
 import { RegisterOptions } from "react-hook-form";
-import { IHospital } from "../types/hospital";
 import DynamicTextArea from "./DynamicTextArea";
 import FileUploadInput from "./FileUploadInput";
 import MultiSelect from "./MultiSelect";
@@ -12,7 +11,7 @@ export interface SelectOption {
 }
 
 export interface FieldConfig {
-  name: keyof IHospital | string;
+  name: string;
   label: string;
   placeholder?: string;
   type?: string;

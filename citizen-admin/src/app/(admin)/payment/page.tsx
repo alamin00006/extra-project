@@ -6,7 +6,7 @@ import { useGetAllPaymentsQuery } from "@/redux/api/paymentApi";
 
 export default function Payments() {
   const { data, isLoading, refetch } = useGetAllPaymentsQuery(null);
-  console.log(data);
+
   return (
     <div>
       <PaymentOverview payments={data} />
