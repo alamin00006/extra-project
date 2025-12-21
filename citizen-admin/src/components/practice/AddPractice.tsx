@@ -1,12 +1,11 @@
 "use client";
 
-import { IHospital } from "@/components/types/hospital";
 import AddForm from "@/components/form/AddForm";
 import { fieldConfigs } from "./practiceField";
 
 const AddPractice = () => {
   return (
-    <AddForm<IHospital>
+    <AddForm<any>
       apiEndpoint="/hospital/create-hospital"
       method="POST"
       imageFields={["logo", "banners"]}
