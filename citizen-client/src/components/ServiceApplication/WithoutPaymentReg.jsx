@@ -54,7 +54,7 @@ const WithoutPaymentReg = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
       <style jsx>{`
         .primary-gradient {
           background: linear-gradient(135deg, #39bcbc, #2a8f8f);
@@ -72,7 +72,7 @@ const WithoutPaymentReg = () => {
           <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full mb-6 shadow-xl">
             <CheckCircle className="w-12 h-12 text-white" />
           </div>
-          <h1 className="md:text-3xl sm:text-2xl font-bold text-gray-900 mb-4">
+          <h1 className="md:text-3xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
             Membership <span style={{ color: "#39bcbc" }}>Registration</span>
           </h1>
         </motion.div>
@@ -85,7 +85,7 @@ const WithoutPaymentReg = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="lg:col-span-2"
           >
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden border border-gray-200 dark:border-gray-700">
               {/* Form Header with gradient */}
               <div className="bg-gradient-to-r from-cyan-400 to-teal-500 px-8 py-6 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
@@ -104,8 +104,8 @@ const WithoutPaymentReg = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name Field */}
                   <div className="space-y-2">
-                    <label className="flex items-center text-sm font-semibold text-gray-700 mb-2">
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-50 to-teal-50 flex items-center justify-center mr-2">
+                    <label className="flex items-center text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-50 to-teal-50 dark:from-cyan-900 dark:to-teal-900 flex items-center justify-center mr-2">
                         <User
                           className="w-4 h-4"
                           style={{ color: "#39bcbc" }}
@@ -116,20 +116,20 @@ const WithoutPaymentReg = () => {
                     <div className="relative">
                       <input
                         type="text"
-                        className="w-full h-14 pl-12 pr-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 hover:border-teal-400"
+                        className="w-full h-14 pl-12 pr-4 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 hover:border-teal-400 dark:bg-gray-700 dark:text-white"
                         required
                         placeholder="Enter your full name"
                         name="name"
                         defaultValue={userData?.fullName || ""}
                       />
-                      <User className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <User className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500" />
                     </div>
                   </div>
 
                   {/* Phone Field */}
                   <div className="space-y-2">
-                    <label className="flex items-center text-sm font-semibold text-gray-700 mb-2">
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-50 to-teal-50 flex items-center justify-center mr-2">
+                    <label className="flex items-center text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-50 to-teal-50 dark:from-cyan-900 dark:to-teal-900 flex items-center justify-center mr-2">
                         <Phone
                           className="w-4 h-4"
                           style={{ color: "#39bcbc" }}
@@ -140,21 +140,21 @@ const WithoutPaymentReg = () => {
                     <div className="relative">
                       <input
                         type="tel"
-                        className="w-full h-14 pl-12 pr-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 hover:border-teal-400"
+                        className="w-full h-14 pl-12 pr-4 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 hover:border-teal-400 dark:bg-gray-700 dark:text-white"
                         required
                         placeholder="Enter your phone number"
                         name="mobileNumber"
                         defaultValue={userData?.phoneNumber || ""}
                         onWheel={(e) => e.target.blur()}
                       />
-                      <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <Phone className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500" />
                     </div>
                   </div>
 
                   {/* Address Field */}
                   <div className="space-y-2">
-                    <label className="flex items-center text-sm font-semibold text-gray-700 mb-2">
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-50 to-teal-50 flex items-center justify-center mr-2">
+                    <label className="flex items-center text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-50 to-teal-50 dark:from-cyan-900 dark:to-teal-900 flex items-center justify-center mr-2">
                         <LocationEdit
                           className="w-4 h-4"
                           style={{ color: "#39bcbc" }}
@@ -166,16 +166,16 @@ const WithoutPaymentReg = () => {
                       <input
                         type="text"
                         name="address"
-                        className="w-full h-14 pl-12 pr-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 hover:border-teal-400"
+                        className="w-full h-14 pl-12 pr-4 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 hover:border-teal-400 dark:bg-gray-700 dark:text-white"
                         placeholder="Your current address"
                       />
-                      <LocationEdit className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <LocationEdit className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500" />
                     </div>
                   </div>
                   {/* Occupation Field */}
                   <div className="space-y-2">
-                    <label className="flex items-center text-sm font-semibold text-gray-700 mb-2">
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-50 to-teal-50 flex items-center justify-center mr-2">
+                    <label className="flex items-center text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-50 to-teal-50 dark:from-cyan-900 dark:to-teal-900 flex items-center justify-center mr-2">
                         <Briefcase
                           className="w-4 h-4"
                           style={{ color: "#39bcbc" }}
@@ -187,17 +187,17 @@ const WithoutPaymentReg = () => {
                       <input
                         type="text"
                         name="occupation"
-                        className="w-full h-14 pl-12 pr-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 hover:border-teal-400"
+                        className="w-full h-14 pl-12 pr-4 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 hover:border-teal-400 dark:bg-gray-700 dark:text-white"
                         placeholder="Your current occupation (optional)"
                       />
-                      <Briefcase className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <Briefcase className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500" />
                     </div>
                   </div>
 
                   {/* Email Field */}
                   <div className="space-y-2">
-                    <label className="flex items-center text-sm font-semibold text-gray-700 mb-2">
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-50 to-teal-50 flex items-center justify-center mr-2">
+                    <label className="flex items-center text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-cyan-50 to-teal-50 dark:from-cyan-900 dark:to-teal-900 flex items-center justify-center mr-2">
                         <Mail
                           className="w-4 h-4"
                           style={{ color: "#39bcbc" }}
@@ -208,20 +208,20 @@ const WithoutPaymentReg = () => {
                     <div className="relative">
                       <input
                         type="email"
-                        className="w-full h-14 pl-12 pr-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 hover:border-teal-400"
+                        className="w-full h-14 pl-12 pr-4 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-all duration-200 hover:border-teal-400 dark:bg-gray-700 dark:text-white"
                         placeholder="name@example.com (optional)"
                         name="email"
                       />
-                      <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-gray-500" />
                     </div>
                   </div>
                 </div>
 
                 {/* Note Section */}
-                <div className="mt-8 p-4 bg-gradient-to-r from-cyan-50 to-teal-50 rounded-xl border border-cyan-100">
+                <div className="mt-8 p-4 bg-gradient-to-r from-cyan-50 to-teal-50 dark:from-cyan-900 dark:to-teal-900 rounded-xl border border-cyan-100 dark:border-cyan-800">
                   <div className="flex items-start">
                     <div>
-                      <p className="text-sm text-gray-700">
+                      <p className="text-sm text-gray-700 dark:text-gray-300">
                         <span className="font-semibold">Note:</span> This is an
                         expression of interest form. Our team will contact you
                         to discuss membership options, fees, and complete the

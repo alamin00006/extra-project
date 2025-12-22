@@ -5,20 +5,20 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-const FB_PIXEL_ID = "1568445817501030";
+const FB_PIXEL_IDS = ["1568445817501030", "1397716988740500"];
 
 export default function FacebookPixel() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (typeof window === "undefined" || !window.fbq) return;
+    if (!window.fbq) return;
 
     const eventId = uuidv4();
 
-    // Browser Pixel
+    // Browser event (sent to ALL initialized pixels)
     window.fbq("track", "PageView", {}, { eventID: eventId });
 
-    // Send event to backend (Conversions API)
+    // Conversions API (deduplication)
     fetch("/api/facebook/capi", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -33,8 +33,9 @@ export default function FacebookPixel() {
 
   return (
     <>
+      {/* Load FB Pixel once */}
       <Script
-        id="fb-pixel"
+        id="facebook-pixel"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
@@ -46,20 +47,24 @@ export default function FacebookPixel() {
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '${FB_PIXEL_ID}');
+
+            ${FB_PIXEL_IDS.map((id) => `fbq('init', '${id}');`).join("")}
           `,
         }}
       />
 
-      <noscript>
-        <img
-          height="1"
-          width="1"
-          style={{ display: "none" }}
-          src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
-          alt=""
-        />
-      </noscript>
+      {/* NoScript fallback */}
+      {FB_PIXEL_IDS.map((id) => (
+        <noscript key={id}>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            src={`https://www.facebook.com/tr?id=${id}&ev=PageView&noscript=1`}
+            alt=""
+          />
+        </noscript>
+      ))}
     </>
   );
 }
