@@ -6,7 +6,7 @@ export const packagesData = [
     enTitle: "Single/Family Package",
     image: "/images/packages/premium.webp",
     banner: "/images/packages-banner/premium.webp",
-    path: "/premium-package",
+    path: "/single-family-package",
     iconColor: "text-[#39bcbc]",
     badgeColor: "bg-[#39bcbc] border-yellow-200",
     content: (
@@ -15,7 +15,10 @@ export const packagesData = [
           <span className="text-[#3abbba] font-bold">
             Citizen Care Bangladesh-
           </span>{" "}
-          এর <span className="text-pink-500 font-bold">প্রিমিয়াম প্যাকেজ</span>{" "}
+          এর{" "}
+          <span className="text-pink-500 font-bold">
+            সিঙ্গেল/ফ্যামিলি প্যাকেজ
+          </span>{" "}
           এর সদস্য হয়ে ঘরে বসে <b>সম্পূর্ণ স্বাস্থ্যসেবা</b> নিন
         </h2>
 
@@ -23,14 +26,98 @@ export const packagesData = [
           <span className="text-[#3abbba] font-bold">
             Citizen Care Bangladesh
           </span>{" "}
-          এর <span className="text-pink-500 font-bold">প্রিমিয়াম প্যাকেজ</span>{" "}
+          এর{" "}
+          <span className="text-pink-500 font-bold">
+            সিঙ্গেল/ফ্যামিলি প্যাকেজ
+          </span>{" "}
           হলো সবচেয়ে ব্যাপক ও সম্পূর্ণ স্বাস্থ্যসেবা প্যাকেজ। এই প্যাকেজে একজন
           সদস্য বা পুরো পরিবার মাসিক চার্জের বিনিময়ে নিয়মিত স্বাস্থ্যসেবা পেতে
           পারেন।
         </p>
 
+        {/* আপনার যোগ করা কন্টেন্ট শুরু */}
+        <div className="mb-6">
+          <p className="text-sm md:text-base mb-4 text-[#565656] leading-8">
+            প্রিভেন্টিভ হেলথ কেয়ার রোগ হওয়ার আগেই ঝুঁকি শনাক্ত করতে সহায়তা করে।
+            নিয়মিত হেলথ মনিটরিংয়ের মাধ্যমে রক্তচাপ, রক্তে শর্করা, ওজন ও ভাইটাল
+            সাইনস মনিটরিং করে শরীরের পরিবর্তন আগেভাগেই ধরা পড়ে। Citizen Care
+            Bangladesh ঘরে বসেই ডাক্তার, নিউট্রিশনিস্ট ও নার্সের মাধ্যমে
+            প্রয়োজনীয় স্বাস্থ্য পরামর্শ ও ধারাবাহিক গাইডেন্স প্রদান করে, যা
+            সুস্থ ও নিরাপদ জীবনযাপন নিশ্চিত করতে সহায়তা করে।
+          </p>
+        </div>
+
+        <div className="bg-blue-50 p-4 rounded-lg mb-6 border-l-4 border-[#3abbba]">
+          <h3 className="text-md font-bold text-[#3abbba] mb-3">
+            Preventive Health Care: Stay Ahead of Illness
+          </h3>
+          <p className="text-sm text-[#565656] mb-3">
+            Preventive health care মানে অসুস্থ হওয়ার অপেক্ষা না করে আগেভাগেই
+            স্বাস্থ্যঝুঁকি চিহ্নিত করা। C C B প্রিভেন্টিভ কেয়ারের মাধ্যমে:
+          </p>
+          <ul className="list-disc ml-4 space-y-1 text-sm text-[#565656]">
+            <li>ভবিষ্যৎ রোগের ঝুঁকি আগেই শনাক্ত করতে সহায়তা করে</li>
+            <li>
+              ডায়াবেটিস, উচ্চ রক্তচাপ, হৃদরোগের মতো সাইলেন্ট রোগ প্রতিরোধে
+              সহায়তা করা হয়
+            </li>
+            <li>
+              জীবনযাপন, খাদ্যাভ্যাস ও দৈনন্দিন অভ্যাসে প্রয়োজনীয় পরিবর্তনের
+              পরামর্শ দেওয়া হয়
+            </li>
+          </ul>
+          <p className="text-sm text-[#565656] mt-3">
+            স্বাস্থ্যকে দীর্ঘমেয়াদে স্থিতিশীল ও নিয়ন্ত্রণে রাখা সম্ভব হয়।
+          </p>
+        </div>
+
+        <div className="bg-green-50 p-4 rounded-lg mb-6 border-l-4 border-green-500">
+          <h3 className="text-md font-bold text-green-700 mb-3">
+            Regular Health Monitoring: Consistency That Protects
+          </h3>
+          <p className="text-sm text-[#565656] mb-3">
+            নিয়মিত হেলথ মনিটরিং ছাড়া সুস্থতা ধরে রাখা সম্ভব নয়। আমাদের
+            কাঠামোবদ্ধ মনিটরিং সিস্টেমে রয়েছে—
+          </p>
+          <ul className="list-disc ml-4 space-y-1 text-sm text-[#565656]">
+            <li>
+              Vital signs পর্যবেক্ষণ (Blood Pressure, Blood Sugar, Pulse,
+              Weight, BMI)
+            </li>
+            <li>পূর্বের রিপোর্টের সাথে তুলনামূলক বিশ্লেষণ</li>
+            <li>সময়ভিত্তিক ফলোআপ ও স্বাস্থ্য অগ্রগতির ট্র্যাকিং</li>
+            <li>
+              অস্বাভাবিক পরিবর্তন দেখা দিলে দ্রুত সতর্কতা ও করণীয় নির্দেশনা
+            </li>
+          </ul>
+          <p className="text-sm text-[#565656] mt-3">
+            এর ফলে রোগ জটিল আকার নেওয়ার আগেই প্রতিরোধ সম্ভব হয়।
+          </p>
+        </div>
+
+        <div className="bg-purple-50 p-4 rounded-lg mb-6 border-l-4 border-purple-500">
+          <h3 className="text-md font-bold text-purple-700 mb-3">
+            Guidance at Home: Care Where You Feel Safe
+          </h3>
+          <p className="text-sm text-[#565656] mb-3">
+            Citizen Care Bangladesh–এর বিশেষত্ব হলো Home-Based Health Guidance।
+          </p>
+          <ul className="list-disc ml-4 space-y-1 text-sm text-[#565656]">
+            <li>
+              প্রশিক্ষিত নার্স ও হেলথ প্রফেশনাল বাসায় গিয়ে সেবা প্রদান করেন
+            </li>
+            <li>ডাক্তারের পরামর্শ অনুযায়ী নিয়মিত কেয়ার ও মনিটরিং</li>
+            <li>বয়স্ক, ব্যস্ত পেশাজীবী ও পরিবারের জন্য সময় সাশ্রয়ী সমাধান</li>
+            <li>
+              নিরাপদ, নির্ভরযোগ্য ও ব্যক্তিগত পরিবেশে স্বাস্থ্যসেবা প্রদান
+            </li>
+          </ul>
+        </div>
+        {/* আপনার যোগ করা কন্টেন্ট শেষ */}
+
         <p className="text-sm md:text-base mb-4 text-[#565656] font-bold">
-          আসুন প্রিমিয়াম প্যাকেজের সেবা সম্পর্কে বিস্তারিত জেনে নেওয়া যাক:
+          আসুন সিঙ্গেল/ফ্যামিলি প্যাকেজের সেবা সম্পর্কে বিস্তারিত জেনে নেওয়া
+          যাক:
         </p>
 
         <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
@@ -104,48 +191,39 @@ export const packagesData = [
         <ul className="list-disc ml-4 space-y-2 text-sm text-[#565656]">
           <li>
             <span className="font-semibold">
-              নোমিনেটেড হাসপাতাল ও ডায়াগনস্টিকে বিশেষ ডিসকাউন্ট:
+              হাসপাতাল ও ডায়াগনস্টিকে ডিসকাউন্ট:
             </span>{" "}
-            আমাদের পার্টনার হাসপাতাল ও ডায়াগনস্টিক সেন্টারে বিশেষ মূল্যে সেবা
-            নিন
+            কর্মীদের জন্য বিশেষ স্বাস্থ্য সুবিধা
+          </li>
+          <li>
+            <span className="font-semibold">ঘরে বসে মেডিকেল টেস্ট:</span>{" "}
+            কর্মীদের জন্য হোম সার্ভিস
           </li>
           <li>
             <span className="font-semibold">
-              ঘরে বসে সাশ্রয়ী প্যাকেজে মেডিকেল টেস্ট:
+              বিশেষজ্ঞ ডাক্তারের কনসালটেন্সি*:
             </span>{" "}
-            ঘরে বসেই বিভিন্ন মেডিকেল টেস্ট করান সাশ্রয়ী মূল্যে
+            উচ্চ পদের কর্মীদের জন্য বিশেষ পরামর্শ
           </li>
           <li>
-            <span className="font-semibold">
-              দেশে-বিদেশে বিশেষজ্ঞ ডাক্তারের কনসালটেন্সি*:
-            </span>{" "}
-            প্রয়োজন অনুযায়ী দেশি-বিদেশি বিশেষজ্ঞ ডাক্তারের পরামর্শ নিন
+            <span className="font-semibold">হেলথ ট্যুরিজম:</span> বিদেশে
+            চিকিৎসার জন্য সম্পূর্ণ ব্যবস্থাপনা
           </li>
           <li>
-            <span className="font-semibold">হেলথ ট্যুরিজম ফ্যাসিলিটিস:</span>{" "}
-            বিদেশে চিকিৎসার জন্য সম্পূর্ণ সাপোর্ট ও ব্যবস্থাপনা
+            <span className="font-semibold">এয়ার অ্যাম্বুলেন্স:</span> জরুরি
+            অবস্থায় বিশেষ পরিবহন সুবিধা
           </li>
           <li>
-            <span className="font-semibold">এয়ার অ্যাম্বুলেন্স সার্ভিস:</span>{" "}
-            জরুরি অবস্থায় এয়ার অ্যাম্বুলেন্স সার্ভিসের সুবিধা
+            <span className="font-semibold">ফ্রি মেডিসিন হোম ডেলিভারি:</span>{" "}
+            কর্মীদের ঔষধ অফিসে বা বাসায় ডেলিভারি
           </li>
           <li>
-            <span className="font-semibold">
-              ফ্রি হোম ডেলিভারি – দেশি/বিদেশি ঔষধ:
-            </span>{" "}
-            প্রেসক্রিপশন অনুযায়ী দেশি-বিদেশি ঔষধ বিনামূল্যে হোম ডেলিভারি
+            <span className="font-semibold">টেলিমেডিসিন*:</span> ব্যস্ত কর্মীদের
+            জন্য অনলাইন কনসালটেশন
           </li>
           <li>
-            <span className="font-semibold">
-              টেলিমেডিসিন / ই-মেডিকেল কনসালটেন্সি*:
-            </span>{" "}
-            ঘরে বসেই অনলাইনে ডাক্তারের পরামর্শ নিন
-          </li>
-          <li>
-            <span className="font-semibold">
-              হেলথ গাইড সার্ভিস – দেশ/বিদেশ*:
-            </span>{" "}
-            বিদেশে চিকিৎসা বা দূরে থাকা অবস্থায় ব্যক্তিগত হেলথ গাইডের সেবা
+            <span className="font-semibold">হেলথ গাইড সার্ভিস*:</span> বিদেশগামী
+            কর্মীদের জন্য বিশেষ সহায়তা
           </li>
         </ul>
 
@@ -155,7 +233,10 @@ export const packagesData = [
           <span className="text-[#3abbba] font-bold">
             Citizen Care Bangladesh
           </span>{" "}
-          এর <span className="text-pink-500 font-bold">প্রিমিয়াম প্যাকেজ</span>{" "}
+          এর{" "}
+          <span className="text-pink-500 font-bold">
+            সিঙ্গেল/ফ্যামিলি প্যাকেজ
+          </span>{" "}
           এর সদস্য হয়ে নিজের ও পরিবারের স্বাস্থ্য সুরক্ষা নিশ্চিত করুন, ঘরে
           বসেই সম্পূর্ণ স্বাস্থ্যসেবা পান, এবং ভবিষ্যতের স্বাস্থ্য ঝুঁকি থেকে
           নিরাপদ থাকুন।
@@ -169,7 +250,7 @@ export const packagesData = [
     text: "গর্ভবতী মায়েদের জন্য বিশেষ স্বাস্থ্যসেবা",
     miniText: "প্রেগন্যান্ট ওম্যান প্যাকেজ",
     enTitle: "Pregnant Woman Package",
-    image: "/images/packages/pegnancy.webp",
+    image: "/images/packages/pegnancy.png",
     banner: "/images/packages-banner/pegnancy.webp",
     path: "/pregnant-woman-package",
     iconColor: "text-pink-500",
