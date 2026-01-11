@@ -1,6 +1,6 @@
 "use client";
 import useUserData from "@/hooks/useUserData";
-import Banner2 from "./Banner2";
+import Banner2 from "./Banner";
 import SuccessStories from "./CCBVideos";
 import Services from "./services/Services";
 import "./Home.css";
