@@ -30,6 +30,12 @@ const memberSchema = mongoose.Schema(
       // validate: [validator.isEmail, "Provide a valid email"],
       // lowercase: true,
       trim: true,
+      default: null,
+    },
+
+    occupation: {
+      type: String,
+      default: null,
     },
     streetAddress: {
       type: String,

@@ -49,7 +49,7 @@ const DropdownUser = ({ userData }) => {
           </div>
 
           <div className="hidden sm:flex items-center gap-1">
-            <span className="text-sm font-medium text-gray-700 max-w-[120px] truncate">
+            <span className="text-base font-bold text-gray-700 max-w-[120px] truncate">
               {"Account"}
             </span>
             <ChevronDown

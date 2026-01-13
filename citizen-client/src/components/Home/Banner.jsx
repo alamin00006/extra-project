@@ -1,26 +1,99 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css"; // Default Splide CSS
 import Image from "next/image";
-import NoticeBoard from "./NoticeBoard/NoticeBoard";
+import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 
 const images = [
-  "/images/banner/helth-awar-01.jpg",
-  "/images/banner/HELTH-CARE-01-01.jpg",
-  "/images/banner/JAHID-01.jpg",
-  "/images/banner/niutri-01.jpg",
-  "/images/banner/nurse-01.jpg",
+  "/images/home-page/1800-4.webp",
+  "/images/home-page/1800-1.webp",
+  "/images/home-page/1800-2.webp",
+  "/images/home-page/1800-3.webp",
+  "/images/home-page/Home-Page-Front.jpg",
+  "/images/home-page/CCB-CUMMUNITY.jpg",
+  "/images/home-page/Awerness-Program.jpg",
 ];
 
-const HeroSlider = () => {
+const HeroSlider = ({ userData }) => {
+  const router = useRouter();
+  const [loading, setLoading] = useState(true);
+  const [imagesLoaded, setImagesLoaded] = useState(0);
+
+  useEffect(() => {
+    // Simulate initial loading
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleImageLoad = () => {
+    setImagesLoaded((prev) => prev + 1);
+    if (imagesLoaded + 1 >= images.length) {
+      setLoading(false);
+    }
+  };
+
+  const handleRegistration = () => {
+    return router.push(`/service-application`);
+  };
+
+  // Loading Skeleton Component
+  const LoadingSkeleton = () => (
+    <div className="relative w-full">
+      {/* Slider Skeleton */}
+      <div className="relative w-full aspect-[3/1] bg-gray-200 animate-pulse">
+        {/* Simulate multiple slides */}
+        <div className="absolute inset-0 flex">
+          {[...Array(3)].map((_, index) => (
+            <div
+              key={index}
+              className="w-full h-full bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200"
+              style={{
+                animationDelay: `${index * 200}ms`,
+                animationDuration: "1.5s",
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Content Skeleton */}
+      <div className="custom-container -mt-[145px] z-[1] md:flex hidden flex-col md:flex-row items-center text-black gap-8 h-full">
+        <div className="w-full max-w-2xl">
+          <div className="w-full bg-gray-100 p-3 rounded md:mt-0 sm:mt-5 animate-pulse">
+            {/* Title Skeleton */}
+            <div className="h-8 bg-gray-300 rounded w-3/4 mb-4"></div>
+
+            {/* Text Lines Skeleton */}
+            <div className="space-y-3 mb-8">
+              <div className="h-4 bg-gray-300 rounded w-full"></div>
+              <div className="h-4 bg-gray-300 rounded w-5/6"></div>
+              <div className="h-4 bg-gray-300 rounded w-4/5"></div>
+            </div>
+
+            {/* Button Skeleton */}
+            <div className="h-12 bg-gray-300 rounded-lg w-48"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  if (loading) {
+    return <LoadingSkeleton />;
+  }
+
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full">
       {/* Splide Slider */}
       <Splide
         options={{
           type: "fade",
           rewind: true,
           autoplay: true,
-          interval: 5000,
+          interval: 2000,
           arrows: false,
           pagination: false,
           speed: 1000,
@@ -29,40 +102,36 @@ const HeroSlider = () => {
       >
         {images.map((image, index) => (
           <SplideSlide key={index}>
-            <div className="relative w-screen h-screen">
+            {/* Desktop & Mobile unified ratio */}
+            <div className="relative w-full aspect-[3/1] bg-black">
               <Image
                 src={image}
                 alt={`Slide ${index + 1}`}
                 fill
-                objectFit="cover"
                 priority
+                className="object-cover"
+                sizes="100vw"
+                onLoadingComplete={handleImageLoad}
+                onError={() => handleImageLoad()} // Handle image load errors
               />
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
             </div>
           </SplideSlide>
         ))}
       </Splide>
 
       {/* Two-Column Content */}
-      <div className="custom-container absolute inset-0 flex flex-col md:flex-row justify-center items-center text-white px-8 gap-8">
-        {/* Left-Aligned Text Content */}
-        <div className="w-full md:w-1/2">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Welcome to Our Service
-          </h1>
-          <p className="text-lg md:text-2xl mb-8">
-            Experience the best healthcare solutions tailored for your family.
-          </p>
-          <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg">
-            Book an Appointment
-          </button>
-        </div>
-
-        {/* Right-Aligned YouTube Video */}
-        <div className="w-full md:w-1/2">
-          <div className="relative w-full h-64 md:h-96">
-            <NoticeBoard />
+      <div className="custom-container  -mt-[145px] z-[1] md:flex hidden flex-col md:flex-row items-center text-black gap-8 h-full">
+        <div>
+          <div className="w-full bg-[#e8ffff] p-3 opacity-75 rounded md:mt-0 sm:mt-5">
+            <h1 className="md:text-2xl 2xl:text-4xl font-bold mb-4 text-pink-600">
+              Welcome to Our Service
+            </h1>
+            <button
+              onClick={handleRegistration}
+              className="text-sm border-2 border-pink-500 hover:bg-pink-600 text-pink-600 hover:text-white font-bold py-3 px-6 rounded-lg"
+            >
+              Registration Now
+            </button>
           </div>
         </div>
       </div>
@@ -72,76 +141,78 @@ const HeroSlider = () => {
 
 export default HeroSlider;
 
+// import { Splide, SplideSlide } from "@splidejs/react-splide";
+// import "@splidejs/splide/css"; // Default Splide CSS
 // import Image from "next/image";
-// import Slider from "react-slick";
-// import NoticeBoard from "./NoticeBoard/NoticeBoard";
+// import { useRouter } from "next/navigation";
 
-// const Banner = () => {
-//   const settings = {
-//     dots: false,
-//     arrows: false,
-//     fade: true,
-//     infinite: true,
-//     speed: 2000,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//     waitForAnimate: false,
-//     autoplay: true,
-//     autoplaySpeed: 2000,
-//     pauseOnHover: false,
+// const images = [
+//   "/images/home-page/1800-4.webp",
+//   "/images/home-page/1800-1.webp",
+//   "/images/home-page/1800-2.webp",
+//   "/images/home-page/1800-3.webp",
+//   "/images/home-page/Home-Page-Front.jpg",
+//   "/images/home-page/CCB-CUMMUNITY.jpg",
+//   "/images/home-page/Awerness-Program.jpg",
+// ];
+
+// const HeroSlider = ({ userData }) => {
+//   const router = useRouter();
+
+//   const handleRegistration = () => {
+//     return router.push(`/service-application`);
 //   };
 
 //   return (
-//     <>
-//       <div className="relative">
-//         <div className="slider-custom-container md:block sm:hidden xs:hidden">
-//           <Slider {...settings}>
-//             <div className="w-[1000px] 2xl:h-[calc(100vh-250px)] xl:h-[calc(100vh-200px)] lg:h-[calc(100vh-250px)] md:h-[calc(100vh-200px)] sm:h-[calc(100vh-50px)]">
-//               <Image
-//                 src={"/images/1.webp"}
-//                 width={1000}
-//                 height={500}
-//                 className="w-full 2xl:h-full xl:h-full lg:h-full  md:h-full sm:h-full "
-//                 alt="banner"
-//               />
+//     <div className="relative w-full">
+//       {/* Splide Slider */}
+//       <Splide
+//         options={{
+//           type: "fade",
+//           rewind: true,
+//           autoplay: true,
+//           interval: 2000,
+//           arrows: false,
+//           pagination: false,
+//           speed: 1000,
+//         }}
+//         className="h-full"
+//       >
+//         {images.map((image, index) => (
+//           <SplideSlide key={index}>
+//             <div className="relative w-screen sm:hidden md:block h-[calc(100vh-230px)] relative">
+//               <Image src={image} alt={`Slide ${index + 1}`} fill priority />
 //             </div>
-//             <div className="w-[1000px] 2xl:h-[calc(100vh-250px)] xl:h-[calc(100vh-200px)] lg:h-[calc(100vh-250px)] md:h-[calc(100vh-200px)] sm:h-[calc(100vh-50px)]">
-//               <Image
-//                 src={"/images/2.webp"}
-//                 width={1000}
-//                 height={500}
-//                 className="w-full 2xl:h-full xl:h-full lg:h-full  md:h-full sm:h-full "
-//                 alt="banner"
-//               />
+//             <div className="md:hidden sm:block relative w-screen h-[150px]">
+//               <Image src={image} alt={`Slide ${index + 1}`} fill priority />
 //             </div>
-//             <div className="w-[1000px] 2xl:h-[calc(100vh-250px)] xl:h-[calc(100vh-200px)] lg:h-[calc(100vh-250px)] md:h-[calc(100vh-200px)] sm:h-[calc(100vh-50px)]">
-//               <Image
-//                 src={"/images/4.webp"}
-//                 width={1000}
-//                 height={500}
-//                 className="w-full 2xl:h-full xl:h-full lg:h-full  md:h-full sm:h-full "
-//                 alt="banner"
-//               />
-//             </div>
-//             <div className="w-[1000px] 2xl:h-[calc(100vh-250px)] xl:h-[calc(100vh-200px)] lg:h-[calc(100vh-250px)] md:h-[calc(100vh-200px)] sm:h-[calc(100vh-50px)]">
-//               <Image
-//                 src={"/images/5.webp"}
-//                 width={1000}
-//                 height={500}
-//                 className="w-full 2xl:h-full xl:h-full lg:h-full  md:h-full sm:h-full "
-//                 alt="banner"
-//               />
-//             </div>
-//           </Slider>
-//         </div>
+//           </SplideSlide>
+//         ))}
+//       </Splide>
 
-//         {/* Center the NoticeBoard */}
-//         <div className="absolute md:top-20 sm:top-3 left-1/2 transform -translate-x-1/2 flex justify-center items-center w-full">
-//           <NoticeBoard />
+//       {/* Two-Column Content */}
+//       <div className="custom-container  -mt-[145px] z-[1] md:flex hidden flex-col md:flex-row items-center text-black gap-8 h-full">
+//         <div>
+//           <div className="w-full bg-[#e8ffff] p-3 opacity-75 rounded md:mt-0 sm:mt-5">
+//             <h1 className="md:text-2xl 2xl:text-4xl font-bold mb-4 text-pink-600">
+//               Welcome to Our Service
+//             </h1>
+//             {/* <p className="text-sm md:text-base mb-8 font-bengali">
+//               Citizen Care Bangladesh - এর লয়্যাল মেম্বার হয়ে বছর জুড়ে MBBS
+//               ডাক্তার, নিউট্রিশনিস্ট, রেজিস্টার্ড নার্সের নিয়মিত স্বাস্থ্যসেবা
+//               নিন ঘরে বসেই।
+//             </p> */}
+//             <button
+//               onClick={handleRegistration}
+//               className="text-sm border-2 border-pink-500 hover:bg-pink-600 text-pink-600 hover:text-white font-bold py-3 px-6 rounded-lg"
+//             >
+//               Registration Now
+//             </button>
+//           </div>
 //         </div>
 //       </div>
-//     </>
+//     </div>
 //   );
 // };
 
-// export default Banner;
+// export default HeroSlider;

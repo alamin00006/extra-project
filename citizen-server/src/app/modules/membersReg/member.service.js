@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { userService } from "../user/user.service.js";
 import Member from "./member.model.js";
 import { generateMemberId } from "./member.utils.js";
 
@@ -33,14 +32,19 @@ const createWithOutPaymentMember = async (payload) => {
     const findMemberWithPhone = await Member.findOne({
       phoneNumber: payload?.phoneNumber,
     });
-    const findMemberWithEmail = await Member.findOne({ email: payload?.email });
+
+    // if (payload?.email) {
+    //   const findMemberWithEmail = await Member.findOne({
+    //     email: payload?.email,
+    //   });
+
+    //   if (findMemberWithEmail) {
+    //     throw new Error("Sorry! already member registered with email");
+    //   }
+    // }
 
     if (findMemberWithPhone) {
       throw new Error("Sorry! already member registered with phone number");
-    }
-
-    if (findMemberWithEmail) {
-      throw new Error("Sorry! already member registered with email");
     }
 
     const memberId = await generateMemberId();
@@ -55,16 +59,16 @@ const createWithOutPaymentMember = async (payload) => {
     const result = await newMember.save({ session });
 
     // Prepare user data
-    const userData = {
-      fullName: payload?.name,
-      phoneNumber: payload?.phoneNumber,
-      email: payload?.email,
-      password: payload?.password,
-      streetAddress: payload?.address,
-    };
+    // const userData = {
+    //   fullName: payload?.name,
+    //   phoneNumber: payload?.phoneNumber,
+    //   email: payload?.email,
+    //   password: payload?.password,
+    //   streetAddress: payload?.address,
+    // };
 
-    // Assuming createUser can accept a session
-    await userService.createUser(userData, session);
+    // createUser can accept a session
+    // await userService.createUser(userData, session);
 
     // Commit transaction
     await session.commitTransaction();
@@ -79,7 +83,32 @@ const createWithOutPaymentMember = async (payload) => {
   }
 };
 
+const getMembers = async () => {
+  const members = await Member.find({});
+  return members;
+};
+const getMember = async (memberId) => {
+  const member = await Member.findById(memberId);
+  return member;
+};
+
+const updateMember = async (memberId, payload) => {
+  const updatedMember = await Member.findByIdAndUpdate(memberId, payload, {
+    new: true,
+  });
+  return updatedMember;
+};
+
+const deleteMember = async (memberId) => {
+  const deletedMember = await Member.findByIdAndDelete(memberId);
+  return deletedMember;
+};
+
 export const MemberService = {
   createMember,
   createWithOutPaymentMember,
+  getMembers,
+  getMember,
+  updateMember,
+  deleteMember,
 };

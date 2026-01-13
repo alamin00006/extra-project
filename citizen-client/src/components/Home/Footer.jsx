@@ -42,9 +42,7 @@ const Footer = () => {
               priority
             />
 
-            <p className="mt-4">
-              We are innovative and passionate about the work we do.
-            </p>
+            <p className="mt-1">We are Committed to Serve, Care for Health.</p>
           </div>
 
           {/* Middle Section */}

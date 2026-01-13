@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function JobOpenings() {
   const jobs = [
     {
-      title: "Medical Information Officer",
+      title: "Doctor",
       experience: "Minimum 1 year",
       education: "Graduation in any discipline",
       salary: "30k, incentive, 3 festival bonus",
@@ -37,6 +37,22 @@ export default function JobOpenings() {
       office: "32/A, Road-02, Dhanmondi, Dhaka-1205",
       email: "citizencarebd@gmail.com",
       image: "/images/careers/Job-Opening-Nurse.jpeg",
+    },
+
+    {
+      title: "Medical Information Officer",
+      experience: "Minimum 1 year",
+      education: "Graduation in any discipline",
+      salary: "30k, incentive, 3 festival bonus",
+      age: "Up to 35",
+      responsibilities: [
+        "To share product information effectively & efficiently to healthcare professionals for creating demand.",
+        "To collect sales orders from chemists to achieve business objectives.",
+      ],
+      location: "Inside Dhaka",
+      office: "32/A, Road-02, Dhanmondi, Dhaka-1205",
+      email: "citizencarebd@gmail.com",
+      image: "/images/careers/medical-info-officer.jpg",
     },
   ];
 

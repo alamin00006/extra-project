@@ -4,6 +4,16 @@ import Image from "next/image";
 
 const videos = [
   {
+    videoUrl: "https://www.youtube.com/embed/iHVxFWGAnuo",
+  },
+  {
+    videoUrl: "https://www.youtube.com/embed/UB_F2ZUNVU8",
+  },
+  // {
+  //   videoUrl: "https://youtube.com/shorts/WIu5ZJqWV3o",
+  // },
+
+  {
     videoUrl: "https://www.youtube.com/embed/qyl1cJqohJs",
   },
   {
@@ -26,8 +36,8 @@ export default function SuccessStories() {
 
   return (
     <div className="custom-container  ">
-      <div className=" text-center md:mx-0 sm:mx-5 md:mt-4 sm:-mt-2 ">
-        <h2 className="md:text-4xl sm:text-xl  text-gray-900 my-5 md:mt-0 sm:mt-6">
+      <div className=" text-center md:mx-0 sm:mx-5 md:mt-0 sm:-mt-8 ">
+        <h2 className="md:text-4xl sm:text-xl  text-gray-900 md:mb-5 sm:mb-4 md:mt-0 sm:mt-3">
           Our Live Experience
         </h2>
 

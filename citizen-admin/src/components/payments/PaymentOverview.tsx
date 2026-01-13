@@ -28,17 +28,19 @@ interface PaymentOverviewProps {
 
 const PaymentOverview: React.FC<PaymentOverviewProps> = ({ payments }) => {
   const stats = {
-    totalPayments: payments.length,
-    totalAmount: payments.reduce((sum, payment) => sum + payment.amount, 0),
+    totalPayments: payments?.length,
+    totalAmount: payments?.reduce((sum, payment) => sum + payment.amount, 0),
     averageAmount:
-      payments.length > 0
-        ? payments.reduce((sum, payment) => sum + payment.amount, 0) /
-          payments.length
+      payments?.length > 0
+        ? payments?.reduce((sum, payment) => sum + payment.amount, 0) /
+          payments?.length
         : 0,
-    bKashPayments: payments.filter((payment) => payment.paymentType === "bkash")
+    bKashPayments: payments?.filter(
+      (payment) => payment.paymentType === "bkash",
+    ).length,
+    successfulPayments: payments?.filter((payment) => payment.amount > 0)
       .length,
-    successfulPayments: payments.filter((payment) => payment.amount > 0).length,
-    todayPayments: payments.filter((payment) => {
+    todayPayments: payments?.filter((payment) => {
       const paymentDate = new Date(payment.paymentDate);
       const today = new Date();
       return paymentDate.toDateString() === today.toDateString();
@@ -58,7 +60,7 @@ const PaymentOverview: React.FC<PaymentOverviewProps> = ({ payments }) => {
     },
     {
       title: "Total Amount",
-      value: `৳${stats.totalAmount.toLocaleString()}`,
+      value: `৳${stats.totalAmount?.toLocaleString()}`,
       description: "Total revenue",
       icon: DollarSign,
       borderColor: "border-l-green-500",

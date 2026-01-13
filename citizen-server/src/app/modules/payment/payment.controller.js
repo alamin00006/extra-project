@@ -8,7 +8,9 @@ import config from "../../../config/index.js";
 import { CCBSms } from "../../../sms/CCBSMS.js";
 import { generateMemberId } from "../membersReg/member.utils.js";
 import { PaymentService } from "./payment.service.js";
-import { userService } from "../user/user.service.js";
+import sendResponse from "../../../shared/sendResponse.js";
+import httpStatus from "http-status";
+import catchAsync from "../../../shared/catchAsync.js";
 
 // Helper to prepare bkash headers
 // const shurjoPayHeaders = async () => {
@@ -116,13 +118,13 @@ const verifyPayment = async (req, res) => {
       const to = `88${dataForRegistration?.phone}`;
       await CCBSms(message, to);
 
-      const userData = {
-        fullName: paymentDetails?.name,
-        phoneNumber: paymentDetails?.phone_no,
-        password: paymentDetails?.value1,
-        streetAddress: paymentDetails?.address,
-      };
-      await userService.createUser(userData);
+      // const userData = {
+      //   fullName: paymentDetails?.name,
+      //   phoneNumber: paymentDetails?.phone_no,
+      //   password: paymentDetails?.value1,
+      //   streetAddress: paymentDetails?.address,
+      // };
+      // await userService.createUser(userData);
     }
     res.json({
       paymentDetails,
@@ -133,7 +135,18 @@ const verifyPayment = async (req, res) => {
   }
 };
 
+const getAllPayments = catchAsync(async (req, res) => {
+  const result = await PaymentService.getAllPayments();
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "Payments retrieved successfully",
+    data: result,
+  });
+});
+
 export const PaymentController = {
   paymentCreate,
   verifyPayment,
+  getAllPayments,
 };

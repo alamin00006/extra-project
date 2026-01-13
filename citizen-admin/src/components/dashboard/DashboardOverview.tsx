@@ -22,11 +22,11 @@ interface DashboardOverviewProps {
 
 const DashboardOverview: React.FC<DashboardOverviewProps> = ({ users }) => {
   const stats = {
-    totalUsers: users.length,
-    approvedUsers: users.filter((user) => user.status === "Approved").length,
-    pendingUsers: users.filter((user) => user.status === "Pending").length,
-    rejectedUsers: users.filter((user) => user.status === "Rejected").length,
-    dhakaUsers: users.filter((user) => user.city.toLowerCase() === "dhaka")
+    totalUsers: users?.length,
+    approvedUsers: users?.filter((user) => user.status === "Approved").length,
+    pendingUsers: users?.filter((user) => user.status === "Pending").length,
+    rejectedUsers: users?.filter((user) => user.status === "Rejected").length,
+    dhakaUsers: users?.filter((user) => user.city?.toLowerCase() === "dhaka")
       .length,
   };
 
@@ -66,20 +66,20 @@ const DashboardOverview: React.FC<DashboardOverviewProps> = ({ users }) => {
       iconColor: "text-yellow-600 dark:text-yellow-400",
       textColor: "text-yellow-600 dark:text-yellow-400",
     },
-    {
-      title: "Dhaka Members",
-      value: stats.dhakaUsers,
-      description: "From Dhaka city",
-      icon: MapPin,
-      borderColor: "border-l-purple-500",
-      iconBg: "bg-purple-100 dark:bg-purple-900/30",
-      iconColor: "text-purple-600 dark:text-purple-400",
-      textColor: "text-purple-600 dark:text-purple-400",
-    },
+    // {
+    //   title: "Dhaka Members",
+    //   value: stats.dhakaUsers,
+    //   description: "From Dhaka city",
+    //   icon: MapPin,
+    //   borderColor: "border-l-purple-500",
+    //   iconBg: "bg-purple-100 dark:bg-purple-900/30",
+    //   iconColor: "text-purple-600 dark:text-purple-400",
+    //   textColor: "text-purple-600 dark:text-purple-400",
+    // },
   ];
 
   return (
-    <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+    <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {cardData.map((card, index) => (
         <div
           key={index}
