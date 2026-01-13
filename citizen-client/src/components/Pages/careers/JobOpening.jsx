@@ -5,7 +5,7 @@ export default function JobOpenings() {
     {
       title: "Doctor",
       experience: "Minimum 1 year",
-      education: "Graduation in any discipline",
+      education: "Graduation in MBBS",
       salary: "30k, incentive, 3 festival bonus",
       age: "Up to 35",
       responsibilities: [
