@@ -15,7 +15,7 @@ export default function JobOpenings() {
       location: "Inside Dhaka",
       office: "32/A, Road-02, Dhanmondi, Dhaka-1205",
       email: "citizencarebd@gmail.com",
-      image: "/images/careers/medical-info-officer.jpg",
+      image: "/images/careers/mbbs-doctor.jpg",
     },
     {
       title: "Nutritionist and Diet Consultant",
@@ -52,7 +52,7 @@ export default function JobOpenings() {
       location: "Inside Dhaka",
       office: "32/A, Road-02, Dhanmondi, Dhaka-1205",
       email: "citizencarebd@gmail.com",
-      image: "/images/careers/medical-info-officer.jpg",
+      image: "/images/careers/medical-information-officer.jpg",
     },
   ];
 
