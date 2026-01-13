@@ -97,6 +97,7 @@ const HeroSlider = ({ userData }) => {
           arrows: false,
           pagination: false,
           speed: 1000,
+          pauseOnHover: false,
         }}
         className="h-full"
       >
