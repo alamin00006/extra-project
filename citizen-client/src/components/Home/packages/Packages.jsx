@@ -1,4 +1,4 @@
-import PackegeCard from "@/components/Card/PackegeCard";
+import PackageCard from "@/components/Card/PackageCard";
 import { packagesData } from "@/helpers/utils/packagesData";
 
 const Packages = () => {
@@ -10,7 +10,7 @@ const Packages = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 ">
           {packagesData.map((card, index) => (
-            <PackegeCard key={index} data={card} />
+            <PackageCard key={index} data={card} />
           ))}
         </div>
       </div>
