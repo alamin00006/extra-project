@@ -13,7 +13,7 @@ const PackageDetails = ({ params }) => {
   useEffect(() => {
     if (params.id) {
       const foundItem = packagesData.find(
-        (item) => item.id === Number(params.id)
+        (item) => item.id === Number(params.id),
       );
       setMenuItem(foundItem);
     }
@@ -66,7 +66,7 @@ const PackageDetails = ({ params }) => {
           <p>
             সিটিজেন কেয়ার বাংলাদেশের লয়্যাল মেম্বার হতে যোগাযোগ করুন:
             <br />
-            কল সেন্টার: ০১৮৯৬-৫১১০২০, 09-613166166 <br />
+            কল সেন্টার: ০১৮৯৬-৫১১০২০, 09613-166166 <br />
             WhatsApp: ০১৮৯৪-৬৭১৮৭৫ <br />
             Website:{" "}
             <a

@@ -14,7 +14,7 @@ const ContactInfo = () => {
           <Phone className="w-4 h-4 text-gray-600" />
           <span className="text-sm text-gray-700 font-bengali">
             <span className="font-semibold">কল সেন্টার:</span> ০১৮৯৬-৫১১০২০,
-            09-613166166
+            09613-166166
           </span>
         </div>
 
